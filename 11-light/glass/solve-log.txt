@@ -1,0 +1,12 @@
+solving name at 512x256 cells
+  solve done: 477 passes, mean |log err| 0.0214, max 2.398, folded cells 0, 35.7s
+  surface: height range 49.37 mm, max slope 7.54 deg
+  traced proof: correlation with target 0.9676, light lost off-picture 0.52%
+solving unboundpdf at 512x256 cells
+  solve done: 456 passes, mean |log err| 0.0225, max 0.459, folded cells 0, 35.8s
+  surface: height range 29.41 mm, max slope 6.30 deg
+  traced proof: correlation with target 0.9681, light lost off-picture 0.43%
+solving write at 512x256 cells
+  solve done: 453 passes, mean |log err| 0.0155, max 0.447, folded cells 0, 37.1s
+  surface: height range 29.30 mm, max slope 5.99 deg
+  traced proof: correlation with target 0.9725, light lost off-picture 0.38%

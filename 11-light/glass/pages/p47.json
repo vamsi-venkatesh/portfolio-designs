@@ -1,0 +1,35 @@
+{
+  "id": "p47",
+  "W": 256,
+  "H": 128,
+  "VW": 257,
+  "VH": 129,
+  "Lx": 1.2,
+  "Ly": 0.6,
+  "D": 2,
+  "n": 1.517,
+  "floor": 0.06,
+  "sun": [
+    -0.2851187825345052,
+    -0.5050675576325521,
+    -0.8146250929557292
+  ],
+  "offset": [
+    -0.7,
+    -1.24
+  ],
+  "heightRangeMm": 30.063,
+  "maxSlopeDeg": 6.66,
+  "solve": {
+    "passes": 469,
+    "meanLogErr": 0.0209,
+    "maxLogErr": 0.4,
+    "foldedCells": 0
+  },
+  "proof": {
+    "correlation": 0.9063,
+    "lostPercent": 0.713,
+    "raysPerCell": 9
+  },
+  "made": "2026-11-04T22:44:09.810Z"
+}

@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vamsi Venkatesh — AI product engineer</title>
+<meta name="description" content="Vamsi Venkatesh designs, builds and runs AI products end to end: the product, the agents, the servers and the tests that prove it works.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1b1a17;
+    --ink-2: rgba(27, 26, 23, 0.62);
+    --ink-3: rgba(27, 26, 23, 0.42);
+    --paper: #e9e5de;
+    --gutter: clamp(16px, 3.2vw, 44px);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-snap-type: y mandatory; background: var(--paper); }
+  body { margin: 0; color: var(--ink); font-family: "Geist", "Avenir Next", sans-serif; background: var(--paper);
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  canvas#scene { position: fixed; inset: 0; width: 100vw; height: 100vh; height: 100lvh; display: block; z-index: 0; touch-action: pan-y; }
+  .step { height: 100vh; height: 100svh; scroll-snap-align: start; position: relative; }
+  a { color: inherit; text-decoration: none; }
+  a:hover, a:focus-visible { text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 2px; }
+
+  header { position: fixed; z-index: 2; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: flex-start;
+    padding: calc(var(--gutter) * 0.8) var(--gutter); pointer-events: none; }
+  header > * { pointer-events: auto; }
+  .who h1 { margin: 0; font-size: 15px; font-weight: 500; letter-spacing: -0.005em; }
+  .who p { margin: 3px 0 0; font-size: 13px; color: var(--ink-2); }
+  nav { display: flex; gap: 18px; font-size: 13px; }
+  nav a { color: var(--ink); }
+
+  .caption { position: fixed; z-index: 2; left: var(--gutter); bottom: calc(var(--gutter) * 0.9); width: min(460px, calc(100vw - 2 * var(--gutter)));
+    opacity: 0; transform: translateY(8px); pointer-events: none; }
+  .caption.on { pointer-events: auto; }
+  .caption .lead { margin: 0; font-size: clamp(17px, 1.45vw, 20px); line-height: 1.42; font-weight: 400; letter-spacing: -0.006em; }
+  .caption h2 { margin: 0 0 6px; font-size: clamp(26px, 2.4vw, 32px); font-weight: 500; letter-spacing: -0.02em; line-height: 1.05; }
+  .caption .kind { margin: 0 0 14px; font-size: 13px; color: var(--ink-2); }
+  .caption .body { margin: 0 0 10px; font-size: 16px; line-height: 1.45; }
+  .caption .facts { margin: 0 0 14px; font-size: 14px; line-height: 1.45; color: var(--ink-2); }
+  .caption .go { font-size: 14px; font-weight: 500; }
+  .hint { position: fixed; z-index: 2; right: var(--gutter); bottom: calc(var(--gutter) * 0.9); margin: 0; font-size: 12px; color: var(--ink-3);
+    transition: opacity 0.6s ease; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .nogl canvas#scene { display: none; }
+  .nogl .caption { opacity: 1 !important; transform: none !important; position: relative; left: auto; bottom: auto; margin: 0 var(--gutter) 40px; }
+  .nogl .hint { display: none; }
+  #cursor { position: fixed; z-index: 5; left: 0; top: 0; width: 22px; height: 22px; pointer-events: none; display: none; transform: translate(-3px, -2px); }
+  @media (max-width: 640px) {
+    nav { gap: 12px; }
+    nav .long { display: none; }
+    .hint { left: var(--gutter); right: auto; bottom: auto; top: 72px; }
+    .caption { padding-top: 28px; }
+    .caption::before { content: ''; position: absolute; z-index: -1; left: calc(-1 * var(--gutter)); right: calc(-1 * var(--gutter)); top: 0; bottom: calc(-1 * var(--gutter));
+      background: linear-gradient(rgba(233, 229, 222, 0), rgba(233, 229, 222, 0.88) 38%); }
+  }
+  @media (prefers-reduced-motion: reduce) { .caption, .hint { transition: none !important; } }
+</style>
+</head>
+<body>
+<canvas id="scene" aria-hidden="true"></canvas>
+<header>
+  <div class="who">
+    <h1>Vamsi Venkatesh</h1>
+    <p>AI product engineer · Magdeburg, Germany</p>
+  </div>
+  <nav aria-label="Contact">
+    <a href="mailto:vamsi@vamsivenkatesh.com">Email</a>
+    <a class="long" href="https://www.linkedin.com/in/vamsivenkatesh" rel="noopener">LinkedIn</a>
+    <a class="long" href="https://github.com/vamsi-venkatesh" rel="noopener">GitHub</a>
+  </nav>
+</header>
+
+<main>
+  <section class="step" id="s0" aria-label="Introduction">
+    <div class="caption" data-state="0">
+      <p class="lead">I design, build and run AI products end to end: the product, the agents, the servers and the tests that prove it works.</p>
+    </div>
+  </section>
+  <section class="step" id="s1" aria-label="UnboundPDF">
+    <div class="caption" data-state="1">
+      <h2>UnboundPDF</h2>
+      <p class="kind">Browser PDF suite · Live</p>
+      <p class="body">Every PDF tool in the browser. The file never leaves the tab.</p>
+      <p class="facts">54 tools, all in the browser. 0 uploads.</p>
+      <a class="go" href="https://unboundpdf.com/" rel="noopener">unboundpdf.com ↗</a>
+    </div>
+  </section>
+  <section class="step" id="s2" aria-label="Contact">
+    <div class="caption" data-state="2">
+      <h2>Write to me</h2>
+      <p class="body"><a href="mailto:vamsi@vamsivenkatesh.com">vamsi@vamsivenkatesh.com</a></p>
+      <p class="facts"><a href="https://www.linkedin.com/in/vamsivenkatesh" rel="noopener">LinkedIn</a> · <a href="https://github.com/vamsi-venkatesh" rel="noopener">GitHub</a></p>
+    </div>
+  </section>
+</main>
+<p class="hint" id="hint">Move to tilt the glass · shake it · scroll for the work</p>
+<svg id="cursor" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 2 L3 18 L7.2 14.2 L10 20.5 L12.6 19.4 L9.9 13.2 L15.6 13.2 Z" fill="#fff" stroke="#1b1a17" stroke-width="1.3" stroke-linejoin="round"/></svg>
+<script type="module" src="./app.js"></script>
+</body>
+</html>

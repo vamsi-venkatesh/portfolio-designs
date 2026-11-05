@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vamsi Venkatesh</title>
+<meta name="description" content="Vamsi Venkatesh — AI product engineer, Magdeburg, Germany. A page you can play.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0B0A12; --bg2:#141127; --text:#EFE8DC; --muted:#9C95AC; --faint:#6E6880;
+  --gold:#F5D58A; --lilac:#A9A3E8;
+  --serif:'Instrument Serif', 'Times New Roman', serif;
+  --sans:'Instrument Sans', 'Helvetica Neue', sans-serif;
+  --mono:'DM Mono', ui-monospace, monospace;
+  --m:28px;
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;color:var(--text);font-family:var(--sans);
+  background:
+    radial-gradient(120% 60% at 50% 115%, rgba(255,170,110,.10), transparent 60%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 55%, #17122a 100%);
+  background-attachment:fixed; min-height:100vh; overflow-x:hidden;
+  -webkit-tap-highlight-color:transparent;}
+canvas#harp{position:fixed;inset:0;width:100vw;height:100vh;pointer-events:none;z-index:0}
+main{position:relative;z-index:1;padding:0 var(--m) 140px;max-width:1440px;margin:0 auto}
+a{color:inherit}
+.wire{height:0;position:relative}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--muted);text-transform:lowercase;
+  padding-top:26px;height:72px}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(56px,10.5vw,168px);line-height:.92;
+  letter-spacing:-.02em;margin:38px 0 34px}
+h1 em{font-style:italic;color:#F7E7C6}
+.lede{font-size:clamp(17px,1.6vw,22px);line-height:1.45;max-width:36em;margin:34px 0 10px;color:var(--text)}
+.who{font-family:var(--mono);font-size:12.5px;color:var(--muted);letter-spacing:.04em;margin:0 0 36px}
+ol.work{list-style:none;margin:70px 0 0;padding:0}
+.row{--c:#EFE8DC;--e:0;position:relative;padding:22px 0 0}
+.row .top{display:flex;align-items:baseline;justify-content:space-between;gap:20px;padding-bottom:12px}
+.idx{font-family:var(--mono);font-size:12px;color:var(--faint);width:44px;flex:none}
+.pname{font-family:var(--serif);font-size:clamp(32px,3.6vw,52px);line-height:1;text-decoration:none;
+  color:color-mix(in oklab, var(--text), var(--c) calc(var(--e) * 70%));
+  text-shadow:0 0 calc(var(--e) * 26px) color-mix(in oklab, var(--c) 75%, transparent);
+  transition:letter-spacing .4s ease}
+.pname:hover,.pname:focus-visible{letter-spacing:.01em}
+.pname:focus-visible{outline:1px dashed var(--c);outline-offset:6px}
+.name-wrap{display:flex;align-items:baseline;flex:1;min-width:0}
+.meta{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap;text-align:right}
+.meta b{font-weight:400;color:color-mix(in oklab, var(--c) 80%, var(--text))}
+.row .bottom{display:flex;justify-content:space-between;gap:24px;padding:14px 0 0 44px;align-items:baseline}
+.one{margin:0;font-size:15.5px;line-height:1.5;color:#CFC8D8;max-width:44em}
+.num{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap}
+.num strong{font-family:var(--serif);font-weight:400;font-size:22px;color:var(--text);margin-right:6px;letter-spacing:0}
+.row .sym{margin-top:34px}
+footer.contact{margin-top:84px;display:flex;flex-wrap:wrap;align-items:flex-end;gap:18px 48px}
+.contact .lab{font-family:var(--serif);font-style:italic;font-size:34px;width:100%;margin-bottom:6px}
+.chime{display:inline-block;text-decoration:none;font-family:var(--mono);font-size:14px;color:var(--text);
+  padding:6px 0 18px;position:relative}
+.chime .wire{position:absolute;left:0;right:0;bottom:6px}
+.chime:hover,.chime:focus-visible{color:var(--gold)}
+.chime:focus-visible{outline:1px dashed var(--gold);outline-offset:4px}
+#play{position:fixed;top:18px;right:var(--m);z-index:5;display:flex;align-items:center;gap:10px;
+  font:500 14px var(--sans);color:#1a1424;background:var(--gold);border:0;border-radius:999px;
+  padding:11px 18px 11px 14px;cursor:pointer;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 8px 40px rgba(245,213,138,.25);
+  transition:background .3s, color .3s, transform .2s}
+#play:hover{transform:translateY(-1px)}
+#play:focus-visible{outline:2px solid #fff;outline-offset:3px}
+#play .ico{width:18px;height:16px;display:flex;align-items:flex-end;gap:2px}
+#play .tri{width:0;height:0;border-left:12px solid currentColor;border-top:7px solid transparent;border-bottom:7px solid transparent;margin:1px 0 0 3px}
+#play .bar{width:3px;background:currentColor;border-radius:2px;height:5px}
+#play.on{background:rgba(239,232,220,.08);color:var(--text);box-shadow:0 0 0 1px rgba(239,232,220,.22);backdrop-filter:blur(6px)}
+#play.on .bar{animation:eq 1.1s ease-in-out infinite}
+#play.on .bar:nth-child(2){animation-delay:-.4s}#play.on .bar:nth-child(3){animation-delay:-.8s}
+#play.muted .bar{animation:none;height:3px;opacity:.5}
+@keyframes eq{0%,100%{height:4px}50%{height:15px}}
+body::after{content:"";position:fixed;left:0;right:0;bottom:0;height:64px;z-index:3;pointer-events:none;
+  background:linear-gradient(180deg, rgba(20,16,36,0), rgba(16,13,30,.92) 60%)}
+#score{position:fixed;left:var(--m);bottom:16px;z-index:4;font-family:var(--mono);font-size:11.5px;color:var(--muted);
+  letter-spacing:.04em;pointer-events:none}
+#score span{color:var(--gold)}
+#hint{position:fixed;right:var(--m);bottom:16px;z-index:4;font-family:var(--mono);font-size:11.5px;color:var(--muted);
+  pointer-events:none;text-align:right}
+.rise{opacity:0;transform:translateY(14px);animation:rise 1s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+@media (max-width:700px){
+  :root{--m:16px}
+  .kicker{height:64px;padding-top:24px;font-size:11px}
+  .row .top{flex-direction:column;align-items:flex-start;gap:8px;padding-bottom:12px}
+  .idx{width:30px}
+  .meta{text-align:left;padding-left:30px;white-space:normal}
+  .row .bottom{flex-direction:column;gap:8px;padding-left:30px}
+  .one{font-size:15px}
+  .row .sym{margin-top:26px}
+  .contact .lab{font-size:28px}
+  footer.contact{gap:8px 28px}
+  #play{top:14px;padding:9px 14px 9px 11px;font-size:13px}
+  #score{bottom:12px;font-size:10.5px}
+  #hint{display:none}
+  main{padding-bottom:120px}
+}
+@media (prefers-reduced-motion:reduce){
+  .rise{animation:none;opacity:1;transform:none}
+  #play.on .bar{animation:none;height:9px}
+}
+</style>
+</head>
+<body>
+<canvas id="harp" aria-hidden="true"></canvas>
+
+<button id="play" type="button" aria-pressed="false" aria-label="Play: turn on sound and play the page">
+  <span class="ico" aria-hidden="true"><span class="tri"></span></span><span class="txt">Play</span>
+</button>
+
+<main>
+  <header>
+    <div class="kicker rise" style="animation-delay:.05s">07 · a page you can play</div>
+    <div class="wire" data-kind="hi"></div>
+    <h1 class="rise" style="animation-delay:.15s">Vamsi <em>Venkatesh</em></h1>
+    <div class="wire" data-kind="hi"></div>
+    <p class="lede rise" style="animation-delay:.3s">I design, build and run AI products end to end: the product, the agents, the servers and the tests that prove it works.</p>
+    <p class="who rise" style="animation-delay:.4s">AI product engineer · Magdeburg, Germany</p>
+    <div class="wire" data-kind="hi"></div>
+  </header>
+
+  <ol class="work" aria-label="Work">
+    <li class="row rise" style="--c:#F2703A;animation-delay:.45s" data-chord="0">
+      <div class="top"><div class="name-wrap"><span class="idx">01</span><a class="pname" href="https://vamsivenkatesh.com/work/vvdex-platform/">VVDex Platform</a></div><span class="meta">AI evaluation platform · <b>Live</b></span></div>
+      <div class="wire" data-kind="p"></div>
+      <div class="bottom"><p class="one">Tests AI models and agents on real work. Hidden tests decide.</p><span class="num"><strong>17</strong>certified exams</span></div>
+      <div class="wire sym" data-kind="s"></div>
+    </li>
+    <li class="row rise" style="--c:#D8CDBE;animation-delay:.5s" data-chord="1">
+      <div class="top"><div class="name-wrap"><span class="idx">02</span><a class="pname" href="https://vamsivenkatesh.com/work/conxto/">Conxto</a></div><span class="meta">AI job search · <b>Live</b></span></div>
+      <div class="wire" data-kind="p"></div>
+      <div class="bottom"><p class="one">Reads live job postings against your résumé and prepares the whole application.</p><span class="num"><strong>5 + 2</strong>agents and reviewers, one memory</span></div>
+      <div class="wire sym" data-kind="s"></div>
+    </li>
+    <li class="row rise" style="--c:#45C987;animation-delay:.55s" data-chord="2">
+      <div class="top"><div class="name-wrap"><span class="idx">03</span><a class="pname" href="https://vamsivenkatesh.com/work/vvdex-engine/">VVDex Engine</a></div><span class="meta">AI service engine · <b>Live</b></span></div>
+      <div class="wire" data-kind="p"></div>
+      <div class="bottom"><p class="one">Describe the work in one paragraph. It compiles a service that runs by your rules.</p><span class="num"><strong>50</strong>compiled service examples</span></div>
+      <div class="wire sym" data-kind="s"></div>
+    </li>
+    <li class="row rise" style="--c:#EFEAE0;animation-delay:.6s" data-chord="3">
+      <div class="top"><div class="name-wrap"><span class="idx">04</span><a class="pname" href="https://vamsivenkatesh.com/work/unboundpdf/">UnboundPDF</a></div><span class="meta">Browser PDF suite · <b>Live</b></span></div>
+      <div class="wire" data-kind="p"></div>
+      <div class="bottom"><p class="one">Every PDF tool in the browser. Your file never leaves the tab.</p><span class="num"><strong>54</strong>tools · 0 uploads</span></div>
+      <div class="wire sym" data-kind="s"></div>
+    </li>
+    <li class="row rise" style="--c:#86C977;animation-delay:.65s" data-chord="4">
+      <div class="top"><div class="name-wrap"><span class="idx">05</span><a class="pname" href="https://vamsivenkatesh.com/work/farmquick/">FarmQuick</a></div><span class="meta">B2B commerce + lead agent · <b>Live</b></span></div>
+      <div class="wire" data-kind="p"></div>
+      <div class="bottom"><p class="one">The ordering site a produce business runs on, and the agent that finds its next buyer.</p><span class="num"><strong>5</strong>cities read every morning</span></div>
+      <div class="wire sym" data-kind="s"></div>
+    </li>
+    <li class="row rise" style="--c:#EDE4D6;animation-delay:.7s" data-chord="5">
+      <div class="top"><div class="name-wrap"><span class="idx">06</span><a class="pname" href="https://vamsivenkatesh.com/work/conxfolio/">Conxfolio</a></div><span class="meta">Career suite · <b>Live</b></span></div>
+      <div class="wire" data-kind="p"></div>
+      <div class="bottom"><p class="one">Résumé, ATS review, cover letter and portfolio website, sharing one résumé.</p><span class="num"><strong>37</strong>résumé designs</span></div>
+      <div class="wire sym" data-kind="s"></div>
+    </li>
+    <li class="row rise" style="--c:#F49A4B;animation-delay:.75s" data-chord="6">
+      <div class="top"><div class="name-wrap"><span class="idx">07</span><a class="pname" href="https://vamsivenkatesh.com/work/pitchradar/">PitchRadar</a></div><span class="meta">Event intelligence · client · <b>Private</b></span></div>
+      <div class="wire" data-kind="p"></div>
+      <div class="bottom"><p class="one">Finds and ranks the events a mobile food vendor should trade at. Built for a client.</p><span class="num"><strong>7</strong>agents</span></div>
+      <div class="wire sym" data-kind="s"></div>
+    </li>
+    <li class="row rise" style="--c:#63D2A3;animation-delay:.8s" data-chord="7">
+      <div class="top"><div class="name-wrap"><span class="idx">08</span><a class="pname" href="https://vamsivenkatesh.com/work/vvdex-trading/">VVDex Trading</a></div><span class="meta">Market research · <b>Research</b></span></div>
+      <div class="wire" data-kind="p"></div>
+      <div class="bottom"><p class="one">Live market microstructure beside a hash-chained record of every dated call. Paper only.</p><span class="num"><strong>2,028</strong>dated calls</span></div>
+    </li>
+  </ol>
+
+  <footer class="contact">
+    <div class="lab">Say hello.</div>
+    <a class="chime" href="mailto:vamsi@vamsivenkatesh.com">vamsi@vamsivenkatesh.com<span class="wire" data-kind="c"></span></a>
+    <a class="chime" href="https://www.linkedin.com/in/vamsivenkatesh">LinkedIn<span class="wire" data-kind="c"></span></a>
+    <a class="chime" href="https://github.com/vamsi-venkatesh">GitHub<span class="wire" data-kind="c"></span></a>
+  </footer>
+</main>
+
+<div id="score" aria-live="polite">D Lydian · <span id="chord">Dmaj9♯11</span></div>
+<div id="hint">brush across the strings · press Play to hear them</div>
+
+<script>
+(() => {
+'use strict';
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const COARSE = matchMedia('(pointer: coarse)').matches;
+const NOTE = ['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B'];
+const mtof = m => 440 * Math.pow(2, (m - 69) / 12);
+const noteName = m => NOTE[m % 12] + (Math.floor(m / 12) - 1);
+const LYD = [0, 2, 4, 6, 7, 9, 11];
+const CHORDS = [
+  ['Dmaj9♯11', [38, 50, 57, 61, 64, 68]],
+  ['E6/9',     [40, 52, 59, 61, 66, 68]],
+  ['F♯m11',    [42, 54, 61, 64, 69, 71]],
+  ['Amaj9',    [45, 52, 56, 59, 61, 64]],
+  ['Bm9',      [47, 54, 57, 61, 62, 66]],
+  ['C♯m7',     [37, 49, 56, 59, 64, 68]],
+  ['D6/9',     [38, 50, 54, 59, 64, 69]],
+  ['Bm11',     [35, 47, 54, 57, 64, 66]],
+];
+const COL = { hi: '#F5D58A', s: '#A9A3E8', c: '#FFE3A8' };
+const OVER = ['#FFC27A', '#FF8FB1'];
+
+// ---------- strings ----------
+const els = [...document.querySelectorAll('.wire')];
+const main = els.filter(e => e.dataset.kind !== 'c');
+const chimes = els.filter(e => e.dataset.kind === 'c');
+const strings = [];
+main.forEach((el, i) => {
+  const k = main.length - 1 - i; // bottom string = lowest
+  const midi = 50 + 12 * Math.floor(k / 7) + LYD[k % 7];
+  const row = el.closest('.row');
+  const kind = el.dataset.kind;
+  strings.push({ el, kind, midi, row, chord: row && kind === 'p' ? +row.dataset.chord : -1,
+    color: kind === 'p' ? getComputedStyle(row).getPropertyValue('--c').trim() : COL[kind],
+    ex: [], held: null, prevRel: null, glowSet: 0, docY: 0, x0: 0, x1: 0 });
+});
+[86, 90, 93].forEach((m, i) => chimes[i] && strings.push({ el: chimes[i], kind: 'c', midi: m, row: null, chord: -1,
+  color: COL.c, ex: [], held: null, prevRel: null, docY: 0, x0: 0, x1: 0 }));
+
+const cv = document.getElementById('harp');
+const ctx = cv.getContext('2d');
+let W = 0, H = 0, DPR = 1, drawStatic = true;
+function measure() {
+  DPR = Math.min(2, devicePixelRatio || 1);
+  W = innerWidth; H = innerHeight;
+  cv.width = Math.round(W * DPR); cv.height = Math.round(H * DPR);
+  const m = W < 700 ? 10 : 22, sy = scrollY;
+  for (const s of strings) {
+    const r = s.el.getBoundingClientRect();
+    s.docY = r.top + sy + r.height / 2;
+    if (s.kind === 'c') { s.x0 = r.left; s.x1 = r.right; } else { s.x0 = m; s.x1 = W - m; }
+  }
+  drawStatic = true;
+}
+measure();
+addEventListener('resize', measure);
+if (document.fonts) document.fonts.ready.then(measure);
+new ResizeObserver(measure).observe(document.querySelector('main'));
+// the intro rise uses transforms, which move the wires without resizing anything: re-measure when it settles
+let amT = 0;
+document.addEventListener('animationend', () => { clearTimeout(amT); amT = setTimeout(measure, 30); });
+setTimeout(measure, 2000);
+
+// ---------- pointer ----------
+const ptr = { x: -1, y: -1, active: false, py: -1 };
+addEventListener('pointermove', e => {
+  if (e.pointerType === 'touch') return;
+  ptr.x = e.clientX; ptr.y = e.clientY; ptr.active = true;
+}, { passive: true });
+document.addEventListener('pointerleave', () => { ptr.active = false; });
+addEventListener('blur', () => { ptr.active = false; });
+
+// ---------- visuals state ----------
+const ripples = [], beads = [];
+let lastInteract = performance.now();
+const MODES = 5;
+const now = () => performance.now() / 1000;
+
+function pluck(s, x, A, opts = {}) {
+  if (!s) return;
+  const t = now();
+  const L = s.x1 - s.x0;
+  const p = Math.min(.95, Math.max(.05, (x - s.x0) / L));
+  if (s.ex.length > 3) s.ex.shift();
+  s.ex.push({ t0: t, A, p });
+  if (!RM) {
+    if (ripples.length > 40) ripples.shift();
+    ripples.push({ x, y: s.docY, t0: t, c: s.color, a: Math.min(1, Math.abs(A) / 14) });
+    if (beads.length > 60) beads.splice(0, 2);
+    beads.push({ s, x, dir: -1, t0: t, c: s.color }, { s, x, dir: 1, t0: t, c: s.color });
+  }
+  if (!opts.silent) Audio.note(s, Math.min(1, .25 + Math.abs(A) / 22), p, x / W);
+  if (s.chord >= 0 && !opts.silent) Audio.chord(s.chord);
+  drawStatic = true;
+}
+
+// modal coefficients for a string at time t
+const coef = new Float32Array(MODES);
+function stringCoefs(s, t) {
+  coef.fill(0);
+  let E = 0;
+  const w1 = 2 * Math.PI * (5 + (s.midi - 50) * 0.22);
+  for (let i = s.ex.length - 1; i >= 0; i--) {
+    const ex = s.ex[i], tau = t - ex.t0;
+    const env = Math.exp(-1.05 * tau);
+    if (env * Math.abs(ex.A) < 0.05) { s.ex.splice(i, 1); continue; }
+    E += Math.abs(ex.A) / 14 * env;
+    for (let n = 1; n <= MODES; n++) {
+      const a = ex.A * 1.25 * Math.sin(n * Math.PI * ex.p) / (n * n);
+      coef[n - 1] += a * Math.exp(-(1.05 + (n - 1) * 0.9) * tau) * Math.cos(w1 * (1 + (n - 1) * 0.62) * tau);
+    }
+  }
+  if (s.held) E += Math.abs(s.held.d) / 18;
+  return Math.min(1.4, E);
+}
+
+function hexA(hex, a) {
+  const h = hex.replace('#', '');
+  const n = parseInt(h.length === 3 ? h.split('').map(c => c + c).join('') : h, 16);
+  return `rgba(${n >> 16 & 255},${n >> 8 & 255},${n & 255},${Math.min(1, Math.max(0, a))})`;
+}
+
+// ---------- ghost hand + breeze ----------
+function gliss(silent) {
+  const vis = strings.filter(s => s.kind !== 'c' && s.docY - scrollY > -10 && s.docY - scrollY < H + 10);
+  vis.forEach((s, i) => setTimeout(() => {
+    const u = i / Math.max(1, vis.length - 1);
+    pluck(s, W * (0.22 + 0.5 * u + 0.08 * Math.sin(u * 6)), (i % 2 ? 1 : -1) * (7 + 3 * Math.sin(u * 3)), { silent });
+  }, i * 75));
+}
+if (!RM) {
+  setTimeout(() => gliss(true), 650);
+  (function breeze() {
+    setTimeout(() => {
+      if (!Audio.on && performance.now() - lastInteract > 2500 && !document.hidden) {
+        const vis = strings.filter(s => s.kind !== 'c' && s.docY - scrollY > 0 && s.docY - scrollY < H);
+        const s = vis[Math.floor(Math.random() * vis.length)];
+        if (s) pluck(s, W * (0.2 + Math.random() * 0.6), (Math.random() < .5 ? -1 : 1) * 4, { silent: true });
+      }
+      breeze();
+    }, 1800 + Math.random() * 2700);
+  })();
+}
+
+// ---------- frame ----------
+const SLIP = 14;
+let lastScroll = scrollY;
+function frame() {
+  const t = now();
+  const sY = scrollY;
+  // interaction point: the mouse (fine pointer) or the fixed bridge (touch)
+  let ix, iy, active;
+  if (COARSE) { iy = H * 0.55; ix = W * (0.5 + 0.28 * Math.sin(t * 0.6)); active = true; }
+  else { ix = ptr.x; iy = ptr.y; active = ptr.active; }
+  const speed = Math.abs(iy - (ptr.py < 0 ? iy : ptr.py)) + Math.abs(sY - lastScroll);
+  ptr.py = iy; lastScroll = sY;
+
+  for (const s of strings) {
+    const sy = s.docY - sY;
+    const inSpan = active && ix >= s.x0 - 2 && ix <= s.x1 + 2;
+    const rel = iy - sy;
+    if (inSpan && s.prevRel !== null) {
+      if (!s.held && Math.sign(rel) !== Math.sign(s.prevRel) && s.prevRel !== 0) {
+        s.held = { dir: Math.sign(rel) || 1, d: rel, x: ix };
+        lastInteract = performance.now();
+      }
+      if (s.held) {
+        s.held.x = ix; s.held.d = rel;
+        if (Math.sign(rel) !== s.held.dir) { // drew back across: let go softly
+          pluck(s, ix, s.held.dir * 3, { silent: true }); s.held = null;
+        } else if (Math.abs(rel) >= SLIP) {
+          const A = s.held.dir * Math.min(22, Math.max(Math.abs(rel) * 0.9, 9 + speed * 0.35));
+          s.held = null; pluck(s, ix, A);
+        }
+      }
+    } else if (s.held) { pluck(s, s.held.x, s.held.d * 0.8); s.held = null; }
+    s.prevRel = inSpan ? rel : null;
+  }
+
+  if (!RM || drawStatic) draw(t, sY, COARSE ? iy : null);
+  requestAnimationFrame(frame);
+}
+
+const pts = new Float32Array(161);
+function draw(t, sY, bridge) {
+  drawStatic = false;
+  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  ctx.clearRect(0, 0, W, H);
+  // score bar lines
+  ctx.strokeStyle = 'rgba(239,232,220,0.035)'; ctx.lineWidth = 1;
+  ctx.beginPath();
+  for (const f of [0.25, 0.5, 0.75]) { const x = Math.round(W * f) + .5; ctx.moveTo(x, 0); ctx.lineTo(x, H); }
+  ctx.stroke();
+
+  for (const s of strings) {
+    const sy = s.docY - sY;
+    if (sy < -40 || sy > H + 40) { if (s.glowSet) setGlow(s, 0); continue; }
+    const E = stringCoefs(s, t);
+    const L = s.x1 - s.x0;
+    const N = s.kind === 'c' ? 24 : Math.min(160, Math.max(40, Math.round(L / 9)));
+    const moving = !RM && (E > 0.004 || s.held);
+    for (let i = 0; i <= N; i++) {
+      let d = 0;
+      if (moving) {
+        const u = i / N;
+        for (let n = 0; n < MODES; n++) if (coef[n]) d += coef[n] * Math.sin((n + 1) * Math.PI * u);
+        if (s.held) {
+          const x = s.x0 + u * L, hx = Math.min(s.x1 - 1, Math.max(s.x0 + 1, s.held.x));
+          d += s.held.d * (x < hx ? (x - s.x0) / (hx - s.x0) : (s.x1 - x) / (s.x1 - hx));
+        }
+      }
+      pts[i] = sy + d;
+    }
+    const base = s.kind === 'p' ? .30 : s.kind === 's' ? .13 : s.kind === 'hi' ? .17 : .45;
+    const lw = s.kind === 'p' ? 1.1 : s.kind === 'c' ? 2 : .75;
+    const e = Math.min(1, E);
+    const path = () => { ctx.beginPath(); for (let i = 0; i <= N; i++) { const x = s.x0 + L * i / N; i ? ctx.lineTo(x, pts[i]) : ctx.moveTo(x, pts[i]); } };
+    ctx.lineCap = 'round';
+    if (e > 0.01) {
+      ctx.globalCompositeOperation = 'lighter';
+      path(); ctx.strokeStyle = hexA(s.color, 0.10 * e); ctx.lineWidth = 9; ctx.stroke();
+      ctx.strokeStyle = hexA(s.color, 0.22 * e); ctx.lineWidth = 3.5; ctx.stroke();
+      // overtones as colour
+      if (moving) for (let k = 0; k < 2; k++) {
+        const c = coef[k + 1]; if (Math.abs(c) < 0.15) continue;
+        ctx.beginPath();
+        for (let i = 0; i <= N; i++) { const u = i / N, x = s.x0 + L * u, y = sy + c * 1.9 * Math.sin((k + 2) * Math.PI * u); i ? ctx.lineTo(x, y) : ctx.moveTo(x, y); }
+        ctx.strokeStyle = hexA(OVER[k], Math.min(.5, .28 * e + Math.abs(c) * .03)); ctx.lineWidth = .8; ctx.stroke();
+      }
+      ctx.globalCompositeOperation = 'source-over';
+    }
+    path();
+    ctx.strokeStyle = e > 0.01 ? hexA(s.color, base + (1 - base) * e) : `rgba(239,232,220,${base})`;
+    ctx.lineWidth = lw + e * 0.6; ctx.stroke();
+    if (s.kind === 'p' || s.kind === 'hi') {
+      ctx.fillStyle = `rgba(239,232,220,${s.kind === 'p' ? .45 : .25})`;
+      const r = s.kind === 'p' ? 2.2 : 1.5;
+      ctx.beginPath(); ctx.arc(s.x0, sy, r, 0, 7); ctx.fill();
+      ctx.beginPath(); ctx.arc(s.x1, sy, r, 0, 7); ctx.fill();
+      if (s.kind === 'p') {
+        ctx.font = '10px "DM Mono", monospace'; ctx.textAlign = 'left';
+        ctx.fillStyle = hexA(s.color, .35 + .6 * e);
+        ctx.fillText(noteName(s.midi), s.x0 + 6, sy + 15);
+      }
+    }
+    if (s.row && s.kind === 'p') setGlow(s, e);
+  }
+
+  if (!RM) {
+    ctx.globalCompositeOperation = 'lighter';
+    for (let i = ripples.length - 1; i >= 0; i--) {
+      const r = ripples[i], k = (t - r.t0) / 1.7;
+      if (k >= 1) { ripples.splice(i, 1); continue; }
+      const ease = 1 - Math.pow(1 - k, 3), rad = 10 + 240 * ease, y = r.y - sY;
+      ctx.beginPath(); ctx.ellipse(r.x, y, rad, rad * 0.26, 0, 0, 7);
+      ctx.strokeStyle = hexA(r.c, 0.42 * r.a * (1 - k) * (1 - k)); ctx.lineWidth = 1; ctx.stroke();
+      if (k < .5) { ctx.beginPath(); ctx.ellipse(r.x, y, rad * .55, rad * .12, 0, 0, 7); ctx.strokeStyle = hexA(r.c, .25 * r.a * (1 - 2 * k)); ctx.stroke(); }
+    }
+    for (let i = beads.length - 1; i >= 0; i--) {
+      const b = beads[i], tau = t - b.t0, x = b.x + b.dir * 520 * tau;
+      if (tau > 1.1 || x < b.s.x0 || x > b.s.x1) { beads.splice(i, 1); continue; }
+      const L = b.s.x1 - b.s.x0, u = (x - b.s.x0) / L;
+      let d = 0; stringCoefs(b.s, t);
+      for (let n = 0; n < MODES; n++) d += coef[n] * Math.sin((n + 1) * Math.PI * u);
+      const y = b.s.docY - sY + d, a = 1 - tau / 1.1;
+      ctx.fillStyle = hexA(b.c, .16 * a); ctx.beginPath(); ctx.arc(x, y, 7, 0, 7); ctx.fill();
+      ctx.fillStyle = hexA('#FFFFFF', .85 * a); ctx.beginPath(); ctx.arc(x, y, 1.5, 0, 7); ctx.fill();
+    }
+    ctx.globalCompositeOperation = 'source-over';
+  }
+  if (bridge !== null) {
+    ctx.strokeStyle = 'rgba(245,213,138,.55)'; ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(0, bridge); ctx.lineTo(8, bridge); ctx.moveTo(W - 8, bridge); ctx.lineTo(W, bridge); ctx.stroke();
+  }
+  if (RM && strings.some(s => s.ex.length)) drawStatic = true; // keep fading the brightness
+}
+function setGlow(s, e) {
+  const v = Math.round(e * 50) / 50;
+  if (v !== s.glowSet) { s.glowSet = v; s.row.style.setProperty('--e', v); }
+}
+
+// ---------- tap / click / keys / focus ----------
+addEventListener('pointerdown', e => {
+  if (e.target.closest('a,button')) return;
+  lastInteract = performance.now();
+  const y = e.clientY, sY = scrollY;
+  let best = null, bd = COARSE ? 44 : 30;
+  for (const s of strings) {
+    const d = Math.abs(s.docY - sY - y);
+    if (d < bd && e.clientX >= s.x0 - 4 && e.clientX <= s.x1 + 4) { bd = d; best = s; }
+  }
+  if (best) pluck(best, e.clientX, (y < best.docY - sY ? 1 : -1) * 13);
+});
+document.querySelectorAll('.row').forEach(row => {
+  const s = strings.find(x => x.row === row && x.kind === 'p');
+  row.addEventListener('pointerenter', () => Audio.chord(+row.dataset.chord));
+  row.querySelector('.pname').addEventListener('focus', () => pluck(s, W * 0.35, 10));
+});
+document.querySelectorAll('.chime').forEach(a => {
+  const s = strings.find(x => x.el === a.querySelector('.wire'));
+  a.addEventListener('focus', () => pluck(s, (s.x0 + s.x1) / 2, 6));
+});
+addEventListener('keydown', e => {
+  if (e.metaKey || e.ctrlKey || e.altKey) return;
+  const n = +e.key;
+  if (n >= 1 && n <= 8) pluck(strings.filter(x => x.kind === 'p')[n - 1], W * (0.3 + Math.random() * 0.4), 12);
+});
+
+// ---------- audio (all synthesised here; no samples) ----------
+const Audio = {
+  on: false, muted: false, ctx: null, nodes: 0, notes: 0, chordIx: 0, pad: null, lastChord: 0, active: 0,
+  init() {
+    const AC = window.AudioContext || window.webkitAudioContext;
+    const c = this.ctx = new AC({ latencyHint: 'interactive' });
+    const mk = n => (this.nodes++, n);
+    this.out = mk(c.createGain()); this.out.gain.value = 0;
+    const comp = mk(c.createDynamicsCompressor());
+    comp.threshold.value = -16; comp.ratio.value = 4; comp.attack.value = .004; comp.release.value = .25;
+    this.out.connect(comp); comp.connect(c.destination);
+    this.dry = mk(c.createGain()); this.dry.gain.value = .55; this.dry.connect(this.out);
+    // reverb: self-generated stereo impulse response with a darkening tail
+    const verb = mk(c.createConvolver());
+    verb.buffer = this.impulse(3.8);
+    this.send = mk(c.createGain());
+    const vRet = mk(c.createGain()); vRet.gain.value = .5;
+    this.send.connect(verb); verb.connect(vRet); vRet.connect(this.out);
+    // filtered feedback delay feeding the reverb
+    const dl = mk(c.createDelay(2)); dl.delayTime.value = .49;
+    const fb = mk(c.createGain()); fb.gain.value = .3;
+    const lp = mk(c.createBiquadFilter()); lp.type = 'lowpass'; lp.frequency.value = 2600;
+    const dRet = mk(c.createGain()); dRet.gain.value = .22;
+    this.dsend = mk(c.createGain()); this.dsend.gain.value = .5;
+    this.dsend.connect(dl); dl.connect(lp); lp.connect(fb); fb.connect(dl); lp.connect(dRet);
+    dRet.connect(this.out); dRet.connect(this.send);
+    // noise for the finger transient
+    const nb = c.createBuffer(1, Math.floor(c.sampleRate * .08), c.sampleRate), d = nb.getChannelData(0);
+    for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / d.length, 3);
+    this.noise = nb;
+    // pad bus with a slowly breathing filter
+    this.padBus = mk(c.createGain()); this.padBus.gain.value = .9;
+    this.padF = mk(c.createBiquadFilter()); this.padF.type = 'lowpass'; this.padF.frequency.value = 900; this.padF.Q.value = .4;
+    const lfo = mk(c.createOscillator()), lg = mk(c.createGain());
+    lfo.frequency.value = .07; lg.gain.value = 380; lfo.connect(lg); lg.connect(this.padF.frequency); lfo.start();
+    this.padBus.connect(this.padF); this.padF.connect(this.dry); this.padF.connect(this.send);
+  },
+  impulse(sec) {
+    const c = this.ctx, len = Math.floor(c.sampleRate * sec), pre = Math.floor(c.sampleRate * .022);
+    const b = c.createBuffer(2, len, c.sampleRate);
+    for (let ch = 0; ch < 2; ch++) {
+      const d = b.getChannelData(ch); let y = 0;
+      for (let i = pre; i < len; i++) {
+        const t = (i - pre) / (len - pre);
+        const a = 0.92 - 0.8 * t;
+        y += a * ((Math.random() * 2 - 1) - y);
+        d[i] = y * Math.pow(1 - t, 2.6) * Math.exp(-t * 1.6) * 0.9;
+      }
+    }
+    return b;
+  },
+  start() {
+    if (!this.ctx) this.init();
+    this.ctx.resume();
+    this.on = true; this.muted = false;
+    const g = this.out.gain, t = this.ctx.currentTime;
+    g.cancelScheduledValues(t); g.setValueAtTime(g.value, t); g.linearRampToValueAtTime(.9, t + .15);
+    this.chord(this.chordIx, true);
+  },
+  setMuted(m) {
+    this.muted = m;
+    const t = this.ctx.currentTime;
+    this.out.gain.cancelScheduledValues(t);
+    this.out.gain.setTargetAtTime(m ? 0 : .9, t, .06);
+  },
+  note(s, vel, p, xn) {
+    if (!this.on || this.muted || !this.ctx) return;
+    if (this.active > 56) return;
+    const c = this.ctx, t = c.currentTime + .005, f = mtof(s.midi);
+    const bell = s.kind === 'hi' || s.kind === 'c';
+    const quiet = s.kind === 's' ? .55 : s.kind === 'hi' ? .5 : s.kind === 'c' ? .55 : 1;
+    const v = c.createGain(); v.gain.value = vel * quiet * .22;
+    const pan = c.createStereoPanner(); pan.pan.value = Math.max(-.8, Math.min(.8, (xn - .5) * 1.5));
+    v.connect(pan); pan.connect(this.dry); pan.connect(this.send);
+    const ds = c.createGain(); ds.gain.value = .35; pan.connect(ds); ds.connect(this.dsend);
+    const ratios = bell ? [1, 2.76, 5.40, 8.93] : [1, 2, 3, 4.01, 5.02];
+    const gains = bell ? [1, .38, .18, .07] : [1, .5, .28, .14, .07];
+    const lowK = Math.max(.45, 1.25 - (s.midi - 50) / 40);
+    const dec = bell ? [4.2, 2.2, 1.1, .5] : [3.4 * lowK, 1.8 * lowK, 1.0, .6, .4];
+    const parts = this.active > 36 ? 2 : ratios.length;
+    let end = t;
+    for (let n = 0; n < parts; n++) {
+      const fr = f * ratios[n]; if (fr > 14000) break;
+      const o = c.createOscillator(), g = c.createGain();
+      o.type = 'sine'; o.frequency.value = fr * (1 + (Math.random() - .5) * .0016);
+      const shape = bell ? 1 : .35 + .65 * Math.abs(Math.sin((n + 1) * Math.PI * p));
+      g.gain.setValueAtTime(0, t);
+      g.gain.linearRampToValueAtTime(gains[n] * shape, t + (bell ? .006 : .003));
+      g.gain.setTargetAtTime(0, t + .01, dec[n] / 4.5);
+      o.connect(g); g.connect(v);
+      const stop = t + dec[n] + .2; o.start(t); o.stop(stop); end = Math.max(end, stop);
+    }
+    if (!bell) {
+      const ns = c.createBufferSource(), bp = c.createBiquadFilter(), ng = c.createGain();
+      ns.buffer = this.noise; bp.type = 'bandpass'; bp.frequency.value = Math.min(9000, f * 5); bp.Q.value = 1.4;
+      ng.gain.value = .22 * vel; ns.connect(bp); bp.connect(ng); ng.connect(v); ns.start(t);
+    }
+    this.active++; this.notes++;
+    setTimeout(() => { this.active--; v.disconnect(); }, (end - t) * 1000 + 300);
+  },
+  chord(i, force) {
+    if (i == null || i < 0) return;
+    const tnow = performance.now();
+    if (!force && (i === this.chordIx || tnow - this.lastChord < 900)) return;
+    this.chordIx = i; this.lastChord = tnow;
+    document.getElementById('chord').textContent = CHORDS[i][0];
+    if (!this.on || !this.ctx) return;
+    const c = this.ctx, t = c.currentTime;
+    if (this.pad) {
+      const old = this.pad;
+      old.g.gain.cancelScheduledValues(t); old.g.gain.setValueAtTime(old.g.gain.value, t);
+      old.g.gain.linearRampToValueAtTime(0, t + 2.6);
+      old.oscs.forEach(o => o.stop(t + 2.8));
+      setTimeout(() => old.g.disconnect(), 3200);
+    }
+    const g = c.createGain(); g.gain.setValueAtTime(0, t); g.connect(this.padBus);
+    g.gain.linearRampToValueAtTime(.05, t + 2.4);
+    const oscs = [];
+    CHORDS[i][1].forEach((m, k) => {
+      const ng = c.createGain(); ng.gain.value = k === 0 ? .7 : .45; ng.connect(g);
+      for (const det of [-7, 6]) {
+        const o = c.createOscillator(); o.type = k === 0 ? 'triangle' : 'sawtooth';
+        o.frequency.value = mtof(m); o.detune.value = det + (Math.random() - .5) * 3;
+        o.connect(ng); o.start(t); oscs.push(o);
+      }
+    });
+    this.pad = { g, oscs };
+  },
+};
+window.__instrument = Audio;
+
+// ---------- play / mute ----------
+const btn = document.getElementById('play'), hint = document.getElementById('hint');
+const setHint = () => {
+  hint.textContent = Audio.on && !Audio.muted
+    ? (COARSE ? 'scroll strings through the bridge · tap a string' : 'brush across the strings · keys 1–8 · hover a name to change the chord')
+    : (COARSE ? 'tap a string · press Play to hear it' : 'brush across the strings · press Play to hear them');
+};
+setHint();
+btn.addEventListener('click', () => {
+  if (!Audio.on) {
+    try { Audio.start(); } catch (err) { console.warn('audio unavailable', err); return; }
+    btn.classList.add('on');
+    const ico = btn.querySelector('.ico');
+    ico.replaceChildren(...[0, 1, 2].map(() => { const b = document.createElement('span'); b.className = 'bar'; return b; }));
+    btn.querySelector('.txt').textContent = 'Mute';
+    btn.setAttribute('aria-pressed', 'true'); btn.setAttribute('aria-label', 'Mute sound');
+    setTimeout(() => gliss(false), 250);
+  } else {
+    Audio.setMuted(!Audio.muted);
+    btn.classList.toggle('muted', Audio.muted);
+    btn.querySelector('.txt').textContent = Audio.muted ? 'Unmute' : 'Mute';
+    btn.setAttribute('aria-label', Audio.muted ? 'Unmute sound' : 'Mute sound');
+  }
+  setHint();
+});
+
+requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

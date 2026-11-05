@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vamsi Venkatesh — made for you</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  html, body { margin:0; height:100%; background:#0b0d14; overflow:hidden; }
+  .sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  #stage { position:fixed; inset:0; overflow:hidden; }
+  #stage > .world { position:absolute; inset:0; overflow:hidden; }
+  #bloom { position:fixed; inset:0; z-index:90; pointer-events:none; opacity:0; }
+  /* the one constant: a floating question */
+  .ask { position:fixed; z-index:100; top:14px; left:50%; transform:translateX(-50%); width:min(580px, calc(100% - 24px));
+    font:500 15px/1.2 "Geist", system-ui, sans-serif; }
+  .ask form { display:flex; align-items:center; gap:8px; height:50px; padding:0 6px 0 18px; border-radius:999px;
+    background:rgba(18,18,22,.62); backdrop-filter:blur(16px) saturate(1.4); -webkit-backdrop-filter:blur(16px) saturate(1.4);
+    border:1px solid rgba(255,255,255,.16); box-shadow:0 10px 40px rgba(0,0,0,.25); transition:box-shadow .4s, border-color .4s; }
+  .ask form:focus-within { border-color:rgba(255,255,255,.45); box-shadow:0 10px 50px rgba(0,0,0,.35), 0 0 0 4px rgba(255,255,255,.08); }
+  .ask label { color:rgba(255,255,255,.62); font-size:13px; white-space:nowrap; }
+  .ask input { flex:1; min-width:0; background:transparent; border:0; outline:none; color:#fff; font:inherit; font-size:16px; }
+  .ask input::placeholder { color:rgba(255,255,255,.45); }
+  .ask button.go { border:0; border-radius:999px; height:38px; padding:0 16px; background:#fff; color:#111; font:500 13px "Geist", system-ui; cursor:pointer; white-space:nowrap; }
+  .chips { display:flex; gap:6px; justify-content:center; flex-wrap:wrap; margin-top:8px; transition:opacity .4s, transform .4s; }
+  .chips.hide { opacity:0; transform:translateY(-6px); pointer-events:none; }
+  .chips button { font:500 12.5px "Geist", system-ui; color:#fff; background:rgba(18,18,22,.5); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.18); border-radius:999px; padding:7px 12px; cursor:pointer; }
+  .chips button:hover, .chips button:focus-visible { border-color:rgba(255,255,255,.6); }
+  .for { text-align:center; margin-top:8px; font:400 12px "Geist", system-ui; color:rgba(255,255,255,.75); text-shadow:0 1px 8px rgba(0,0,0,.6); opacity:0; transition:opacity .6s; }
+  .for.show { opacity:1; }
+  @media (max-width:640px) {
+    .ask label { display:none; }
+    .chips { flex-wrap:nowrap; overflow-x:auto; justify-content:flex-start; scrollbar-width:none; margin:8px -12px 0; padding:0 12px; }
+    .chips button { flex:none; }
+  }
+</style>
+</head>
+<body>
+<h1 class="sr">Vamsi Venkatesh — AI product engineer. This page re-forms itself for whoever is visiting.</h1>
+<main id="stage" aria-live="polite"></main>
+<canvas id="bloom" aria-hidden="true"></canvas>
+<div class="ask">
+  <form id="ask" autocomplete="off">
+    <label for="q">Who's visiting?</label>
+    <input id="q" maxlength="120" placeholder="Tell me who you are">
+    <button class="go" type="submit">Make it mine</button>
+  </form>
+  <div class="chips" id="chips"></div>
+  <div class="for" id="for"></div>
+</div>
+
+<script type="module">
+import * as content from './content.mjs';
+
+// words → audience → world. (Sample: a local matcher. The real version reads free text with a model.)
+// role words first (most specific), then situations. [audience, pattern, world, label]
+const AUD = [
+  ['seek',     /\b(looking for (a )?(job|work)|job.?seek\w*|unemployed|career change|my (cv|resume|résumé)|apply(ing)? for|need a job)\b/i, 'seek', 'someone looking for work'],
+  ['motion',   /\b(motion|animat\w*|after effects|rive|lottie|kinetic|title design)\b/i,                                         'motion', 'a motion designer'],
+  ['eval',     /\b(eval|evals|evaluation|benchmark\w*|red.?team\w*|ai safety|model quality)\b/i,                                 'hire',   'an AI evaluation engineer'],
+  ['systems',  /\b(systems?|infra\w*|platform engineer|sre|devops|mlops|backend|distributed|reliability|kubernetes|cloud)\b/i, 'eng',    'an AI systems engineer'],
+  ['product',  /\b(product (engineer|builder|manager|designer)|pm\b|ai product|build(ing)? products?|ship(ping)? products?)/i, 'client', 'an AI product builder'],
+  ['software', /\b(software|full.?stack|front.?end|swe|developer|typescript|javascript|python dev|web dev|programm\w*|coder)\b/i, 'fold', 'an AI software engineer'],
+  ['ai',       /\b(ai engineer|ml engineer|machine learning|llm|agents?|genai|gen ai|nlp|applied ai|ai developer|prompt)\b/i, 'loom',   'an AI engineer'],
+  ['design',   /\b(design\w*|ux|ui|art director|creative|typograph\w*|illustrat\w*|figma)\b/i,                                    'design', 'a designer'],
+  ['client',   /\b(business|client|shop|store|restaurant|cafe|café|bakery|agency|farm|food|vendor|orders?|automat\w*|build (me|us)|need (a|an|help)|customers?)\b/i, 'client', 'a business that needs something built'],
+  ['found',    /\b(found(er|ing)|startup|start-up|invest\w*|vc|venture|co.?founder|ceo)\b/i,                                      'client', 'a founder'],
+  ['data',     /\b(trad(e|er|ing)|market|quant|finance|fintech|data scien\w*)\b/i,                                                'eng',    'someone into markets and data'],
+  ['ai',       /\b(engineer\w*|dev|code|github|cto)\b/i,                                                                       'loom',   'an engineer'],
+  ['hire',     /\b(hir(e|es|ing)|recruit\w*|talent|hr|headhunt\w*|open role|position|vacanc\w*|we.?re looking)\b/i,                'hire',   'someone hiring'],
+];
+function understand(text) {
+  const t = text.trim(); if (!t) return { audience:'curious', world:'scale', label:'a curious visitor' };
+  const hit = AUD.find(([, re]) => re.test(t));
+  if (!hit) return { audience:'curious', world:'scale', label:'a curious visitor' };
+  const hiring = /\b(hir(e|es|ing)|recruit\w*|looking for an?|we need an?)\b/i.test(t);
+  return { audience:hit[0], world:hit[2], label:(hiring && hit[0] !== 'hire' && hit[0] !== 'client' && hit[0] !== 'seek' ? 'someone hiring ' : '') + hit[3] };
+}
+function org(text) { const m = text.match(/\b(?:at|from|with)\s+([A-Z0-9][\w&.\-]*(?:\s+[A-Z0-9][\w&.\-]*){0,2})/); return m ? m[1].replace(/[.\-]+$/, '').slice(0, 28) : ''; }
+
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const isTouch = matchMedia('(pointer: coarse)').matches;
+const stage = document.getElementById('stage');
+let cur = null, busy = false, queued = null, lastKey = '';
+
+// a soft bloom of the next world's colour opens from the question, covers the change, then clears
+const bloom = document.getElementById('bloom'); const bg = bloom.getContext('2d');
+function bloomTo(color, grow) {
+  return new Promise(res => {
+    if (reduced) return res();
+    const dpr = Math.min(devicePixelRatio, 2); bloom.width = innerWidth * dpr; bloom.height = innerHeight * dpr; bloom.style.opacity = 1;
+    const r0 = document.querySelector('.ask form').getBoundingClientRect(); const cx = (r0.left + r0.width / 2) * dpr, cy = (r0.top + r0.height / 2) * dpr;
+    const R = Math.hypot(Math.max(cx, bloom.width - cx), Math.max(cy, bloom.height - cy)) * 1.05; const t0 = performance.now(), dur = grow ? 620 : 760;
+    (function f(now) { const p = Math.min(1, (now - t0) / dur); const e = grow ? 1 - Math.pow(1 - p, 3) : p * p * (3 - 2 * p);
+      bg.clearRect(0, 0, bloom.width, bloom.height); bg.fillStyle = color;
+      if (grow) { bg.beginPath(); bg.arc(cx, cy, R * e, 0, Math.PI * 2); bg.fill(); }
+      else { bg.globalAlpha = 1 - e; bg.fillRect(0, 0, bloom.width, bloom.height); bg.globalAlpha = 1; }
+      if (p < 1) requestAnimationFrame(f); else { if (!grow) bloom.style.opacity = 0; res(); } })(t0);
+  });
+}
+
+async function go(text) {
+  const u = understand(text); const o = org(text); const key = u.world + '|' + u.audience + '|' + o;
+  if (key === lastKey && cur) { showFor(u, o); return; }
+  if (busy) { queued = text; return; } busy = true; lastKey = key;
+  const mod = (await import(`./worlds/${u.world}.js`)).default;
+  if (cur) await bloomTo(mod.color || '#0b0d14', true);
+  if (cur) { try { cur.unmount && cur.unmount(); } catch (e) { console.warn(e); } cur.el.remove(); }
+  if (cur && location.hash) history.replaceState(null, '', location.pathname + location.search);
+  { const sp = new URLSearchParams(location.search); text.trim() ? sp.set('t', text.trim()) : sp.delete('t'); const qs = sp.toString();
+    history.replaceState(null, '', location.pathname + (qs ? '?' + qs : '') + location.hash); }
+  const el = document.createElement('div'); el.className = 'world'; stage.appendChild(el);
+  const ctx = { ...content, text, org:o, audience:u.audience, reduced, isTouch };
+  const unmount = await mod.mount(el, ctx);
+  cur = { el, unmount, world:u.world };
+  document.documentElement.style.background = mod.color || '#0b0d14';
+  if (bloom.style.opacity === '1') await bloomTo(mod.color || '#0b0d14', false);
+  showFor(u, o); setChips(); busy = false;
+  if (queued != null) { const q2 = queued; queued = null; go(q2); }
+}
+function showFor(u, o) { const f = document.getElementById('for');
+  if (u.world === 'scale' && !q.value.trim()) { f.classList.remove('show'); return; }
+  f.textContent = `Made for ${u.label}${o ? ' at ' + o : ''} · from eight real products, nothing invented`; f.classList.add('show');
+  clearTimeout(showFor.t); showFor.t = setTimeout(() => f.classList.remove('show'), 3200); }
+
+const q = document.getElementById('q'); const chips = document.getElementById('chips');
+// suggestions show on the start screen and while the question has focus; inside a world they get out of the way
+let chipT; function setChips() { const inWorld = cur && cur.world !== 'scale'; const open = document.activeElement === q || chips.contains(document.activeElement);
+  chips.classList.toggle('hide', !!inWorld && !open); document.getElementById('for').style.display = inWorld && open ? 'none' : ''; }
+q.addEventListener('focus', () => { clearTimeout(chipT); setChips(); });
+q.addEventListener('blur', () => { chipT = setTimeout(setChips, 250); });
+chips.addEventListener('focusout', () => { chipT = setTimeout(setChips, 250); });
+const CHIPS = ['Hiring an AI engineer', 'AI evaluation engineer', 'AI product builder', 'AI systems engineer', 'AI software engineer', 'Designer', 'Motion designer', 'I run a business', 'Looking for a job', 'Just curious'];
+CHIPS.forEach(c => { const b = document.createElement('button'); b.type = 'button'; b.textContent = c;
+  b.addEventListener('click', () => { q.value = c === 'Just curious' ? '' : c; go(q.value); }); chips.appendChild(b); });
+document.getElementById('ask').addEventListener('submit', e => { e.preventDefault(); q.blur(); go(q.value); });
+// placeholder hints, so the question is obvious
+const HINTS = ['Tell me who you are', 'e.g. I hire AI engineers at a startup', 'e.g. I run a bakery and need an online shop', 'e.g. I’m a designer', 'e.g. I write backend code'];
+let hi = 0; const hintT = setInterval(() => { if (document.activeElement !== q && !q.value) q.placeholder = HINTS[++hi % HINTS.length]; }, 2600);
+
+const start = new URLSearchParams(location.search).get('t') || '';
+q.value = start; go(start);
+</script>
+</body>
+</html>

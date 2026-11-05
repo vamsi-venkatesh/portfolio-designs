@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vamsi Venkatesh — AI product engineer</title>
+<meta name="description" content="Vamsi Venkatesh, AI product engineer in Magdeburg, Germany. I design, build and run AI products end to end.">
+<meta name="theme-color" content="#F6E7D3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,100;1,9..144,300..600,100&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#24301E; --ink-soft:#4A5640; --accent:#B4552F; --paper:#FFFBF3;
+    --serif:'Fraunces', Georgia, serif; --sans:'Instrument Sans', 'Helvetica Neue', sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%;overflow:hidden;background:#F3E6D2;color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+  body{touch-action:none;-webkit-user-select:none;user-select:none}
+  canvas#garden{position:fixed;inset:0;width:100%;height:100%;display:block;cursor:crosshair}
+  canvas#garden.over-tree{cursor:pointer}
+
+  .intro{position:fixed;left:clamp(20px,4.4vw,72px);top:clamp(22px,5.2vh,64px);max-width:min(560px,calc(100vw - 40px));pointer-events:none;z-index:2}
+  .eyebrow{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);font-weight:500}
+  h1{font-family:var(--serif);font-weight:420;font-variation-settings:"SOFT" 100,"opsz" 144;font-size:clamp(44px,6.4vw,96px);line-height:.94;letter-spacing:-.02em;margin:.28em 0 .26em}
+  h1 em{font-style:italic;font-weight:340}
+  .lede{font-size:clamp(16px,1.35vw,19px);line-height:1.5;color:var(--ink);max-width:31em}
+  .contact{display:flex;flex-wrap:wrap;gap:6px 22px;margin-top:18px;pointer-events:auto}
+  .contact a{color:var(--ink);font-size:15px;font-weight:500;text-decoration:none;border-bottom:1.5px solid rgba(180,85,47,.45);padding-bottom:1px;transition:border-color .2s,color .2s}
+  .contact a:hover,.contact a:focus-visible{color:var(--accent);border-color:var(--accent);outline:none}
+  .intro > *{opacity:0;transform:translateY(10px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+  .intro > *:nth-child(2){animation-delay:.12s}.intro > *:nth-child(3){animation-delay:.26s}.intro > *:nth-child(4){animation-delay:.4s}
+  @keyframes rise{to{opacity:1;transform:none}}
+
+  /* nursery tags at the foot of each product tree */
+  .tags{position:fixed;inset:0;pointer-events:none;z-index:3}
+  .tag{position:absolute;left:0;top:0;transform:translate(-50%,0);pointer-events:auto;display:flex;flex-direction:column;align-items:center;text-decoration:none;color:var(--ink);opacity:0;transition:opacity .8s}
+  .tag.on{opacity:1}
+  .tag i{display:block;width:2px;height:14px;background:#8A6A4E;border-radius:1px}
+  .tag span{display:flex;align-items:center;gap:6px;white-space:nowrap;background:rgba(255,251,243,.92);border:1px solid rgba(60,45,25,.16);border-radius:4px;padding:4px 9px 4px 8px;font-size:12.5px;font-weight:600;letter-spacing:.01em;box-shadow:0 2px 8px rgba(60,50,20,.12);transition:transform .2s cubic-bezier(.3,1.6,.5,1),box-shadow .2s}
+  .tag b{width:8px;height:8px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+  .tag:hover span,.tag:focus-visible span,.tag.active span{transform:translateY(-2px) rotate(-2deg);box-shadow:0 6px 16px rgba(60,50,20,.2)}
+  .tag:focus-visible{outline:none}.tag:focus-visible span{outline:2px solid var(--accent);outline-offset:2px}
+
+  .card{position:fixed;z-index:4;width:290px;background:var(--paper);border-radius:12px;padding:16px 18px 15px;box-shadow:0 18px 40px rgba(50,45,20,.18),0 2px 6px rgba(50,45,20,.1);opacity:0;transform:translateY(6px) scale(.98);transition:opacity .18s,transform .22s cubic-bezier(.2,.8,.3,1);pointer-events:none}
+  .card.show{opacity:1;transform:none;pointer-events:auto}
+  .card .kind{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);font-weight:600;display:flex;align-items:center;gap:7px}
+  .card .kind b{width:9px;height:9px;border-radius:50%;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+  .card h2{font-family:var(--serif);font-weight:460;font-variation-settings:"SOFT" 100,"opsz" 40;font-size:25px;line-height:1.1;margin:6px 0 6px}
+  .card p{font-size:14.5px;line-height:1.45;color:var(--ink)}
+  .card a{display:inline-block;margin-top:11px;color:var(--accent);font-weight:600;font-size:14px;text-decoration:none;border-bottom:1.5px solid rgba(180,85,47,.35)}
+  .card a:hover{border-color:var(--accent)}
+
+  .foot{position:fixed;left:clamp(20px,4.4vw,72px);right:clamp(20px,4.4vw,72px);bottom:max(14px,env(safe-area-inset-bottom));display:flex;justify-content:space-between;gap:16px;align-items:flex-end;font-size:13px;font-weight:500;color:#FFF8E6;text-shadow:0 1px 2px rgba(30,50,20,.45);pointer-events:none;z-index:2}
+  .foot .count{font-variant-numeric:tabular-nums;opacity:.9;white-space:nowrap}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+  @media (max-width:700px){
+    .intro{top:max(18px,env(safe-area-inset-top))}
+    .eyebrow{font-size:11.5px}
+    h1{font-size:44px}
+    .lede{font-size:15.5px}
+    .contact{gap:4px 16px;margin-top:12px}.contact a{font-size:14px}
+    .tag i{height:8px}
+    .tag span{font-size:10.5px;padding:3px 6px;gap:4px}
+    .tag b{width:6px;height:6px}
+    .card{width:min(290px,calc(100vw - 32px))}
+    .foot{font-size:12px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .intro > *{animation:none;opacity:1;transform:none}
+    .tag,.card,.tag span{transition:none}
+  }
+</style>
+</head>
+<body>
+<canvas id="garden" aria-hidden="true"></canvas>
+
+<header class="intro">
+  <p class="eyebrow">AI product engineer · Magdeburg, Germany</p>
+  <h1>Vamsi <em>Venkatesh</em></h1>
+  <p class="lede">I design, build and run AI products end to end: the product, the agents, the servers and the tests that prove it works.</p>
+  <nav class="contact" aria-label="Contact">
+    <a href="mailto:vamsi@vamsivenkatesh.com">vamsi@vamsivenkatesh.com</a>
+    <a href="https://www.linkedin.com/in/vamsivenkatesh" rel="noopener">LinkedIn</a>
+    <a href="https://github.com/vamsi-venkatesh" rel="noopener">GitHub</a>
+  </nav>
+</header>
+
+<nav class="tags" id="tags" aria-label="Work"></nav>
+
+<div class="card" id="card" role="dialog" aria-live="polite">
+  <div class="kind"><b></b><span></span></div>
+  <h2></h2>
+  <p></p>
+  <a href="#">Open the work →</a>
+</div>
+
+<footer class="foot">
+  <span class="hint" id="hint">Click anywhere to plant · drag to sow · the eight old trees are my work</span>
+  <span class="count" id="count"></span>
+</footer>
+
+<script src="garden.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>World harness</title>
+<style>
+  html, body { margin:0; height:100%; background:#000; }
+  #world { position:fixed; inset:0; overflow:hidden; }
+  /* stand-in for the shell's floating "Who's visiting?" pill: worlds keep the top 76px free of essential content */
+  #pill { position:fixed; top:14px; left:50%; transform:translateX(-50%); z-index:100; width:min(560px, calc(100% - 24px)); height:48px;
+    border-radius:999px; background:rgba(20,20,20,.55); backdrop-filter:blur(12px); color:#fff; font:500 14px/48px system-ui; padding:0 20px; box-sizing:border-box; white-space:nowrap; overflow:hidden; }
+</style>
+</head>
+<body>
+<div id="world"></div>
+<div id="pill"></div>
+<script type="module">
+import * as content from './content.mjs';
+const p = new URLSearchParams(location.search);
+const name = p.get('w') || 'hire';
+const ctx = {
+  ...content,
+  text: p.get('t') || '',
+  org: p.get('org') || '',
+  audience: p.get('a') || name,
+  reduced: matchMedia('(prefers-reduced-motion: reduce)').matches || p.has('still'),
+  isTouch: matchMedia('(pointer: coarse)').matches,
+};
+document.getElementById('pill').textContent = ctx.text || `Who's visiting? (world: ${name})`;
+const mod = await import(`./worlds/${name}.js`);
+const unmount = await mod.default.mount(document.getElementById('world'), ctx);
+window.__unmount = unmount; // QA: call to check cleanup
+</script>
+</body>
+</html>

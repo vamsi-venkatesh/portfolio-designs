@@ -1,0 +1,542 @@
+[
+ {
+  "id": "p17",
+  "slug": "pdf-to-word",
+  "name": "PDF to Word",
+  "category": "Convert",
+  "desc": "Convert PDF to Word (.docx) free in your browser. Tables, columns and images come across \u2014 no upload, no sign-up.",
+  "url": "https://unboundpdf.com/tools/pdf-to-word/",
+  "col": 0,
+  "row": 0
+ },
+ {
+  "id": "p18",
+  "slug": "word-to-pdf",
+  "name": "Word to PDF",
+  "category": "Convert",
+  "desc": "Convert Word (.docx) to PDF free in your browser \u2014 real page size, pictures, tables, headers and bookmarks. No upload, no sign-up.",
+  "url": "https://unboundpdf.com/tools/word-to-pdf/",
+  "col": 0,
+  "row": 1
+ },
+ {
+  "id": "p19",
+  "slug": "pdf-to-excel",
+  "name": "PDF to Excel",
+  "category": "Convert",
+  "desc": "Extract PDF tables to a standard .xlsx (Office Open XML) workbook free in your browser \u2014 numbers, dates and currency stored as values. CSV is also available. No upload, no sign-up.",
+  "url": "https://unboundpdf.com/tools/pdf-to-excel/",
+  "col": 0,
+  "row": 2
+ },
+ {
+  "id": "p20",
+  "slug": "excel-to-pdf",
+  "name": "Excel to PDF",
+  "category": "Convert",
+  "desc": "Convert an .xlsx workbook to PDF in your browser. Every sheet paginated, header rows repeated, text selectable. Nothing is uploaded.",
+  "url": "https://unboundpdf.com/tools/excel-to-pdf/",
+  "col": 0,
+  "row": 3
+ },
+ {
+  "id": "p21",
+  "slug": "pdf-to-jpg",
+  "name": "PDF to JPG",
+  "category": "Convert",
+  "desc": "Convert PDF pages to JPG images free in your browser. No upload, no sign-up, no watermark.",
+  "url": "https://unboundpdf.com/tools/pdf-to-jpg/",
+  "col": 0,
+  "row": 4
+ },
+ {
+  "id": "p22",
+  "slug": "jpg-to-pdf",
+  "name": "JPG to PDF",
+  "category": "Convert",
+  "desc": "Convert JPG and PNG images to PDF free in your browser. No upload, no sign-up, no watermark.",
+  "url": "https://unboundpdf.com/tools/jpg-to-pdf/",
+  "col": 0,
+  "row": 5
+ },
+ {
+  "id": "p23",
+  "slug": "pptx-to-pdf",
+  "name": "PPTX to PDF",
+  "category": "Convert",
+  "desc": "Convert PowerPoint to PDF free in your browser. One page per slide \u2014 titles, bullets and photos; the .pptx never leaves your device. No upload.",
+  "url": "https://unboundpdf.com/tools/pptx-to-pdf/",
+  "col": 1,
+  "row": 0
+ },
+ {
+  "id": "p24",
+  "slug": "html-to-pdf",
+  "name": "HTML to PDF",
+  "category": "Convert",
+  "desc": "Convert HTML to PDF free in your browser. Real page layout, selectable text, no upload, no sign-up.",
+  "url": "https://unboundpdf.com/tools/html-to-pdf/",
+  "col": 1,
+  "row": 1
+ },
+ {
+  "id": "p25",
+  "slug": "markdown-to-pdf",
+  "name": "Markdown",
+  "category": "Convert",
+  "desc": "Convert Markdown \u2014 or plain text \u2014 to PDF in your browser. Headings, tables, code blocks and links, with selectable text. No upload, no account.",
+  "url": "https://unboundpdf.com/tools/markdown-to-pdf/",
+  "col": 1,
+  "row": 2
+ },
+ {
+  "id": "p26",
+  "slug": "email-to-pdf",
+  "name": "Email to PDF",
+  "category": "Convert",
+  "desc": "Turn an .eml email into a paginated PDF free in your browser. Headers, HTML body, embedded pictures, attachment list. Remote content is not loaded. No upload.",
+  "url": "https://unboundpdf.com/tools/email-to-pdf/",
+  "col": 1,
+  "row": 3
+ },
+ {
+  "id": "p27",
+  "slug": "heic-convert",
+  "name": "HEIC",
+  "category": "Convert",
+  "desc": "Convert iPhone HEIC photos to JPG or PNG free in your browser, one or many at a time, or lay them out as a PDF. Decoded on your device. No upload, no sign-up.",
+  "url": "https://unboundpdf.com/tools/heic-convert/",
+  "col": 1,
+  "row": 4
+ },
+ {
+  "id": "p40",
+  "slug": "pdf-a",
+  "name": "PDF/A",
+  "category": "Convert",
+  "desc": "Convert to PDF/A-2b free in your browser. Fonts embedded, sRGB output intent, checked against our published rule list.",
+  "url": "https://unboundpdf.com/tools/pdf-a/",
+  "col": 1,
+  "row": 5
+ },
+ {
+  "id": "p00",
+  "slug": "merge-pdf",
+  "name": "Merge",
+  "category": "Organize",
+  "desc": "Merge PDF files free in your browser. Combine multiple PDFs into one \u2014 no upload, no sign-up, no watermark, no hourly cap.",
+  "url": "https://unboundpdf.com/tools/merge-pdf/",
+  "col": 2,
+  "row": 0
+ },
+ {
+  "id": "p01",
+  "slug": "split-pdf",
+  "name": "Split",
+  "category": "Organize",
+  "desc": "Split PDF pages free in your browser. Extract a range or every page \u2014 no upload, no sign-up, no watermark.",
+  "url": "https://unboundpdf.com/tools/split-pdf/",
+  "col": 2,
+  "row": 1
+ },
+ {
+  "id": "p52",
+  "slug": "split-by-bookmarks",
+  "name": "Split by bookmark",
+  "category": "Organize",
+  "desc": "Split a PDF at any bookmark level, in your browser \u2014 the whole outline tree, not just the top. No bookmarks? Enter page ranges instead.",
+  "url": "https://unboundpdf.com/tools/split-by-bookmarks/",
+  "col": 2,
+  "row": 2
+ },
+ {
+  "id": "p53",
+  "slug": "split-by-size",
+  "name": "Split by size",
+  "category": "Organize",
+  "desc": "Split PDF by file size free in your browser. Break large PDFs into smaller parts \u2014 no upload.",
+  "url": "https://unboundpdf.com/tools/split-by-size/",
+  "col": 2,
+  "row": 3
+ },
+ {
+  "id": "p51",
+  "slug": "split-book-scan",
+  "name": "Split scans",
+  "category": "Organize",
+  "desc": "Cut a book scan with two pages per sheet into single pages, in reading order. You place the gutter line and see it before anything is cut. In your browser, no upload.",
+  "url": "https://unboundpdf.com/tools/split-book-scan/",
+  "col": 2,
+  "row": 4
+ },
+ {
+  "id": "p15",
+  "slug": "organize-pdf",
+  "name": "Organize",
+  "category": "Organize",
+  "desc": "Reorder and delete PDF pages free in your browser. No upload, no sign-up, no watermark.",
+  "url": "https://unboundpdf.com/tools/organize-pdf/",
+  "col": 2,
+  "row": 5
+ },
+ {
+  "id": "p07",
+  "slug": "rotate-pdf",
+  "name": "Rotate",
+  "category": "Organize",
+  "desc": "Rotate PDF pages 90\u00b0, 180\u00b0, or 270\u00b0 free in your browser. No upload, no sign-up, no watermark.",
+  "url": "https://unboundpdf.com/tools/rotate-pdf/",
+  "col": 3,
+  "row": 0
+ },
+ {
+  "id": "p08",
+  "slug": "crop-pdf",
+  "name": "Crop",
+  "category": "Organize",
+  "desc": "Crop PDF online free \u2014 drag a box on a live preview and the same trim applies to every page, in your browser. No upload.",
+  "url": "https://unboundpdf.com/tools/crop-pdf/",
+  "col": 3,
+  "row": 1
+ },
+ {
+  "id": "p49",
+  "slug": "resize-pdf",
+  "name": "Resize",
+  "category": "Organize",
+  "desc": "Resize PDF page dimensions free in your browser. A4, Letter, or custom \u2014 no upload.",
+  "url": "https://unboundpdf.com/tools/resize-pdf/",
+  "col": 3,
+  "row": 2
+ },
+ {
+  "id": "p30",
+  "slug": "booklet-imposition",
+  "name": "Booklet",
+  "category": "Organize",
+  "desc": "Reorder and impose a PDF two pages to a landscape sheet, so a double-sided print folds into a booklet. Blank padding is counted and stated. In your browser, no upload.",
+  "url": "https://unboundpdf.com/tools/booklet-imposition/",
+  "col": 3,
+  "row": 3
+ },
+ {
+  "id": "p38",
+  "slug": "overlay-pdf",
+  "name": "Overlay",
+  "category": "Organize",
+  "desc": "Put a letterhead PDF behind your pages, or a stamp PDF over them, on every page or a range. Text in both layers stays selectable. In your browser, no upload.",
+  "url": "https://unboundpdf.com/tools/overlay-pdf/",
+  "col": 3,
+  "row": 4
+ },
+ {
+  "id": "p28",
+  "slug": "add-page-numbers",
+  "name": "Page numbers",
+  "category": "Organize",
+  "desc": "Add page numbers to PDF free in your browser. No upload, no sign-up, no watermark.",
+  "url": "https://unboundpdf.com/tools/add-page-numbers/",
+  "col": 3,
+  "row": 5
+ },
+ {
+  "id": "p36",
+  "slug": "headers-footers",
+  "name": "Headers",
+  "category": "Organize",
+  "desc": "Add running headers and footers to a PDF free in your browser. Page number, total, date and file name tokens, margins, and a distinct first page.",
+  "url": "https://unboundpdf.com/tools/headers-footers/",
+  "col": 4,
+  "row": 0
+ },
+ {
+  "id": "p46",
+  "slug": "remove-blank-pages",
+  "name": "Remove blanks",
+  "category": "Organize",
+  "desc": "Measure the ink on every page of a scan, see the light ones with their percentages, and remove only the ones you confirm. In your browser, no upload.",
+  "url": "https://unboundpdf.com/tools/remove-blank-pages/",
+  "col": 4,
+  "row": 1
+ },
+ {
+  "id": "p06",
+  "slug": "protect-pdf",
+  "name": "Protect",
+  "category": "Secure and clean",
+  "desc": "Password-protect PDF free in your browser. Encrypt with a user password \u2014 no upload, no sign-up.",
+  "url": "https://unboundpdf.com/tools/protect-pdf/",
+  "col": 4,
+  "row": 2
+ },
+ {
+  "id": "p09",
+  "slug": "unlock-pdf",
+  "name": "Unlock",
+  "category": "Secure and clean",
+  "desc": "Unlock password-protected PDF free in your browser. Enter your password \u2014 no upload, no sign-up.",
+  "url": "https://unboundpdf.com/tools/unlock-pdf/",
+  "col": 4,
+  "row": 3
+ },
+ {
+  "id": "p04",
+  "slug": "redact-pdf",
+  "name": "Redact",
+  "category": "Secure and clean",
+  "desc": "Redact PDF free in your browser. Search or draw boxes; the matched text is deleted from the page, not just covered. No upload.",
+  "url": "https://unboundpdf.com/tools/redact-pdf/",
+  "col": 4,
+  "row": 4
+ },
+ {
+  "id": "p42",
+  "slug": "redaction-log",
+  "name": "Redaction log",
+  "category": "Secure and clean",
+  "desc": "Build a redaction log for an already-redacted PDF, with the check run on the delivered bytes and a SHA-256 of each document. Free, in your browser.",
+  "url": "https://unboundpdf.com/tools/redaction-log/",
+  "col": 4,
+  "row": 5
+ },
+ {
+  "id": "p43",
+  "slug": "redaction-verifier",
+  "name": "Verify redaction",
+  "category": "Secure and clean",
+  "desc": "Check whether a redacted PDF still contains the text underneath. Detects text under a filled box, invisible text, hidden layers and annotation covers. Free, in your browser.",
+  "url": "https://unboundpdf.com/tools/redaction-verifier/",
+  "col": 5,
+  "row": 0
+ },
+ {
+  "id": "p50",
+  "slug": "sanitize-pdf",
+  "name": "Sanitize",
+  "category": "Secure and clean",
+  "desc": "Check a PDF before you send it. See its metadata, comments, attachments, scripts, form values and hidden text, strip what you choose, and read the check made on the output. In your browser, no upload.",
+  "url": "https://unboundpdf.com/tools/sanitize-pdf/",
+  "col": 5,
+  "row": 1
+ },
+ {
+  "id": "p44",
+  "slug": "remove-annotations",
+  "name": "Remove annotations",
+  "category": "Secure and clean",
+  "desc": "Remove annotations from a PDF free in your browser \u2014 comments, highlights, notes and markup stripped in one pass. No upload, no account.",
+  "url": "https://unboundpdf.com/tools/remove-annotations/",
+  "col": 5,
+  "row": 2
+ },
+ {
+  "id": "p47",
+  "slug": "remove-watermark-pdf",
+  "name": "Remove watermark",
+  "category": "Secure and clean",
+  "desc": "Remove watermark objects from a PDF in your browser: watermark and stamp annotations, repeated form XObjects and transparent content-stream marks. Verified on the output. No upload.",
+  "url": "https://unboundpdf.com/tools/remove-watermark-pdf/",
+  "col": 5,
+  "row": 3
+ },
+ {
+  "id": "p13",
+  "slug": "flatten-pdf",
+  "name": "Flatten",
+  "category": "Secure and clean",
+  "desc": "Flatten PDF forms and annotations free in your browser. Bake them into static content \u2014 no upload.",
+  "url": "https://unboundpdf.com/tools/flatten-pdf/",
+  "col": 5,
+  "row": 4
+ },
+ {
+  "id": "p32",
+  "slug": "edit-metadata",
+  "name": "Metadata",
+  "category": "Secure and clean",
+  "desc": "Edit PDF title, author, and keywords free in your browser. No upload, no sign-up.",
+  "url": "https://unboundpdf.com/tools/edit-metadata/",
+  "col": 5,
+  "row": 5
+ },
+ {
+  "id": "p10",
+  "slug": "watermark-pdf",
+  "name": "Watermark",
+  "category": "Secure and clean",
+  "desc": "Add a text watermark to PDF free in your browser. No upload, no sign-up, no watermark on output.",
+  "url": "https://unboundpdf.com/tools/watermark-pdf/",
+  "col": 6,
+  "row": 0
+ },
+ {
+  "id": "p14",
+  "slug": "fill-sign",
+  "name": "Fill & sign",
+  "category": "Forms and signing",
+  "desc": "Sign PDF free in your browser. Draw, type, or upload a signature \u2014 no upload to servers.",
+  "url": "https://unboundpdf.com/tools/fill-sign/",
+  "col": 6,
+  "row": 1
+ },
+ {
+  "id": "p03",
+  "slug": "sign-pdf",
+  "name": "Sign",
+  "category": "Forms and signing",
+  "desc": "Sign PDF free in your browser. Embed a drawn signature \u2014 not PKCS digital signature.",
+  "url": "https://unboundpdf.com/tools/sign-pdf/",
+  "col": 6,
+  "row": 2
+ },
+ {
+  "id": "p37",
+  "slug": "make-fillable",
+  "name": "Make fillable",
+  "category": "Forms and signing",
+  "desc": "Turn a flat PDF form into a fillable one, free in your browser. Draw text fields, check boxes and dropdowns where they belong, then read back the fields the saved file carries. No upload, no account.",
+  "url": "https://unboundpdf.com/tools/make-fillable/",
+  "col": 6,
+  "row": 3
+ },
+ {
+  "id": "p41",
+  "slug": "pdf-form-doctor",
+  "name": "Form doctor",
+  "category": "Forms and signing",
+  "desc": "Find out why a PDF form says \u201cPlease wait\u201d, will not save, or cannot be typed into outside Adobe Reader. See what the form is made of and what can be done. In your browser, no upload.",
+  "url": "https://unboundpdf.com/tools/pdf-form-doctor/",
+  "col": 6,
+  "row": 4
+ },
+ {
+  "id": "p33",
+  "slug": "exhibit-stamper",
+  "name": "Exhibit stamps",
+  "category": "Forms and signing",
+  "desc": "Stamp Exhibit A, B, C onto PDF files free in your browser. Auto-incrementing labels, optional cover sheet, exhibit index. No upload, no sign-up.",
+  "url": "https://unboundpdf.com/tools/exhibit-stamper/",
+  "col": 6,
+  "row": 5
+ },
+ {
+  "id": "p29",
+  "slug": "bates-numbering",
+  "name": "Bates numbering",
+  "category": "Forms and signing",
+  "desc": "Add Bates numbers to PDF files free in your browser. Prefix, padding, and one continuous run across an ordered set. No upload, no sign-up.",
+  "url": "https://unboundpdf.com/tools/bates-numbering/",
+  "col": 7,
+  "row": 0
+ },
+ {
+  "id": "p02",
+  "slug": "compress-pdf",
+  "name": "Compress",
+  "category": "Fix and extract",
+  "desc": "Compress PDF file size free in your browser. Set the reduction you want \u2014 the engine re-compresses each photo just enough to hit it. No upload, no sign-up.",
+  "url": "https://unboundpdf.com/tools/compress-pdf/",
+  "col": 7,
+  "row": 1
+ },
+ {
+  "id": "p12",
+  "slug": "repair-pdf",
+  "name": "Repair",
+  "category": "Fix and extract",
+  "desc": "Rebuild a broken cross-reference table and keep the text where it survives \u2014 free in your browser, no upload.",
+  "url": "https://unboundpdf.com/tools/repair-pdf/",
+  "col": 7,
+  "row": 2
+ },
+ {
+  "id": "p31",
+  "slug": "deskew-pdf",
+  "name": "Deskew",
+  "category": "Fix and extract",
+  "desc": "Deskew scanned PDF pages free in your browser. Auto-detects each page's skew angle up to about 5\u00b0 \u2014 no upload.",
+  "url": "https://unboundpdf.com/tools/deskew-pdf/",
+  "col": 7,
+  "row": 3
+ },
+ {
+  "id": "p05",
+  "slug": "ocr-pdf",
+  "name": "OCR",
+  "category": "Fix and extract",
+  "desc": "OCR PDF free in your browser. 126 languages, columns read in order \u2014 no upload, no sign-up.",
+  "url": "https://unboundpdf.com/tools/ocr-pdf/",
+  "col": 7,
+  "row": 4
+ },
+ {
+  "id": "p35",
+  "slug": "extract-text",
+  "name": "Extract text",
+  "category": "Fix and extract",
+  "desc": "Extract PDF text as .txt or Markdown free in your browser. Reading order, heading levels, optional page markers and tables. No upload, no sign-up.",
+  "url": "https://unboundpdf.com/tools/extract-text/",
+  "col": 7,
+  "row": 5
+ },
+ {
+  "id": "p34",
+  "slug": "extract-images",
+  "name": "Extract images",
+  "category": "Fix and extract",
+  "desc": "Extract images from a PDF without uploading it: every embedded photo and graphic is found in your browser and saved at original quality. Free, no account.",
+  "url": "https://unboundpdf.com/tools/extract-images/",
+  "col": 8,
+  "row": 0
+ },
+ {
+  "id": "p11",
+  "slug": "compare-pdf",
+  "name": "Compare",
+  "category": "Fix and extract",
+  "desc": "Compare two PDFs visually free in your browser. Side-by-side render \u2014 no upload, no sign-up.",
+  "url": "https://unboundpdf.com/tools/compare-pdf/",
+  "col": 8,
+  "row": 1
+ },
+ {
+  "id": "p16",
+  "slug": "pdf-editor",
+  "name": "Edit",
+  "category": "Fix and extract",
+  "desc": "Edit existing PDF text in your browser \u2014 click a paragraph, rewrite it in place, and the text reflows in the document's own font.",
+  "url": "https://unboundpdf.com/tools/pdf-editor/",
+  "col": 8,
+  "row": 2
+ },
+ {
+  "id": "p39",
+  "slug": "passport-photo",
+  "name": "Passport photo",
+  "category": "Images",
+  "desc": "Make a passport or ID photo free in your browser. ICAO 35x45, US 2x2, India, UK, Schengen, China and stamp sizes at 300 or 600 DPI, plus a print sheet. No upload.",
+  "url": "https://unboundpdf.com/tools/passport-photo/",
+  "col": 8,
+  "row": 3
+ },
+ {
+  "id": "p45",
+  "slug": "remove-background",
+  "name": "Remove background",
+  "category": "Images",
+  "desc": "Remove the background from a photo of a person, in your browser. The model runs on your device after a one-time download. No upload, no account.",
+  "url": "https://unboundpdf.com/tools/remove-background/",
+  "col": 8,
+  "row": 4
+ },
+ {
+  "id": "p48",
+  "slug": "resize-image",
+  "name": "Resize image",
+  "category": "Images",
+  "desc": "Resize or convert JPG, PNG and WebP in your browser. Set pixels, a percent, or aim for a file size. EXIF orientation honoured, metadata stripped by default. No upload.",
+  "url": "https://unboundpdf.com/tools/resize-image/",
+  "col": 8,
+  "row": 5
+ }
+]

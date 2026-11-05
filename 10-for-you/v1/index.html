@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vamsi Venkatesh — made for you</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Hanken+Grotesk:wght@400;500;600&family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Figtree:wght@400;500;600&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500&family=Instrument+Serif&family=Geist:wght@400;500&family=Gloock&family=Albert+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#f3efe7; --ink:#1c1a17; --mute:#6c655b; --accent:#e4572e; --card:#fbf8f2; --line:rgba(28,26,23,.13);
+    --fd:"Instrument Serif", serif; --fb:"Geist", sans-serif; --dw:400; --hs:clamp(44px,6.2vw,92px); --ls:-.02em; --rad:14px; }
+  * { box-sizing:border-box; }
+  html { background:var(--bg); transition:background-color .8s; }
+  body { margin:0; color:var(--ink); font:16px/1.5 var(--fb); -webkit-font-smoothing:antialiased; transition:color .8s; }
+  a { color:inherit; }
+  .bar { position:sticky; top:0; z-index:5; padding:16px 24px; background:color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-bottom:1px solid var(--line); transition:background-color .8s, border-color .8s; }
+  .ask { max-width:1240px; margin:0 auto; display:flex; align-items:center; gap:12px 14px; flex-wrap:wrap; }
+  .ask label { font:500 13px var(--fb); color:var(--mute); white-space:nowrap; }
+  .field { flex:1 1 360px; display:flex; align-items:center; gap:10px; background:var(--card); border:1px solid var(--line); border-radius:999px; padding:4px 6px 4px 18px; transition:background-color .8s, border-color .8s; }
+  .field input { flex:1; min-width:0; border:0; background:transparent; font:500 17px var(--fb); color:var(--ink); padding:9px 0; outline:none; }
+  .field input::placeholder { color:var(--mute); opacity:.8; }
+  .field button { border:0; border-radius:999px; background:var(--ink); color:var(--bg); font:500 13px var(--fb); padding:9px 14px; cursor:pointer; white-space:nowrap; transition:background-color .8s, color .8s; }
+  .chips { display:flex; gap:8px; flex-wrap:wrap; }
+  .chips button { font:500 13px var(--fb); color:var(--ink); background:transparent; border:1px solid var(--line); border-radius:999px; padding:7px 12px; cursor:pointer; transition:border-color .3s; }
+  .chips button:hover, .chips button:focus-visible { border-color:var(--ink); }
+  main { max-width:1240px; margin:0 auto; padding:56px 24px 80px; }
+  .who { font:500 13px var(--fb); color:var(--mute); display:flex; gap:10px; align-items:center; margin:0 0 22px; }
+  .who i { width:8px; height:8px; border-radius:50%; background:var(--accent); display:inline-block; transition:background-color .8s; }
+  h1 { font:var(--dw) var(--hs)/1.02 var(--fd); letter-spacing:var(--ls); margin:0 0 24px; max-width:15ch; text-wrap:balance; min-height:2.04em; }
+  h1 .acc { color:var(--accent); transition:color .8s; }
+  .sub { font-size:19px; line-height:1.5; max-width:620px; margin:0 0 14px; }
+  .made { font-size:13px; color:var(--mute); margin:0 0 54px; max-width:620px; }
+  .work { display:grid; gap:16px; grid-template-columns:repeat(4, 1fr); margin-bottom:56px; }
+  .w { background:var(--card); border:1px solid var(--line); border-radius:var(--rad); padding:20px 20px 18px; display:flex; flex-direction:column; gap:6px; text-decoration:none;
+    transition:background-color .8s, border-color .8s, border-radius .8s; min-height:190px; }
+  .w:hover { border-color:var(--ink); }
+  .w .n { font:500 12px var(--fb); color:var(--mute); display:flex; justify-content:space-between; }
+  .w .n s { width:10px; height:10px; border-radius:3px; display:inline-block; }
+  .w h3 { font:var(--dw) 26px/1.1 var(--fd); letter-spacing:var(--ls); margin:6px 0 2px; }
+  .w .k { font-size:13px; color:var(--mute); margin:0; }
+  .w .o { font-size:14px; margin:4px 0 0; flex:1; }
+  .w .num { margin:12px 0 0; font-size:12px; color:var(--mute); }
+  .w .num b { display:block; font:var(--dw) 30px/1 var(--fd); color:var(--ink); margin-bottom:3px; }
+  .w.feat { grid-column:span 2; min-height:260px; }
+  .w.feat h3 { font-size:clamp(30px,3.2vw,44px); }
+  .w.feat .num b { font-size:46px; color:var(--accent); transition:color .8s; }
+  .why { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; border-top:1px solid var(--line); padding-top:28px; margin-bottom:56px; }
+  .why h4 { font:var(--dw) 22px/1.15 var(--fd); margin:0 0 8px; }
+  .why p { margin:0; font-size:14px; color:var(--mute); }
+  .cta { display:flex; flex-wrap:wrap; align-items:center; gap:18px 26px; border-top:1px solid var(--line); padding-top:28px; }
+  .cta .go { font:var(--dw) clamp(28px,3.4vw,44px)/1.1 var(--fd); text-decoration:none; border-bottom:2px solid var(--accent); }
+  .cta .alt { font-size:14px; color:var(--mute); display:flex; gap:18px; flex-wrap:wrap; }
+  /* layouts */
+  .L-stack main { max-width:860px; }
+  .L-stack .work { grid-template-columns:1fr; gap:0; border-top:1px solid var(--line); }
+  .L-stack .w { border:0; border-bottom:1px solid var(--line); border-radius:0; background:transparent; min-height:0; display:grid;
+    grid-template-columns:44px 1.1fr 1.6fr 130px; align-items:baseline; gap:16px; padding:18px 0; }
+  .L-stack .w.feat { grid-column:auto; min-height:0; }
+  .L-stack .w h3, .L-stack .w.feat h3 { font-size:24px; margin:0; }
+  .L-stack .w .k { display:none; }
+  .L-stack .w .o { margin:0; }
+  .L-stack .w .num { margin:0; text-align:right; }
+  .L-stack .w .num b, .L-stack .w.feat .num b { font-size:24px; }
+  .L-stack .why { grid-template-columns:1fr; gap:18px; }
+  .L-bold h1 { font-size:clamp(56px,9vw,140px); max-width:13ch; }
+  .L-bold .work { grid-template-columns:repeat(2,1fr); gap:18px; }
+  .L-bold .w.feat { grid-column:span 2; }
+  .L-bold .w.feat .num b { font-size:72px; }
+  .L-tech h1 { font-size:clamp(38px,5vw,74px); max-width:20ch; }
+  .L-tech .work { grid-template-columns:1fr; gap:0; border:1px solid var(--line); border-radius:var(--rad); overflow:hidden; }
+  .L-tech .w { border:0; border-bottom:1px solid var(--line); border-radius:0; min-height:0; display:grid; grid-template-columns:52px 200px 1fr 220px; gap:16px; align-items:baseline; padding:16px 18px; }
+  .L-tech .w.feat { grid-column:auto; min-height:0; }
+  .L-tech .w h3, .L-tech .w.feat h3 { font-size:17px; margin:0; font-weight:700; }
+  .L-tech .w .k { display:none; }
+  .L-tech .w .o { margin:0; }
+  .L-tech .w .num { margin:0; text-align:right; }
+  .L-tech .w .num b, .L-tech .w.feat .num b { font-size:20px; display:inline; margin-right:6px; color:var(--accent); }
+  .L-split main { display:grid; grid-template-columns:5fr 7fr; column-gap:56px; align-items:start; }
+  .L-split .intro { position:sticky; top:120px; }
+  .L-split h1 { font-size:clamp(40px,4.6vw,70px); }
+  .L-split .work { grid-template-columns:1fr 1fr; }
+  .L-split .why, .L-split .cta { grid-column:1 / -1; }
+  [hidden] { display:none !important; }
+  @media (max-width:760px) {
+    .bar { padding:12px 16px; } main { padding:30px 16px 60px; }
+    .ask label { display:none; } .field input { font-size:16px; }
+    .chips { flex-wrap:nowrap; overflow-x:auto; margin:0 -16px; padding:0 16px; scrollbar-width:none; width:calc(100% + 32px); }
+    .chips button { flex:none; }
+    .L-split main { display:block; } .L-split .intro { position:static; }
+    .work, .L-bold .work, .L-split .work { grid-template-columns:1fr; }
+    .w.feat, .L-bold .w.feat { grid-column:auto; }
+    .L-stack .w, .L-tech .w { grid-template-columns:30px 1fr; }
+    .L-stack .w .o, .L-tech .w .o, .L-stack .w .num, .L-tech .w .num { grid-column:2; text-align:left; }
+    .why { grid-template-columns:1fr; gap:18px; }
+    .sub { font-size:17px; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition:none !important; } }
+</style>
+</head>
+<body class="L-split">
+<header class="bar">
+  <form class="ask" id="ask" autocomplete="off">
+    <label for="q">Who's visiting?</label>
+    <div class="field"><input id="q" name="q" placeholder="Tell me who you are, in your own words" maxlength="120"><button type="submit">Make it for me</button></div>
+    <div class="chips" id="chips"></div>
+  </form>
+</header>
+<main id="page">
+  <div class="intro" data-f>
+    <p class="who"><i></i><span>Vamsi Venkatesh · AI product engineer · Magdeburg, Germany</span></p>
+    <h1 id="hello">Hello. Here is what I build.</h1>
+    <p class="sub" id="sub">I design, build and run AI products end to end: the product, the agents, the servers and the tests that prove it works.</p>
+    <p class="made" id="made">This page arranges itself for whoever is reading it. Tell it who you are.</p>
+  </div>
+  <section class="work" id="work" aria-label="Work"></section>
+  <section class="why" id="why" aria-label="How I work"></section>
+  <section class="cta" data-f>
+    <a class="go" id="go" href="mailto:vamsi@vamsivenkatesh.com">Write to me</a>
+    <span class="alt"><a href="https://www.linkedin.com/in/vamsivenkatesh">LinkedIn</a><a href="https://github.com/vamsi-venkatesh">GitHub</a><a href="mailto:vamsi@vamsivenkatesh.com">vamsi@vamsivenkatesh.com</a></span>
+  </section>
+</main>
+
+<script>
+// ---------- approved content only (portfolio-inside/src/content/site.mjs) ----------
+const WORK = [
+  { slug:'vvdex-platform', name:'VVDex Platform', kind:'AI evaluation platform', color:'#F2703A', one:'Tests AI models and agents on real work. Hidden tests decide.',
+    num:['417','graded attempts, published'], test:['550','automated tests'], tags:{ hire:3, eval:6, eng:4, found:3, ai:4 } },
+  { slug:'conxto', name:'Conxto', kind:'AI job search', color:'#B9A584', one:'Reads live job postings against your résumé and prepares the whole application.',
+    num:['5 + 2','agents and reviewers, one memory'], test:null, tags:{ hire:5, product:5, found:5, seek:6, ai:5 } },
+  { slug:'vvdex-engine', name:'VVDex Engine', kind:'AI service engine', color:'#45C987', one:'Describe the work in one paragraph. It compiles a service that runs by your rules.',
+    num:['76 / 76','briefs compiled into a valid process'], test:['1,429','automated tests'], tags:{ hire:4, client:5, found:4, eng:3, ai:5 } },
+  { slug:'unboundpdf', name:'UnboundPDF', kind:'Browser PDF suite', color:'#9C8F7A', one:'Every PDF tool in the browser. Your file never leaves the tab.',
+    num:['54','tools, all in the browser'], test:['124','benchmark runs, 3 browser engines'], tags:{ eng:5, design:4, product:3 } },
+  { slug:'farmquick', name:'FarmQuick', kind:'B2B commerce + lead agent', color:'#6DB35E', one:'The ordering site a produce business runs on, and the agent that finds its next buyer.',
+    num:['5','cities read every morning'], test:['408','tests on the public engine'], tags:{ client:6, product:2 } },
+  { slug:'conxfolio', name:'Conxfolio', kind:'Career suite', color:'#C9A97E', one:'Résumé, ATS review, cover letter and portfolio website, sharing one résumé.',
+    num:['37','résumé designs'], test:null, tags:{ design:6, seek:5, product:2 } },
+  { slug:'pitchradar', name:'PitchRadar', kind:'Event intelligence · client', color:'#F49A4B', one:'Finds and ranks the events a mobile food vendor should trade at. Built for a client.',
+    num:['7','agents'], test:['620','tests in CI on every push'], tags:{ client:5, eng:3, ai:3 } },
+  { slug:'vvdex-trading', name:'VVDex Trading', kind:'Market research', color:'#3FB988', one:'Live market microstructure beside a hash-chained record of every dated call. Paper only.',
+    num:['2,028','dated calls'], test:null, tags:{ eng:4, data:6 } },
+];
+const PRINCIPLES = [
+  { k:'I own the whole stack.', v:'Built, deployed and debugged in production. The live products run on servers I administer, behind deploy gates I wrote: full test suites, checksum sweeps, rendered-frame checks, rollback roots.' },
+  { k:'I hold the standard.', v:'I built the evaluation instrument my agents are measured with, and every claim on my sites is gated on a threshold declared in advance and checked on the served artefact, never on the source file.' },
+  { k:'I ship with a team of agents, and I sign every release.', v:'Multi-agent pipelines are how I ship faster than one pair of hands. I plan the work, review every output, and sign off before anything reaches a user. The send stays human.' },
+];
+const LEDE = 'I design, build and run AI products end to end: the product, the agents, the servers and the tests that prove it works.';
+const WANTS = 'I am looking for an AI role: AI engineer, AI product engineer or AI evaluation engineer, remote or on-site in Germany, on a team that ships real products. No visa sponsorship needed.';
+
+// ---------- who is reading: words → an audience (local composer for this sample) ----------
+// hello(org) returns [plain text, accented text]
+const AUD = {
+  eval:    { re:/\b(eval|evals|evaluation|benchmark\w*|red.?team\w*|safety|quality)\b/i, label:'someone hiring for AI evaluation', w:'eval', look:'hire',
+             hello:o => [`${o ? `Hiring at ${o} for AI evaluation?` : 'Hiring for AI evaluation?'} I built my own `, 'evaluation platform.'],
+             sub:WANTS, why:[1,0,2], cta:['Write to me about the role','A role in AI evaluation'], layout:['L-split','L-tech'] },
+  hire:    { re:/\b(hir(e|es|ing)|recruit\w*|talent|hr|headhunt\w*|open role|position|vacanc\w*|we.?re looking)\b/i, label:'someone hiring', w:'hire', look:'hire',
+             hello:o => [`${o ? `Hiring at ${o}?` : 'You’re hiring.'} I’m open to `, 'AI roles.'],
+             sub:WANTS, why:[0,1,2], cta:['Write to me about the role','An AI role'], layout:['L-split','L-stack'] },
+  seek:    { re:/\b(looking for (a )?(job|work)|job.?seek\w*|unemployed|career change|my (cv|resume|résumé)|apply(ing)? for)\b/i, label:'someone looking for work', w:'seek', look:'warm',
+             hello:() => ['Looking for work? Two of these were ', 'built for you.'],
+             sub:'Conxto reads live job postings against your résumé and prepares the whole application. Conxfolio builds the résumé, the letter and the portfolio site.', why:[2,1], cta:['Ask me anything','About Conxto'], layout:['L-bold','L-split'] },
+  client:  { re:/\b(business|client|shop|store|restaurant|cafe|café|agency|farm|food|vendor|orders?|automat\w*|build (me|us)|need (a|an|help)|customers?)\b/i, label:'a business that needs something built', w:'client', look:'warm',
+             hello:o => [`${o ? `${o} needs something built?` : 'You need something built?'} I also build AI products `, 'for clients.'],
+             sub:'Two of these run for real businesses today: a produce company’s ordering site with the agent that finds its next buyer, and an event planner for a mobile food vendor. ' + LEDE, why:[2,0], cta:['Tell me what you need built','A project'], layout:['L-bold','L-split'] },
+  design:  { re:/\b(design\w*|ux|ui|art director|creative|typograph\w*|illustrat\w*|figma)\b/i, label:'a designer', w:'design', look:'bold',
+             hello:() => ['You notice design. This page just ', 'redesigned itself for you.'],
+             sub:LEDE + ' Interface and interaction design is part of every one of them.', why:[2], cta:['Say hello','Hello from a designer'], layout:['L-bold','L-stack'] },
+  eng:     { re:/\b(engineer\w*|developer|dev|code|coder|programm\w*|open.?source|github|backend|frontend|sre|devops|cto)\b/i, label:'an engineer', w:'eng', look:'tech',
+             hello:() => ['You read code. Here are ', 'the tests.'],
+             sub:'Every claim on my sites is gated on a threshold declared in advance and checked on the served artefact, never on the source file.', why:[1,0,2], cta:['Read the code on GitHub','Engineering'], gh:true, layout:['L-tech'] },
+  found:   { re:/\b(found(er|ing)|startup|start-up|invest\w*|vc|venture|co.?founder|ceo|pitch)\b/i, label:'a founder', w:'found', look:'found',
+             hello:o => [`${o ? `Building ${o}?` : 'You’re building something.'} I build AI products `, 'end to end.'],
+             sub:LEDE, why:[0,2,1], cta:['Write to me','From a founder'], layout:['L-split','L-bold'] },
+  data:    { re:/\b(trad(e|er|ing)|market|quant|finance|fintech|data scien\w*)\b/i, label:'someone into markets and data', w:'data', look:'tech',
+             hello:() => ['Every call, dated and ', 'chained, so nobody can cherry-pick.'],
+             sub:'VVDex Trading publishes every dated call into a hash-chained record, so anyone can check the whole history rather than the highlights. Paper only: no capital.', why:[1], cta:['Write to me','Markets'], layout:['L-tech','L-split'] },
+  curious: { re:/.^/, label:'a curious visitor', w:'ai', look:'edit',
+             hello:() => ['Hello. Here is ', 'what I build.'], sub:LEDE, why:[0,1,2], cta:['Write to me','Hello'], layout:['L-split','L-stack','L-bold'] },
+};
+const ORDER = ['seek','eval','client','design','data','found','hire','eng'];
+const LOOKS = {
+  hire:{ fd:'"Newsreader", serif', fb:'"Hanken Grotesk", sans-serif', dw:400, ls:'-.02em', rad:'10px', light:true, hue:[205,230], sat:58 },
+  warm:{ fd:'"Fraunces", serif', fb:'"Figtree", sans-serif', dw:400, ls:'-.025em', rad:'22px', light:true, hue:[18,42], sat:70 },
+  bold:{ fd:'"Bricolage Grotesque", sans-serif', fb:'"Manrope", sans-serif', dw:800, ls:'-.045em', rad:'4px', light:false, hue:[320,360], sat:85 },
+  tech:{ fd:'"JetBrains Mono", monospace', fb:'"IBM Plex Sans", sans-serif', dw:500, ls:'-.03em', rad:'6px', light:false, hue:[130,165], sat:65 },
+  edit:{ fd:'"Instrument Serif", serif', fb:'"Geist", sans-serif', dw:400, ls:'-.02em', rad:'14px', light:true, hue:[8,28], sat:72 },
+  found:{ fd:'"Gloock", serif', fb:'"Albert Sans", sans-serif', dw:400, ls:'-.02em', rad:'16px', light:true, hue:[250,280], sat:55 },
+};
+
+function hash(s) { let h = 2166136261; for (const c of s) { h ^= c.codePointAt(0); h = Math.imul(h, 16777619); } return h >>> 0; }
+function rng(seed) { return () => { seed = (seed + 0x6D2B79F5) | 0; let t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t ^= t + Math.imul(t ^ (t >>> 7), 61 | t); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+function org(text) { const m = text.match(/\b(?:at|from|with)\s+([A-Z0-9][\w&.\-]*(?:\s+[A-Z0-9][\w&.\-]*){0,2})/); return m ? m[1].replace(/[.\-]+$/, '').slice(0, 28) : ''; }
+function understand(text) {
+  const t = text.trim(); if (!t) return { a:AUD.curious, key:'curious', org:'' };
+  let key = ORDER.find(k => AUD[k].re.test(t)) || 'curious';
+  // "evaluation" without any hiring words reads as an engineer, not a recruiter
+  if (key === 'eval' && !AUD.hire.re.test(t)) key = AUD.eng.re.test(t) ? 'eng' : 'eval';
+  // an engineer who is hiring is hiring
+  if (key === 'eng' && AUD.hire.re.test(t)) key = 'hire';
+  return { a:AUD[key], key, org:org(t) };
+}
+
+// ---------- build once ----------
+const $ = id => document.getElementById(id);
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+const cards = new Map();
+WORK.forEach((w, i) => {
+  const a = el('a', 'w'); a.href = `https://vamsivenkatesh.com/work/${w.slug}/`; a.dataset.f = '';
+  const n = el('div', 'n'); n.append(el('span', null, String(i + 1).padStart(2, '0'))); const sw = el('s'); sw.style.background = w.color; n.append(sw);
+  const num = el('p', 'num'); num.append(el('b'), el('span'));
+  a.append(n, el('h3', null, w.name), el('p', 'k', w.kind), el('p', 'o', w.one), num);
+  cards.set(w.slug, a); $('work').append(a);
+});
+const whyEls = PRINCIPLES.map(p => { const d = el('div'); d.dataset.f = ''; d.append(el('h4', null, p.k), el('p', null, p.v)); $('why').append(d); return d; });
+
+function theme(look, r) {
+  const L = LOOKS[look]; const hue = L.hue[0] + r() * (L.hue[1] - L.hue[0]); const s = document.documentElement.style;
+  if (L.light) { s.setProperty('--bg', `hsl(${hue} ${12 + r()*10}% ${94 + r()*2}%)`); s.setProperty('--card', `hsl(${hue} 22% 98.5%)`); s.setProperty('--ink', `hsl(${hue} 18% 11%)`); s.setProperty('--mute', `hsl(${hue} 9% 38%)`); s.setProperty('--line', `hsl(${hue} 15% 11% / .13)`); }
+  else { s.setProperty('--bg', `hsl(${hue} ${14 + r()*10}% ${7 + r()*3}%)`); s.setProperty('--card', `hsl(${hue} 14% 12%)`); s.setProperty('--ink', `hsl(${hue} 20% 93%)`); s.setProperty('--mute', `hsl(${hue} 9% 66%)`); s.setProperty('--line', `hsl(${hue} 20% 90% / .14)`); }
+  s.setProperty('--accent', `hsl(${(hue + 180 + (r()-.5)*50) % 360} ${L.sat}% ${L.light ? 44 : 64}%)`);
+  s.setProperty('--fd', L.fd); s.setProperty('--fb', L.fb); s.setProperty('--dw', L.dw); s.setProperty('--ls', L.ls); s.setProperty('--rad', L.rad);
+}
+
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const GLYPHS = 'abcdefghijklmnopqrstuvwxyz';
+function setHello(node, parts) { const acc = el('span', 'acc', parts[1]); node.replaceChildren(document.createTextNode(parts[0]), acc); }
+let scr = 0;
+function scramble(node, parts) {
+  const target = parts.join(''); if (node.textContent === target) return;
+  if (reduced) { setHello(node, parts); return; }
+  const id = ++scr; const from = node.textContent; const t0 = performance.now(), dur = 620;
+  (function step(now) { if (id !== scr) return; const p = Math.min(1, (now - t0) / dur); const len = Math.round(from.length + (target.length - from.length) * p);
+    const rev = Math.floor(target.length * p * p); let out = '';
+    for (let i = 0; i < len; i++) out += i < rev ? target[i] : (target[i] === ' ' ? ' ' : GLYPHS[(Math.random() * 26) | 0]);
+    node.textContent = out; if (p < 1) requestAnimationFrame(step); else setHello(node, parts); })(t0);
+}
+
+let current = '';
+async function compose(text, salt = '') {
+  const u = understand(text); const r = rng(hash((text || 'hello').toLowerCase() + salt));
+  const sig = u.key + '|' + (text || '').toLowerCase() + '|' + salt; if (sig === current) return; current = sig;
+  const L = LOOKS[u.a.look]; const layout = u.a.layout[Math.floor(r() * u.a.layout.length)];
+  await Promise.race([Promise.all([document.fonts.load(`${L.dw} 40px ${L.fd}`), document.fonts.load(`400 16px ${L.fb}`)]), new Promise(res => setTimeout(res, 700))]);
+  if (sig !== current) return;
+  const tag = u.a.w; const score = w => (w.tags[tag] || 0) * 10 + (w.tags.ai || 0) + (w.tags.product || 0) * .5 + ((hash(w.slug + salt + text) % 100) / 100);
+  const ranked = [...WORK].sort((a, b) => score(b) - score(a));
+  const nFeat = layout === 'L-stack' || layout === 'L-tech' ? 0 : layout === 'L-bold' ? 1 : 2;
+  const flips = [...document.querySelectorAll('[data-f]')]; const first = new Map(flips.map(e => [e, e.getBoundingClientRect()]));
+  theme(u.a.look, r); document.body.className = layout;
+  ranked.forEach((w, i) => { const c = cards.get(w.slug); $('work').append(c); c.classList.toggle('feat', i < nFeat);
+    const show = (tag === 'eng' && w.test) ? w.test : w.num; c.querySelector('.num b').textContent = show[0]; c.querySelector('.num span').textContent = show[1]; });
+  whyEls.forEach((d, i) => { d.hidden = !u.a.why.includes(i); }); u.a.why.forEach(i => $('why').append(whyEls[i]));
+  scramble($('hello'), u.a.hello(u.org));
+  $('sub').textContent = u.a.sub;
+  $('made').textContent = text.trim() ? `Arranged for ${u.a.label}${u.org ? ` at ${u.org}` : ''}, from eight products, three principles and one résumé. Nothing on it is invented.` : 'This page arranges itself for whoever is reading it. Tell it who you are.';
+  const go = $('go'); go.textContent = u.a.cta[0];
+  go.href = u.a.gh ? 'https://github.com/vamsi-venkatesh' : `mailto:vamsi@vamsivenkatesh.com?subject=${encodeURIComponent(u.a.cta[1])}`;
+  if (reduced) return;
+  flips.forEach((e, i) => { if (e.hidden) return; const a = first.get(e), b = e.getBoundingClientRect();
+    if (!a || !a.width) { e.animate([{ opacity:0, transform:'translateY(18px)' }, { opacity:1, transform:'none' }], { duration:600, delay:i * 30, easing:'cubic-bezier(.2,.8,.2,1)', fill:'backwards' }); return; }
+    const dx = a.left - b.left, dy = a.top - b.top, sx = a.width / b.width, sy = a.height / b.height;
+    if (Math.abs(dx) + Math.abs(dy) < 1 && Math.abs(sx - 1) < .01) return;
+    e.animate([{ transform:`translate(${dx}px,${dy}px) scale(${sx},${sy})`, transformOrigin:'0 0' }, { transform:'none', transformOrigin:'0 0' }], { duration:900, delay:i * 22, easing:'cubic-bezier(.7,0,.15,1)' });
+    e.animate([{ opacity:.35 }, { opacity:1 }], { duration:700, delay:i * 22 + 250, fill:'backwards' }); });
+}
+
+// ---------- input ----------
+const q = $('q'); let demo = true, debounce, demoTimer;
+const CHIPS = ['I’m hiring an AI engineer', 'I run a restaurant and need help', 'I’m a designer', 'I’m a developer', 'I’m looking for a job', 'Just curious'];
+CHIPS.forEach(c => { const b = el('button', null, c); b.type = 'button'; b.addEventListener('click', () => { stopDemo(); q.value = c; compose(c); }); $('chips').append(b); });
+q.addEventListener('input', () => { stopDemo(); clearTimeout(debounce); debounce = setTimeout(() => compose(q.value), 380); });
+q.addEventListener('focus', stopDemo);
+$('ask').addEventListener('submit', e => { e.preventDefault(); stopDemo(); compose(q.value, String(Math.random())); });
+function stopDemo() { if (!demo) return; demo = false; clearTimeout(demoTimer); }
+
+// the first seconds: it shows itself by being asked by three different people
+const DEMO = ['I’m hiring an AI engineer at Zalando', 'I run a restaurant and need help with orders', 'I’m a designer'];
+function typeDemo(i) {
+  if (!demo) return; const s = DEMO[i % DEMO.length]; let k = 0; q.value = '';
+  (function tick() { if (!demo) return; q.value = s.slice(0, ++k);
+    if (k < s.length) demoTimer = setTimeout(tick, 34 + Math.random() * 40);
+    else { compose(s); demoTimer = setTimeout(() => typeDemo(i + 1), 5200); } })();
+}
+compose('');
+if (!reduced) demoTimer = setTimeout(() => typeDemo(0), 900);
+</script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head><script>if(/[?&]embed/.test(location.search))document.documentElement.classList.add('embed')</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Vamsi Venkatesh · Powers of Ten</title>
+<meta name="description" content="Vamsi Venkatesh, AI product engineer in Magdeburg, Germany. I design, build and run AI products end to end.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22%3E%3Crect x=%227%22 y=%222%22 width=%222%22 height=%2212%22 fill=%22%23ffb867%22/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#030409; --text:#efe9dc; --muted:#9a968e; --dim:#6d6a65; --sodium:#ffb867; --air:#7fb2ff;
+  --serif:"Instrument Serif",Georgia,serif; --sans:"Instrument Sans",Helvetica,sans-serif; --mono:"IBM Plex Mono",Menlo,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:var(--ink);color:var(--text);overflow:hidden;overscroll-behavior:none}
+body{font-family:var(--sans);-webkit-font-smoothing:antialiased;touch-action:none;user-select:none;-webkit-user-select:none}
+canvas#c{position:fixed;inset:0;display:block;cursor:zoom-out}
+a{color:inherit}
+.ui{position:fixed;z-index:2;pointer-events:none}
+.ui a,.ui button{pointer-events:auto}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:1px solid var(--sodium);outline-offset:4px;border-radius:2px}
+
+header.id{top:22px;left:26px}
+header.id h1{font-family:var(--serif);font-weight:400;font-size:25px;letter-spacing:.005em;line-height:1}
+header.id p{margin-top:6px;font-size:12.5px;color:var(--muted);letter-spacing:.02em}
+nav.top{top:22px;right:26px;display:flex;gap:22px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:lowercase}
+nav.top button{color:var(--muted);padding:4px 0;border-bottom:1px solid transparent;transition:color .2s,border-color .2s}
+nav.top button:hover{color:var(--text);border-color:var(--sodium)}
+
+.lede{left:26px;bottom:142px;max-width:610px;font-family:var(--serif);font-size:clamp(22px,2.35vw,33px);line-height:1.18;color:var(--text);text-shadow:0 0 24px #000}
+.lede em{color:var(--sodium);font-style:italic}
+
+.readout{left:26px;bottom:24px;font-family:var(--mono)}
+.readout .pow{font-size:30px;font-weight:500;letter-spacing:-.01em;line-height:1}
+.readout .pow sup{font-size:.55em;vertical-align:.75em;margin-left:1px}
+.readout .len{margin-top:7px;font-size:11.5px;color:var(--muted);letter-spacing:.04em}
+.readout .cap{margin-top:6px;font-family:var(--serif);font-style:italic;font-size:21px;color:var(--text);transition:opacity .35s}
+
+.hint{left:50%;bottom:28px;transform:translateX(-50%);font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:lowercase;color:var(--muted);transition:opacity .8s;white-space:nowrap}
+.hint i{display:inline-block;font-style:normal;animation:rise 2.2s ease-in-out infinite}
+@keyframes rise{0%,100%{transform:translateY(2px);opacity:.5}50%{transform:translateY(-3px);opacity:1}}
+
+.ruler{right:20px;top:50%;height:min(62vh,520px);transform:translateY(-50%);width:44px;pointer-events:auto;cursor:ns-resize;touch-action:none}
+.ruler .bar{position:absolute;right:8px;top:0;bottom:0;width:1px;background:linear-gradient(#fff3,#fff2 50%,#fff3)}
+.ruler .tk{position:absolute;right:8px;height:1px;width:5px;background:#ffffff40}
+.ruler .tk.m{width:10px;background:#ffffff70}
+.ruler .tk b{position:absolute;right:15px;top:-6px;font:400 9.5px var(--mono);color:var(--dim);white-space:nowrap}
+.ruler .mk{position:absolute;right:3px;width:11px;height:11px;margin-top:-5.5px;border:1px solid var(--sodium);transform:rotate(45deg);box-shadow:0 0 12px #ffb86780}
+
+.lbl{position:fixed;left:0;top:0;z-index:1;pointer-events:none;font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;color:#d8d3c8;white-space:nowrap;will-change:transform,opacity;text-shadow:0 0 8px #000;opacity:0}
+
+.works{position:fixed;inset:0;z-index:2;pointer-events:none}
+a.work{position:absolute;left:0;top:0;display:block;text-decoration:none;width:230px;will-change:transform,opacity;padding:6px 0;pointer-events:auto;visibility:hidden}
+a.work .t{display:block}
+a.work b{display:block;font-family:var(--serif);font-weight:400;font-size:23px;line-height:1.05;color:#fff7ea}
+a.work i{display:block;font-style:normal;font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--c);margin-top:4px;opacity:.95}
+a.work em{display:block;font-style:normal;font-size:12.5px;line-height:1.35;color:#cfc9bd;margin-top:5px}
+a.work.r{text-align:right}
+a.work:hover b,a.work:focus-visible b{color:var(--c)}
+a.work:hover em{color:#fff}
+
+.contact{left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;width:min(560px,88vw);opacity:0;visibility:hidden}
+.contact h2{font-family:var(--serif);font-weight:400;font-style:italic;font-size:clamp(56px,8vw,104px);line-height:.95;text-shadow:0 0 40px #000}
+.contact .mail{display:inline-block;margin-top:22px;font-family:var(--mono);font-size:clamp(14px,1.6vw,18px);color:var(--sodium);text-decoration:none;border-bottom:1px solid #ffb86766;padding-bottom:3px}
+.contact .mail:hover{border-color:var(--sodium)}
+.contact .more{margin-top:18px;display:flex;gap:22px;justify-content:center;font-family:var(--mono);font-size:12px;letter-spacing:.06em}
+.contact .more a{color:var(--muted);text-decoration:none}
+.contact .more a:hover{color:var(--text)}
+.contact .back{margin-top:34px;font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--muted);text-transform:lowercase}
+.contact .back:hover{color:var(--text)}
+.contact p.who{margin-top:12px;font-size:13px;color:var(--muted)}
+
+.still{display:none}
+.rm .still{display:block}
+.rm .hint,.rm .ruler,.rm .works,.rm .contact{display:none}
+.still.ui{left:26px;top:110px;width:min(380px,40vw);pointer-events:auto;max-height:calc(100vh - 230px);overflow:auto}
+.still h2{font:400 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+.still ul{list-style:none}
+.still li{margin:0 0 11px}
+.still li a{text-decoration:none}
+.still li b{font-family:var(--serif);font-weight:400;font-size:20px}
+.still li span{display:block;font-size:12.5px;color:#cfc9bd;line-height:1.35}
+.still .cl{margin-top:18px;font-family:var(--mono);font-size:12.5px;line-height:1.9}
+.still .cl a{color:var(--sodium)}
+.rm .lede{left:auto;right:40px;bottom:110px;max-width:440px;text-align:right}
+
+@media (max-width:700px){
+  header.id{top:16px;left:16px}
+  header.id h1{font-size:21px}
+  header.id p{font-size:11px;max-width:200px}
+  nav.top{top:18px;right:16px;gap:10px;font-size:11px;flex-direction:column;align-items:flex-end}
+  .lede{left:16px;right:52px;bottom:128px;font-size:21px}
+  .readout{left:16px;bottom:18px}
+  .readout .pow{font-size:24px}
+  .readout .cap{font-size:18px}
+  .hint{left:16px;transform:none;top:74px;bottom:auto;font-size:10px}
+  .ruler{right:4px;width:30px;height:46vh}
+  .ruler .tk b{display:none}
+  a.work{width:148px}
+  a.work b{font-size:18px}
+  a.work em{font-size:11px}
+  a.work i{font-size:8.5px}
+  .still.ui{left:0;right:0;top:auto;bottom:0;width:auto;max-height:52vh;padding:40px 16px 16px;background:linear-gradient(#03040900,#030409f0 14%)}
+  .rm .lede{display:none}
+  .rm .readout{display:none}
+}
+@media (max-width:640px){html.embed header.id,html.embed nav.top{top:124px}}
+</style>
+</head>
+<body>
+<canvas id="c" aria-hidden="true"></canvas>
+
+<header class="ui id">
+  <h1>Vamsi Venkatesh</h1>
+  <p>AI product engineer · Magdeburg, Germany</p>
+</header>
+<nav class="ui top" aria-label="Jump">
+  <button type="button" data-go="work">the work</button>
+  <button type="button" data-go="end">write to me</button>
+</nav>
+
+<p class="ui lede" id="lede">I design, build and run AI products end to end: <em>the product, the agents, the servers and the tests that prove it works.</em></p>
+
+<div class="ui readout">
+  <div class="pow" id="pow">10<sup>−3</sup> m</div>
+  <div class="len" id="len">≈ 1 mm across</div>
+  <div class="cap" id="cap">a cursor, mid-thought</div>
+</div>
+<div class="ui hint" id="hint"><i>↑</i>&nbsp; scroll · drag · click to rise</div>
+<div class="ui ruler" id="ruler" role="slider" aria-label="Scale, powers of ten" aria-valuemin="-3" aria-valuemax="24" aria-valuenow="-3" tabindex="0"><div class="bar"></div><div class="mk" id="mk"></div></div>
+
+<div class="works" id="works" aria-label="The work"></div>
+
+<section class="ui contact" id="contact" aria-label="Contact">
+  <h2>Write to me</h2>
+  <a class="mail" href="mailto:vamsi@vamsivenkatesh.com">vamsi@vamsivenkatesh.com</a>
+  <div class="more"><a href="https://www.linkedin.com/in/vamsivenkatesh" rel="noopener">LinkedIn ↗</a><a href="https://github.com/vamsi-venkatesh" rel="noopener">GitHub ↗</a></div>
+  <p class="who">Vamsi Venkatesh · AI product engineer · Magdeburg, Germany</p>
+  <button type="button" class="back" data-go="start">↺ back to the cursor</button>
+</section>
+
+<section class="ui still" aria-label="The work and contact">
+  <h2>The work</h2>
+  <ul id="stillList"></ul>
+  <div class="cl"><a href="mailto:vamsi@vamsivenkatesh.com">vamsi@vamsivenkatesh.com</a><br><a href="https://www.linkedin.com/in/vamsivenkatesh">LinkedIn</a> · <a href="https://github.com/vamsi-venkatesh">GitHub</a></div>
+</section>
+
+<script src="app.js"></script>
+</body>
+</html>

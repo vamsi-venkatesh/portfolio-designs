@@ -1,0 +1,186 @@
+// What the page says. Product facts come from facts.js (the live site's wording) with the lines below written
+// for this page; skills only name tools the repos actually use. Screens are fresh 2x captures (hd/, 2026-09-23)
+// of the public product pages; PitchRadar's come from its public GitHub README.
+window.SITE = {
+  // "What I work with" as capability cards. Every figure comes from the products' own facts (checked 2026-09-23).
+  // uses: product letters (C Conxto, U UnboundPDF, F FarmQuick, L Lab, G Forge, P PitchRadar, X Conxfolio, T Trading)
+  bento: [
+    { k: "agents", size: "xl", tone: "ink", group: "AI & agents", title: "AI agents that do real work",
+      fig: "50", figcap: "agent services in the Lab, each ending in a sealed receipt",
+      line: "Multi-agent workflows with tool use and long-term memory, using a model only where written rules can't answer.",
+      stats: [["5", "agents in Conxto"], ["7", "agents in PitchRadar"], ["1", "lead agent for FarmQuick, every morning"]],
+      tags: ["Anthropic", "OpenAI", "DeepSeek", "Tool use", "Long-term memory", "Rules first"], uses: "LCPF" },
+    { k: "evals", size: "m", tone: "cream", group: "AI & agents", title: "Measuring what AI actually does",
+      fig: "17", figcap: "certified exams on the VVDex Platform, each attacked before use",
+      line: "Sealed exams, hidden tests in a separate box, and golden test sets: 17 exams on the VVDex Platform, 90 cases in PitchRadar.",
+      tags: ["Sealed runs", "Graders", "Golden sets"], uses: "GLP" },
+    { k: "browser", size: "m", tone: "red", group: "Product engineering", title: "Software that runs in your browser",
+      fig: "53", figcap: "PDF tools in UnboundPDF, and your file never leaves the tab",
+      line: "Heavy work done on the visitor's own device, with files kept encrypted in their browser.",
+      tags: ["WebAssembly", "Tesseract OCR", "pdf.js", "pdf-lib", "Web Workers", "Offline", "AES-GCM"], uses: "U" },
+    { k: "fullstack", size: "s", tone: "cream", group: "Product engineering", title: "Full-stack products",
+      fig: "3", figcap: "products built on one TypeScript stack",
+      line: "APIs, apps and front ends, end to end.",
+      tags: ["TypeScript", "Node.js", "Fastify", "React", "Vite", "Astro", "Python", "Swift for macOS"], uses: "CXP" },
+    { k: "data", size: "s", tone: "cream", group: "Data & infrastructure", title: "Data and live systems",
+      fig: "2,028", figcap: "market calls, each hash-chained to the one before",
+      line: "Live order flow over WebSockets, records that can't be quietly rewritten.",
+      tags: ["PostgreSQL", "Cloudflare D1", "WebSockets", "Hash chains"], uses: "TCL" },
+    { k: "servers", size: "s", tone: "cream", group: "Data & infrastructure", title: "Servers I run myself",
+      fig: "6", figcap: "of these products run on Linux servers I set up and operate",
+      line: "From the first deploy to TLS, backups and rollbacks.",
+      tags: ["Linux", "Docker", "Caddy", "Cloudflare Workers & Pages", "Sandboxed containers"], uses: "CULGXT" },
+    { k: "auto", size: "m", tone: "cream", group: "Automation", title: "Automations that reach people",
+      fig: "5", figcap: "cities read every morning by FarmQuick's lead agent",
+      line: "An order reaches the owner on WhatsApp and email; Conxto can send through Gmail and Telegram.",
+      tags: ["n8n", "WhatsApp", "Gmail", "Telegram", "Email"], uses: "FC" },
+    { k: "quality", size: "l", tone: "ink", group: "Quality", title: "Quality you can check",
+      fig: "620", figcap: "tests in PitchRadar, 471 in UnboundPDF, 394 in FarmQuick's lead engine",
+      line: "Release gates and checksum sweeps before every deploy, and guards against unsafe web requests.",
+      tags: ["Automated tests", "Release gates", "Checksum sweeps", "SSRF guards"], uses: "PUF" },
+    { k: "design", size: "wide", tone: "cream", group: "Design & words", title: "Design and words",
+      fig: "37", figcap: "résumé designs in Conxfolio, all grown from one base",
+      line: "I design the interfaces and write the copy for every product here, and built this site, motion and all.",
+      tags: ["Interaction design", "Design systems", "SEO content", "Motion & WebGL", "Product copy"], uses: "XUC" },
+  ],
+  // skills × products: each skill lists the products that actually use it (checked 2026-09-23 against the live
+  // builds, repos and the products' own facts). C Conxto, U UnboundPDF, F FarmQuick, L Lab, G Forge, P PitchRadar,
+  // X Conxfolio, T Trading. A string instead of a list is a note (no product in this portfolio).
+  skillmap: [
+    ["AI & agents", [
+      ["LLM features with Anthropic, OpenAI and DeepSeek models", "CLFP"],
+      ["Multi-agent workflows and tool use", "CLPF"],
+      ["Rules first: a model only where rules can't answer", "PFX"],
+      ["Long-term memory per user", "C"],
+      ["Evaluating AI systems", "GLP"],
+      ["Reading documents: résumé parsing and OCR", "XUC"],
+    ]],
+    ["Product engineering", [
+      ["TypeScript and Node.js", "CXP"],
+      ["React, Astro and Vite front ends", "CFP"],
+      ["Python services", "LG"],
+      ["Apps that run entirely in the browser: WebAssembly, workers, offline", "U"],
+      ["Live market data over WebSockets", "T"],
+      ["Integrations: Gmail, WhatsApp, Telegram, email", "CF"],
+      ["Native macOS with Swift", "a private desktop agent"],
+    ]],
+    ["Data & infrastructure", [
+      ["PostgreSQL and Cloudflare D1", "CXLPF"],
+      ["Linux servers, Docker, Caddy", "CULGXTP"],
+      ["Cloudflare Workers and Pages", "F"],
+      ["Sandboxed runs in locked-down containers", "G"],
+      ["Tamper-evident records: hashes and sealed receipts", "TGLUP"],
+      ["Privacy and security: encryption in the browser, SSRF guards", "UP"],
+    ]],
+    ["Quality", [
+      ["Large automated test suites", "UPF"],
+      ["Release gates and checksum sweeps", "UXL"],
+    ]],
+    ["Design & content", [
+      ["Interface and interaction design", "CUFLGPXT"],
+      ["Design systems", "X"],
+      ["SEO content at scale", "XU"],
+      ["Writing product copy", "CUFLGPXT"],
+      ["Motion, WebGL and 3D for the web", "this site"],
+    ]],
+  ],
+  // first-person stories, one per product; facts only, framing kept modest
+  story: {
+    "VV 106": "Job hunting is mostly guessing whether you fit. I built Conxto to stop the guessing: it pulls live postings from 22 sources, checks every requirement against your résumé line by line, and prepares the whole application, from the tailored résumé to the letter and the answers. If a rewritten line claims more than your résumé can prove, it is reverted.",
+    "VV 105": "I wanted PDF tools that never ask for your file. UnboundPDF does all of it inside the browser tab: 53 tools, and your document never leaves your device. Under the simple page there is one registry that every count comes from, a 471-test suite, and a checksum sweep on every deploy.",
+    "VV 103": "For FarmQuick, a B2B produce business, I built both halves of the loop. An ordering site that buyers use on their phones, and Lead Desk, an agent that reads open sources across five cities every morning and scores new buyers by written rules. An order reaches the owner, becomes a won lead, and shows up in the weekly report.",
+    "VV 102": "Most automation asks you to build the workflow. With the VVDex Engine you describe the work in one paragraph and it compiles the service: what runs by itself, what waits for the person you named, and what never happens. A crew of specialist agents does each step, an independent reviewer checks every result, incoming emails are read as data and never as instructions, and every run is sealed under one digest anyone can recompute.",
+    "VV 101": "Everyone says their model is the best one. On the VVDex Platform you give it real work instead: fix a bug in an open-source library, triage an incident, correct an order in a web app. It works in a sealed sandbox, hidden tests it never sees decide the result, and every run comes back with a pass rate, its 95% range and a signed receipt anyone can check. Five exams are free, with no sign-in.",
+    "VV 104": "Built for a client who runs a mobile food business. Seven agents find the events worth trading at, pull deadlines and contacts, check the weather, and hand over one weekly brief with the evidence behind every line. The ranking runs on rules you can read; a language model only fills the gaps the rules can't.",
+    "VV 107": "Getting the next job means a résumé, a check that software can read it, a letter and somewhere to show your work, usually from four different tools with four accounts. Conxfolio puts all four in one place and they share one résumé: 37 résumé designs in PDF and Word, an ATS review that shows what a system actually reads, 12 cover-letter designs in your own words, and 20 complete portfolio websites you publish at conxfolio.com/yourname for free. No account is needed to start.",
+    "VV 108": "My research bench for markets. It watches live order flow and records every call it makes, dated and hash-chained to the one before, so nothing can be quietly rewritten later. 2,028 calls so far, on paper only.",
+  },
+  // how each product is named inside the opening sentence
+  clause: {
+    "VV 106": ["", " reads live job postings against your résumé"],
+    "VV 105": ["", " edits PDFs without ever uploading them"],
+    "VV 103": ["", " takes orders and finds new buyers for a produce business"],
+    "VV 102": ["", " turns a paragraph into a service that runs by your rules"],
+    "VV 101": ["", " tests AI models and agents on real work"],
+    "VV 104": ["", " finds the right events for a food vendor (private, for a client)"],
+    "VV 107": ["", " puts your résumé, ATS review, letter and portfolio in one place"],
+    "VV 108": ["", " tests market ideas on paper"],
+  },
+  // Problem → What I built → Result. The problem lines are framing, not statistics; results use facts only.
+  problem: {
+    "VV 106": "Job seekers apply blind: they can't see which requirements they actually meet, and tailoring every application by hand doesn't scale.",
+    "VV 105": "Most online PDF tools upload your file to someone else's server before they do anything with it.",
+    "VV 103": "A B2B produce business needed a proper ordering channel for its buyers, and a steady way to find the next ones.",
+    "VV 102": "Businesses want AI automation they can trust, but most tools make them build the workflow and cannot show what ran, or why.",
+    "VV 101": "AI models get compared on claims and quizzes, not on real work graded where they cannot cheat.",
+    "VV 104": "A mobile food vendor has to find the right events to trade at, among scattered listings, deadlines and organisers.",
+    "VV 107": "Good résumé tools hide the useful parts behind accounts, paywalls and watermarks.",
+    "VV 108": "Market calls are easy to claim after the fact, and hard to check.",
+  },
+  // the concept: the world is noise; each product turns a specific noise into a specific signal
+  thesis: ["Most of the world is noise.", "I build systems that find the signal."],
+  signal: {
+    "VV 106": { in: "81,615 live job postings from 22 sources", out: "The roles that fit you, and a finished application for each, every line checked against your résumé." },
+    "VV 105": { in: "Your file, and 53 tools to work on it", out: "The finished PDF. Uploaded to a server: nothing." },
+    "VV 103": { in: "Open sources across five cities, read every morning", out: "The next buyer, scored by written rules, and orders that go straight to the owner." },
+    "VV 102": { in: "One paragraph describing the work", out: "A compiled service that runs by your rules and seals every run." },
+    "VV 101": { in: "Your model or agent, and a real task", out: "A pass rate with its 95% range, and a signed receipt anyone can check." },
+    "VV 104": { in: "Event listings and organiser sites across the open web", out: "One weekly brief: the events worth trading at, ranked, with the evidence behind every line." },
+    "VV 107": { in: "Your experience, or an existing résumé", out: "A résumé, an ATS review, a cover letter and a published portfolio website." },
+    "VV 108": { in: "Live order flow across trading venues", out: "2,028 dated calls, each hash-chained to the last. Paper only." },
+  },
+  name: ["Vamsi", "Venkatesh"],
+  role: "AI systems & product engineer · Magdeburg, Germany",
+  intro: "I design and build AI products end to end: the idea, the system behind it, the interface people use, and the servers it runs on. Here are eight of them.",
+  email: "vamsi@vamsivenkatesh.com",
+  order: ["VV 106", "VV 105", "VV 103", "VV 102", "VV 101", "VV 104", "VV 107", "VV 108"],
+  accent: { "VV 101": "#8a7bff", "VV 102": "#3fd08a", "VV 103": "#7bc96f", "VV 104": "#ff9a3d", "VV 105": "#ff5a4e", "VV 106": "#5b8cff", "VV 107": "#ff6f61", "VV 108": "#38c6d9" },
+  kind: { "VV 101": "AI evaluation platform", "VV 102": "AI service engine", "VV 103": "B2B commerce + lead agent", "VV 104": "Event intelligence · client", "VV 105": "Browser PDF suite", "VV 106": "AI job search", "VV 107": "Career suite", "VV 108": "Market research" },
+  // per product: the line, three facts, two numbers, and the screens (main first)
+  copy: {
+    "VV 106": {
+      line: "Reads live job postings against your résumé, checks every requirement and prepares the whole application: the tailored résumé, the letter and the answers.",
+      built: ["Its own job search engine: boards, feeds and career pages merged per job, from 22 sources", "A truthfulness pipeline: every rewritten line is checked against the original résumé, and anything that claims more is reverted", "Five agents sharing one persistent memory per account"],
+      shots: [["hd/conxto-a.jpg", "Copilot: live postings, checked against your résumé."], ["hd/conxto-b.jpg", "Each requirement next to the line that proves it."], ["hd/conxto-c.jpg", "The package: résumé, letter and answers."]],
+    },
+    "VV 105": {
+      shots: [["hd/unboundpdf-a.jpg", "The home page. Nothing is uploaded."], ["hd/unboundpdf-b.jpg", "All 53 tools, from one registry."], ["hd/unboundpdf-c.jpg", "The Workspace: chain the tools on one file."]],
+    },
+    "VV 103": {
+      built: ["The ordering site on Cloudflare: catalogue, bulk enquiry and orders, mobile first", "The loop closes: an order reaches the owner, becomes a won lead in the register and a line in the weekly report", "Lead Desk reads open sources across five cities and scores leads by written rules, calling a model only when rules cannot answer"],
+      numbers: [["5", "cities every morning"], ["42", "catalogue items"]],
+      shots: [["hd/farmquick-a.jpg", "The ordering site, for wholesale and restaurant buyers."], ["hd/farmquick-b.jpg", "Build a supply order."], ["hd/farmquick-c.jpg", "The range, product by product."]],
+    },
+    "VV 102": {
+      line: "Describe the work in one paragraph; the Engine compiles and runs it by your rules, and every run leaves proof.",
+      built: ["A compiler from one paragraph to a service contract", "A crew of specialist agents, an independent reviewer on every result", "Every run sealed under one SHA-256 digest"],
+      shots: [["hd/lab-a.jpg", "Describe the work. VVDex runs it, by your rules."], ["hd/lab-b.jpg", "Your rules draw the line."], ["hd/lab-c.jpg", "Every run leaves proof."]],
+    },
+    "VV 101": {
+      shots: [["hd/forge-a.jpg", "Test AI models and agents on real work."], ["hd/forge-b.jpg", "From your model to a result anyone can check."], ["hd/forge-c.jpg", "What we tested: 148 graded attempts, all published."]],
+    },
+    "VV 104": {
+      shots: [["hd/pitchradar-a.jpg", "The command centre: the week's openings."], ["hd/pitchradar-b.jpg", "Every event ranked, with its evidence."], ["hd/pitchradar-c.jpg", "A 12-week booking plan."]],
+    },
+    "VV 107": {
+      shots: [["hd/conxfolio-a.jpg", "Your next move. All here."], ["hd/conxfolio-b.jpg", "Every detail of the résumé, editable."], ["hd/conxfolio-c.jpg", "20 websites. One of them is yours."]],
+    },
+    "VV 108": {
+      shots: [["hd/trading-a.jpg", "The market, order by order."], ["hd/trading-b.jpg", "Order flow across venues."], ["hd/trading-c.jpg", "Every call the engine made."]],
+    },
+  },
+  skills: [
+    ["AI & agents", ["LLM apps with Anthropic, OpenAI and DeepSeek models", "Multi-agent workflows and tool use", "Retrieval and long-term agent memory", "Evaluation suites for AI systems"]],
+    ["Product engineering", ["TypeScript, Node.js, Fastify", "React and Astro front ends", "Python services", "Native macOS with Swift"]],
+    ["Data & infrastructure", ["PostgreSQL and Cloudflare D1", "Linux servers, Docker, Caddy", "Cloudflare Workers and Pages", "n8n automations, WhatsApp and email delivery"]],
+    ["Design", ["Interface and interaction design", "Design systems", "Motion, WebGL and 3D for the web", "Writing product copy"]],
+  ],
+  process: [
+    ["Understand", "Start from a real problem and the person who has it. Talk to them, read the data, find the one thing that matters."],
+    ["Design", "Shape the product and the system together: the screens, the data, where AI helps and where it shouldn't."],
+    ["Build", "Write it end to end, using AI coding agents as part of my toolkit to move fast without losing quality."],
+    ["Launch", "Put it on real servers, in front of real users, and watch how it's actually used."],
+    ["Improve", "Keep a written record of every decision, and make the next version better than the last."],
+  ],
+  facts: [["Education", "M.Sc. Data Science (in progress), University of Europe for Applied Sciences · B.E. Electronics & Communication, PESIT Bengaluru"], ["Based in", "Magdeburg, Germany · German residence permit, no sponsorship needed"], ["Languages", "English fluent · German A1, learning A2"]],
+};

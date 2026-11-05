@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vamsi Venkatesh — AI product engineer</title>
+<meta name="description" content="Vamsi Venkatesh, AI product engineer in Magdeburg, Germany. I design, build and run AI products end to end.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#F1E8D6; --stone2:#FAF5EA; --grout:#DCCDB2;
+    --ink:#0B4A5E; --ink2:#1E4E59; --coral:#E2683F;
+    --display:'Fraunces', Georgia, serif; --text:'Instrument Sans', 'Helvetica Neue', sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{background:var(--stone);-webkit-text-size-adjust:100%}
+  body{min-height:100vh;color:var(--ink);font-family:var(--text);font-optical-sizing:none;
+    background:var(--stone);overflow-x:hidden}
+  #pool{position:fixed;inset:0;width:100vw;height:100vh;display:block;z-index:0;opacity:0;
+    transition:opacity 1.3s cubic-bezier(.2,.7,.2,1)}
+  main{position:relative;z-index:1;max-width:1440px;margin:0 auto;
+    padding:clamp(28px,4.2vw,64px) clamp(20px,4.4vw,72px) clamp(28px,3.4vw,48px);
+    min-height:100vh;display:flex;flex-direction:column;gap:clamp(26px,3.6vh,44px)}
+  /* ink colours: real colour without WebGL, read by the painter as --inlay, transparent once the water is on */
+  main *{--inlay:var(--ink);transition:color 1.3s cubic-bezier(.2,.7,.2,1)}
+  html.gl main *{color:transparent !important}
+  ::selection{background:rgba(255,255,255,.55);color:transparent}
+
+  .kicker{font-size:clamp(14px,1.1vw,16px);letter-spacing:.06em;color:var(--ink2);--inlay:var(--ink2);font-weight:500}
+  h1{font-family:var(--display);font-weight:300;font-size:clamp(58px,9.4vw,142px);line-height:.92;
+    letter-spacing:-.025em;margin-top:.12em;--inlay:var(--ink)}
+  h1 em{font-style:italic;font-weight:300}
+  .lede{font-family:var(--display);font-weight:400;font-size:clamp(19px,1.75vw,26px);line-height:1.32;
+    max-width:34em;margin-top:clamp(14px,2vh,22px);color:var(--ink2);--inlay:var(--ink2)}
+
+  .label{font-size:13px;letter-spacing:.14em;font-weight:600;color:var(--coral);--inlay:var(--coral)}
+  .tiles{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,22px);margin-top:14px}
+  .plaque{display:flex;flex-direction:column;gap:6px;height:100%;padding:18px 18px 20px;text-decoration:none;
+    border-radius:6px;outline-offset:4px;color:var(--ink)}
+  .plaque:focus-visible{outline:2px solid var(--coral)}
+  .row{display:flex;align-items:center;gap:10px}
+  .num{font-size:12px;font-weight:600;letter-spacing:.08em;color:var(--coral);--inlay:var(--coral)}
+  .dot{width:11px;height:11px;flex:none}
+  .pname{font-family:var(--display);font-weight:500;font-size:clamp(21px,1.75vw,26px);line-height:1.1;letter-spacing:-.01em;margin-top:4px}
+  .kind{font-size:12.5px;font-weight:600;letter-spacing:.03em;color:var(--ink2);--inlay:var(--ink2)}
+  .one{font-size:14.5px;line-height:1.42;color:var(--ink2);--inlay:var(--ink2)}
+
+  footer{margin-top:auto;display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 30px}
+  footer a{font-family:var(--display);font-size:clamp(19px,1.6vw,24px);text-decoration:none;color:var(--ink);padding:2px 0;outline-offset:4px}
+  footer a:focus-visible{outline:2px solid var(--coral)}
+  .where{font-size:13px;color:var(--ink2);--inlay:var(--ink2)}
+  html:not(.gl) .dot{background:var(--c);outline:1px solid rgba(11,74,94,.35)}
+  html:not(.gl) .plaque{background:var(--stone2);box-shadow:inset 0 0 0 1px rgba(11,74,94,.2)}
+  .hint{margin-left:auto;font-family:var(--display);font-style:italic;font-size:16px;color:var(--coral);--inlay:var(--coral)}
+
+  @media (max-width:1100px){ .tiles{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:620px){
+    .tiles{grid-template-columns:1fr}
+    .plaque{padding:16px 16px 18px}
+    h1{font-size:clamp(52px,15.5vw,80px)}
+    .hint{margin-left:0;width:100%}
+    footer{gap:8px 22px}
+  }
+</style>
+</head>
+<body>
+<canvas id="pool" aria-hidden="true"></canvas>
+<main>
+  <header>
+    <p class="kicker">AI product engineer · Magdeburg, Germany</p>
+    <h1>Vamsi <em>Venkatesh</em></h1>
+    <p class="lede">I design, build and run AI products end to end: the product, the agents, the servers and the tests that prove it works.</p>
+  </header>
+
+  <section aria-labelledby="work-h">
+    <h2 class="label" id="work-h">The work</h2>
+    <ol class="tiles">
+      <li><a class="plaque" href="https://vamsivenkatesh.com/work/vvdex-platform/"><span class="row"><span class="num">01</span><span class="dot" style="--c:#F2703A"></span></span><span class="pname">VVDex Platform</span><span class="kind">AI evaluation platform · Live</span><span class="one">Tests AI models and agents on real work. Hidden tests decide.</span></a></li>
+      <li><a class="plaque" href="https://vamsivenkatesh.com/work/conxto/"><span class="row"><span class="num">02</span><span class="dot" style="--c:#D8CDBE"></span></span><span class="pname">Conxto</span><span class="kind">AI job search · Live</span><span class="one">Reads live job postings against your résumé and prepares the whole application.</span></a></li>
+      <li><a class="plaque" href="https://vamsivenkatesh.com/work/vvdex-engine/"><span class="row"><span class="num">03</span><span class="dot" style="--c:#45C987"></span></span><span class="pname">VVDex Engine</span><span class="kind">AI service engine · Live</span><span class="one">Describe the work in one paragraph. It compiles a service that runs by your rules.</span></a></li>
+      <li><a class="plaque" href="https://vamsivenkatesh.com/work/unboundpdf/"><span class="row"><span class="num">04</span><span class="dot" style="--c:#EFEAE0"></span></span><span class="pname">UnboundPDF</span><span class="kind">Browser PDF suite · Live</span><span class="one">Every PDF tool in the browser. Your file never leaves the tab.</span></a></li>
+      <li><a class="plaque" href="https://vamsivenkatesh.com/work/farmquick/"><span class="row"><span class="num">05</span><span class="dot" style="--c:#86C977"></span></span><span class="pname">FarmQuick</span><span class="kind">B2B commerce + lead agent · Live</span><span class="one">The ordering site a produce business runs on, and the agent that finds its next buyer.</span></a></li>
+      <li><a class="plaque" href="https://vamsivenkatesh.com/work/conxfolio/"><span class="row"><span class="num">06</span><span class="dot" style="--c:#EDE4D6"></span></span><span class="pname">Conxfolio</span><span class="kind">Career suite · Live</span><span class="one">Résumé, ATS review, cover letter and portfolio website, sharing one résumé.</span></a></li>
+      <li><a class="plaque" href="https://vamsivenkatesh.com/work/pitchradar/"><span class="row"><span class="num">07</span><span class="dot" style="--c:#F49A4B"></span></span><span class="pname">PitchRadar</span><span class="kind">Event intelligence · client · Private</span><span class="one">Finds and ranks the events a mobile food vendor should trade at. Built for a client.</span></a></li>
+      <li><a class="plaque" href="https://vamsivenkatesh.com/work/vvdex-trading/"><span class="row"><span class="num">08</span><span class="dot" style="--c:#63D2A3"></span></span><span class="pname">VVDex Trading</span><span class="kind">Market research · Research</span><span class="one">Live market microstructure beside a hash-chained record of every dated call. Paper only.</span></a></li>
+    </ol>
+  </section>
+
+  <footer>
+    <a href="mailto:vamsi@vamsivenkatesh.com">vamsi@vamsivenkatesh.com</a>
+    <a href="https://www.linkedin.com/in/vamsivenkatesh">LinkedIn</a>
+    <a href="https://github.com/vamsi-venkatesh">GitHub</a>
+    <p class="hint">Touch the water.</p>
+  </footer>
+</main>
+<script type="module" src="./water.js"></script>
+</body>
+</html>

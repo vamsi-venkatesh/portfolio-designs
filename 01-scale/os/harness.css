@@ -1,0 +1,4 @@
+html,body{margin:0;height:100%;background:#04060b;overflow:hidden}
+#stage{position:fixed;inset:0}
+#stage.win{inset:60px 8vw 90px 8vw;border:1px solid #cfe6ff33;border-radius:14px;overflow:hidden;background:#070b14}
+#log{position:fixed;left:8px;bottom:8px;font:11px Menlo,monospace;color:#9fb6cf;z-index:99}

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Portfolio Designs · Vamsi Venkatesh</title>
+<meta name="description" content="Fourteen portfolio designs in HTML, CSS, JavaScript, Canvas and WebGL. Open each live, read the code, download any one.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@500;700&family=Funnel+Sans:wght@400;500&family=Geist+Mono:wght@400&display=swap">
+<style>
+:root{--bg:#f3f1ec;--card:#ffffff;--ink:#1b1a17;--mute:#6a655c;--line:#dcd6cb;--red:#e5361b;--red-ink:#b8350f;
+  --display:"Funnel Display",system-ui,sans-serif;--body:"Funnel Sans",system-ui,sans-serif;--mono:"Geist Mono",ui-monospace,Menlo,monospace}
+@media (prefers-color-scheme:dark){:root{--bg:#121110;--card:#1c1b19;--ink:#ece8e1;--mute:#a19b90;--line:#2e2c28;--red-ink:#ff6a4d;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 var(--body);padding:40px max(16px,env(safe-area-inset-right)) 72px max(16px,env(safe-area-inset-left))}
+.wrap{max-width:1240px;margin:0 auto;display:grid;gap:32px}
+header{display:grid;gap:12px;max-width:68ch}
+h1{font:700 clamp(36px,6vw,64px)/1.02 var(--display);margin:0;letter-spacing:-.01em;text-wrap:balance}
+h1 .dot{color:var(--red)}
+.lede{color:var(--mute);margin:0}
+.meta{font:13px/1.5 var(--mono);color:var(--mute);margin:0}
+.meta a{color:var(--red-ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.card a.shot{display:block;aspect-ratio:16/10;background:var(--line);overflow:hidden}
+.card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.card a.shot:hover img,.card a.shot:focus-visible img{transform:scale(1.03)}
+.body{padding:14px 16px 16px;display:grid;gap:6px;flex:1;align-content:start}
+.num{font:12px var(--mono);color:var(--mute);letter-spacing:.04em}
+h2{font:500 20px/1.2 var(--display);margin:0}
+.body p{margin:0;color:var(--mute);font-size:15px}
+.tech{font:12px var(--mono);color:var(--mute)}
+.links{display:flex;gap:14px;flex-wrap:wrap;padding:0 16px 16px;font-size:14px}
+.links a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);min-height:32px;display:inline-flex;align-items:center}
+.links a:first-child{color:var(--red-ink);border-color:currentColor;font-weight:500}
+.links a:hover{border-color:currentColor}
+a:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+footer{color:var(--mute);font-size:14px;border-top:1px solid var(--line);padding-top:18px;display:grid;gap:6px}
+footer a{color:var(--ink)}
+@media (prefers-reduced-motion:reduce){.card img{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="meta">HTML · CSS · JavaScript · Canvas · WebGL · no frameworks</p>
+    <h1>Portfolio designs<span class="dot">.</span></h1>
+    <p class="lede">Fourteen ways to present the same work, from my live site to experiments in physics, light and sound. Open any one live, read its code, or download it and make it yours.</p>
+    <p class="meta">By Vamsi Venkatesh · code under the <a href="https://github.com/vamsi-venkatesh/portfolio-designs/blob/main/LICENSE">MIT licence</a> · <a href="https://github.com/vamsi-venkatesh/portfolio-designs">GitHub</a></p>
+  </header>
+  <main class="grid">
+  <article class="card">
+    <a class="shot" href="red-dot/" aria-label="Open Red Dot live"><img src="gallery/thumbs/red-dot.jpg" alt="Red Dot" loading="lazy" width="900" height="563"></a>
+    <div class="body"><span class="num">01</span><h2>Red Dot</h2><p>My live site. A red dot is the mark, the cursor and the door into every product: an airport scene on canvas, and a checkpoint world you scroll into.</p><span class="tech">GSAP · ScrollTrigger · Canvas</span></div>
+    <div class="links"><a href="red-dot/">Open live</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/tree/main/red-dot">Code</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/releases/latest/download/red-dot.zip">Download .zip</a></div>
+  </article>
+  <article class="card">
+    <a class="shot" href="inside-the-dot/" aria-label="Open Inside the Dot live"><img src="gallery/thumbs/inside-the-dot.jpg" alt="Inside the Dot" loading="lazy" width="900" height="563"></a>
+    <div class="body"><span class="num">02</span><h2>Inside the Dot</h2><p>A full 16-page site: the home, a case study per product, about, CV and contact.</p><span class="tech">Three.js · WebGL · static build</span></div>
+    <div class="links"><a href="inside-the-dot/">Open live</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/tree/main/inside-the-dot">Code</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/releases/latest/download/inside-the-dot.zip">Download .zip</a></div>
+  </article>
+  <article class="card">
+    <a class="shot" href="board-v2/" aria-label="Open The Board live"><img src="gallery/thumbs/board-v2.jpg" alt="The Board" loading="lazy" width="900" height="563"></a>
+    <div class="body"><span class="num">03</span><h2>The Board</h2><p>A board of live product frames. Scroll is one camera flying into each product; frames drag, resize and open their case study.</p><span class="tech">DOM camera · video loops</span></div>
+    <div class="links"><a href="board-v2/">Open live</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/tree/main/board-v2">Code</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/releases/latest/download/board-v2.zip">Download .zip</a></div>
+  </article>
+  <article class="card">
+    <a class="shot" href="01-scale/" aria-label="Open Scale live"><img src="gallery/thumbs/01-scale.jpg" alt="Scale" loading="lazy" width="900" height="563"></a>
+    <div class="body"><span class="num">04</span><h2>Scale</h2><p>From a blinking cursor out to the galaxies, in one unbroken zoom. Scroll.</p><span class="tech">Three.js · scroll-driven zoom</span></div>
+    <div class="links"><a href="01-scale/">Open live</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/tree/main/01-scale">Code</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/releases/latest/download/01-scale.zip">Download .zip</a></div>
+  </article>
+  <article class="card">
+    <a class="shot" href="02-garden/" aria-label="Open Garden live"><img src="gallery/thumbs/02-garden.jpg" alt="Garden" loading="lazy" width="900" height="563"></a>
+    <div class="body"><span class="num">05</span><h2>Garden</h2><p>Every click plants an idea that grows in seconds. The eight old trees are the work.</p><span class="tech">Canvas · procedural growth</span></div>
+    <div class="links"><a href="02-garden/">Open live</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/tree/main/02-garden">Code</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/releases/latest/download/02-garden.zip">Download .zip</a></div>
+  </article>
+  <article class="card">
+    <a class="shot" href="03-toybox/" aria-label="Open Toybox live"><img src="gallery/thumbs/03-toybox.jpg" alt="Toybox" loading="lazy" width="900" height="563"></a>
+    <div class="body"><span class="num">06</span><h2>Toybox</h2><p>The page is a toy. Grab, throw, stack, knock it all over. Double-click a toy to open it.</p><span class="tech">Custom physics · Canvas</span></div>
+    <div class="links"><a href="03-toybox/">Open live</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/tree/main/03-toybox">Code</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/releases/latest/download/03-toybox.zip">Download .zip</a></div>
+  </article>
+  <article class="card">
+    <a class="shot" href="04-water/" aria-label="Open Water live"><img src="gallery/thumbs/04-water.jpg" alt="Water" loading="lazy" width="900" height="563"></a>
+    <div class="body"><span class="num">07</span><h2>Water</h2><p>Sunlight through a shallow pool. Touch the water.</p><span class="tech">WebGL · caustics</span></div>
+    <div class="links"><a href="04-water/">Open live</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/tree/main/04-water">Code</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/releases/latest/download/04-water.zip">Download .zip</a></div>
+  </article>
+  <article class="card">
+    <a class="shot" href="05-hundred/" aria-label="Open A hundred versions live"><img src="gallery/thumbs/05-hundred.jpg" alt="A hundred versions" loading="lazy" width="900" height="563"></a>
+    <div class="body"><span class="num">08</span><h2>A hundred versions</h2><p>The page redesigns itself every few seconds through 34 art directions, morphing. Keep the one you like.</p><span class="tech">FLIP morphs · CSS</span></div>
+    <div class="links"><a href="05-hundred/">Open live</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/tree/main/05-hundred">Code</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/releases/latest/download/05-hundred.zip">Download .zip</a></div>
+  </article>
+  <article class="card">
+    <a class="shot" href="06-sky/" aria-label="Open Night sky live"><img src="gallery/thumbs/06-sky.jpg" alt="Night sky" loading="lazy" width="900" height="563"></a>
+    <div class="body"><span class="num">09</span><h2>Night sky</h2><p>Lying on the grass, looking up. The work is eight constellations. Draw your own.</p><span class="tech">WebGL2 · Canvas · star field</span></div>
+    <div class="links"><a href="06-sky/">Open live</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/tree/main/06-sky">Code</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/releases/latest/download/06-sky.zip">Download .zip</a></div>
+  </article>
+  <article class="card">
+    <a class="shot" href="07-instrument/" aria-label="Open Instrument live"><img src="gallery/thumbs/07-instrument.jpg" alt="Instrument" loading="lazy" width="900" height="563"></a>
+    <div class="body"><span class="num">10</span><h2>Instrument</h2><p>Every line is a string. Press Play, then brush across the page. Every note is in key.</p><span class="tech">Web Audio · DOM</span></div>
+    <div class="links"><a href="07-instrument/">Open live</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/tree/main/07-instrument">Code</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/releases/latest/download/07-instrument.zip">Download .zip</a></div>
+  </article>
+  <article class="card">
+    <a class="shot" href="08-prism/" aria-label="Open Prism live"><img src="gallery/thumbs/08-prism.jpg" alt="Prism" loading="lazy" width="900" height="563"></a>
+    <div class="body"><span class="num">11</span><h2>Prism</h2><p>Steer a rainbow across the work. Hold to open the full spectrum.</p><span class="tech">WebGL · light</span></div>
+    <div class="links"><a href="08-prism/">Open live</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/tree/main/08-prism">Code</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/releases/latest/download/08-prism.zip">Download .zip</a></div>
+  </article>
+  <article class="card">
+    <a class="shot" href="09-window/" aria-label="Open The Window live"><img src="gallery/thumbs/09-window.jpg" alt="The Window" loading="lazy" width="900" height="563"></a>
+    <div class="body"><span class="num">12</span><h2>The Window</h2><p>The screen becomes glass onto a sunlit room. Turn on head tracking and lean: it moves like a real window.</p><span class="tech">Three.js · off-axis projection · MediaPipe</span></div>
+    <div class="links"><a href="09-window/">Open live</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/tree/main/09-window">Code</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/releases/latest/download/09-window.zip">Download .zip</a></div>
+  </article>
+  <article class="card">
+    <a class="shot" href="10-for-you/" aria-label="Open Made for you live"><img src="gallery/thumbs/10-for-you.jpg" alt="Made for you" loading="lazy" width="900" height="563"></a>
+    <div class="body"><span class="num">13</span><h2>Made for you</h2><p>Tell it who you are and the whole site becomes a world built for you, a complete website in each.</p><span class="tech">Three.js · per-visitor worlds</span></div>
+    <div class="links"><a href="10-for-you/">Open live</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/tree/main/10-for-you">Code</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/releases/latest/download/10-for-you.zip">Download .zip</a></div>
+  </article>
+  <article class="card">
+    <a class="shot" href="11-light/" aria-label="Open Hold it to the light live"><img src="gallery/thumbs/11-light.jpg" alt="Hold it to the light" loading="lazy" width="900" height="563"></a>
+    <div class="body"><span class="num">14</span><h2>Hold it to the light</h2><p>A pane of glass in a morning room. Sunlight through it writes the work on the wall; move the cursor and the sun turns.</p><span class="tech">WebGL · computed caustics</span></div>
+    <div class="links"><a href="11-light/">Open live</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/tree/main/11-light">Code</a><a href="https://github.com/vamsi-venkatesh/portfolio-designs/releases/latest/download/11-light.zip">Download .zip</a></div>
+  </article>
+  </main>
+  <footer>
+    <span>To reuse a design: download it, replace my name, products and screenshots with your own, and keep the licence file.</span>
+    <span>My live site: <a href="https://vamsivenkatesh.com">vamsivenkatesh.com</a></span>
+  </footer>
+</div>
+</body>
+</html>
