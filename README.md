@@ -1,18 +1,19 @@
 # Portfolio designs
 
-Fourteen ways to present the same work: my live portfolio site, a full multi-page site, a product board, and eleven interactive experiments in physics, light, sound and 3D. Every one is plain HTML, CSS and JavaScript (plus Three.js or raw WebGL where the design needs it), with no build step.
+Fifteen ways to present the same work: my live portfolio site, the one before it, a full multi-page site, an earlier board, and eleven interactive experiments in physics, light, sound and 3D. Every one is plain HTML, CSS and JavaScript (plus Three.js or raw WebGL where the design needs it), with no build step.
 
 **Open them live:** https://vamsi-venkatesh.github.io/portfolio-designs/
 
-![Gallery](gallery/thumbs/red-dot.jpg)
+![The Board, my live site](gallery/thumbs/board.jpg)
 
 ## The designs
 
 | Folder | Design | Idea | Built with | Live |
 | --- | --- | --- | --- | --- |
-| `red-dot` | Red Dot | My live site. A red dot is the mark, the cursor and the door into every product | GSAP, ScrollTrigger, Canvas | [open](https://vamsi-venkatesh.github.io/portfolio-designs/red-dot/) |
+| `board` | The Board | **My live site since 5 Nov 2026.** All seven products play live on one board; scroll is one camera flying into each | DOM camera, video loops | [open](https://vamsi-venkatesh.github.io/portfolio-designs/board/) |
+| `red-dot` | Red Dot | My live site until 5 Nov 2026. A red dot is the mark, the cursor and the door into every product | GSAP, ScrollTrigger, Canvas | [open](https://vamsi-venkatesh.github.io/portfolio-designs/red-dot/) |
 | `inside-the-dot` | Inside the Dot | A full 16-page site: home, a case study per product, about, CV, contact | Three.js, WebGL | [open](https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/) |
-| `board-v2` | The Board | Live product frames on a board; scroll is one camera flying into each product | DOM camera, video loops | [open](https://vamsi-venkatesh.github.io/portfolio-designs/board-v2/) |
+| `board-v2` | The Board, v2 | An earlier version of the board: live product frames on a board; scroll is one camera flying into each product | DOM camera, video loops | [open](https://vamsi-venkatesh.github.io/portfolio-designs/board-v2/) |
 | `01-scale` | Scale | From a blinking cursor out to the galaxies, in one unbroken zoom | Three.js, WebGL | [open](https://vamsi-venkatesh.github.io/portfolio-designs/01-scale/) |
 | `02-garden` | Garden | Every click plants an idea that grows in seconds | Canvas 2D | [open](https://vamsi-venkatesh.github.io/portfolio-designs/02-garden/) |
 | `03-toybox` | Toybox | The page is a toy: grab, throw, stack, knock it over | Custom physics, Canvas 2D | [open](https://vamsi-venkatesh.github.io/portfolio-designs/03-toybox/) |
