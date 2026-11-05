@@ -347,7 +347,7 @@ export default {
         const tri = sv('svg', { viewBox: '0 0 12 12', width: 12, height: 12, 'aria-hidden': 'true' }, play); sv('path', { d: 'M2 1 L11 6 L2 11 Z', fill: 'currentColor' }, tri);
         el('span', null, 'Play the case', play);
         on(play, 'click', () => go(`#work/${w.slug}`));
-        ext('c-link', 'Write-up ↗', `https://vamsivenkatesh.com/work/${w.slug}/`, acts);
+        ext('c-link', 'Write-up ↗', `https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${w.slug}/`, acts);
         if (w.url) ext('c-link', `${w.host} ↗`, w.url, acts);
         const right = el('div', 'c-right', null, mid);
         const nums = el('div', 'c-nums', null, right);
@@ -885,7 +885,7 @@ export default {
         el('p', 'cs-lead', c ? c.one_line : w.line, t0);
         if (c) el('p', 'cs-p', c.summary, t0);
         const ln = el('p', 'cs-links0', null, t0);
-        ext('cs-a', 'Write-up on vamsivenkatesh.com ↗', `https://vamsivenkatesh.com/work/${sl}/`, ln);
+        ext('cs-a', 'Write-up on vamsivenkatesh.com ↗', `https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${sl}/`, ln);
         if (w.url) ext('cs-a', `${w.host} ↗`, w.url, ln);
         kids(t0);
         if (c) {
@@ -906,7 +906,7 @@ export default {
           const bu = shot('Built', 'field'); const ol = el('ol', 'cs-ol', null, bu); w.built.forEach((x) => el('li', null, x, ol)); kids(ol);
           const ch = shot('Checks', 'paper'); const ol2 = el('ol', 'cs-ol', null, ch); w.checks.forEach((x) => el('li', null, x, ol2)); kids(ol2);
           const nu = shot('Numbers', 'ink'); const ng = el('div', 'cs-nums', null, nu); (w.stage || w.numbers).forEach(([v, l]) => { const d = el('div', 'cs-num', null, ng); el('span', 'ctr disp', v, d).dataset.v = v; el('span', 'cs-nl', l, d); }); kids(ng);
-          const lk = shot('Links', 'paper'); const ul = el('ul', 'cs-ul', null, lk); w.links.forEach(([l, u]) => ext('cs-big', `${l} ↗`, u, el('li', null, null, ul))); ext('cs-big', 'Write-up on vamsivenkatesh.com ↗', `https://vamsivenkatesh.com/work/${sl}/`, el('li', null, null, ul)); kids(ul);
+          const lk = shot('Links', 'paper'); const ul = el('ul', 'cs-ul', null, lk); w.links.forEach(([l, u]) => ext('cs-big', `${l} ↗`, u, el('li', null, null, ul))); ext('cs-big', 'Write-up on vamsivenkatesh.com ↗', `https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${sl}/`, el('li', null, null, ul)); kids(ul);
         }
         // end card: the next case, in its own colour
         const nx = items[(i + 1) % N];

@@ -913,7 +913,7 @@ export default {
         t.appendChild(el('p', 'lede', c ? c.one_line : w.line));
         if (c) { t.appendChild(el('p', null, c.summary)); const r = el('p'); r.append(el('b', null, 'My role — '), document.createTextNode(c.role)); t.appendChild(r); }
         const ls = (c ? c.links.map((l) => [l.label + ' ↗', l.url]) : (w.links || []).map((l) => [l[0] + ' ↗', l[1]]));
-        ls.push(['The full write-up ↗', `https://vamsivenkatesh.com/work/${slug}/`]);
+        ls.push(['The full write-up ↗', `https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${slug}/`]);
         t.appendChild(linksEl(ls));
         read.append(pnEl(slug), t);
         if (c) {

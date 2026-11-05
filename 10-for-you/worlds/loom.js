@@ -420,7 +420,7 @@ export default {
       } else if (L && L.rev) el('p', 'lm-woven', `On this tapestry: a crew of specialist agents and an ${L.revLabel}`, hd);
       const lk = el('p', 'lm-golinks', null, hd);
       if (w.url) ext(w.url, `Open ${w.host} ↗`, lk);
-      ext(`https://vamsivenkatesh.com/work/${w.slug}/`, 'Full case on vamsivenkatesh.com ↗', lk);
+      ext(`https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${w.slug}/`, 'Full case on vamsivenkatesh.com ↗', lk);
       return hd;
     }
     function pager(f, slug) {

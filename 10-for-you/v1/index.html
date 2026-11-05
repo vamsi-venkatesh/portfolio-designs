@@ -207,7 +207,7 @@ const $ = id => document.getElementById(id);
 const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
 const cards = new Map();
 WORK.forEach((w, i) => {
-  const a = el('a', 'w'); a.href = `https://vamsivenkatesh.com/work/${w.slug}/`; a.dataset.f = '';
+  const a = el('a', 'w'); a.href = `https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${w.slug}/`; a.dataset.f = '';
   const n = el('div', 'n'); n.append(el('span', null, String(i + 1).padStart(2, '0'))); const sw = el('s'); sw.style.background = w.color; n.append(sw);
   const num = el('p', 'num'); num.append(el('b'), el('span'));
   a.append(n, el('h3', null, w.name), el('p', 'k', w.kind), el('p', 'o', w.one), num);

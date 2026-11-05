@@ -580,7 +580,7 @@ export default {
         sec.appendChild(g);
       };
       const LINKS = (sec, arr) => { const u = el('ul', 'dz-links'); arr.forEach(([t, u2]) => { const li = el('li'); li.appendChild(ext(t + ' ↗', u2)); u.appendChild(li); }); sec.appendChild(u); };
-      const caseLink = ['Full case study on vamsivenkatesh.com', `https://vamsivenkatesh.com/work/${w.slug}/`];
+      const caseLink = ['Full case study on vamsivenkatesh.com', `https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${w.slug}/`];
       if (k) {
         sections.push({ label: 'Summary', heading: false, fill: (s) => {
           s.appendChild(el('p', 'dz-meta', [k.category, k.status, k.period].filter(Boolean).join(' · ')));

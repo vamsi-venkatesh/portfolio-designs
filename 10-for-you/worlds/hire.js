@@ -877,7 +877,7 @@ export default {
         return d;
       };
       const linksOf = (arr) => { const d = el('div', 'pg-links'); for (const l of arr) d.appendChild(mkA(l.url, l.label + ' ↗', 1, 'pg-ul')); return d; };
-      const caseLink = { label: 'The case on vamsivenkatesh.com', url: `https://vamsivenkatesh.com/work/${w.slug}/` };
+      const caseLink = { label: 'The case on vamsivenkatesh.com', url: `https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${w.slug}/` };
       const defs = {};
       if (c) {
         defs.summary = ['Summary', () => { const f = document.createDocumentFragment(); f.append(P_(c.summary)); if (c.period) f.append(P_(`${c.category} · ${c.status} · ${c.period}`, 'pg-trade')); return f; }];

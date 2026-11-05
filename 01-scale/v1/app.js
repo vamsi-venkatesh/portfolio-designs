@@ -11,7 +11,7 @@ const WORK=[
  ['pitchradar','PitchRadar','Event intelligence · client','Finds and ranks the events a mobile food vendor should trade at. Built for a client.','#F49A4B'],
  ['vvdex-trading','VVDex Trading','Market research','Live market microstructure beside a hash-chained record of every dated call. Paper only.','#63D2A3'],
 ];
-const workURL=s=>`https://vamsivenkatesh.com/work/${s}/`;
+const workURL=s=>`https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${s}/`;
 
 // ───────────────────────── utils ─────────────────────────
 const clamp=(x,a,b)=>x<a?a:x>b?b:x, lerp=(a,b,t)=>a+(b-a)*t;

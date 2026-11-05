@@ -535,7 +535,7 @@ export default {
         c.limits.forEach((x, j) => { const d = el('div', 'tl', null, lm); el('span', 'code', 'TOL-' + pad(j + 1), d); el('p', null, x, d); });
         withdrawnFor(w.slug).forEach(x => { const d = el('section', 'wdx', null, sin); sh(d, '§!', 'Withdrawn · ' + x.title); el('p', null, x.what, d); const a = el('a', 'lk', 'All withdrawn claims', d); a.href = '#withdrawn'; });
         const lk = el('section', null, null, sin); sh(lk, '§10', 'Ports', 'Where to check it yourself.');
-        linkList(lk, [...c.links.map(l => [l.label, l.url]), ['Case study', `https://vamsivenkatesh.com/work/${w.slug}/`]]);
+        linkList(lk, [...c.links.map(l => [l.label, l.url]), ['Case study', `https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${w.slug}/`]]);
       } else {
         const nums = (w.stage || w.numbers || []).map(([value, label]) => ({ value, label }));
         if (nums.length) readouts(sin, nums);
@@ -551,7 +551,7 @@ export default {
           const a = el('a', 'lk', 'All withdrawn claims', d); a.href = '#withdrawn';
         });
         const lk = el('section', null, null, sin); sh(lk, '§05', 'Ports', 'Where to check it yourself.');
-        linkList(lk, [...(w.links || []), ['Case study', `https://vamsivenkatesh.com/work/${w.slug}/`]]);
+        linkList(lk, [...(w.links || []), ['Case study', `https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${w.slug}/`]]);
       }
       prevNext(sin, i);
       return h2;

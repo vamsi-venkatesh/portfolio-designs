@@ -317,7 +317,7 @@ export default {
       const b = el('button', 'act', null, go); b.type = 'button';
       el('span', null, st.key === 'contact' ? 'Unfold and write' : 'Unfold the sheet', b); el('i', 'ar', '↘', b);
       on(b, 'click', () => openUI(i));
-      if (st.key === 'work') { const a = ext(el('a', 'sub', 'Case study', go)); a.href = `https://vamsivenkatesh.com/work/${st.slug}/`; }
+      if (st.key === 'work') { const a = ext(el('a', 'sub', 'Case study', go)); a.href = `https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${st.slug}/`; }
       if (st.key === 'contact') { const a = el('a', 'sub', 'Email', go); a.href = mailto(); }
     }
     function mailto() {
@@ -432,7 +432,7 @@ export default {
       const lm = el('ul', 'lim', null, sw); c.limits.forEach((x) => el('li', null, x, lm));
       withdrawnFor(w.slug).forEach((x) => { const d = el('div', 'wdx', null, sw); el('h4', null, `Withdrawn: ${x.title}`, d); el('p', null, x.what, d); const a = el('a', null, 'All withdrawn claims', d); a.href = '#withdrawn'; });
       const sl = section(); H2(sl, secNo(), 'Check it yourself');
-      links(sl, [...c.links.map((l) => [l.label, l.url]), ['Case study on vamsivenkatesh.com', `https://vamsivenkatesh.com/work/${w.slug}/`]]);
+      links(sl, [...c.links.map((l) => [l.label, l.url]), ['Case study on vamsivenkatesh.com', `https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${w.slug}/`]]);
       return h;
     }
     function smallCase(si) {
@@ -455,7 +455,7 @@ export default {
         const a = el('a', 'more', 'All withdrawn claims', d); a.href = '#withdrawn';
       });
       const sl = section(); H2(sl, secNo(), 'Check it yourself');
-      links(sl, [...(w.links || []), ['Case study on vamsivenkatesh.com', `https://vamsivenkatesh.com/work/${w.slug}/`]]);
+      links(sl, [...(w.links || []), ['Case study on vamsivenkatesh.com', `https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${w.slug}/`]]);
       return h;
     }
     function withdrawnFor(slug) { return withdrawn.filter((x) => (slug === 'vvdex-trading' && /70%/.test(x.title)) || (slug === 'vvdex-platform' && /exam lane/i.test(x.title))); }
