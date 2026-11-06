@@ -1,6 +1,6 @@
 # Portfolio designs
 
-Seventeen ways to present the same work: my live portfolio site, the one before it, a full multi-page site, an earlier board, and eleven interactive experiments in physics, light, sound and 3D. Every one is plain HTML, CSS and JavaScript (plus Three.js or raw WebGL where the design needs it), with no build step.
+Twenty-three ways to present the same work: my live portfolio site, nine earlier and alternative sites, eleven interactive experiments in physics, light, sound and 3D, a small paper-cut game, and a career template anyone can reuse. Every one is plain HTML, CSS and JavaScript (plus Three.js or raw WebGL where the design needs it), with no build step.
 
 **Open them live:** https://vamsi-venkatesh.github.io/portfolio-designs/
 
