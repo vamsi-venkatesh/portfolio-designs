@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Vamsi Venkatesh · AI systems & product engineer</title>
+<meta name="description" content="Vamsi Venkatesh designs and builds AI products end to end. Fly through eight of them, with real screens and live links.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="world.css?v=30">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vamsi Venkatesh · AI systems & product engineer">
+<meta property="og:description" content="I design and build AI products end to end. Fly through eight of them, with real screens and live links.">
+<meta property="og:image" content="https://vamsivenkatesh.com/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#050508">
+<script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js", "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/", "postprocessing": "https://cdn.jsdelivr.net/npm/postprocessing@6.39.5/build/index.js", "lenis": "https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.mjs", "detect-gpu": "https://cdn.jsdelivr.net/npm/detect-gpu@5.0.70/dist/detect-gpu.esm.js" } }</script>
+</head>
+<body>
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="flash" id="flash" aria-hidden="true"></div>
+<div class="veil" id="veil" aria-hidden="true"></div>
+<div class="cover" id="cover" aria-hidden="true"></div>
+
+<header class="top">
+  <a class="mark" href="#top">Vamsi Venkatesh</a>
+  <nav><a href="#world">Work</a><a href="#skills">Skills</a><a href="#process">How I work</a><button class="snd on" id="snd" type="button" aria-pressed="true" aria-label="Sound"><i></i><i></i><i></i><i></i><span>Sound on</span></button><a class="pill" href="mailto:vamsi@vamsivenkatesh.com">Contact</a></nav>
+</header>
+<div class="meter" aria-hidden="true"><i id="meter"></i></div>
+<nav class="stations" id="stations" aria-label="Products"></nav>
+
+<div class="intro" id="intro">
+  <h1 class="name"><span class="w1" id="nameA"></span> <span class="w2" id="nameB"></span><span class="caret" id="caret" aria-hidden="true"></span></h1>
+  <p class="role" id="role"></p>
+  <p class="lede" id="lede"></p>
+  <p class="load" id="load" aria-hidden="true">Loading the world <b id="loadpct">0%</b></p>
+  <p class="cue"><span class="cue-line"></span>Scroll to fly in</p>
+</div>
+
+<div class="panels" id="panels"></div>
+
+<main id="top">
+  <section class="world" id="world" aria-label="Products"></section>
+
+  <section class="skills" id="skills" aria-labelledby="sk-h">
+    <p class="sec-k">Skills</p>
+    <h2 id="sk-h">What I work with</h2>
+    <div class="sk-grid" id="sk-grid"></div>
+  </section>
+
+  <section class="process" id="process" aria-labelledby="pr-h">
+    <div class="pr-pin">
+      <div class="pr-head"><p class="sec-k">How I work</p><h2 id="pr-h">From a problem to a running product</h2></div>
+      <div class="pr-rail"><i id="pr-fill"></i><b id="pr-dot"></b></div>
+      <ol class="steps" id="steps"></ol>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <dl class="facts" id="facts"></dl>
+    <p class="sec-k">Contact</p>
+    <h2>Let's build something.</h2>
+    <a class="mail" id="mail"></a>
+    <p class="small">Open to AI engineering roles and client work.</p>
+  </section>
+</main>
+
+<script src="facts.js?v=1"></script>
+<script src="content.js?v=8"></script>
+<script type="module" src="world.js?v=35"></script>
+<noscript><style>.cover{display:none}.intro .lede{opacity:1}</style></noscript>
+</body>
+</html>

@@ -1,0 +1,302 @@
+@font-face{font-family:Space;src:url('assets/space-grotesk.woff2') format('woff2');font-display:swap}
+@font-face{font-family:Mono;src:url('assets/ibm-plex-mono.woff2') format('woff2');font-display:swap}
+:root{--paper:#f6efe1;--paper2:#efe6d4;--ink:#221f1c;--soft:#6d655b;--red:#d9503a;--mustard:#e6a52e;--green:#3f8a5f;--clay:#b7714a;
+  --mono:Mono,ui-monospace,SFMono-Regular,Menlo,monospace;--pop:cubic-bezier(.34,1.56,.64,1);--ease:cubic-bezier(.16,1,.3,1);
+  --camy:42%}
+*{box-sizing:border-box}
+html{background:var(--paper)}
+body{margin:0;color:var(--ink);font:16px/1.6 Space,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden;background:var(--paper)}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+
+.bar{position:fixed;top:0;left:0;right:0;z-index:20;display:flex;align-items:baseline;gap:18px;padding:14px clamp(18px,3vw,40px)}
+.bar .who{font-size:17px;font-weight:600;letter-spacing:-.02em}
+.bar .role{font:10.5px var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--soft)}
+.bar .back{margin-left:auto;font:10.5px var(--mono);letter-spacing:.13em;text-transform:uppercase;border-bottom:2px solid var(--red);padding-bottom:2px}
+.bar:hover .back{color:var(--red)}
+
+/* ---------- the stage: sky behind, a tilted paper board in front, haze over the distance ---------- */
+.stage{position:fixed;inset:0;overflow:hidden;z-index:1;background:var(--paper);contain:strict}
+.sky{position:absolute;inset:0;background:linear-gradient(#f9f3e6 0%, #f4ebd8 30%, #eee3cc 42%, #e9dfc9 100%)}
+.hills{position:absolute;left:-4%;width:108%;top:calc(var(--camy) - 15vh);height:16vh;display:block}
+.sky .sun{position:absolute;left:74%;top:10%;width:120px;height:120px;border-radius:50%;background:#f4c65e;border:4px solid var(--ink);
+  box-shadow:0 0 0 30px rgba(255,217,138,.35),0 0 0 70px rgba(255,217,138,.16)}
+.groundsvg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.world{position:absolute;inset:0;overflow:hidden}
+.bb{position:absolute;left:0;top:0;width:calc(var(--w) * 1px);will-change:transform,width;contain:layout style}
+.bb .art{display:block;width:100%;height:auto;overflow:visible}
+.haze{position:absolute;inset:0;pointer-events:none;background:linear-gradient(rgba(246,239,225,0) 34%, rgba(246,239,225,.92) 42%, rgba(246,239,225,.6) 47%, rgba(246,239,225,0) 58%)}
+body::after{content:"";position:fixed;inset:0;z-index:9;pointer-events:none;opacity:.5;mix-blend-mode:multiply;
+  background-image:radial-gradient(rgba(34,31,28,.055) 1px,transparent 1px),radial-gradient(rgba(34,31,28,.04) 1px,transparent 1px);
+  background-size:3px 3px,7px 7px;background-position:0 0,2px 3px}
+
+.lbl{font-family:Mono,monospace;font-size:13px;letter-spacing:.2em;fill:var(--ink);opacity:.5}
+.post{font-family:Mono,monospace;font-size:14px;letter-spacing:.14em;fill:var(--ink);font-weight:700}
+.signtext{font-family:Space,Arial,sans-serif;font-size:44px;font-weight:600;letter-spacing:.04em;fill:var(--ink)}
+.signsmall{font-family:Mono,monospace;font-size:12px;letter-spacing:.22em;fill:var(--ink);opacity:.6}
+.signmid{font-family:Mono,monospace;font-size:20px;letter-spacing:.2em;fill:#f6efe1;font-weight:700}
+.sealtext{font-family:Mono,monospace;font-size:14px;font-weight:700;fill:#f6efe1;letter-spacing:.06em}
+.stamp{font-family:Mono,monospace;font-size:15px;font-weight:700;fill:var(--red);letter-spacing:.24em}
+
+use.bot{--c:#4fe39c;--f:url(#gr);--legL:none;--legR:none;--armL:none;--armR:none;--bob:none;--armT:none;--headT:none}
+use.bot.r{--c:#ff9d4a;--f:url(#rd)}use.bot.y{--c:#ffd23d;--f:url(#gd)}
+#bot .torso,#bot .hand{fill:var(--f)}#bot .chest,#bot .eye,#bot .glow{fill:var(--c)}
+#bot .leg,#bot .arm{transform-box:fill-box;transform-origin:50% 0}
+#bot .head{transform-box:fill-box;transform-origin:50% 100%;transition:transform .4s var(--pop);transform:var(--headT)}
+#bot .leg-l{animation:var(--legL)}#bot .leg-r{animation:var(--legR)}
+#bot .arm-l{animation:var(--armL);transform:var(--armT)}#bot .arm-r{animation:var(--armR);transform:var(--armTr,var(--armT))}
+#bot .body{animation:var(--bob)}
+use.walk{--legL:legL .55s ease-in-out infinite;--legR:legR .55s ease-in-out infinite;--armL:legR .55s ease-in-out infinite;--armR:legL .55s ease-in-out infinite;--bob:bob .275s ease-in-out infinite alternate}
+@keyframes legL{0%,100%{transform:rotate(22deg)}50%{transform:rotate(-22deg)}}
+@keyframes legR{0%,100%{transform:rotate(-22deg)}50%{transform:rotate(22deg)}}
+@keyframes bob{from{transform:translateY(0)}to{transform:translateY(-4px)}}
+use.carry{--legL:legL .55s ease-in-out infinite;--legR:legR .55s ease-in-out infinite;--armT:rotate(-70deg);--bob:bob2 .275s ease-in-out infinite alternate}
+@keyframes bob2{from{transform:translateY(0)}to{transform:translateY(-2px)}}
+use.idle{--bob:idle 3.2s ease-in-out infinite alternate}
+@keyframes idle{from{transform:translateY(0)}to{transform:translateY(-5px)}}
+use.lookup{--headT:rotate(-6deg)}
+/* the welcome: right arm up and waving */
+use.wave{--armR:wave .55s ease-in-out infinite alternate;--armTr:rotate(-150deg);--headT:rotate(-5deg)}
+@keyframes wave{from{transform:rotate(-135deg)}to{transform:rotate(-170deg)}}
+.bb.crew .art > g{transform-box:fill-box;transform-origin:50% 100%}
+
+.smoke circle{transform-box:fill-box;transform-origin:center}
+.smoke .s1{animation:smoke 3.2s ease-out infinite}.smoke .s2{animation:smoke 3.2s ease-out infinite 1.05s}.smoke .s3{animation:smoke 3.2s ease-out infinite 2.1s}
+@keyframes smoke{0%{transform:translate(0,0) scale(.5);opacity:.8}100%{transform:translate(18px,-64px) scale(1.5);opacity:0}}
+.lamp{animation:lamp 2.4s ease-in-out infinite alternate}
+@keyframes lamp{from{opacity:.55}to{opacity:.9}}
+[data-sign]{transform-box:fill-box;transform-origin:50% 0}
+[data-sign].swing{animation:swing 4.5s ease-in-out infinite alternate}
+@keyframes swing{from{transform:rotate(-1.4deg)}to{transform:rotate(1.4deg)}}
+[data-sign].drop{animation:drop 1.1s cubic-bezier(.34,1.4,.5,1) forwards}
+@keyframes drop{0%{transform:translateY(-260px)}70%{transform:translateY(8px) rotate(3deg)}100%{transform:translateY(0) rotate(0)}}
+.hammer{transform-box:fill-box;transform-origin:50% 100%;animation:hammer 1.2s ease-in-out infinite}
+@keyframes hammer{0%,55%,100%{transform:rotate(0)}20%{transform:rotate(-58deg)}35%{transform:rotate(12deg)}}
+.stamphand{transform-box:fill-box;transform-origin:50% 100%;animation:stamphand 2.6s ease-in-out infinite}
+@keyframes stamphand{0%,70%,100%{transform:translateY(0)}78%{transform:translateY(-14px)}86%{transform:translateY(2px)}}
+.tick{stroke-dasharray:30;stroke-dashoffset:30;animation:tick 2.2s ease-out infinite}
+@keyframes tick{0%,30%{stroke-dashoffset:30}55%,100%{stroke-dashoffset:0}}
+.seal{transform-box:fill-box;transform-origin:center;animation:sealpulse 3.4s ease-in-out infinite}
+@keyframes sealpulse{0%,90%,100%{transform:scale(1)}94%{transform:scale(1.12)}}
+.flag{transform-box:fill-box;transform-origin:0 50%;animation:flag 1.8s ease-in-out infinite alternate}
+@keyframes flag{from{transform:skewY(-6deg)}to{transform:skewY(6deg)}}
+
+.sheet{position:fixed;inset:0;z-index:12;pointer-events:none}
+.sheet > *{pointer-events:auto;position:absolute}
+.words{left:clamp(18px,4vw,64px);top:8vh;width:min(430px,29vw);max-height:26vh;opacity:0;transform:translateY(12px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.words.in{opacity:1;transform:none}
+.words .eyebrow{margin:0 0 6px;font:11px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--soft)}
+.words h1{margin:0 0 8px;font-size:clamp(26px,2.5vw,36px);line-height:1.04;letter-spacing:-.035em;font-weight:600}
+.words .lede{margin:0;font-size:clamp(14px,1.05vw,15.5px);line-height:1.4;color:var(--ink)}
+.words .cue{margin:10px 0 0;padding-top:0;border-top:0;font:11.5px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink)}
+.key{display:inline-block;border:2.5px solid var(--ink);border-radius:5px;padding:1px 8px;margin:0 3px;color:var(--ink);background:#fff;box-shadow:2px 2px 0 rgba(34,31,28,.25)}
+.card{right:clamp(18px,4vw,64px);top:9vh;width:min(440px,36vw);background:#fbf8ef;border:3px solid var(--ink);border-radius:8px;padding:16px 18px;
+  box-shadow:8px 8px 0 rgba(34,31,28,.16);font-size:13.5px;line-height:1.45;opacity:0;transform:translateX(30px) rotate(.4deg);transition:opacity .6s var(--ease),transform .6s var(--pop)}
+.card.in{opacity:1;transform:rotate(-.4deg)}
+.card:not(.in){pointer-events:none}
+.card .serial{position:absolute;top:-12px;left:16px;background:#fbf8ef;padding:0 8px;font:10px var(--mono);letter-spacing:.2em;color:var(--soft)}
+.card .shot{border:2.5px solid var(--ink);border-radius:5px;overflow:hidden;aspect-ratio:16/8;background:var(--paper2)}
+.card .shot img{display:block;width:100%;height:100%;object-fit:cover;object-position:top left}
+.card .head{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
+.card h2{margin:0;font-size:24px;letter-spacing:-.03em;font-weight:600}
+.pin{font:11px var(--mono);letter-spacing:.16em;text-transform:uppercase;border:2.5px solid var(--green);color:var(--green);border-radius:4px;padding:2px 8px;transform:rotate(-3deg)}
+.card .sub{margin:6px 0 8px;color:var(--soft)}
+.card .parts{margin:0;padding:0;list-style:none}
+.card .parts li{position:relative;padding-left:22px;margin:2px 0}
+.card .parts li::before{content:"";position:absolute;left:0;top:.5em;width:10px;height:6px;border-left:3px solid var(--green);border-bottom:3px solid var(--green);transform:rotate(-45deg)}
+.card .fail{margin:8px 0 0;padding:4px 10px;border-left:3px solid var(--red);color:var(--soft);font-size:.94em}
+.card .fail b{color:var(--red);font-weight:600}
+.card .nums{display:flex;gap:26px;margin-top:10px;padding-top:8px;border-top:2px dashed rgba(34,31,28,.25)}
+.card .nums b{display:block;font-size:26px;line-height:1;letter-spacing:-.03em;font-weight:600}
+.card .nums span{font:10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.card .link{display:inline-block;margin-top:10px;font:11px var(--mono);letter-spacing:.14em;text-transform:uppercase;border-bottom:2px solid var(--mustard);padding-bottom:2px}
+.card .link:hover{color:var(--clay);border-color:var(--clay)}
+
+.arrow{position:fixed;top:50%;z-index:15;width:56px;height:56px;margin-top:-28px;border-radius:50%;background:#fbf8ef;border:3px solid var(--ink);
+  font-size:30px;line-height:1;box-shadow:4px 4px 0 rgba(34,31,28,.2);transition:transform .2s var(--pop),opacity .4s;display:grid;place-items:center;padding-bottom:4px}
+.arrow:hover{transform:scale(1.08)}.arrow:active{transform:scale(.94)}
+.arrow.left{left:18px}.arrow.right{right:18px}
+.arrow[disabled]{opacity:.25;pointer-events:none}
+.trail{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:15;display:flex;align-items:flex-start;padding:10px 18px 4px;background:rgba(251,248,239,.92);border:2.5px solid var(--ink);border-radius:999px;box-shadow:4px 4px 0 rgba(34,31,28,.16)}
+.trail-line{position:absolute;left:34px;right:34px;top:20px;height:3px;background:rgba(34,31,28,.16);border-radius:2px}
+.trail-line i{display:block;height:100%;width:0;background:var(--red);border-radius:2px;transition:width .3s var(--ease)}
+.trail button{position:relative;display:flex;flex-direction:column;align-items:center;gap:4px;width:58px;padding:0}
+.trail button b{width:14px;height:14px;border-radius:50%;border:3px solid var(--ink);background:#fbf8ef;transition:transform .25s var(--pop),background .25s}
+.trail button.on b{background:var(--red);transform:scale(1.25)}
+.trail button em{font:9px var(--mono);font-style:normal;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);white-space:nowrap}
+.trail button[disabled]{cursor:default}.trail button[disabled] b{border-style:dashed;border-color:rgba(34,31,28,.35)}
+.trail button[disabled] em{opacity:.45}
+.skip{position:fixed;right:24px;bottom:22px;z-index:16;font:10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--soft);border-bottom:2px solid rgba(34,31,28,.25);padding-bottom:2px;opacity:0;transition:opacity .4s;pointer-events:none}
+.skip.show{opacity:1;pointer-events:auto}.skip:hover{color:var(--red);border-color:var(--red)}
+.track{position:relative;z-index:0;width:1px;pointer-events:none}
+.arrow,.trail,.bar{transition:opacity .6s}
+body.descending .arrow,body.descending .trail,body.descending .bar{opacity:0;pointer-events:none}
+
+.arrow{top:auto;bottom:18px;margin-top:0}
+@media (max-width:900px){
+  :root{--persp:700px;--camy:44%}
+  .bb.gone{display:none}
+  .trail button{width:44px}.trail button em{display:none}
+  .arrow{width:46px;height:46px;margin-top:0;top:auto;bottom:74px;font-size:24px}
+  .words{left:14px;right:14px;top:60px;width:auto;max-height:none}
+  .words h1{font-size:28px}.words .lede{font-size:14.5px}
+  .card{left:12px;right:12px;top:auto;bottom:66px;width:auto;max-height:36vh;overflow:auto;font-size:12px;padding:10px 12px 12px}
+  .card .shot{display:none}.card .sub{margin:4px 0 6px}
+  .arrow{bottom:72px}
+  .card .shot{aspect-ratio:16/6}.card h2{font-size:19px}.card .nums b{font-size:20px}
+  .bar .role{display:none}
+  .sky .sun{width:72px;height:72px;left:80%;top:5%;box-shadow:0 0 0 18px rgba(255,217,138,.35),0 0 0 40px rgba(255,217,138,.16)}
+  .words{right:24%}
+  .arrow{bottom:96px}
+  .trail{padding:8px 8px 2px}
+  .trail button{width:31px}
+  .trail-line{left:24px;right:24px}
+  .card{max-height:38vh}
+  .words{top:56px}
+  .words h1{font-size:24px;margin-bottom:4px}
+  .words .lede{font-size:13.5px;line-height:1.35}
+  .words .cue{margin-top:6px;font-size:10.5px}
+  .words .eyebrow{margin-bottom:4px;font-size:10px}
+}
+@media (prefers-reduced-motion:reduce){
+  .stage::after{transition:none;opacity:0}
+  .words,.card{transition:none}
+  use.bot{--legL:none;--legR:none;--armL:none;--armR:none;--bob:none}
+  .smoke circle,.lamp,.hammer,.stamphand,.tick,.seal,.flag,[data-sign].swing,[data-sign].drop,.cloud{animation:none}
+}
+
+.ground .plans{opacity:0}
+
+/* cards can sit on either side of the road */
+.card[data-side="left"]{right:auto;left:clamp(18px,4vw,64px)}
+.noendpoint{display:inline-block;margin-top:10px;font:11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--soft)}
+.pin[data-s="research"]{border-color:var(--clay);color:var(--clay)}
+.pin[data-s="building"]{border-color:var(--clay);color:var(--clay);border-style:dashed}
+.pin[data-s="private"]{border-color:var(--soft);color:var(--soft)}
+.wheel{transform-box:fill-box;transform-origin:center;animation:spin 7s linear infinite}
+.mach{width:100%}.mach .machine{display:block;width:100%;height:auto;overflow:visible}
+/* ---- the machine at the workshop: its own motion rules, scoped ---- */
+.mach .lbl{font-size:13.5px}.mach .plate{font-family:Mono,monospace;font-size:13px;letter-spacing:.18em;fill:#f6efe1;opacity:.75}
+.mach .passtext{font-family:Mono,monospace;font-size:13px;letter-spacing:.11em;fill:var(--green);font-weight:700}
+.mach .brieftag{font-family:Mono,monospace;font-size:15px;letter-spacing:.17em;fill:var(--ink);opacity:.72;font-weight:700}
+.mach .chip rect{fill:#fbf8ef;stroke:#221f1c;stroke-width:3.5}.mach .chip text{font-family:Mono,monospace;font-size:14px;fill:#221f1c}
+.mach .chip{opacity:0;transform-box:view-box;transform-origin:center}.mach .chip.in{animation:chipin 2.1s var(--ease) forwards}
+@keyframes chipin{0%{opacity:0;transform:translateY(10px) scale(.85)}14%{opacity:1;transform:translateY(0) scale(1)}72%{opacity:1;transform:translateY(-6px)}100%{opacity:0;transform:translateY(-22px)}}
+.mach .stamptext{font-family:Mono,monospace;font-size:14px;letter-spacing:.09em;fill:var(--red);font-weight:700}
+.mach .heldtext{font-family:Mono,monospace;font-size:15px;letter-spacing:.14em;fill:var(--clay);font-weight:700}
+.mach .yestext{font-family:Mono,monospace;font-size:17px;letter-spacing:.16em;fill:var(--green);font-weight:700}
+.lever{cursor:pointer}
+.lever .arm{transform-origin:40px 400px;transition:transform .2s var(--pop)}
+.lever.down .arm{transform:rotate(36deg)}
+.lever:hover .arm{transform:rotate(-4deg)}
+.lever.down:hover .arm{transform:rotate(36deg)}
+
+.spoke,.gear,[data-needle],[data-needle2]{transform-box:fill-box;transform-origin:center}
+.machine.run .spoke{animation:spin 1.05s linear infinite}
+.machine.run .gear{animation:spin 3.6s linear infinite}
+.machine.run .gear-b{animation:spin 2.2s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+[data-tread]{transition:none}
+.machine.run [data-tread]{animation:tread .55s linear infinite}
+@keyframes tread{to{transform:translateX(40px)}}
+[data-needle]{transition:transform .5s var(--pop)}
+.machine.run [data-needle]{transform:rotate(64deg)}
+[data-needle].kick{transform:rotate(112deg)}
+[data-needle2]{transition:transform .6s var(--ease)}
+.machine.run [data-needle2]{transform:rotate(-38deg)}
+
+/* the little robots */
+.agent{transform-box:fill-box;transform-origin:center bottom}
+.agent .arm-l,.agent .arm-r{transform-box:fill-box;transform-origin:top center;transition:transform .28s var(--pop)}
+.agent .head{transform-box:fill-box;transform-origin:center bottom;transition:transform .3s var(--pop)}
+.agent .chest{transition:fill .3s,r .3s}
+.agent{animation:idle 3.4s ease-in-out infinite alternate}
+@keyframes idle{from{transform:translateY(0)}to{transform:translateY(-3px)}}
+.agent.busy{animation:work .5s ease-in-out infinite alternate}
+@keyframes work{from{transform:translateY(2px) rotate(-1.3deg)}to{transform:translateY(-7px) rotate(1.3deg)}}
+.agent.busy .arm-r{transform:rotate(44deg)}
+.agent.busy .arm-l{transform:rotate(-20deg)}
+.agent.busy .head{transform:rotate(6deg) translateY(3px)}
+.agent.busy .chest{fill:#fff}
+.agent:not(.on) .chest{fill:#6f675d}
+.agent:not(.on) .eye{fill:#6f675d}
+.agent:not(.on) .glow{opacity:0}
+.agent .eye,.agent .chest{transition:fill .5s ease}
+.agent .glow{transition:opacity .5s ease}
+.agent.peek .head{transform:rotate(-10deg) translateX(-3px)}
+.agent.peek2 .head{transform:rotate(9deg) translateX(3px)}
+.agent.shrug{animation:shrug 1s var(--pop)}
+@keyframes shrug{0%,100%{transform:translateY(0)}45%{transform:translateY(-7px)}}
+.agent.shrug .arm-l{transform:rotate(-44deg)}
+.agent.shrug .arm-r{transform:rotate(42deg)}
+.agent.flinch{animation:flinch .42s var(--pop)}
+@keyframes flinch{0%{transform:translateY(0)}30%{transform:translateY(-14px) rotate(-6deg)}100%{transform:translateY(0)}}
+.agent.cheer{animation:cheer .7s var(--pop)}
+@keyframes cheer{0%{transform:translateY(0)}35%{transform:translateY(-22px) scale(1.05)}70%{transform:translateY(-4px)}100%{transform:translateY(0)}}
+.agent.cheer .arm-l{transform:rotate(-72deg)}
+.agent.cheer .arm-r{transform:rotate(70deg)}
+
+[data-stamp]{transform-box:fill-box;transform-origin:center top;transition:transform .14s var(--pop)}
+[data-stamp].slam{transform:translateY(58px)}
+[data-lamp] .bulb{transition:fill .18s,filter .18s}
+[data-lamp].hot .bulb{fill:#ff6a4a;filter:drop-shadow(0 0 14px rgba(255,106,74,.9))}
+[data-bell]{transform-box:fill-box;transform-origin:center top}
+[data-bell].ring{animation:ring .72s ease-in-out}
+@keyframes ring{0%,100%{transform:rotate(0)}18%{transform:rotate(15deg)}42%{transform:rotate(-12deg)}68%{transform:rotate(7deg)}86%{transform:rotate(-4deg)}}
+[data-bell] .clapper{transform-box:fill-box;transform-origin:center -60px}
+[data-bell].ring .clapper{animation:clap .72s ease-in-out}
+@keyframes clap{0%,100%{transform:translateX(0)}20%{transform:translateX(11px)}50%{transform:translateX(-9px)}75%{transform:translateX(5px)}}
+[data-human]{transform-box:fill-box;transform-origin:center bottom}
+[data-human].look{animation:look .8s var(--ease)}
+@keyframes look{0%,100%{transform:translateX(0)}40%{transform:translateX(-9px) rotate(-3deg)}}
+[data-human].nod{animation:nod .7s var(--pop)}
+@keyframes nod{0%,100%{transform:translateY(0)}30%{transform:translateY(12px) rotate(5deg)}62%{transform:translateY(-4px) rotate(-2deg)}}
+[data-human] .mug{transform-box:fill-box;transform-origin:left center;transition:transform .35s var(--pop)}
+[data-human].sip .mug{transform:translate(-22px,-20px) rotate(-26deg)}
+[data-yes]{transform-box:fill-box;transform-origin:center;transition:opacity .2s}
+[data-held]{transform-box:fill-box;transform-origin:center}
+[data-held].on{animation:slamin .5s var(--pop) forwards}
+[data-human].hold{animation:hold .9s var(--ease)}
+@keyframes hold{0%,100%{transform:translateY(0) rotate(0)}35%{transform:translateY(-5px) rotate(-5deg)}70%{transform:translateY(-2px) rotate(4deg)}}
+[data-yes].on{animation:slamin .5s var(--pop) forwards}
+@keyframes slamin{0%{opacity:0;transform:scale(2.2) rotate(-14deg)}60%{opacity:1;transform:scale(.94) rotate(-6deg)}100%{opacity:1;transform:scale(1) rotate(-7deg)}}
+[data-steam]{transform-box:fill-box;transform-origin:center bottom;animation:steam 3.6s ease-in-out infinite}
+@keyframes steam{0%{opacity:0;transform:translateY(6px) scaleY(.7)}40%{opacity:.6}100%{opacity:0;transform:translateY(-16px) scaleY(1.15)}}
+.machine.recycling [data-loop]{opacity:.95;animation:crawl .9s linear infinite}
+@keyframes crawl{to{stroke-dashoffset:-60}}
+[data-brief]{transform-box:view-box}
+[data-brief-in]{transform-box:fill-box;transform-origin:center}
+.machine.shake{animation:shake .34s ease-in-out}
+@keyframes shake{0%,100%{transform:translate(0,0)}25%{transform:translate(-3px,2px)}50%{transform:translate(3px,-2px)}75%{transform:translate(-2px,-1px)}}
+
+.controls{display:flex;flex-wrap:wrap;align-items:center;gap:20px;margin-top:14px}
+.pull{position:relative;background:var(--red);color:var(--paper);font-weight:600;font-size:17px;letter-spacing:-.01em;
+  padding:15px 28px;border-radius:999px;box-shadow:0 5px 0 #a63a28,0 14px 26px rgba(34,31,28,.2);transition:transform .12s var(--pop),box-shadow .12s}
+/* ---- agent jobs: arms and head driven through the <use> variables ---- */
+use.work{--armL:workL .5s ease-in-out infinite alternate;--armR:workR .5s ease-in-out infinite alternate;--headT:rotate(6deg);--bob:bob2 .25s ease-in-out infinite alternate}
+@keyframes workL{from{transform:rotate(-30deg)}to{transform:rotate(-70deg)}}
+@keyframes workR{from{transform:rotate(-70deg)}to{transform:rotate(-30deg)}}
+use.point{--armTr:rotate(-100deg);--headT:rotate(-4deg)}
+use.read{--armT:rotate(-60deg);--headT:rotate(9deg)}
+use.shrug{--armT:rotate(-46deg);--bob:idle 1s var(--pop)}
+use.cheer{--armT:rotate(-160deg);--bob:cheerb .7s var(--pop)}
+@keyframes cheerb{0%,100%{transform:translateY(0)}35%{transform:translateY(-22px)}70%{transform:translateY(-4px)}}
+/* ---- stop actions ---- */
+.glass{transform-box:fill-box;transform-origin:50% 100%;animation:scan 5s ease-in-out infinite alternate}
+@keyframes scan{from{transform:rotate(-24deg)}to{transform:rotate(18deg)}}
+.psheet{opacity:0}.psheet.go{animation:sheetfly 1.6s var(--ease) forwards}
+@keyframes sheetfly{0%{opacity:0;transform:translate(0,0) rotate(0)}15%{opacity:1}100%{opacity:0;transform:translate(-210px,120px) rotate(-30deg)}}
+.letter{opacity:0}.letter.go{animation:letterdrop 1.3s cubic-bezier(.5,0,.6,1) forwards}
+@keyframes letterdrop{0%{opacity:0;transform:translate(0,0) rotate(0)}12%{opacity:1}100%{opacity:0;transform:translate(150px,130px) rotate(40deg)}}
+.book{transform-box:fill-box;transform-origin:50% 100%}.book.go{animation:flip .9s var(--pop)}
+@keyframes flip{0%,100%{transform:scaleX(1)}50%{transform:scaleX(-.2)}}
+/* ---- the card is pinned to its building by a thread ---- */
+.card{transition:opacity .45s var(--ease)}
+.card.in{transform:none}
+.card:not(.in){transform:none}
+.thread{position:fixed;inset:0;z-index:11;pointer-events:none;width:100%;height:100%}
+.thread path{fill:none;stroke:var(--ink);stroke-width:2.5;stroke-dasharray:6 5;opacity:0;transition:opacity .45s}
+.thread circle{fill:var(--red);stroke:var(--ink);stroke-width:2.5;opacity:0;transition:opacity .45s}
+.thread.on path,.thread.on circle{opacity:1}
+/* arrows live at the bottom corners, not beside the buildings */
+@media (max-width:900px){.card[data-side="left"]{left:12px;right:12px}.trail{bottom:10px;padding:8px 10px 2px}}

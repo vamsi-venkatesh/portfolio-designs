@@ -1,0 +1,13 @@
+const answers = {
+  'what is vamsi’s main shipped product':'UnboundPDF is the clearest primary shipped proof: 43 public browser PDF tools, live since 15 July 2026, with no upload, account or watermark. Files are processed locally on the user’s device.',
+  'give me the 10-second recruiter summary':'Vamsi is an AI Product Builder who ships the entire system around a model: product, owned data, agent tools, evaluation, deployment and real operational workflows. UnboundPDF is the main public utility; Conxto is the flagship AI system.',
+  'how does unboundpdf protect files':'The browser performs the PDF work on the user’s device. The file is selected locally, processed locally and downloaded locally—it is not uploaded to a server for the core workflow.',
+  'what has vamsi actually shipped':'UnboundPDF, Conxto, the public Agent Services Lab, VVDexOps and FarmQuick are the clearest shipped or operational products. VVDex Studio, Eval Hub and the AI Operating System are private operational infrastructure; Conxfolio, Sara and MIRA carry explicit product-preview, R&D or private boundaries.',
+  'how do agent services work':'An authored contract becomes an executable graph, runs through clean and failure paths, receives an independent check, pauses at action-specific human gates and seals evidence. The public Lab proves the base workflow; private Studio owns operational control.',
+  'what’s his tech stack':'TypeScript, React, Next.js, Vite, Fastify, Node.js, Python, PostgreSQL, Drizzle, pgvector, TimescaleDB, Redis, Cloudflare, Linux/systemd, Playwright/CDP, Whisper, Piper and MLX LoRA—selected per product.'
+};
+const chat=document.querySelector('#chat');const chips=document.querySelector('#chips');const form=document.querySelector('#composer');const input=document.querySelector('#question');
+function add(role,text){const node=document.createElement('div');node.className=`msg ${role}`;node.textContent=text;chat.append(node);node.scrollIntoView({behavior:'smooth',block:'nearest'})}
+function normalize(text){return text.toLowerCase().replace(/[?.!]/g,'').trim()}
+function ask(text){if(!text)return;add('you',text);const answer=answers[normalize(text)]||'This evidence guide answers the prepared questions only. For a custom answer, email vamsi@vamsivenkatesh.com.';setTimeout(()=>add('ai',answer),160);input.value=''}
+chips.addEventListener('click',event=>{const button=event.target.closest('button');if(button)ask(button.textContent.trim())});form.addEventListener('submit',event=>{event.preventDefault();ask(input.value.trim())});add('ai','Ask me what shipped, how it works, what Vamsi owned, or where the evidence stops.');

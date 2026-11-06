@@ -27,6 +27,12 @@ Seventeen ways to present the same work: my live portfolio site, the one before 
 | `11-light` | Hold it to the light | Sunlight through a pane of glass writes each of the nine products on the wall; move the cursor and the sun turns | Three.js, WebGL | [open](https://vamsi-venkatesh.github.io/portfolio-designs/11-light/) |
 | `original-site` | The Operations Deck | My first live site (Aug 2026): walk the stations, type commands in a terminal; every number dated. Ask my AI is off in this copy (it needs its server) | Three.js, terminal UI | [open](https://vamsi-venkatesh.github.io/portfolio-designs/original-site/) |
 | `desk` | The Paper Town | A paper-cut town; each product is a building with its own world inside, plus a desk diorama | Paper-cut layers, Canvas | [open](https://vamsi-venkatesh.github.io/portfolio-designs/desk/) |
+| `desk/desk.html` | The Desk diorama | The Paper Town as one desk: every product is an object on it | Paper-cut layers, Canvas | [open](https://vamsi-venkatesh.github.io/portfolio-designs/desk/desk.html) |
+| `ink-paper` | Ink and Paper | A dark editorial site with a case page per product, plus about, now, writing and ask pages | Three.js, editorial layout | [open](https://vamsi-venkatesh.github.io/portfolio-designs/ink-paper/#work) |
+| `yard-tour` | The Yard tour | Through the gate into the yard where the agents build; each product is a building on the road | Illustrated scenes, scroll | [open](https://vamsi-venkatesh.github.io/portfolio-designs/yard-tour/) |
+| `cinematic-world` | Cinematic world | Fly through eight products as one world, with real screens and live links | Canvas, scroll camera, Web Audio | [open](https://vamsi-venkatesh.github.io/portfolio-designs/cinematic-world/) |
+| `checkpoint` | The Checkpoint | A tiny paper-cut game from the Red Dot site: take a product through Design, Build, Run, Check and Ship | GSAP, cut-paper SVG | [open](https://vamsi-venkatesh.github.io/portfolio-designs/checkpoint/) |
+| `paper-town-career` | Paper Town, career template | The Paper Town as a template for anyone; shown with a made-up example person | Paper-cut layers, data-driven | [open](https://vamsi-venkatesh.github.io/portfolio-designs/paper-town-career/) |
 
 ## Download one
 

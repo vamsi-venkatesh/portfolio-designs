@@ -1,0 +1,23 @@
+.spoke,.gear,[data-needle],[data-needle2]{transform-box:fill-box;transform-origin:center}
+.machine.run .spoke{animation:spin 1.05s linear infinite}
+.machine.run .gear{animation:spin 3.6s linear infinite}
+.machine.run .gear-b{animation:spin 2.2s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+[data-tread]{transition:none}
+.machine.run [data-tread]{animation:tread .55s linear infinite}
+@keyframes tread{to{transform:translateX(40px)}}
+.agent{transform-box:fill-box;transform-origin:center bottom}
+.agent .arm-l,.agent .arm-r{transform-box:fill-box;transform-origin:top center;transition:transform .28s var(--pop)}
+.agent .head{transform-box:fill-box;transform-origin:center bottom;transition:transform .3s var(--pop)}
+.agent{animation:idle 3.4s ease-in-out infinite alternate}
+@keyframes idle{from{transform:translateY(0)}to{transform:translateY(-3px)}}
+.lever .arm{transform-origin:40px 400px;transition:transform .2s var(--pop)}
+.lbl{font-size:16px;letter-spacing:.14em}
+.plate{font-size:15px}
+.passtext{font-family:Mono,monospace;font-size:13px;letter-spacing:.11em;fill:var(--green);font-weight:700}
+.brieftag{font-family:Mono,monospace;font-size:15px;letter-spacing:.17em;fill:var(--ink);opacity:.72;font-weight:700}
+.chip rect{fill:#fbf8ef;stroke:#221f1c;stroke-width:3.5}
+.chip text{font-family:Mono,monospace;font-size:14px;letter-spacing:.03em;fill:#221f1c}
+.stamptext{font-family:Mono,monospace;font-size:14px;letter-spacing:.09em;fill:var(--red);font-weight:700}
+.heldtext{font-family:Mono,monospace;font-size:15px;letter-spacing:.14em;fill:var(--clay);font-weight:700}
+.yestext{font-family:Mono,monospace;font-size:17px;letter-spacing:.16em;fill:var(--green);font-weight:700}

@@ -1,0 +1,56 @@
+/* THE FLEX LAWS — one standard for all twenty career designs.
+   SPEC-7 §B, 2026-09-11. Founder: "we need standard and flexible processing not
+   fixed and bug."
+
+   Linked LAST in every active design's <head>, so it sits after the design's own
+   stylesheet and before the engine's theme block. It carries only the rules that
+   are true for every design; anything a design needs on its own lives in that
+   design's own CSS under a "FLEX LAWS" comment.
+
+   Nothing here changes a design's art direction: no colour, no type face, no
+   spacing scale. It only stops real content from being cut, squeezed or pushed
+   off the page when a résumé is longer than the authored specimen.
+*/
+
+/* LAW 4 · The page is never wider than the viewport.
+   `clip`, never `hidden`: an overflow of `clip` on one axis leaves the other axis
+   `visible`, so nothing becomes a scroll container and every position:sticky
+   header, rail and progress bar in this library keeps working. */
+html,
+body {
+  overflow-x: clip;
+}
+
+/* LAW 3 · Long lines wrap.
+   A grid or flex child's automatic minimum size is the width of its longest word,
+   which is how one 38-character surname pushes a whole row past the viewport.
+   `:where()` holds this at zero specificity, so a design that deliberately sets
+   its own min-width (a horizontal rail's `min-width:100vw`, a fixed column) still
+   wins on the cascade.
+
+   Only containers that hold wrapping text are listed. A link, a button or a chip
+   must keep `min-width:auto`: given zero, a nav row in a tight flex container
+   squeezes its links to 7px and cuts the word inside — measured on Planum Noir
+   and Control Room Corridor at 390 before this list was narrowed. */
+:where(div, section, article, main, header, footer, aside, figure, figcaption,
+  p, li, ul, ol, dl, dd, dt, h1, h2, h3, h4, h5, h6, blockquote, table, td, th,
+  strong, b, em, i, time, code) {
+  min-width: 0;
+}
+
+/* LAW 4 · A flex or grid child in an `align-items: center` column is sized to its
+   own content, not to the column: Studio Quiet Builder's hero name was 426px wide
+   inside a 390px phone because the h1 shrink-to-fit around one 27-character word
+   and never got the chance to break it. A block of content is never wider than the
+   space it is given. */
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl, blockquote, figure, table, img, pre) {
+  max-width: 100%;
+}
+
+/* LAW 3 · A word that cannot fit on a line of its own breaks instead of
+   overflowing — a 66-character e-mail address, a hyphenated double surname, a URL.
+   `break-word` breaks ONLY such a word; ordinary prose is untouched. */
+:where(p, li, h1, h2, h3, h4, h5, h6, dd, dt, td, th, blockquote, figcaption,
+  address, a, span, small, strong, em, b, i, time, label, summary, div) {
+  overflow-wrap: break-word;
+}

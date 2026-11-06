@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A career portfolio as one paper-cut town: the person's house at one end, every project a building on the same road, the record on paper below.">
+<meta name="theme-color" content="#141a2c">
+<title>Paper Town · Career Portfolio</title>
+<link rel="preload" href="fonts/fraunces-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="paper.css?v=1">
+<link rel="stylesheet" href="town.css?v=1">
+<!-- SPEC-7 §B — the shared flex laws, last in the head so they follow this design's own CSS. -->
+<link rel="stylesheet" href="_flex-laws.css?v=1">
+</head>
+<body>
+<a class="skip" href="#record">Skip to the record</a>
+<main>
+  <div class="stage" id="stage">
+    <div class="pan" id="pan" tabindex="0" aria-label="The town. Drag, swipe or use the arrow keys to walk along it.">
+      <div class="pan-inner" id="pan-inner">
+        <svg id="town" viewBox="0 0 2000 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A paper-cut town: a house at night at one end, a building for each project along one road and one river, dawn at the far end.">
+          <defs>
+            <linearGradient id="skyTime" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#101a36"/><stop offset=".2" stop-color="#34467c"/><stop offset=".42" stop-color="#8ec7e0"/><stop offset=".64" stop-color="#b9d9e3"/><stop offset=".84" stop-color="#f7dcb4"/><stop offset="1" stop-color="#f4c089"/></linearGradient>
+            <linearGradient id="farTime" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#26335a"/><stop offset=".3" stop-color="#6d86a0"/><stop offset=".5" stop-color="#b9cfc0"/><stop offset="1" stop-color="#d4e2c4"/></linearGradient>
+            <linearGradient id="midTime" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2b3a52"/><stop offset=".3" stop-color="#7f9a7a"/><stop offset=".6" stop-color="#9fbe84"/><stop offset="1" stop-color="#a9c98e"/></linearGradient>
+            <linearGradient id="nearTime" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1c2a3e"/><stop offset=".3" stop-color="#55704c"/><stop offset="1" stop-color="#6f9a55"/></linearGradient>
+          </defs>
+        </svg>
+        <!-- The name hangs over the house like a museum plate. Printed by town.js from PORTFOLIO_DATA. -->
+        <header class="plaque" id="plaque" hidden>
+          <p class="specimen" id="p-spec">Example portfolio</p>
+          <p class="p-kick" id="p-kick"></p>
+          <h1 id="p-name"></h1>
+          <p class="p-sub" id="p-sub"></p>
+          <p class="p-acts" id="p-acts"></p>
+        </header>
+      </div>
+    </div>
+    <div class="torch" id="torch" aria-hidden="true"></div>
+    <div class="grain" id="grain" aria-hidden="true"></div>
+    <div class="frame" aria-hidden="true"></div>
+    <nav class="corner" id="corner" aria-label="Views">
+      <a href="desk.html" data-keep-query>The desk →</a>
+    </nav>
+    <nav class="index" id="index" aria-label="The buildings" hidden></nav>
+    <p class="walk" aria-hidden="true">← drag to walk the town →</p>
+    <div class="sheet" id="sheet" hidden aria-hidden="true">
+      <svg id="sheet-svg" preserveAspectRatio="none"></svg>
+      <div class="sheet-name"><p class="big" id="sheet-name"></p><p class="sub" id="sheet-sub"></p></div>
+    </div>
+  </div>
+  <div class="record" id="record">
+    <div class="grain" id="r-grain" aria-hidden="true"></div>
+  </div>
+  <footer class="foot"><a href="desk.html" data-keep-query>See the same record as a desk →</a></footer>
+</main>
+<!-- ?data=sparse swaps in the sparse specimen (the same object as ../specimen-sparse.js): a name and a headline only. -->
+<script>if (new URLSearchParams(location.search).get("data") === "sparse") window.CONXFOLIO_RESUME = { profile: { name: "Sam Lee", headline: "Product designer" }, experience: [], projects: [] };</script>
+<script src="portfolio-data.js?v=1"></script>
+<script src="shared-resume-adapter.js?v=3" data-conxfolio-target="PORTFOLIO_DATA"></script>
+<script src="kit.js?v=1"></script>
+<script src="town.js?v=1"></script>
+</body>
+</html>

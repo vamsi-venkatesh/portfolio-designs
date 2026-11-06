@@ -1,0 +1,267 @@
+<svg class="machine run" viewBox="0 0 1400 660">
+      <defs>
+        <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ddd5c3"/><stop offset=".5" stop-color="#b9b0a0"/><stop offset="1" stop-color="#948b7c"/></linearGradient>
+        <linearGradient id="brass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8c98a"/><stop offset=".5" stop-color="#c69a4e"/><stop offset="1" stop-color="#8f6c2e"/></linearGradient>
+        <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4c65e"/><stop offset=".5" stop-color="#e6a52e"/><stop offset="1" stop-color="#c0821b"/></linearGradient>
+        <linearGradient id="red" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9694f"/><stop offset=".5" stop-color="#d9503a"/><stop offset="1" stop-color="#ad3826"/></linearGradient>
+        <linearGradient id="green" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#55a675"/><stop offset=".5" stop-color="#3f8a5f"/><stop offset="1" stop-color="#2b6745"/></linearGradient>
+        <linearGradient id="clay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cd8a5f"/><stop offset=".5" stop-color="#b7714a"/><stop offset="1" stop-color="#8c5334"/></linearGradient>
+        <linearGradient id="beltg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4b453f"/><stop offset=".35" stop-color="#2e2a26"/><stop offset="1" stop-color="#1d1a17"/></linearGradient>
+        <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".5"/><stop offset=".5" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#fff" stop-opacity=".28"/></linearGradient>
+        <radialGradient id="warm"><stop offset="0" stop-color="#ffd98a" stop-opacity=".9"/><stop offset="1" stop-color="#ffd98a" stop-opacity="0"/></radialGradient>
+        <pattern id="hatch" width="9" height="9" patternTransform="rotate(38)" patternUnits="userSpaceOnUse"><path d="M0 0 v9" stroke="#221f1c" stroke-width="2.4" opacity=".13"/></pattern>
+        <clipPath id="hopclip"><path d="M196 148 L404 148 L368 268 L232 268 Z"/></clipPath>
+        <clipPath id="beltclip"><rect x="250" y="400" width="812" height="36" rx="10"/></clipPath>
+        <clipPath id="winclip"><rect x="1082" y="286" width="146" height="106" rx="12"/></clipPath>
+      </defs>
+
+      <!-- floor -->
+      <ellipse cx="700" cy="614" rx="640" ry="16" fill="#221f1c" opacity=".07"/>
+      <path d="M70 610 H1350" stroke="#221f1c" stroke-width="4" opacity=".16" stroke-linecap="round"/>
+
+      <!-- the return line, behind everything -->
+      <g data-loopwrap>
+        <path d="M1010 206 q0 -58 -46 -84 q-44 -24 -118 -24 L470 94 q-90 0 -110 -40 q-8 -16 -6 -34" fill="none" stroke="#221f1c" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M1010 206 q0 -58 -46 -84 q-44 -24 -118 -24 L470 94 q-90 0 -110 -40 q-8 -16 -6 -34" fill="none" stroke="url(#steel)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+        <path data-loop d="M1010 206 q0 -58 -46 -84 q-44 -24 -118 -24 L470 94 q-90 0 -110 -40 q-8 -16 -6 -34" fill="none" stroke="var(--red)" stroke-width="6" stroke-dasharray="13 17" stroke-linecap="round" opacity="0"/>
+        <rect x="612" y="80" width="18" height="28" rx="4" fill="url(#brass)" stroke="#221f1c" stroke-width="4"/>
+        <rect x="928" y="106" width="18" height="26" rx="4" fill="url(#brass)" stroke="#221f1c" stroke-width="4" transform="rotate(38 937 119)"/>
+        <text x="700" y="60" text-anchor="middle" class="lbl">ROUND AGAIN</text>
+      </g>
+
+      <!-- the crew, standing behind the bench -->
+      <g data-agents>
+      <g transform="translate(400 349) scale(.95)">
+        <g class="agent" data-agent="1">
+          <path class="leg" d="M-14 74 v26 M14 74 v26" stroke="#221f1c" stroke-width="11" stroke-linecap="round"/>
+          <path d="M-29 4 q0 -24 29 -24 q29 0 29 24 v38 q0 26 -29 26 q-29 0 -29 -26 z" fill="url(#green)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M8 -19 q18 4 18 21 v44 q0 26 -26 26 q-6 0 -11 -2 q19 -4 19 -26 z" fill="#221f1c" opacity=".14"/>
+          <path d="M-17 -8 q-5 8 -5 22 v20" stroke="#fff" stroke-width="6" opacity=".3" fill="none" stroke-linecap="round"/>
+          <rect x="-14" y="14" width="28" height="22" rx="7" fill="#efe6d4" stroke="#221f1c" stroke-width="4"/>
+          <circle class="glow" cx="0" cy="25" r="11" fill="#4fe39c" opacity=".26"/><circle class="chest" cx="0" cy="25" r="4.8" fill="#4fe39c"/>
+          <g class="arm-l"><path d="M-25 10 q-21 11 -20 34" stroke="#221f1c" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="-45" cy="47" r="9" fill="url(#green)" stroke="#221f1c" stroke-width="5"/></g>
+          <g class="arm-r"><path d="M25 10 q21 11 20 34" stroke="#221f1c" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="45" cy="47" r="9" fill="url(#green)" stroke="#221f1c" stroke-width="5"/><g transform="translate(45 47)"><circle cx="2" cy="12" r="9" fill="none" stroke="#221f1c" stroke-width="4"/><circle cx="2" cy="12" r="9" fill="#efe6d4" opacity=".5"/><path d="M8 19 l9 10" stroke="#221f1c" stroke-width="5" stroke-linecap="round"/></g></g>
+          <rect x="-13" y="-26" width="26" height="9" rx="4" fill="url(#brass)" stroke="#221f1c" stroke-width="4"/>
+          <g class="head">
+            <path d="M-16 -48 q-9 -16 -3 -26" stroke="#221f1c" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <circle cx="-19" cy="-76" r="6.5" fill="#4fe39c" stroke="#221f1c" stroke-width="4"/>
+            <path d="M-30 -62 q0 -14 12 -14 h36 q12 0 12 14 v22 q0 14 -12 14 h-36 q-12 0 -12 -14 z" fill="#f6efe1" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+            <path d="M18 -76 q12 0 12 14 v22 q0 14 -12 14 h-9 q11 -4 11 -18 v-14 q0 -14 -11 -18 z" fill="#221f1c" opacity=".12"/>
+            <rect x="-21" y="-56" width="42" height="24" rx="12" fill="#221f1c"/>
+            <circle class="glow" cx="-8" cy="-44" r="10" fill="#4fe39c" opacity=".3"/><circle class="glow" cx="8" cy="-44" r="10" fill="#4fe39c" opacity=".3"/><circle class="eye" cx="-8" cy="-44" r="4.6" fill="#4fe39c"/><circle class="eye" cx="8" cy="-44" r="4.6" fill="#4fe39c"/>
+            <path d="M-17 -53 q6 -3 13 -2" stroke="#fff" stroke-width="4" opacity=".3" fill="none" stroke-linecap="round"/>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(572 330) scale(1.09)">
+        <g class="agent" data-agent="2">
+          <path class="leg" d="M-14 74 v26 M14 74 v26" stroke="#221f1c" stroke-width="11" stroke-linecap="round"/>
+          <path d="M-22 0 q0 -20 22 -20 q22 0 22 20 v52 q0 24 -22 24 q-22 0 -22 -24 z" fill="url(#red)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M8 -19 q18 4 18 21 v44 q0 26 -26 26 q-6 0 -11 -2 q19 -4 19 -26 z" fill="#221f1c" opacity=".14"/>
+          <path d="M-17 -8 q-5 8 -5 22 v20" stroke="#fff" stroke-width="6" opacity=".3" fill="none" stroke-linecap="round"/>
+          <rect x="-14" y="14" width="28" height="22" rx="7" fill="#efe6d4" stroke="#221f1c" stroke-width="4"/>
+          <circle class="glow" cx="0" cy="25" r="11" fill="#ff9d4a" opacity=".26"/><circle class="chest" cx="0" cy="25" r="4.8" fill="#ff9d4a"/>
+          <g class="arm-l"><path d="M-25 10 q-21 11 -20 34" stroke="#221f1c" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="-45" cy="47" r="9" fill="url(#red)" stroke="#221f1c" stroke-width="5"/></g>
+          <g class="arm-r"><path d="M25 10 q21 11 20 34" stroke="#221f1c" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="45" cy="47" r="9" fill="url(#red)" stroke="#221f1c" stroke-width="5"/><g transform="translate(45 47)"><path d="M-1 8 l16 16 l-4 6 l-16 -16 z" fill="url(#brass)" stroke="#221f1c" stroke-width="4" stroke-linejoin="round"/><path d="M14 29 l6 8 l2 -9 z" fill="#221f1c"/></g></g>
+          <rect x="-13" y="-26" width="26" height="9" rx="4" fill="url(#brass)" stroke="#221f1c" stroke-width="4"/>
+          <g class="head">
+            <path d="M-16 -48 q-9 -16 -3 -26" stroke="#221f1c" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <circle cx="-19" cy="-76" r="6.5" fill="#ff9d4a" stroke="#221f1c" stroke-width="4"/>
+            <path d="M-30 -62 q0 -14 12 -14 h36 q12 0 12 14 v22 q0 14 -12 14 h-36 q-12 0 -12 -14 z" fill="#f6efe1" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+            <path d="M18 -76 q12 0 12 14 v22 q0 14 -12 14 h-9 q11 -4 11 -18 v-14 q0 -14 -11 -18 z" fill="#221f1c" opacity=".12"/>
+            <rect x="-21" y="-56" width="42" height="24" rx="12" fill="#221f1c"/>
+            <circle class="glow" cx="-8" cy="-44" r="10" fill="#ff9d4a" opacity=".3"/><circle class="glow" cx="8" cy="-44" r="10" fill="#ff9d4a" opacity=".3"/><circle class="eye" cx="-8" cy="-44" r="4.6" fill="#ff9d4a"/><circle class="eye" cx="8" cy="-44" r="4.6" fill="#ff9d4a"/>
+            <path d="M-17 -53 q6 -3 13 -2" stroke="#fff" stroke-width="4" opacity=".3" fill="none" stroke-linecap="round"/>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(744 348) scale(1)">
+        <g class="agent" data-agent="3">
+          <path class="leg" d="M-14 74 v26 M14 74 v26" stroke="#221f1c" stroke-width="11" stroke-linecap="round"/>
+          <path d="M-26 2 q0 -22 26 -22 q26 0 26 22 v44 q0 26 -26 26 q-26 0 -26 -26 z" fill="url(#gold)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M8 -19 q18 4 18 21 v44 q0 26 -26 26 q-6 0 -11 -2 q19 -4 19 -26 z" fill="#221f1c" opacity=".14"/>
+          <path d="M-17 -8 q-5 8 -5 22 v20" stroke="#fff" stroke-width="6" opacity=".3" fill="none" stroke-linecap="round"/>
+          <rect x="-14" y="14" width="28" height="22" rx="7" fill="#efe6d4" stroke="#221f1c" stroke-width="4"/>
+          <circle class="glow" cx="0" cy="25" r="11" fill="#ffd23d" opacity=".26"/><circle class="chest" cx="0" cy="25" r="4.8" fill="#ffd23d"/>
+          <g class="arm-l"><path d="M-25 10 q-21 11 -20 34" stroke="#221f1c" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="-45" cy="47" r="9" fill="url(#gold)" stroke="#221f1c" stroke-width="5"/></g>
+          <g class="arm-r"><path d="M25 10 q21 11 20 34" stroke="#221f1c" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="45" cy="47" r="9" fill="url(#gold)" stroke="#221f1c" stroke-width="5"/><g transform="translate(47 50)"><rect x="-4" y="0" width="26" height="32" rx="4" fill="#fbf8ef" stroke="#221f1c" stroke-width="4"/><rect x="3" y="-4" width="12" height="8" rx="3" fill="url(#brass)" stroke="#221f1c" stroke-width="3.4"/><path d="M2 12 h14 M2 20 h10" stroke="#3f8a5f" stroke-width="3.2" stroke-linecap="round"/></g></g>
+          <rect x="-13" y="-26" width="26" height="9" rx="4" fill="url(#brass)" stroke="#221f1c" stroke-width="4"/>
+          <g class="head">
+            <path d="M-16 -48 q-9 -16 -3 -26" stroke="#221f1c" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <circle cx="-19" cy="-76" r="6.5" fill="#ffd23d" stroke="#221f1c" stroke-width="4"/>
+            <path d="M-14 -78 h28 q5 0 5 6 h-38 q0 -6 5 -6z" fill="url(#brass)" stroke="#221f1c" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M-30 -62 q0 -14 12 -14 h36 q12 0 12 14 v22 q0 14 -12 14 h-36 q-12 0 -12 -14 z" fill="#f6efe1" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+            <path d="M18 -76 q12 0 12 14 v22 q0 14 -12 14 h-9 q11 -4 11 -18 v-14 q0 -14 -11 -18 z" fill="#221f1c" opacity=".12"/>
+            <rect x="-21" y="-56" width="42" height="24" rx="12" fill="#221f1c"/>
+            <circle class="glow" cx="-8" cy="-44" r="10" fill="#ffd23d" opacity=".3"/><circle class="glow" cx="8" cy="-44" r="10" fill="#ffd23d" opacity=".3"/><circle class="eye" cx="-8" cy="-44" r="4.6" fill="#ffd23d"/><circle class="eye" cx="8" cy="-44" r="4.6" fill="#ffd23d"/>
+            <path d="M-17 -53 q6 -3 13 -2" stroke="#fff" stroke-width="4" opacity=".3" fill="none" stroke-linecap="round"/>
+          </g>
+        </g>
+      </g>
+      </g>
+
+      <!-- the bench: one chassis everything bolts to -->
+      <g data-bench>
+        <ellipse cx="330" cy="606" rx="52" ry="9" fill="#221f1c" opacity=".12"/>
+        <ellipse cx="770" cy="606" rx="44" ry="8" fill="#221f1c" opacity=".1"/>
+        <ellipse cx="1178" cy="606" rx="52" ry="9" fill="#221f1c" opacity=".12"/>
+        <path d="M318 470 l-14 132 M346 470 l14 132 M750 470 l-10 130 M774 470 l10 130 M1166 470 l-14 132 M1194 470 l14 132" stroke="#221f1c" stroke-width="15" stroke-linecap="round"/>
+        <path d="M318 470 l-14 132 M346 470 l14 132 M750 470 l-10 130 M774 470 l10 130 M1166 470 l-14 132 M1194 470 l14 132" stroke="url(#steel)" stroke-width="8" stroke-linecap="round"/>
+        <path d="M300 552 h64 M736 556 h52 M1148 552 h64" stroke="#221f1c" stroke-width="9" stroke-linecap="round"/>
+        <ellipse cx="300" cy="436" rx="52" ry="7" fill="#221f1c" opacity=".16"/>
+        <ellipse cx="944" cy="436" rx="82" ry="8" fill="#221f1c" opacity=".16"/>
+        <ellipse cx="1155" cy="438" rx="96" ry="9" fill="#221f1c" opacity=".18"/>
+        <rect x="244" y="434" width="1002" height="38" rx="10" fill="url(#steel)" stroke="#221f1c" stroke-width="6"/>
+        <rect x="252" y="440" width="986" height="7" rx="3.5" fill="#fff" opacity=".3"/>
+        <rect x="252" y="462" width="986" height="6" rx="3" fill="#221f1c" opacity=".14"/>
+        <rect x="248" y="456" width="994" height="14" fill="url(#hatch)" opacity=".7"/>
+        <g fill="#221f1c" opacity=".3"><circle cx="272" cy="453" r="4"/><circle cx="700" cy="453" r="4"/><circle cx="1218" cy="453" r="4"/></g>
+        <path d="M286 540 q-40 18 -46 62" stroke="#221f1c" stroke-width="7" fill="none" stroke-linecap="round" opacity=".8"/>
+        <g transform="translate(444 584)"><ellipse cx="0" cy="24" rx="26" ry="6" fill="#221f1c" opacity=".12"/><path d="M-16 22 h32 q6 0 6 -8 v-14 q0 -6 -6 -6 h-32 q-6 0 -6 6 v14 q0 8 6 8z" fill="url(#brass)" stroke="#221f1c" stroke-width="4.5" stroke-linejoin="round"/><path d="M14 -6 q16 -6 22 -18" stroke="#221f1c" stroke-width="4.5" fill="none" stroke-linecap="round"/><rect x="-6" y="-12" width="12" height="8" rx="3" fill="#221f1c" opacity=".5"/></g>
+        <!-- gearbox on the left leg -->
+        <rect x="286" y="486" width="96" height="76" rx="10" fill="url(#clay)" stroke="#221f1c" stroke-width="6"/>
+        <rect x="294" y="492" width="26" height="12" rx="6" fill="#fff" opacity=".25"/>
+        <g transform="translate(322 524)"><g class="gear"><circle r="26" fill="url(#steel)" stroke="#221f1c" stroke-width="5"/><circle r="8" fill="#efe6d4" stroke="#221f1c" stroke-width="4"/><path d="M0 -26 v-10 M0 26 v10 M-26 0 h-10 M26 0 h10 M-18 -18 l-7 -7 M18 18 l7 7 M18 -18 l7 -7 M-18 18 l-7 7" stroke="#221f1c" stroke-width="6" stroke-linecap="round"/></g></g>
+        <g transform="translate(364 552)"><g class="gear gear-b"><circle r="16" fill="url(#brass)" stroke="#221f1c" stroke-width="5"/><circle r="5" fill="#efe6d4" stroke="#221f1c" stroke-width="3.4"/><path d="M0 -16 v-8 M0 16 v8 M-16 0 h-8 M16 0 h8" stroke="#221f1c" stroke-width="5" stroke-linecap="round"/></g></g>
+      </g>
+
+      <!-- belt -->
+      <g data-belt>
+        <rect x="250" y="400" width="812" height="36" rx="10" fill="url(#beltg)" stroke="#221f1c" stroke-width="6"/>
+        <g clip-path="url(#beltclip)"><g data-tread><path d="M262 400 v36 M302 400 v36 M342 400 v36 M382 400 v36 M422 400 v36 M462 400 v36 M502 400 v36 M542 400 v36 M582 400 v36 M622 400 v36 M662 400 v36 M702 400 v36 M742 400 v36 M782 400 v36 M822 400 v36 M862 400 v36 M902 400 v36 M942 400 v36 M982 400 v36 M1022 400 v36 M1062 400 v36 M1102 400 v36 M1142 400 v36 M1182 400 v36 M1222 400 v36 M1262 400 v36" stroke="#efe6d4" stroke-width="3" opacity=".17"/></g></g>
+        <rect x="256" y="403" width="800" height="6" rx="3" fill="#fff" opacity=".13"/>
+        <g class="rollers">
+          <g transform="translate(268 418)"><circle r="20" fill="url(#clay)" stroke="#221f1c" stroke-width="5"/><path class="spoke" d="M0 -20 v40 M-20 0 h40 M-14 -14 l28 28 M14 -14 l-28 28" stroke="#221f1c" stroke-width="4" opacity=".55"/><circle r="5" fill="#efe6d4" stroke="#221f1c" stroke-width="3.4"/></g>
+          <g transform="translate(508 418)"><circle r="20" fill="url(#clay)" stroke="#221f1c" stroke-width="5"/><path class="spoke" d="M0 -20 v40 M-20 0 h40 M-14 -14 l28 28 M14 -14 l-28 28" stroke="#221f1c" stroke-width="4" opacity=".55"/><circle r="5" fill="#efe6d4" stroke="#221f1c" stroke-width="3.4"/></g>
+          <g transform="translate(832 418)"><circle r="20" fill="url(#clay)" stroke="#221f1c" stroke-width="5"/><path class="spoke" d="M0 -20 v40 M-20 0 h40 M-14 -14 l28 28 M14 -14 l-28 28" stroke="#221f1c" stroke-width="4" opacity=".55"/><circle r="5" fill="#efe6d4" stroke="#221f1c" stroke-width="3.4"/></g>
+          <g transform="translate(1044 418)"><circle r="20" fill="url(#clay)" stroke="#221f1c" stroke-width="5"/><path class="spoke" d="M0 -20 v40 M-20 0 h40 M-14 -14 l28 28 M14 -14 l-28 28" stroke="#221f1c" stroke-width="4" opacity=".55"/><circle r="5" fill="#efe6d4" stroke="#221f1c" stroke-width="3.4"/></g>
+        </g>
+      </g>
+
+      <!-- intake -->
+      <g data-hopper>
+        <path d="M196 148 L404 148 L368 268 L232 268 Z" fill="url(#gold)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M300 148 L404 148 L368 268 L300 268 Z" fill="#221f1c" opacity=".12"/>
+        <g clip-path="url(#hopclip)"><rect x="304" y="148" width="104" height="124" fill="url(#hatch)"/></g>
+        <path d="M190 142 L410 142 L404 172 L196 172 Z" fill="#f4c65e" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M214 182 L242 254" stroke="#fff" stroke-width="7" opacity=".3" stroke-linecap="round"/>
+        <rect x="264" y="264" width="72" height="72" rx="8" fill="url(#red)" stroke="#221f1c" stroke-width="6"/>
+        <rect x="274" y="274" width="15" height="50" rx="7" fill="#fff" opacity=".22"/>
+        <rect x="256" y="330" width="88" height="16" rx="8" fill="url(#steel)" stroke="#221f1c" stroke-width="5"/>
+        <path d="M282 346 v54 M318 346 v54" stroke="#221f1c" stroke-width="11" stroke-linecap="round"/>
+        <text x="300" y="128" text-anchor="middle" class="lbl">THE BRIEF</text>
+        <!-- gauge, bracketed to the hopper -->
+        <path d="M262 344 h-32" stroke="#221f1c" stroke-width="9" stroke-linecap="round"/>
+        <g transform="translate(198 344)">
+          <circle r="28" fill="#efe6d4" stroke="#221f1c" stroke-width="6"/><circle r="28" fill="url(#glass)"/>
+          <path d="M-18 8 A20 20 0 0 1 18 8" fill="none" stroke="#221f1c" stroke-width="3" opacity=".3"/>
+          <g data-needle><path d="M0 4 L-12 -13" stroke="var(--red)" stroke-width="5" stroke-linecap="round"/></g>
+          <circle r="4.5" fill="#221f1c"/>
+        </g>
+      </g>
+
+      <!-- lever -->
+      <g class="lever" data-lever>
+        <ellipse cx="120" cy="606" rx="40" ry="9" fill="#221f1c" opacity=".13"/>
+        <rect x="88" y="424" width="64" height="182" rx="12" fill="url(#steel)" stroke="#221f1c" stroke-width="6"/>
+        <rect x="98" y="436" width="13" height="158" rx="6" fill="#fff" opacity=".26"/>
+        <rect x="104" y="436" width="32" height="118" rx="16" fill="#221f1c" opacity=".5"/>
+        <g class="arm" data-arm>
+          <rect x="110" y="336" width="20" height="112" rx="10" fill="url(#green)" stroke="#221f1c" stroke-width="6"/>
+          <circle cx="120" cy="326" r="25" fill="url(#red)" stroke="#221f1c" stroke-width="6"/>
+          <ellipse cx="112" cy="317" rx="7.5" ry="5.5" fill="#fff" opacity=".45"/>
+        </g>
+        <text x="120" y="638" text-anchor="middle" class="lbl">PULL</text>
+      </g>
+
+      <!-- the press, bolted to the bench -->
+      <g data-press>
+        <path d="M878 214 h132 M878 214 v220 M1010 214 v220" stroke="#221f1c" stroke-width="17" fill="none" stroke-linejoin="round"/>
+        <path d="M878 214 h132 M878 214 v220 M1010 214 v220" stroke="url(#steel)" stroke-width="9" fill="none" stroke-linejoin="round"/>
+        <rect x="862" y="176" width="164" height="42" rx="12" fill="url(#clay)" stroke="#221f1c" stroke-width="6"/>
+        <rect x="874" y="184" width="42" height="12" rx="6" fill="#fff" opacity=".28"/>
+        <g data-stamp>
+          <rect x="930" y="216" width="28" height="104" rx="8" fill="url(#steel)" stroke="#221f1c" stroke-width="6"/>
+          <path d="M930 232 h28 M930 252 h28 M930 272 h28 M930 292 h28" stroke="#221f1c" stroke-width="3" opacity=".32"/>
+          <rect x="888" y="314" width="112" height="52" rx="10" fill="url(#red)" stroke="#221f1c" stroke-width="6"/>
+          <rect x="898" y="322" width="32" height="12" rx="6" fill="#fff" opacity=".3"/>
+        </g>
+        <g data-lamp transform="translate(944 156)"><circle r="17" fill="#6b625a" stroke="#221f1c" stroke-width="5"/><circle class="bulb" r="10" fill="#7e3a2c"/></g>
+        <text x="944" y="204" text-anchor="middle" class="plate">THE CHECK</text>
+        <g transform="translate(1042 264)">
+          <circle r="24" fill="#efe6d4" stroke="#221f1c" stroke-width="6"/><circle r="24" fill="url(#glass)"/>
+          <g data-needle2><path d="M0 3 L10 -13" stroke="var(--green)" stroke-width="4.5" stroke-linecap="round"/></g>
+          <circle r="4" fill="#221f1c"/>
+        </g>
+      </g>
+
+      <!-- the kiosk: a person, in the loop, at the end -->
+      <g data-booth>
+        <rect x="1068" y="272" width="174" height="164" rx="12" fill="#efe6d4" stroke="#221f1c" stroke-width="6"/>
+        <path d="M1054 274 L1256 274 L1234 240 L1076 240 Z" fill="url(#clay)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M1155 240 L1256 274 L1234 240 Z" fill="#221f1c" opacity=".14"/>
+        <path d="M1155 240 L1256 274 L1234 240 Z" fill="url(#hatch)"/>
+        <rect x="1082" y="286" width="146" height="106" rx="12" fill="#39332c" stroke="#221f1c" stroke-width="6"/>
+        <g clip-path="url(#winclip)">
+          <rect x="1082" y="286" width="146" height="106" fill="#4a4038"/>
+          <ellipse cx="1206" cy="300" rx="80" ry="66" fill="url(#warm)"/>
+          <g transform="translate(1146 378)"><g data-human>
+            <path d="M-40 26 q10 -42 40 -42 q30 0 40 42 z" fill="url(#green)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+            <circle cx="0" cy="-30" r="27" fill="#f0cfa8" stroke="#221f1c" stroke-width="6"/>
+            <path d="M-27 -38 q5 -27 27 -27 q23 0 27 27 q-14 -11 -27 -9 q-17 2 -27 9z" fill="#3a2f28" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/>
+            <circle class="eye" cx="-9" cy="-30" r="3.8" fill="#221f1c"/><circle class="eye" cx="9" cy="-30" r="3.8" fill="#221f1c"/>
+            <path d="M-9 -19 q9 7 18 0" stroke="#221f1c" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <g class="mug"><rect x="30" y="0" width="24" height="22" rx="5" fill="url(#red)" stroke="#221f1c" stroke-width="5"/><path d="M54 6 q10 5 0 12" stroke="#221f1c" stroke-width="4" fill="none"/></g>
+          </g></g>
+        </g>
+        <rect x="1074" y="386" width="162" height="14" rx="7" fill="url(#brass)" stroke="#221f1c" stroke-width="5"/>
+        <g data-steam opacity=".5"><path d="M1194 348 q7 -13 0 -24 q-7 -11 0 -20" stroke="#ffe6bb" stroke-width="4" fill="none" stroke-linecap="round"/></g>
+        <g transform="translate(1155 412)"><g data-yes opacity="0"><rect x="-36" y="-17" width="72" height="34" rx="7" fill="none" stroke="var(--green)" stroke-width="5"/><text x="0" y="8" text-anchor="middle" class="yestext">YES</text></g></g>
+        <g transform="translate(1155 412)"><g data-held opacity="0"><rect x="-46" y="-17" width="92" height="34" rx="7" fill="none" stroke="var(--clay)" stroke-width="5" stroke-dasharray="9 7"/><text x="0" y="8" text-anchor="middle" class="heldtext">NOT YET</text></g></g>
+        <text x="1120" y="630" text-anchor="middle" class="lbl">A HUMAN SIGNS IT</text>
+      </g>
+
+      <!-- out -->
+      <g data-out>
+        <path d="M1246 396 L1310 396 L1352 500 L1288 500 Z" fill="url(#gold)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M1278 396 L1310 396 L1352 500 L1320 500 Z" fill="#221f1c" opacity=".12"/>
+        <path d="M1278 396 L1310 396 L1352 500 L1320 500 Z" fill="url(#hatch)"/>
+        <rect x="1256" y="496" width="118" height="80" rx="10" fill="url(#clay)" stroke="#221f1c" stroke-width="6"/>
+        <path d="M1256 524 h118 M1315 496 v80" stroke="#221f1c" stroke-width="4" opacity=".38"/>
+        <path d="M1240 250 q54 -12 66 -34" stroke="#221f1c" stroke-width="12" fill="none" stroke-linecap="round"/>
+        <g transform="translate(1312 216)"><g data-bell>
+          <path d="M-34 40 q0 -50 34 -50 q34 0 34 50 z" fill="url(#gold)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M-21 28 q-2 -31 13 -40" stroke="#fff" stroke-width="6" opacity=".35" fill="none" stroke-linecap="round"/>
+          <rect x="-38" y="38" width="76" height="12" rx="6" fill="url(#clay)" stroke="#221f1c" stroke-width="5"/>
+          <circle class="clapper" cx="0" cy="58" r="8" fill="var(--red)" stroke="#221f1c" stroke-width="5"/>
+        </g></g>
+        <g data-ring opacity="0">
+          <path d="M1252 214 q-17 -15 -17 -36 M1238 242 q-23 -11 -28 -30" stroke="#221f1c" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M1372 214 q17 -15 17 -36 M1386 242 q23 -11 28 -30" stroke="#221f1c" stroke-width="5" fill="none" stroke-linecap="round"/>
+        </g>
+        <text x="1315" y="626" text-anchor="middle" class="lbl">SHIPPED</text>
+      </g>
+
+      <g class="rim" aria-hidden="true">
+        <path d="M1010 214 v220" stroke="#ffd98a" stroke-width="5" opacity=".5" stroke-linecap="round"/>
+        <path d="M1000 320 v46" stroke="#ffd98a" stroke-width="4" opacity=".35" stroke-linecap="round"/>
+      </g>
+      <g data-brief opacity="0">
+        <g data-brief-in>
+          <path d="M-24 -30 h34 l14 14 v46 h-48 z" fill="#fbf8ef" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/>
+          <path d="M10 -30 v14 h14" fill="#e6ddc9" stroke="#221f1c" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M-14 -6 h28 M-14 6 h22 M-14 18 h28" stroke="#221f1c" stroke-width="3.6" stroke-linecap="round" opacity=".55"/>
+          <g data-stampmark opacity="0" transform="rotate(-14)">
+            <rect x="-36" y="-14" width="72" height="28" rx="5" fill="none" stroke="var(--red)" stroke-width="4"/>
+            <text x="0" y="7" text-anchor="middle" class="stamptext">NEEDS WORK</text>
+          </g>
+          <g data-passmark opacity="0" transform="rotate(-11)">
+            <rect x="-30" y="-13" width="60" height="26" rx="5" fill="none" stroke="var(--green)" stroke-width="4"/>
+            <text x="0" y="6" text-anchor="middle" class="passtext">PASSED</text>
+          </g>
+        </g>
+      </g>
+      <g data-brief-tag opacity="0"><rect data-tag-plate x="-70" y="-16" width="140" height="30" rx="8" fill="#fbf8ef" stroke="#221f1c" stroke-width="3.5"/><text x="0" y="6" text-anchor="middle" class="brieftag"></text></g>
+      <g data-chips></g>
+      <g data-puffs></g>
+    </svg>

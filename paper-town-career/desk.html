@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="The same career record as a paper-cut desk: the projects as sheets of paper, the roles as a stack of files, the contact as an envelope.">
+<meta name="theme-color" content="#141a2c">
+<title>The Desk · Career Portfolio</title>
+<link rel="preload" href="fonts/fraunces-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="paper.css?v=1">
+<link rel="stylesheet" href="desk.css?v=1">
+<!-- SPEC-7 §B — the shared flex laws, last in the head so they follow this design's own CSS. -->
+<link rel="stylesheet" href="_flex-laws.css?v=1">
+</head>
+<body>
+<main>
+  <div class="stage" id="stage">
+    <svg id="desk" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMin meet" role="img" aria-label="A paper-cut desk under a window. Each object on it holds part of the record: the projects are sheets of paper, the roles a stack of files, the contact an envelope.">
+      <defs>
+        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="sky-top"/><stop offset="1" class="sky-bot"/></linearGradient>
+      </defs>
+    </svg>
+    <!-- The name tag hangs over the desk. Printed by desk.js from PORTFOLIO_DATA. -->
+    <header class="nametag" id="nametag" hidden>
+      <p class="specimen" id="t-spec">Example portfolio</p>
+      <p class="t-kick" id="t-kick"></p>
+      <h1 id="t-name"></h1>
+      <p class="t-sub" id="t-sub"></p>
+      <p class="t-acts" id="t-acts"></p>
+    </header>
+    <div class="grain" id="grain" aria-hidden="true"></div>
+    <div class="tip" id="tip" hidden></div>
+  </div>
+  <div class="frame" aria-hidden="true"></div>
+  <nav class="corner" aria-label="Views">
+    <a href="index.html" data-keep-query>← The town</a>
+  </nav>
+  <button class="lamp-btn" id="lamp-btn" type="button" aria-pressed="true"><span class="sw" aria-hidden="true"><i></i></span><span id="lamp-state">Evening</span></button>
+</main>
+<!-- ?data=sparse swaps in the sparse specimen (the same object as ../specimen-sparse.js): a name and a headline only. -->
+<script>if (new URLSearchParams(location.search).get("data") === "sparse") window.CONXFOLIO_RESUME = { profile: { name: "Sam Lee", headline: "Product designer" }, experience: [], projects: [] };</script>
+<script src="portfolio-data.js?v=1"></script>
+<script src="shared-resume-adapter.js?v=3" data-conxfolio-target="PORTFOLIO_DATA"></script>
+<script src="kit.js?v=1"></script>
+<script src="desk.js?v=1"></script>
+</body>
+</html>

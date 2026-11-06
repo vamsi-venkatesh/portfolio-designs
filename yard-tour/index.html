@@ -1,0 +1,1210 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6efe1">
+<meta name="description" content="Come down into the yard where Vamsi Venkatesh and his AI agents build. Seven things so far, five of them out.">
+<title>The yard · Vamsi Venkatesh</title>
+<link rel="icon" href="data:," type="image/svg+xml">
+<link rel="stylesheet" href="tour.css?v=53">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+      <linearGradient id="gr" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#55a675"/><stop offset=".5" stop-color="#3f8a5f"/><stop offset="1" stop-color="#2b6745"/></linearGradient>
+      <linearGradient id="rd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9694f"/><stop offset=".5" stop-color="#d9503a"/><stop offset="1" stop-color="#ad3826"/></linearGradient>
+      <linearGradient id="gd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4c65e"/><stop offset=".5" stop-color="#e6a52e"/><stop offset="1" stop-color="#c0821b"/></linearGradient>
+      <linearGradient id="cl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cd8a5f"/><stop offset=".5" stop-color="#b7714a"/><stop offset="1" stop-color="#8c5334"/></linearGradient>
+      <linearGradient id="brass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8c98a"/><stop offset=".5" stop-color="#c69a4e"/><stop offset="1" stop-color="#8f6c2e"/></linearGradient>
+      <linearGradient id="stone" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e2d9c6"/><stop offset=".5" stop-color="#c9bfa8"/><stop offset="1" stop-color="#a89d86"/></linearGradient>
+      <linearGradient id="wood" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d5a06f"/><stop offset=".5" stop-color="#b7714a"/><stop offset="1" stop-color="#8c5334"/></linearGradient>
+      <linearGradient id="roofR" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9694f"/><stop offset="1" stop-color="#ad3826"/></linearGradient>
+      <linearGradient id="roofG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#55a675"/><stop offset="1" stop-color="#2b6745"/></linearGradient>
+      <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fbf6ea"/><stop offset="1" stop-color="#e9dfc9"/></linearGradient>
+      <linearGradient id="path" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3d6bb"/><stop offset="1" stop-color="#d3c4a6"/></linearGradient>
+      <radialGradient id="lampG"><stop offset="0" stop-color="#ffd98a" stop-opacity=".9"/><stop offset="1" stop-color="#ffd98a" stop-opacity="0"/></radialGradient>
+      <radialGradient id="fogM"><stop offset="0" stop-color="#f6efe1" stop-opacity=".85"/><stop offset="1" stop-color="#f6efe1" stop-opacity="0"/></radialGradient>
+      <pattern id="hatch" width="9" height="9" patternTransform="rotate(38)" patternUnits="userSpaceOnUse"><path d="M0 0 v9" stroke="#221f1c" stroke-width="2.4" opacity=".13"/></pattern>
+      <pattern id="plank" width="60" height="18" patternUnits="userSpaceOnUse"><path d="M0 17.5 h60" stroke="#221f1c" stroke-width="2.5" opacity=".28"/><circle cx="8" cy="9" r="1.8" fill="#221f1c" opacity=".35"/><circle cx="52" cy="9" r="1.8" fill="#221f1c" opacity=".35"/></pattern>
+
+      <!-- one bot, reused. hard hat + tool belt on the accepted machine bot -->
+      <g id="bot">
+        <g class="body">
+          <g class="leg leg-l"><path d="M-14 74 v26" stroke="#221f1c" stroke-width="11" stroke-linecap="round"/><path d="M-20 98 h14" stroke="#221f1c" stroke-width="8" stroke-linecap="round"/></g>
+          <g class="leg leg-r"><path d="M14 74 v26" stroke="#221f1c" stroke-width="11" stroke-linecap="round"/><path d="M8 98 h14" stroke="#221f1c" stroke-width="8" stroke-linecap="round"/></g>
+          <path class="torso" d="M-26 2 q0 -22 26 -22 q26 0 26 22 v44 q0 26 -26 26 q-26 0 -26 -26 z" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M8 -19 q18 4 18 21 v44 q0 26 -26 26 q-6 0 -11 -2 q19 -4 19 -26 z" fill="#221f1c" opacity=".14"/>
+          <path d="M-17 -8 q-5 8 -5 22 v20" stroke="#fff" stroke-width="6" opacity=".3" fill="none" stroke-linecap="round"/>
+          <rect x="-14" y="14" width="28" height="22" rx="7" fill="#efe6d4" stroke="#221f1c" stroke-width="4"/>
+          <circle class="chest" cx="0" cy="25" r="4.8"/>
+          <!-- tool belt -->
+          <rect x="-27" y="42" width="54" height="10" rx="4" fill="url(#wood)" stroke="#221f1c" stroke-width="4"/>
+          <rect x="6" y="40" width="12" height="16" rx="3" fill="url(#brass)" stroke="#221f1c" stroke-width="3.5"/>
+          <g class="arm arm-l"><path d="M-25 10 q-21 11 -20 34" stroke="#221f1c" stroke-width="9" fill="none" stroke-linecap="round"/><circle class="hand" cx="-45" cy="47" r="9" stroke="#221f1c" stroke-width="5"/></g>
+          <g class="arm arm-r"><path d="M25 10 q21 11 20 34" stroke="#221f1c" stroke-width="9" fill="none" stroke-linecap="round"/><circle class="hand" cx="45" cy="47" r="9" stroke="#221f1c" stroke-width="5"/></g>
+          <rect x="-13" y="-26" width="26" height="9" rx="4" fill="url(#brass)" stroke="#221f1c" stroke-width="4"/>
+          <g class="head">
+            <path d="M-30 -62 q0 -14 12 -14 h36 q12 0 12 14 v22 q0 14 -12 14 h-36 q-12 0 -12 -14 z" fill="#f6efe1" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+            <path d="M18 -76 q12 0 12 14 v22 q0 14 -12 14 h-9 q11 -4 11 -18 v-14 q0 -14 -11 -18 z" fill="#221f1c" opacity=".12"/>
+            <rect x="-21" y="-56" width="42" height="24" rx="12" fill="#221f1c"/>
+            <circle class="glow" cx="-8" cy="-44" r="10" opacity=".3"/><circle class="glow" cx="8" cy="-44" r="10" opacity=".3"/>
+            <circle class="eye" cx="-8" cy="-44" r="4.6"/><circle class="eye" cx="8" cy="-44" r="4.6"/>
+            <path d="M-17 -53 q6 -3 13 -2" stroke="#fff" stroke-width="4" opacity=".3" fill="none" stroke-linecap="round"/>
+            <!-- hard hat -->
+            <path d="M-36 -74 q0 -30 36 -30 q36 0 36 30 z" fill="url(#gd)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+            <rect x="-42" y="-78" width="84" height="10" rx="5" fill="url(#gd)" stroke="#221f1c" stroke-width="5"/>
+            <path d="M-22 -92 q10 -6 24 -6" stroke="#fff" stroke-width="5" opacity=".35" fill="none" stroke-linecap="round"/>
+          </g>
+        </g>
+      </g>
+
+      <!-- a sealed crate -->
+      <g id="crate">
+        <rect x="-38" y="-26" width="76" height="52" rx="7" fill="url(#wood)" stroke="#221f1c" stroke-width="5"/>
+        <rect x="-38" y="-26" width="76" height="52" rx="7" fill="url(#plank)"/>
+        <path d="M-38 -4 h76" stroke="#221f1c" stroke-width="4" opacity=".5"/>
+        <path d="M-10 -26 v52 M10 -26 v52" stroke="#221f1c" stroke-width="3" opacity=".35"/>
+        <path d="M-38 -6 h76" stroke="#221f1c" stroke-width="5" stroke-dasharray="7 5" stroke-linecap="round"/>
+        <circle cx="0" cy="-6" r="12" fill="url(#rd)" stroke="#221f1c" stroke-width="4"/>
+        <text x="0" y="-1" text-anchor="middle" class="sealtext" font-size="11">VV</text>
+      </g>
+    </defs></svg>
+
+<a class="bar" href="../">
+  <span class="who">Vamsi Venkatesh</span>
+  <span class="role">the yard · walk in</span>
+  <span class="back">← the page</span>
+</a>
+
+<div class="stage" data-stage>
+  <div class="sky" aria-hidden="true"><i class="sun"></i>
+    <svg class="hills" viewBox="0 0 2000 300" preserveAspectRatio="none" data-hills>
+      <path d="M0 200 Q180 120 360 170 T760 150 T1200 180 T1640 130 T2000 170 V300 H0 Z" fill="#e3d9c4"/>
+      <path d="M0 240 Q240 170 480 220 T980 210 T1500 240 T2000 200 V300 H0 Z" fill="#d9cfb8"/>
+      <path d="M0 200 Q180 120 360 170 T760 150 T1200 180 T1640 130 T2000 170" fill="none" stroke="#221f1c" stroke-width="3" opacity=".22"/>
+      <path d="M0 240 Q240 170 480 220 T980 210 T1500 240 T2000 200" fill="none" stroke="#221f1c" stroke-width="3" opacity=".25"/>
+      <g fill="#3f8a5f" stroke="#221f1c" stroke-width="3" stroke-linejoin="round" opacity=".5"><path d="M300 176 l14 -40 l14 40 z"/><path d="M330 180 l11 -30 l11 30 z"/><path d="M1180 186 l13 -36 l13 36 z"/><path d="M1205 182 l16 -46 l16 46 z"/><path d="M1700 140 l13 -34 l13 34 z"/><path d="M1725 144 l10 -26 l10 26 z"/></g>
+    </svg>
+  </div>
+  <svg class="groundsvg" data-ground aria-hidden="true" preserveAspectRatio="none">
+    <defs><pattern id="hatch2" width="9" height="9" patternTransform="rotate(38)" patternUnits="userSpaceOnUse"><path d="M0 0 v9" stroke="#221f1c" stroke-width="2.2" opacity=".11"/></pattern>
+    <linearGradient id="roadg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ddd0b4"/><stop offset="1" stop-color="#d3c4a6"/></linearGradient></defs>
+    <g data-fields></g>
+    <path data-road fill="url(#roadg)" stroke="#221f1c" stroke-width="3" stroke-linejoin="round" opacity=".95"/>
+  </svg>
+  <div class="world" data-world>
+<div class="bb " data-bb="house" style="--x:-900;--z:640;--w:400" ><svg viewBox="-200 -320 400 380" class="art"><g transform="translate(0 0)">
+        <ellipse cx="30" cy="8" rx="190" ry="16" fill="#221f1c" opacity=".13"/>
+        <rect x="-130" y="-160" width="260" height="160" rx="10" fill="url(#wall)" stroke="#221f1c" stroke-width="6"/>
+        <rect x="70" y="-160" width="60" height="160" fill="#221f1c" opacity=".08"/>
+        <!-- roof, oversized -->
+        <path d="M-175 -150 L0 -290 L175 -150 Z" fill="url(#roofR)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-150 -150 L0 -270 L150 -150" fill="none" stroke="#fff" stroke-width="5" opacity=".18"/>
+        <path d="M-175 -150 H175" stroke="#221f1c" stroke-width="6"/>
+        <!-- chimney + smoke -->
+        <rect x="70" y="-250" width="34" height="70" rx="5" fill="url(#stone)" stroke="#221f1c" stroke-width="5"/>
+        <g class="smoke" transform="translate(87 -258)">
+          <circle class="s1" r="10" fill="#f6efe1" stroke="#221f1c" stroke-width="3" opacity=".8"/>
+          <circle class="s2" r="13" fill="#f6efe1" stroke="#221f1c" stroke-width="3" opacity=".7"/>
+          <circle class="s3" r="16" fill="#f6efe1" stroke="#221f1c" stroke-width="3" opacity=".6"/>
+        </g>
+        <!-- door and window -->
+        <rect x="-32" y="-88" width="64" height="88" rx="30" ry="18" fill="url(#wood)" stroke="#221f1c" stroke-width="5"/>
+        <rect x="-32" y="-88" width="64" height="88" rx="30" ry="18" fill="url(#plank)"/>
+        <circle cx="16" cy="-44" r="4" fill="url(#brass)" stroke="#221f1c" stroke-width="3"/>
+        <rect x="-108" y="-120" width="54" height="50" rx="8" fill="#ffe6bb" stroke="#221f1c" stroke-width="5"/>
+        <path d="M-81 -120 v50 M-108 -95 h54" stroke="#221f1c" stroke-width="4"/>
+        <circle cx="-81" cy="-95" r="26" fill="url(#lampG)" opacity=".7"/>
+        <!-- the chief at the door -->
+        <g transform="translate(0 -14) scale(.62)"><g class="chief" data-chief>
+          <ellipse cx="0" cy="26" rx="46" ry="8" fill="#221f1c" opacity=".14"/>
+          <path d="M-40 26 q10 -42 40 -42 q30 0 40 42 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+          <circle cx="0" cy="-30" r="27" fill="#f0cfa8" stroke="#221f1c" stroke-width="6"/>
+          <path d="M-27 -38 q5 -27 27 -27 q23 0 27 27 q-14 -11 -27 -9 q-17 2 -27 9z" fill="#3a2f28" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/>
+          <circle class="eye" cx="-9" cy="-30" r="3.8" fill="#221f1c"/><circle class="eye" cx="9" cy="-30" r="3.8" fill="#221f1c"/>
+          <path d="M-9 -19 q9 7 18 0" stroke="#221f1c" stroke-width="4" fill="none" stroke-linecap="round"/>
+          <g class="mug"><rect x="30" y="0" width="24" height="22" rx="5" fill="url(#rd)" stroke="#221f1c" stroke-width="5"/><path d="M54 6 q10 5 0 12" stroke="#221f1c" stroke-width="4" fill="none"/></g>
+        </g></g>
+        <text x="0" y="40" text-anchor="middle" class="lbl">THE CHIEF'S HOUSE</text>
+      </g></svg></div>
+<div class="bb " data-bb="tree" style="--x:-700;--z:820;--w:160" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb arch" data-bb="arch" style="--x:0;--z:330;--w:520"  data-main="0"><svg viewBox="-260 -480 520 540" class="art"><g transform="translate(0 0)" data-arch>
+        <ellipse cx="0" cy="10" rx="230" ry="18" fill="#221f1c" opacity=".12"/>
+        <!-- posts: stone base, wood post -->
+        <g transform="translate(-190 0)">
+          <rect x="-34" y="-60" width="68" height="60" rx="8" fill="url(#stone)" stroke="#221f1c" stroke-width="6"/>
+          <path d="M-34 -30 h68 M0 -60 v30" stroke="#221f1c" stroke-width="3.5" opacity=".4"/>
+          <rect x="-20" y="-330" width="40" height="272" rx="6" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/>
+          <rect x="-20" y="-330" width="40" height="272" fill="url(#plank)"/>
+          <rect x="-30" y="-350" width="60" height="26" rx="6" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/>
+        </g>
+        <g transform="translate(190 0)">
+          <rect x="-34" y="-60" width="68" height="60" rx="8" fill="url(#stone)" stroke="#221f1c" stroke-width="6"/>
+          <path d="M-34 -30 h68 M0 -60 v30" stroke="#221f1c" stroke-width="3.5" opacity=".4"/>
+          <rect x="-20" y="-330" width="40" height="272" rx="6" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/>
+          <rect x="-20" y="-330" width="40" height="272" fill="url(#plank)"/>
+          <rect x="-30" y="-350" width="60" height="26" rx="6" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/>
+        </g>
+        <!-- beam -->
+        <rect x="-240" y="-370" width="480" height="34" rx="8" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/>
+        <rect x="-240" y="-370" width="480" height="34" fill="url(#plank)"/>
+        <!-- lantern on the beam, lit = live yard -->
+        <g transform="translate(-232 -336)">
+          <path d="M0 0 v18" stroke="#221f1c" stroke-width="4"/>
+          <circle cx="0" cy="40" r="34" fill="url(#lampG)" class="lamp"/>
+          <rect x="-12" y="18" width="24" height="30" rx="6" fill="#ffe6bb" stroke="#221f1c" stroke-width="5"/>
+          <rect x="-15" y="14" width="30" height="8" rx="3" fill="url(#brass)" stroke="#221f1c" stroke-width="4"/>
+        </g>
+        <!-- the sign, hanging on chains -->
+        <g transform="translate(0 -336)"><g class="sign" data-sign>
+          <path d="M-150 0 v40 M150 0 v40" stroke="#221f1c" stroke-width="4" stroke-dasharray="6 5"/>
+          <rect x="-200" y="40" width="400" height="92" rx="14" fill="url(#wood)" stroke="#221f1c" stroke-width="7"/>
+          <rect x="-200" y="40" width="400" height="92" rx="14" fill="url(#plank)"/>
+          <rect x="-186" y="52" width="372" height="68" rx="10" fill="#f6efe1" stroke="#221f1c" stroke-width="5"/>
+          <text x="0" y="104" text-anchor="middle" class="signtext">THE YARD</text>
+          <text x="0" y="66" text-anchor="middle" class="signsmall">VVDEX · AGENTS AT WORK</text>
+        </g></g>
+        <text x="0" y="46" text-anchor="middle" class="lbl">THE GATE</text>
+      </g></svg></div>
+<div class="bb " data-bb="fenceL" style="--x:-420;--z:330;--w:260" ><svg viewBox="0 0 260 90" class="art"><g fill="url(#wood)" stroke="#221f1c" stroke-width="5"><rect x="20" y="10" width="14" height="72" rx="4"/><rect x="123" y="10" width="14" height="72" rx="4"/><rect x="226" y="10" width="14" height="72" rx="4"/><rect x="0" y="26" width="260" height="10" rx="4"/><rect x="0" y="54" width="260" height="10" rx="4"/></g></svg></div>
+<div class="bb " data-bb="fenceR" style="--x:420;--z:330;--w:260" ><svg viewBox="0 0 260 90" class="art"><g fill="url(#wood)" stroke="#221f1c" stroke-width="5"><rect x="20" y="10" width="14" height="72" rx="4"/><rect x="123" y="10" width="14" height="72" rx="4"/><rect x="226" y="10" width="14" height="72" rx="4"/><rect x="0" y="26" width="260" height="10" rx="4"/><rect x="0" y="54" width="260" height="10" rx="4"/></g></svg></div>
+<div class="bb " data-bb="fenceL2" style="--x:-690;--z:330;--w:260" ><svg viewBox="0 0 260 90" class="art"><g fill="url(#wood)" stroke="#221f1c" stroke-width="5"><rect x="20" y="10" width="14" height="72" rx="4"/><rect x="123" y="10" width="14" height="72" rx="4"/><rect x="226" y="10" width="14" height="72" rx="4"/><rect x="0" y="26" width="260" height="10" rx="4"/><rect x="0" y="54" width="260" height="10" rx="4"/></g></svg></div>
+<div class="bb " data-bb="fenceR2" style="--x:690;--z:330;--w:260" ><svg viewBox="0 0 260 90" class="art"><g fill="url(#wood)" stroke="#221f1c" stroke-width="5"><rect x="20" y="10" width="14" height="72" rx="4"/><rect x="123" y="10" width="14" height="72" rx="4"/><rect x="226" y="10" width="14" height="72" rx="4"/><rect x="0" y="26" width="260" height="10" rx="4"/><rect x="0" y="54" width="260" height="10" rx="4"/></g></svg></div>
+<div class="bb crew" data-bb="crew0" style="--x:-360;--z:470;--w:86" data-crew="0"><svg viewBox="-60 -100 120 200" class="art"><g ><use href="#bot" class="bot g"/></g></svg></div>
+<div class="bb crew" data-bb="crew1" style="--x:470;--z:540;--w:98" data-crew="1"><svg viewBox="-60 -100 120 200" class="art"><g ><use href="#bot" class="bot r"/></g></svg></div>
+<div class="bb crew" data-bb="crew2" style="--x:360;--z:470;--w:84" data-crew="2"><svg viewBox="-60 -100 120 200" class="art"><g ><use href="#bot" class="bot y"/></g></svg></div>
+<div class="bb " data-bb="hay1" style="--x:480;--z:980;--w:120" ><svg viewBox="-60 -70 120 80" class="art"><ellipse cx="0" cy="6" rx="62" ry="8" fill="#221f1c" opacity=".12"/><rect x="-60" y="-66" width="120" height="66" rx="16" fill="url(#gd)" stroke="#221f1c" stroke-width="6"/><rect x="-60" y="-66" width="120" height="66" rx="16" fill="url(#hatch)"/><path d="M-60 -34 h120" stroke="#221f1c" stroke-width="4" opacity=".4"/></svg></div>
+<div class="bb " data-bb="hay2" style="--x:640;--z:1060;--w:100" ><svg viewBox="-60 -70 120 80" class="art"><ellipse cx="0" cy="6" rx="62" ry="8" fill="#221f1c" opacity=".12"/><rect x="-60" y="-66" width="120" height="66" rx="16" fill="url(#gd)" stroke="#221f1c" stroke-width="6"/><rect x="-60" y="-66" width="120" height="66" rx="16" fill="url(#hatch)"/><path d="M-60 -34 h120" stroke="#221f1c" stroke-width="4" opacity=".4"/></svg></div>
+<div class="bb " data-bb="hay3" style="--x:760;--z:900;--w:110" ><svg viewBox="-60 -70 120 80" class="art"><ellipse cx="0" cy="6" rx="62" ry="8" fill="#221f1c" opacity=".12"/><rect x="-60" y="-66" width="120" height="66" rx="16" fill="url(#gd)" stroke="#221f1c" stroke-width="6"/><rect x="-60" y="-66" width="120" height="66" rx="16" fill="url(#hatch)"/><path d="M-60 -34 h120" stroke="#221f1c" stroke-width="4" opacity=".4"/></svg></div>
+<div class="bb " data-bb="cart" style="--x:660;--z:1250;--w:260" ><svg viewBox="-120 -170 260 200" class="art"><!-- the cart with crates -->
+      <g transform="translate(0 0)">
+        <ellipse cx="0" cy="8" rx="110" ry="12" fill="#221f1c" opacity=".13"/>
+        <rect x="-96" y="-80" width="170" height="60" rx="8" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/>
+        <rect x="-96" y="-80" width="170" height="60" fill="url(#plank)"/>
+        <path d="M74 -70 l60 -30" stroke="#221f1c" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="-56" cy="-8" r="26" fill="url(#cl)" stroke="#221f1c" stroke-width="6"/><circle cx="-56" cy="-8" r="8" fill="#f6efe1" stroke="#221f1c" stroke-width="4"/>
+        <circle cx="40" cy="-8" r="26" fill="url(#cl)" stroke="#221f1c" stroke-width="6"/><circle cx="40" cy="-8" r="8" fill="#f6efe1" stroke="#221f1c" stroke-width="4"/>
+        <g transform="translate(-40 -108) scale(.7)"><use href="#crate"/></g>
+        <g transform="translate(20 -104) scale(.62) rotate(-8)"><use href="#crate"/></g>
+      </g></svg></div>
+<div class="bb " data-bb="post1" style="--x:440;--z:1500;--w:260" ><svg viewBox="-130 -230 260 240" class="art"><ellipse cx="4" cy="6" rx="36" ry="7" fill="#221f1c" opacity=".14"/><rect x="-8" y="-190" width="16" height="190" rx="5" fill="url(#wood)" stroke="#221f1c" stroke-width="5"/><g transform="translate(0 -176)" opacity="1"><path d="M100 -18 h-176 l-24 18 l24 18 h176 z" fill="#f6efe1" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><text x="90" y="6" text-anchor="end" class="post">THE EXAM HALL</text></g><g transform="translate(0 -124)" opacity="0.6"><path d="M-100 -18 h176 l24 18 l-24 18 h-176 z" fill="#f6efe1" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><text x="-90" y="6" text-anchor="start" class="post">THE PAPER MILL</text></g></svg></div>
+<div class="bb " data-bb="hall" style="--x:-520;--z:2480;--w:600"  data-main="1"><svg viewBox="-300 -430 600 480" class="art"><g transform="translate(0 0) scale(.86)" data-hall>
+        <ellipse cx="40" cy="10" rx="330" ry="20" fill="#221f1c" opacity=".13"/>
+        <!-- plinth -->
+        <rect x="-290" y="-24" width="580" height="24" rx="6" fill="url(#stone)" stroke="#221f1c" stroke-width="6"/>
+        <path d="M-290 -12 h580" stroke="#221f1c" stroke-width="3" opacity=".35"/>
+        <!-- walls -->
+        <rect x="-260" y="-230" width="520" height="206" rx="10" fill="url(#wall)" stroke="#221f1c" stroke-width="6"/>
+        <rect x="150" y="-230" width="110" height="206" fill="#221f1c" opacity=".08"/>
+        <!-- stone corners -->
+        <g fill="url(#stone)" stroke="#221f1c" stroke-width="4">
+          <rect x="-266" y="-70" width="34" height="22" rx="5"/><rect x="-266" y="-118" width="26" height="22" rx="5"/><rect x="-266" y="-166" width="34" height="22" rx="5"/>
+          <rect x="232" y="-70" width="34" height="22" rx="5"/><rect x="240" y="-118" width="26" height="22" rx="5"/><rect x="232" y="-166" width="34" height="22" rx="5"/>
+        </g>
+        <!-- big roof -->
+        <path d="M-330 -220 L0 -420 L330 -220 Z" fill="url(#roofG)" stroke="#221f1c" stroke-width="7" stroke-linejoin="round"/>
+        <path d="M-290 -222 L0 -396 L290 -222" fill="none" stroke="#fff" stroke-width="6" opacity=".16"/>
+        <path d="M-330 -220 H330" stroke="#221f1c" stroke-width="7"/>
+        <g stroke="#221f1c" stroke-width="3" opacity=".3"><path d="M-220 -286 L220 -286"/><path d="M-150 -330 L150 -330"/><path d="M-80 -372 L80 -372"/></g>
+        <!-- pennant on the ridge -->
+        <g transform="translate(0 -420)"><path d="M0 0 v-70" stroke="#221f1c" stroke-width="5" stroke-linecap="round"/><path class="flag" d="M2 -70 l58 12 l-58 14 z" fill="url(#rd)" stroke="#221f1c" stroke-width="4" stroke-linejoin="round"/></g>
+        <!-- steps -->
+        <rect x="-100" y="0" width="200" height="12" rx="4" fill="url(#stone)" stroke="#221f1c" stroke-width="5"/>
+        <!-- roof sign -->
+        <g transform="translate(0 -250)">
+          <rect x="-150" y="-26" width="300" height="52" rx="10" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/>
+          <rect x="-150" y="-26" width="300" height="52" fill="url(#plank)"/>
+          <text x="0" y="9" text-anchor="middle" class="signmid">EXAM HALL</text>
+        </g>
+        <!-- the sealed double doors -->
+        <g transform="translate(0 -24)">
+          <rect x="-72" y="-140" width="144" height="140" rx="40" ry="20" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/>
+          <rect x="-72" y="-140" width="144" height="140" rx="40" ry="20" fill="url(#plank)"/>
+          <path d="M0 -140 v140" stroke="#221f1c" stroke-width="5"/>
+          <path d="M-60 -70 h120" stroke="#221f1c" stroke-width="7" stroke-linecap="round" stroke-dasharray="10 8"/>
+          <g class="seal"><circle cx="0" cy="-70" r="22" fill="url(#rd)" stroke="#221f1c" stroke-width="5"/><text x="0" y="-64" text-anchor="middle" class="sealtext">VV</text></g>
+          <text x="0" y="-14" text-anchor="middle" class="stamp">SEALED</text>
+        </g>
+        <!-- the judge's window, lit -->
+        <g transform="translate(-170 -140)">
+          <circle cx="0" cy="10" r="70" fill="url(#lampG)" opacity=".8"/>
+          <rect x="-56" y="-48" width="112" height="96" rx="12" fill="#ffe6bb" stroke="#221f1c" stroke-width="6"/>
+          <!-- judge: the chief with glasses, at a desk -->
+          <g transform="translate(0 22) scale(.5)">
+            <rect x="-70" y="10" width="140" height="18" rx="6" fill="url(#wood)" stroke="#221f1c" stroke-width="5"/>
+            <path d="M-40 12 q10 -42 40 -42 q30 0 40 42 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+            <circle cx="0" cy="-44" r="27" fill="#f0cfa8" stroke="#221f1c" stroke-width="6"/>
+            <path d="M-27 -52 q5 -27 27 -27 q23 0 27 27 q-14 -11 -27 -9 q-17 2 -27 9z" fill="#3a2f28" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/>
+            <circle cx="-10" cy="-42" r="9" fill="none" stroke="#221f1c" stroke-width="4"/><circle cx="10" cy="-42" r="9" fill="none" stroke="#221f1c" stroke-width="4"/><path d="M-1 -42 h2" stroke="#221f1c" stroke-width="4"/>
+            <circle class="eye" cx="-10" cy="-42" r="3.4" fill="#221f1c"/><circle class="eye" cx="10" cy="-42" r="3.4" fill="#221f1c"/>
+            <path d="M-8 -30 q8 4 16 0" stroke="#221f1c" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <rect x="-50" y="-4" width="34" height="22" rx="3" fill="#f6efe1" stroke="#221f1c" stroke-width="4" class="paper"/>
+            <g class="stamphand"><rect x="18" y="-14" width="22" height="26" rx="5" fill="url(#rd)" stroke="#221f1c" stroke-width="4"/></g>
+          </g>
+          <path d="M-56 0 h112" stroke="#221f1c" stroke-width="4" opacity=".5"/>
+          <text x="0" y="-58" text-anchor="middle" class="lbl">THE JUDGE</text>
+        </g>
+        <!-- lantern by the door -->
+        <g transform="translate(120 -150)">
+          <circle cx="0" cy="24" r="38" fill="url(#lampG)" class="lamp"/>
+          <path d="M-18 -10 h36" stroke="#221f1c" stroke-width="5"/><path d="M0 -10 v10" stroke="#221f1c" stroke-width="4"/>
+          <rect x="-13" y="0" width="26" height="34" rx="6" fill="#ffe6bb" stroke="#221f1c" stroke-width="5"/>
+          <rect x="-16" y="-4" width="32" height="8" rx="3" fill="url(#brass)" stroke="#221f1c" stroke-width="4"/>
+        </g>
+        <text x="0" y="46" text-anchor="middle" class="lbl">THE EXAM HALL · FORGE</text>
+      </g></svg></div>
+<div class="bb " data-bb="wall" style="--x:-230;--z:2810;--w:240" ><svg viewBox="-120 -250 240 290" class="art"><g transform="translate(0 0) scale(.8)" data-wall>
+        <ellipse cx="0" cy="8" rx="150" ry="12" fill="#221f1c" opacity=".12"/>
+        <rect x="-120" y="-250" width="16" height="250" rx="5" fill="url(#wood)" stroke="#221f1c" stroke-width="5"/>
+        <rect x="104" y="-250" width="16" height="250" rx="5" fill="url(#wood)" stroke="#221f1c" stroke-width="5"/>
+        <rect x="-136" y="-262" width="272" height="196" rx="10" fill="url(#cl)" stroke="#221f1c" stroke-width="6"/>
+        <rect x="-136" y="-262" width="272" height="196" fill="url(#plank)"/>
+        <rect x="-136" y="-292" width="272" height="34" rx="8" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/>
+        <text x="0" y="-268" text-anchor="middle" class="signsmall">SEALED RECORDS</text>
+        <g data-records fill="#f6efe1" stroke="#221f1c" stroke-width="3.5">
+          <rect x="-118" y="-246" width="46" height="34" rx="3"/><rect x="-62" y="-244" width="46" height="34" rx="3" transform="rotate(-2 -39 -227)"/><rect x="-6" y="-246" width="46" height="34" rx="3"/><rect x="50" y="-243" width="46" height="34" rx="3" transform="rotate(3 73 -226)"/>
+          <rect x="-118" y="-200" width="46" height="34" rx="3" transform="rotate(2 -95 -183)"/><rect x="-62" y="-202" width="46" height="34" rx="3"/><rect x="-6" y="-199" width="46" height="34" rx="3" transform="rotate(-3 17 -182)"/><rect x="50" y="-202" width="46" height="34" rx="3"/>
+          <rect x="-118" y="-156" width="46" height="34" rx="3"/><rect x="-62" y="-154" width="46" height="34" rx="3" transform="rotate(2 -39 -137)"/><rect x="-6" y="-156" width="46" height="34" rx="3"/><rect x="50" y="-157" width="46" height="34" rx="3" transform="rotate(-2 73 -140)"/>
+          <rect x="-118" y="-112" width="46" height="34" rx="3" transform="rotate(-2 -95 -95)"/><rect x="-62" y="-110" width="46" height="34" rx="3"/><rect x="-6" y="-112" width="46" height="34" rx="3" transform="rotate(2 17 -95)"/>
+        </g>
+        <!-- pass stamps on some, one struck through: the withdrawn passes -->
+        <g fill="none" stroke-width="3">
+          <circle cx="-95" cy="-229" r="9" stroke="#3f8a5f"/><circle cx="17" cy="-229" r="9" stroke="#3f8a5f"/><circle cx="-39" cy="-185" r="9" stroke="#3f8a5f"/><circle cx="73" cy="-185" r="9" stroke="#3f8a5f"/><circle cx="-95" cy="-139" r="9" stroke="#3f8a5f"/><circle cx="17" cy="-139" r="9" stroke="#3f8a5f"/><circle cx="-39" cy="-95" r="9" stroke="#3f8a5f"/>
+          <path d="M-110 -110 l30 30 M-80 -110 l-30 30" stroke="#d9503a"/><path d="M60 -160 l26 26 M86 -160 l-26 26" stroke="#d9503a"/>
+        </g>
+        <text x="0" y="40" text-anchor="middle" class="lbl">EVERY VERDICT, DATED</text>
+      </g></svg></div>
+<div class="bb carriers" data-bb="carriers" style="--x:-900;--z:2390;--w:220" data-carriers><svg viewBox="-110 -110 220 215" class="art"><g transform="translate(-52 0) scale(.66)"><use href="#bot" class="bot g carry"/></g><g transform="translate(52 0) scale(.66)"><use href="#bot" class="bot r carry"/></g><g transform="translate(0 10) scale(.8)"><use href="#crate"/></g><ellipse cx="0" cy="70" rx="70" ry="9" fill="#221f1c" opacity=".14"/></svg></div>
+<div class="bb clerk" data-bb="clerk" style="--x:-440;--z:2450;--w:74" ><svg viewBox="-60 -100 120 200" class="art"><g ><use href="#bot" class="bot y"/></g></svg></div>
+<div class="bb " data-bb="post2" style="--x:460;--z:3260;--w:260" ><svg viewBox="-130 -230 260 240" class="art"><ellipse cx="4" cy="6" rx="36" ry="7" fill="#221f1c" opacity=".14"/><rect x="-8" y="-190" width="16" height="190" rx="5" fill="url(#wood)" stroke="#221f1c" stroke-width="5"/><g transform="translate(0 -176)" opacity="1"><path d="M-100 -18 h176 l24 18 l-24 18 h-176 z" fill="#f6efe1" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><text x="-90" y="6" text-anchor="start" class="post">THE PAPER MILL</text></g><g transform="translate(0 -124)" opacity="0.6"><path d="M100 -18 h-176 l-24 18 l24 18 h176 z" fill="#f6efe1" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><text x="90" y="6" text-anchor="end" class="post">THE POST OFFICE</text></g></svg></div>
+<div class="bb " data-bb="mill" style="--x:480;--z:4050;--w:680"  data-main="2"><svg viewBox="-340 -520 680 570" class="art"><ellipse cx="26.0" cy="10" rx="310.0" ry="18" fill="#221f1c" opacity=".13"/>
+<rect x="-280.0" y="-24" width="560" height="24" rx="6" fill="url(#stone)" stroke="#221f1c" stroke-width="6"/>
+<rect x="-260.0" y="-224" width="520" height="200" rx="10" fill="url(#wall)" stroke="#221f1c" stroke-width="6"/>
+<rect x="170.0" y="-224" width="90" height="200" fill="#221f1c" opacity=".08"/>
+<path d="M-320.0 -214 L0 -404 L320.0 -214 Z" fill="url(#cl)" stroke="#221f1c" stroke-width="7" stroke-linejoin="round"/>
+<path d="M-290.0 -216 L0 -382 L290.0 -216" fill="none" stroke="#fff" stroke-width="6" opacity=".16"/>
+<path d="M-320.0 -214 H320.0" stroke="#221f1c" stroke-width="7"/><g transform="translate(0 -240)"><rect x="-150.0" y="-26" width="300" height="52" rx="10" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/><rect x="-150.0" y="-26" width="300" height="52" fill="url(#plank)"/><text x="0" y="9" text-anchor="middle" class="signmid">PAPER MILL</text></g><g transform="translate(-300 -110)"><circle r="96" fill="none" stroke="#221f1c" stroke-width="7"/><g class="wheel"><circle r="96" fill="none" stroke="url(#wood)" stroke-width="22"/><circle r="96" fill="none" stroke="#221f1c" stroke-width="5"/><path d="M-96 0 H96 M0 -96 V96 M-68 -68 L68 68 M-68 68 L68 -68" stroke="#221f1c" stroke-width="7" stroke-linecap="round"/><g fill="url(#wood)" stroke="#221f1c" stroke-width="4"><rect x="-10" y="-112" width="20" height="30" rx="4"/><rect x="-10" y="82" width="20" height="30" rx="4"/><rect x="-112" y="-10" width="30" height="20" rx="4"/><rect x="82" y="-10" width="30" height="20" rx="4"/></g></g><circle r="14" fill="url(#brass)" stroke="#221f1c" stroke-width="5"/></g><g transform="translate(150 -24)"><rect x="-70" y="-120" width="140" height="120" rx="12" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/><rect x="-70" y="-120" width="140" height="120" fill="url(#plank)"/><g fill="#f6efe1" stroke="#221f1c" stroke-width="4"><rect x="-54" y="-40" width="108" height="10" rx="2"/><rect x="-50" y="-56" width="108" height="10" rx="2" transform="rotate(-2 4 -51)"/><rect x="-56" y="-72" width="108" height="10" rx="2" transform="rotate(2 -2 -67)"/><rect x="-52" y="-88" width="108" height="10" rx="2"/></g><path d="M-30 -96 q36 -40 76 -30" stroke="#221f1c" stroke-width="4" fill="none" stroke-dasharray="6 5"/></g><g transform="translate(-60 -24)"><rect x="-56" y="-124" width="112" height="124" rx="36" ry="18" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/><rect x="-56" y="-124" width="112" height="124" rx="36" ry="18" fill="url(#plank)"/><path d="M-40 -60 h80" stroke="#221f1c" stroke-width="7" stroke-linecap="round" stroke-dasharray="10 8"/><rect x="-16" y="-72" width="32" height="26" rx="6" fill="url(#brass)" stroke="#221f1c" stroke-width="4"/><path d="M-9 -72 v-12 q9 -14 18 0 v12" fill="none" stroke="#221f1c" stroke-width="5"/></g><g transform="translate(-60 -170)"><rect x="-105.0" y="-16" width="210" height="32" rx="6" fill="#f6efe1" stroke="#221f1c" stroke-width="4"/><text x="0" y="6" text-anchor="middle" class="stamp" style="fill:var(--red);font-size:12px;letter-spacing:.18em">NOTHING LEAVES</text></g><g transform="translate(60 -150)"><circle cx="0" cy="24" r="38" fill="url(#lampG)" class="lamp"/><path d="M-18 -10 h36" stroke="#221f1c" stroke-width="5"/><path d="M0 -10 v10" stroke="#221f1c" stroke-width="4"/><rect x="-13" y="0" width="26" height="34" rx="6" fill="#ffe6bb" stroke="#221f1c" stroke-width="5"/><rect x="-16" y="-4" width="32" height="8" rx="3" fill="url(#brass)" stroke="#221f1c" stroke-width="4"/></g><g class="psheet" data-act="sheet" transform="translate(150 -150)"><rect x="-30" y="-8" width="60" height="14" rx="2" fill="#f6efe1" stroke="#221f1c" stroke-width="4"/></g><rect x="180" y="-380" width="34" height="100" rx="5" fill="url(#stone)" stroke="#221f1c" stroke-width="5"/><g class="smoke" transform="translate(197 -390)"><circle class="s1" r="10" fill="#f6efe1" stroke="#221f1c" stroke-width="3" opacity=".8"/><circle class="s2" r="13" fill="#f6efe1" stroke="#221f1c" stroke-width="3" opacity=".7"/><circle class="s3" r="16" fill="#f6efe1" stroke="#221f1c" stroke-width="3" opacity=".6"/></g><text x="0" y="46" text-anchor="middle" class="lbl">THE PAPER MILL · UNBOUNDPDF</text></svg></div>
+<div class="bb shuttle" data-bb="millbot" style="--x:300;--z:3990;--w:80" data-shuttle="300,620,4800"><svg viewBox="-60 -100 120 200" class="art"><use href="#bot" class="bot g carry"/><g fill="#f6efe1" stroke="#221f1c" stroke-width="4"><rect x="-34" y="18" width="68" height="8" rx="2"/><rect x="-32" y="10" width="68" height="8" rx="2"/><rect x="-35" y="2" width="68" height="8" rx="2"/></g></svg></div>
+<div class="bb " data-bb="post3" style="--x:-460;--z:4750;--w:260" ><svg viewBox="-130 -230 260 240" class="art"><ellipse cx="4" cy="6" rx="36" ry="7" fill="#221f1c" opacity=".14"/><rect x="-8" y="-190" width="16" height="190" rx="5" fill="url(#wood)" stroke="#221f1c" stroke-width="5"/><g transform="translate(0 -176)" opacity="1"><path d="M100 -18 h-176 l-24 18 l24 18 h176 z" fill="#f6efe1" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><text x="90" y="6" text-anchor="end" class="post">THE POST OFFICE</text></g><g transform="translate(0 -124)" opacity="0.6"><path d="M100 -18 h-176 l-24 18 l24 18 h176 z" fill="#f6efe1" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><text x="90" y="6" text-anchor="end" class="post">THE WORKSHOP</text></g></svg></div>
+<div class="bb " data-bb="hay4" style="--x:-700;--z:4350;--w:110" ><svg viewBox="-60 -70 120 80" class="art"><ellipse cx="0" cy="6" rx="62" ry="8" fill="#221f1c" opacity=".12"/><rect x="-60" y="-66" width="120" height="66" rx="16" fill="url(#gd)" stroke="#221f1c" stroke-width="6"/><rect x="-60" y="-66" width="120" height="66" rx="16" fill="url(#hatch)"/><path d="M-60 -34 h120" stroke="#221f1c" stroke-width="4" opacity=".4"/></svg></div>
+<div class="bb " data-bb="postoffice" style="--x:-480;--z:5620;--w:680"  data-main="3"><svg viewBox="-340 -520 680 570" class="art"><ellipse cx="26.0" cy="10" rx="310.0" ry="18" fill="#221f1c" opacity=".13"/>
+<rect x="-280.0" y="-24" width="560" height="24" rx="6" fill="url(#stone)" stroke="#221f1c" stroke-width="6"/>
+<rect x="-260.0" y="-224" width="520" height="200" rx="10" fill="url(#wall)" stroke="#221f1c" stroke-width="6"/>
+<rect x="170.0" y="-224" width="90" height="200" fill="#221f1c" opacity=".08"/>
+<path d="M-320.0 -214 L0 -384 L320.0 -214 Z" fill="url(#roofG)" stroke="#221f1c" stroke-width="7" stroke-linejoin="round"/>
+<path d="M-290.0 -216 L0 -362 L290.0 -216" fill="none" stroke="#fff" stroke-width="6" opacity=".16"/>
+<path d="M-320.0 -214 H320.0" stroke="#221f1c" stroke-width="7"/><g transform="translate(0 -240)"><rect x="-150.0" y="-26" width="300" height="52" rx="10" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/><rect x="-150.0" y="-26" width="300" height="52" fill="url(#plank)"/><text x="0" y="9" text-anchor="middle" class="signmid">POST OFFICE</text></g><g transform="translate(130 -140)"><circle cx="0" cy="10" r="74" fill="url(#lampG)" opacity=".8"/><rect x="-70" y="-56" width="140" height="112" rx="12" fill="#ffe6bb" stroke="#221f1c" stroke-width="6"/><g transform="translate(0 30) scale(0.5)"><ellipse cx="0" cy="26" rx="46" ry="8" fill="#221f1c" opacity=".14"/><path d="M-40 26 q10 -42 40 -42 q30 0 40 42 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/><circle cx="0" cy="-30" r="27" fill="#f0cfa8" stroke="#221f1c" stroke-width="6"/><path d="M-27 -38 q5 -27 27 -27 q23 0 27 27 q-14 -11 -27 -9 q-17 2 -27 9z" fill="#3a2f28" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><circle class="eye" cx="-9" cy="-30" r="3.8" fill="#221f1c"/><circle class="eye" cx="9" cy="-30" r="3.8" fill="#221f1c"/><path d="M-9 -19 q9 7 18 0" stroke="#221f1c" stroke-width="4" fill="none" stroke-linecap="round"/></g><rect x="-70" y="30" width="140" height="14" rx="4" fill="url(#wood)" stroke="#221f1c" stroke-width="5"/><g class="stamphand" transform="translate(28 8)"><rect x="-12" y="-16" width="24" height="26" rx="5" fill="url(#rd)" stroke="#221f1c" stroke-width="4"/></g><text x="0" y="-66" text-anchor="middle" class="lbl">THE SENDING WINDOW</text></g><g transform="translate(-120 -24)"><rect x="-72" y="-130" width="144" height="130" rx="10" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/><rect x="-72" y="-130" width="144" height="130" fill="url(#plank)"/><g fill="#f6efe1" stroke="#221f1c" stroke-width="4" stroke-linejoin="round"><g transform="translate(-30 -70) rotate(-8)"><rect x="-28" y="-18" width="56" height="36" rx="3"/><path d="M-28 -18 l28 20 l28 -20"/></g><g transform="translate(24 -56) rotate(6)"><rect x="-28" y="-18" width="56" height="36" rx="3"/><path d="M-28 -18 l28 20 l28 -20"/></g><g transform="translate(-6 -98)"><rect x="-28" y="-18" width="56" height="36" rx="3"/><path d="M-28 -18 l28 20 l28 -20"/></g></g></g><g class="letter" data-act="letter" transform="translate(160 -110)"><rect x="-22" y="-14" width="44" height="28" rx="3" fill="#f6efe1" stroke="#221f1c" stroke-width="4"/><path d="M-22 -14 l22 16 l22 -16" fill="none" stroke="#221f1c" stroke-width="4" stroke-linejoin="round"/></g><g transform="translate(300 0)"><ellipse cx="0" cy="6" rx="40" ry="8" fill="#221f1c" opacity=".14"/><rect x="-28" y="-150" width="56" height="150" rx="14" fill="url(#rd)" stroke="#221f1c" stroke-width="6"/><rect x="-18" y="-112" width="36" height="8" rx="3" fill="#221f1c"/><path d="M-28 -136 q28 -18 56 0" fill="none" stroke="#221f1c" stroke-width="5"/></g><g transform="translate(0 -300)"><rect x="-125.0" y="-16" width="250" height="32" rx="6" fill="#f6efe1" stroke="#221f1c" stroke-width="4"/><text x="0" y="6" text-anchor="middle" class="stamp" style="fill:var(--green);font-size:12px;letter-spacing:.18em">THE SEND STAYS HUMAN</text></g><text x="0" y="46" text-anchor="middle" class="lbl">THE POST OFFICE · CONXTO</text></svg></div>
+<div class="bb " data-bb="postbot" style="--x:-300;--z:5570;--w:84" ><svg viewBox="-60 -100 120 200" class="art"><use href="#bot" class="bot y work"/><g transform="translate(-70 30) rotate(-10)"><rect x="-28" y="-18" width="56" height="36" rx="3" fill="#f6efe1" stroke="#221f1c" stroke-width="4"/><path d="M-28 -18 l28 20 l28 -20" fill="none" stroke="#221f1c" stroke-width="4" stroke-linejoin="round"/></g></svg></div>
+<div class="bb " data-bb="post4" style="--x:460;--z:6320;--w:260" ><svg viewBox="-130 -230 260 240" class="art"><ellipse cx="4" cy="6" rx="36" ry="7" fill="#221f1c" opacity=".14"/><rect x="-8" y="-190" width="16" height="190" rx="5" fill="url(#wood)" stroke="#221f1c" stroke-width="5"/><g transform="translate(0 -176)" opacity="1"><path d="M100 -18 h-176 l-24 18 l24 18 h176 z" fill="#f6efe1" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><text x="90" y="6" text-anchor="end" class="post">THE WORKSHOP</text></g><g transform="translate(0 -124)" opacity="0.6"><path d="M-100 -18 h176 l24 18 l-24 18 h-176 z" fill="#f6efe1" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><text x="-90" y="6" text-anchor="start" class="post">THE TOOL WALL</text></g></svg></div>
+<div class="bb " data-bb="fenceP1" style="--x:520;--z:5740;--w:260" ><svg viewBox="0 0 260 90" class="art"><g fill="url(#wood)" stroke="#221f1c" stroke-width="5"><rect x="20" y="10" width="14" height="72" rx="4"/><rect x="123" y="10" width="14" height="72" rx="4"/><rect x="226" y="10" width="14" height="72" rx="4"/><rect x="0" y="26" width="260" height="10" rx="4"/><rect x="0" y="54" width="260" height="10" rx="4"/></g></svg></div>
+<div class="bb " data-bb="fenceP2" style="--x:790;--z:5740;--w:260" ><svg viewBox="0 0 260 90" class="art"><g fill="url(#wood)" stroke="#221f1c" stroke-width="5"><rect x="20" y="10" width="14" height="72" rx="4"/><rect x="123" y="10" width="14" height="72" rx="4"/><rect x="226" y="10" width="14" height="72" rx="4"/><rect x="0" y="26" width="260" height="10" rx="4"/><rect x="0" y="54" width="260" height="10" rx="4"/></g></svg></div>
+<div class="bb workshop" data-bb="workshop" style="--x:-640;--z:7540;--w:860"  data-main="4"><div class="mach"><svg class="machine run" viewBox="0 0 1400 660">
+      <defs>
+        <linearGradient id="steel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ddd5c3"/><stop offset=".5" stop-color="#b9b0a0"/><stop offset="1" stop-color="#948b7c"/></linearGradient>
+        <linearGradient id="brass" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e8c98a"/><stop offset=".5" stop-color="#c69a4e"/><stop offset="1" stop-color="#8f6c2e"/></linearGradient>
+        <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4c65e"/><stop offset=".5" stop-color="#e6a52e"/><stop offset="1" stop-color="#c0821b"/></linearGradient>
+        <linearGradient id="red" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e9694f"/><stop offset=".5" stop-color="#d9503a"/><stop offset="1" stop-color="#ad3826"/></linearGradient>
+        <linearGradient id="green" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#55a675"/><stop offset=".5" stop-color="#3f8a5f"/><stop offset="1" stop-color="#2b6745"/></linearGradient>
+        <linearGradient id="clay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cd8a5f"/><stop offset=".5" stop-color="#b7714a"/><stop offset="1" stop-color="#8c5334"/></linearGradient>
+        <linearGradient id="beltg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4b453f"/><stop offset=".35" stop-color="#2e2a26"/><stop offset="1" stop-color="#1d1a17"/></linearGradient>
+        <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".5"/><stop offset=".5" stop-color="#fff" stop-opacity=".06"/><stop offset="1" stop-color="#fff" stop-opacity=".28"/></linearGradient>
+        <radialGradient id="warm"><stop offset="0" stop-color="#ffd98a" stop-opacity=".9"/><stop offset="1" stop-color="#ffd98a" stop-opacity="0"/></radialGradient>
+        <pattern id="hatch" width="9" height="9" patternTransform="rotate(38)" patternUnits="userSpaceOnUse"><path d="M0 0 v9" stroke="#221f1c" stroke-width="2.4" opacity=".13"/></pattern>
+        <clipPath id="hopclip"><path d="M196 148 L404 148 L368 268 L232 268 Z"/></clipPath>
+        <clipPath id="beltclip"><rect x="250" y="400" width="812" height="36" rx="10"/></clipPath>
+        <clipPath id="winclip"><rect x="1082" y="286" width="146" height="106" rx="12"/></clipPath>
+      </defs>
+
+      <!-- floor -->
+      <ellipse cx="700" cy="614" rx="640" ry="16" fill="#221f1c" opacity=".07"/>
+      <path d="M70 610 H1350" stroke="#221f1c" stroke-width="4" opacity=".16" stroke-linecap="round"/>
+
+      <!-- the return line, behind everything -->
+      <g data-loopwrap>
+        <path d="M1010 206 q0 -58 -46 -84 q-44 -24 -118 -24 L470 94 q-90 0 -110 -40 q-8 -16 -6 -34" fill="none" stroke="#221f1c" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M1010 206 q0 -58 -46 -84 q-44 -24 -118 -24 L470 94 q-90 0 -110 -40 q-8 -16 -6 -34" fill="none" stroke="url(#steel)" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+        <path data-loop d="M1010 206 q0 -58 -46 -84 q-44 -24 -118 -24 L470 94 q-90 0 -110 -40 q-8 -16 -6 -34" fill="none" stroke="var(--red)" stroke-width="6" stroke-dasharray="13 17" stroke-linecap="round" opacity="0"/>
+        <rect x="612" y="80" width="18" height="28" rx="4" fill="url(#brass)" stroke="#221f1c" stroke-width="4"/>
+        <rect x="928" y="106" width="18" height="26" rx="4" fill="url(#brass)" stroke="#221f1c" stroke-width="4" transform="rotate(38 937 119)"/>
+        <text x="700" y="60" text-anchor="middle" class="lbl">ROUND AGAIN</text>
+      </g>
+
+      <!-- the crew, standing behind the bench -->
+      <g data-agents>
+      <g transform="translate(400 349) scale(.95)">
+        <g class="agent" data-agent="1">
+          <path class="leg" d="M-14 74 v26 M14 74 v26" stroke="#221f1c" stroke-width="11" stroke-linecap="round"/>
+          <path d="M-29 4 q0 -24 29 -24 q29 0 29 24 v38 q0 26 -29 26 q-29 0 -29 -26 z" fill="url(#green)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M8 -19 q18 4 18 21 v44 q0 26 -26 26 q-6 0 -11 -2 q19 -4 19 -26 z" fill="#221f1c" opacity=".14"/>
+          <path d="M-17 -8 q-5 8 -5 22 v20" stroke="#fff" stroke-width="6" opacity=".3" fill="none" stroke-linecap="round"/>
+          <rect x="-14" y="14" width="28" height="22" rx="7" fill="#efe6d4" stroke="#221f1c" stroke-width="4"/>
+          <circle class="glow" cx="0" cy="25" r="11" fill="#4fe39c" opacity=".26"/><circle class="chest" cx="0" cy="25" r="4.8" fill="#4fe39c"/>
+          <g class="arm-l"><path d="M-25 10 q-21 11 -20 34" stroke="#221f1c" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="-45" cy="47" r="9" fill="url(#green)" stroke="#221f1c" stroke-width="5"/></g>
+          <g class="arm-r"><path d="M25 10 q21 11 20 34" stroke="#221f1c" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="45" cy="47" r="9" fill="url(#green)" stroke="#221f1c" stroke-width="5"/><g transform="translate(45 47)"><circle cx="2" cy="12" r="9" fill="none" stroke="#221f1c" stroke-width="4"/><circle cx="2" cy="12" r="9" fill="#efe6d4" opacity=".5"/><path d="M8 19 l9 10" stroke="#221f1c" stroke-width="5" stroke-linecap="round"/></g></g>
+          <rect x="-13" y="-26" width="26" height="9" rx="4" fill="url(#brass)" stroke="#221f1c" stroke-width="4"/>
+          <g class="head">
+            <path d="M-16 -48 q-9 -16 -3 -26" stroke="#221f1c" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <circle cx="-19" cy="-76" r="6.5" fill="#4fe39c" stroke="#221f1c" stroke-width="4"/>
+            <path d="M-30 -62 q0 -14 12 -14 h36 q12 0 12 14 v22 q0 14 -12 14 h-36 q-12 0 -12 -14 z" fill="#f6efe1" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+            <path d="M18 -76 q12 0 12 14 v22 q0 14 -12 14 h-9 q11 -4 11 -18 v-14 q0 -14 -11 -18 z" fill="#221f1c" opacity=".12"/>
+            <rect x="-21" y="-56" width="42" height="24" rx="12" fill="#221f1c"/>
+            <circle class="glow" cx="-8" cy="-44" r="10" fill="#4fe39c" opacity=".3"/><circle class="glow" cx="8" cy="-44" r="10" fill="#4fe39c" opacity=".3"/><circle class="eye" cx="-8" cy="-44" r="4.6" fill="#4fe39c"/><circle class="eye" cx="8" cy="-44" r="4.6" fill="#4fe39c"/>
+            <path d="M-17 -53 q6 -3 13 -2" stroke="#fff" stroke-width="4" opacity=".3" fill="none" stroke-linecap="round"/>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(572 330) scale(1.09)">
+        <g class="agent" data-agent="2">
+          <path class="leg" d="M-14 74 v26 M14 74 v26" stroke="#221f1c" stroke-width="11" stroke-linecap="round"/>
+          <path d="M-22 0 q0 -20 22 -20 q22 0 22 20 v52 q0 24 -22 24 q-22 0 -22 -24 z" fill="url(#red)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M8 -19 q18 4 18 21 v44 q0 26 -26 26 q-6 0 -11 -2 q19 -4 19 -26 z" fill="#221f1c" opacity=".14"/>
+          <path d="M-17 -8 q-5 8 -5 22 v20" stroke="#fff" stroke-width="6" opacity=".3" fill="none" stroke-linecap="round"/>
+          <rect x="-14" y="14" width="28" height="22" rx="7" fill="#efe6d4" stroke="#221f1c" stroke-width="4"/>
+          <circle class="glow" cx="0" cy="25" r="11" fill="#ff9d4a" opacity=".26"/><circle class="chest" cx="0" cy="25" r="4.8" fill="#ff9d4a"/>
+          <g class="arm-l"><path d="M-25 10 q-21 11 -20 34" stroke="#221f1c" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="-45" cy="47" r="9" fill="url(#red)" stroke="#221f1c" stroke-width="5"/></g>
+          <g class="arm-r"><path d="M25 10 q21 11 20 34" stroke="#221f1c" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="45" cy="47" r="9" fill="url(#red)" stroke="#221f1c" stroke-width="5"/><g transform="translate(45 47)"><path d="M-1 8 l16 16 l-4 6 l-16 -16 z" fill="url(#brass)" stroke="#221f1c" stroke-width="4" stroke-linejoin="round"/><path d="M14 29 l6 8 l2 -9 z" fill="#221f1c"/></g></g>
+          <rect x="-13" y="-26" width="26" height="9" rx="4" fill="url(#brass)" stroke="#221f1c" stroke-width="4"/>
+          <g class="head">
+            <path d="M-16 -48 q-9 -16 -3 -26" stroke="#221f1c" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <circle cx="-19" cy="-76" r="6.5" fill="#ff9d4a" stroke="#221f1c" stroke-width="4"/>
+            <path d="M-30 -62 q0 -14 12 -14 h36 q12 0 12 14 v22 q0 14 -12 14 h-36 q-12 0 -12 -14 z" fill="#f6efe1" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+            <path d="M18 -76 q12 0 12 14 v22 q0 14 -12 14 h-9 q11 -4 11 -18 v-14 q0 -14 -11 -18 z" fill="#221f1c" opacity=".12"/>
+            <rect x="-21" y="-56" width="42" height="24" rx="12" fill="#221f1c"/>
+            <circle class="glow" cx="-8" cy="-44" r="10" fill="#ff9d4a" opacity=".3"/><circle class="glow" cx="8" cy="-44" r="10" fill="#ff9d4a" opacity=".3"/><circle class="eye" cx="-8" cy="-44" r="4.6" fill="#ff9d4a"/><circle class="eye" cx="8" cy="-44" r="4.6" fill="#ff9d4a"/>
+            <path d="M-17 -53 q6 -3 13 -2" stroke="#fff" stroke-width="4" opacity=".3" fill="none" stroke-linecap="round"/>
+          </g>
+        </g>
+      </g>
+      <g transform="translate(744 348) scale(1)">
+        <g class="agent" data-agent="3">
+          <path class="leg" d="M-14 74 v26 M14 74 v26" stroke="#221f1c" stroke-width="11" stroke-linecap="round"/>
+          <path d="M-26 2 q0 -22 26 -22 q26 0 26 22 v44 q0 26 -26 26 q-26 0 -26 -26 z" fill="url(#gold)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M8 -19 q18 4 18 21 v44 q0 26 -26 26 q-6 0 -11 -2 q19 -4 19 -26 z" fill="#221f1c" opacity=".14"/>
+          <path d="M-17 -8 q-5 8 -5 22 v20" stroke="#fff" stroke-width="6" opacity=".3" fill="none" stroke-linecap="round"/>
+          <rect x="-14" y="14" width="28" height="22" rx="7" fill="#efe6d4" stroke="#221f1c" stroke-width="4"/>
+          <circle class="glow" cx="0" cy="25" r="11" fill="#ffd23d" opacity=".26"/><circle class="chest" cx="0" cy="25" r="4.8" fill="#ffd23d"/>
+          <g class="arm-l"><path d="M-25 10 q-21 11 -20 34" stroke="#221f1c" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="-45" cy="47" r="9" fill="url(#gold)" stroke="#221f1c" stroke-width="5"/></g>
+          <g class="arm-r"><path d="M25 10 q21 11 20 34" stroke="#221f1c" stroke-width="9" fill="none" stroke-linecap="round"/><circle cx="45" cy="47" r="9" fill="url(#gold)" stroke="#221f1c" stroke-width="5"/><g transform="translate(47 50)"><rect x="-4" y="0" width="26" height="32" rx="4" fill="#fbf8ef" stroke="#221f1c" stroke-width="4"/><rect x="3" y="-4" width="12" height="8" rx="3" fill="url(#brass)" stroke="#221f1c" stroke-width="3.4"/><path d="M2 12 h14 M2 20 h10" stroke="#3f8a5f" stroke-width="3.2" stroke-linecap="round"/></g></g>
+          <rect x="-13" y="-26" width="26" height="9" rx="4" fill="url(#brass)" stroke="#221f1c" stroke-width="4"/>
+          <g class="head">
+            <path d="M-16 -48 q-9 -16 -3 -26" stroke="#221f1c" stroke-width="5" fill="none" stroke-linecap="round"/>
+            <circle cx="-19" cy="-76" r="6.5" fill="#ffd23d" stroke="#221f1c" stroke-width="4"/>
+            <path d="M-14 -78 h28 q5 0 5 6 h-38 q0 -6 5 -6z" fill="url(#brass)" stroke="#221f1c" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M-30 -62 q0 -14 12 -14 h36 q12 0 12 14 v22 q0 14 -12 14 h-36 q-12 0 -12 -14 z" fill="#f6efe1" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+            <path d="M18 -76 q12 0 12 14 v22 q0 14 -12 14 h-9 q11 -4 11 -18 v-14 q0 -14 -11 -18 z" fill="#221f1c" opacity=".12"/>
+            <rect x="-21" y="-56" width="42" height="24" rx="12" fill="#221f1c"/>
+            <circle class="glow" cx="-8" cy="-44" r="10" fill="#ffd23d" opacity=".3"/><circle class="glow" cx="8" cy="-44" r="10" fill="#ffd23d" opacity=".3"/><circle class="eye" cx="-8" cy="-44" r="4.6" fill="#ffd23d"/><circle class="eye" cx="8" cy="-44" r="4.6" fill="#ffd23d"/>
+            <path d="M-17 -53 q6 -3 13 -2" stroke="#fff" stroke-width="4" opacity=".3" fill="none" stroke-linecap="round"/>
+          </g>
+        </g>
+      </g>
+      </g>
+
+      <!-- the bench: one chassis everything bolts to -->
+      <g data-bench>
+        <ellipse cx="330" cy="606" rx="52" ry="9" fill="#221f1c" opacity=".12"/>
+        <ellipse cx="770" cy="606" rx="44" ry="8" fill="#221f1c" opacity=".1"/>
+        <ellipse cx="1178" cy="606" rx="52" ry="9" fill="#221f1c" opacity=".12"/>
+        <path d="M318 470 l-14 132 M346 470 l14 132 M750 470 l-10 130 M774 470 l10 130 M1166 470 l-14 132 M1194 470 l14 132" stroke="#221f1c" stroke-width="15" stroke-linecap="round"/>
+        <path d="M318 470 l-14 132 M346 470 l14 132 M750 470 l-10 130 M774 470 l10 130 M1166 470 l-14 132 M1194 470 l14 132" stroke="url(#steel)" stroke-width="8" stroke-linecap="round"/>
+        <path d="M300 552 h64 M736 556 h52 M1148 552 h64" stroke="#221f1c" stroke-width="9" stroke-linecap="round"/>
+        <ellipse cx="300" cy="436" rx="52" ry="7" fill="#221f1c" opacity=".16"/>
+        <ellipse cx="944" cy="436" rx="82" ry="8" fill="#221f1c" opacity=".16"/>
+        <ellipse cx="1155" cy="438" rx="96" ry="9" fill="#221f1c" opacity=".18"/>
+        <rect x="244" y="434" width="1002" height="38" rx="10" fill="url(#steel)" stroke="#221f1c" stroke-width="6"/>
+        <rect x="252" y="440" width="986" height="7" rx="3.5" fill="#fff" opacity=".3"/>
+        <rect x="252" y="462" width="986" height="6" rx="3" fill="#221f1c" opacity=".14"/>
+        <rect x="248" y="456" width="994" height="14" fill="url(#hatch)" opacity=".7"/>
+        <g fill="#221f1c" opacity=".3"><circle cx="272" cy="453" r="4"/><circle cx="700" cy="453" r="4"/><circle cx="1218" cy="453" r="4"/></g>
+        <path d="M286 540 q-40 18 -46 62" stroke="#221f1c" stroke-width="7" fill="none" stroke-linecap="round" opacity=".8"/>
+        <g transform="translate(444 584)"><ellipse cx="0" cy="24" rx="26" ry="6" fill="#221f1c" opacity=".12"/><path d="M-16 22 h32 q6 0 6 -8 v-14 q0 -6 -6 -6 h-32 q-6 0 -6 6 v14 q0 8 6 8z" fill="url(#brass)" stroke="#221f1c" stroke-width="4.5" stroke-linejoin="round"/><path d="M14 -6 q16 -6 22 -18" stroke="#221f1c" stroke-width="4.5" fill="none" stroke-linecap="round"/><rect x="-6" y="-12" width="12" height="8" rx="3" fill="#221f1c" opacity=".5"/></g>
+        <!-- gearbox on the left leg -->
+        <rect x="286" y="486" width="96" height="76" rx="10" fill="url(#clay)" stroke="#221f1c" stroke-width="6"/>
+        <rect x="294" y="492" width="26" height="12" rx="6" fill="#fff" opacity=".25"/>
+        <g transform="translate(322 524)"><g class="gear"><circle r="26" fill="url(#steel)" stroke="#221f1c" stroke-width="5"/><circle r="8" fill="#efe6d4" stroke="#221f1c" stroke-width="4"/><path d="M0 -26 v-10 M0 26 v10 M-26 0 h-10 M26 0 h10 M-18 -18 l-7 -7 M18 18 l7 7 M18 -18 l7 -7 M-18 18 l-7 7" stroke="#221f1c" stroke-width="6" stroke-linecap="round"/></g></g>
+        <g transform="translate(364 552)"><g class="gear gear-b"><circle r="16" fill="url(#brass)" stroke="#221f1c" stroke-width="5"/><circle r="5" fill="#efe6d4" stroke="#221f1c" stroke-width="3.4"/><path d="M0 -16 v-8 M0 16 v8 M-16 0 h-8 M16 0 h8" stroke="#221f1c" stroke-width="5" stroke-linecap="round"/></g></g>
+      </g>
+
+      <!-- belt -->
+      <g data-belt>
+        <rect x="250" y="400" width="812" height="36" rx="10" fill="url(#beltg)" stroke="#221f1c" stroke-width="6"/>
+        <g clip-path="url(#beltclip)"><g data-tread><path d="M262 400 v36 M302 400 v36 M342 400 v36 M382 400 v36 M422 400 v36 M462 400 v36 M502 400 v36 M542 400 v36 M582 400 v36 M622 400 v36 M662 400 v36 M702 400 v36 M742 400 v36 M782 400 v36 M822 400 v36 M862 400 v36 M902 400 v36 M942 400 v36 M982 400 v36 M1022 400 v36 M1062 400 v36 M1102 400 v36 M1142 400 v36 M1182 400 v36 M1222 400 v36 M1262 400 v36" stroke="#efe6d4" stroke-width="3" opacity=".17"/></g></g>
+        <rect x="256" y="403" width="800" height="6" rx="3" fill="#fff" opacity=".13"/>
+        <g class="rollers">
+          <g transform="translate(268 418)"><circle r="20" fill="url(#clay)" stroke="#221f1c" stroke-width="5"/><path class="spoke" d="M0 -20 v40 M-20 0 h40 M-14 -14 l28 28 M14 -14 l-28 28" stroke="#221f1c" stroke-width="4" opacity=".55"/><circle r="5" fill="#efe6d4" stroke="#221f1c" stroke-width="3.4"/></g>
+          <g transform="translate(508 418)"><circle r="20" fill="url(#clay)" stroke="#221f1c" stroke-width="5"/><path class="spoke" d="M0 -20 v40 M-20 0 h40 M-14 -14 l28 28 M14 -14 l-28 28" stroke="#221f1c" stroke-width="4" opacity=".55"/><circle r="5" fill="#efe6d4" stroke="#221f1c" stroke-width="3.4"/></g>
+          <g transform="translate(832 418)"><circle r="20" fill="url(#clay)" stroke="#221f1c" stroke-width="5"/><path class="spoke" d="M0 -20 v40 M-20 0 h40 M-14 -14 l28 28 M14 -14 l-28 28" stroke="#221f1c" stroke-width="4" opacity=".55"/><circle r="5" fill="#efe6d4" stroke="#221f1c" stroke-width="3.4"/></g>
+          <g transform="translate(1044 418)"><circle r="20" fill="url(#clay)" stroke="#221f1c" stroke-width="5"/><path class="spoke" d="M0 -20 v40 M-20 0 h40 M-14 -14 l28 28 M14 -14 l-28 28" stroke="#221f1c" stroke-width="4" opacity=".55"/><circle r="5" fill="#efe6d4" stroke="#221f1c" stroke-width="3.4"/></g>
+        </g>
+      </g>
+
+      <!-- intake -->
+      <g data-hopper>
+        <path d="M196 148 L404 148 L368 268 L232 268 Z" fill="url(#gold)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M300 148 L404 148 L368 268 L300 268 Z" fill="#221f1c" opacity=".12"/>
+        <g clip-path="url(#hopclip)"><rect x="304" y="148" width="104" height="124" fill="url(#hatch)"/></g>
+        <path d="M190 142 L410 142 L404 172 L196 172 Z" fill="#f4c65e" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M214 182 L242 254" stroke="#fff" stroke-width="7" opacity=".3" stroke-linecap="round"/>
+        <rect x="264" y="264" width="72" height="72" rx="8" fill="url(#red)" stroke="#221f1c" stroke-width="6"/>
+        <rect x="274" y="274" width="15" height="50" rx="7" fill="#fff" opacity=".22"/>
+        <rect x="256" y="330" width="88" height="16" rx="8" fill="url(#steel)" stroke="#221f1c" stroke-width="5"/>
+        <path d="M282 346 v54 M318 346 v54" stroke="#221f1c" stroke-width="11" stroke-linecap="round"/>
+        <text x="300" y="128" text-anchor="middle" class="lbl">THE BRIEF</text>
+        <!-- gauge, bracketed to the hopper -->
+        <path d="M262 344 h-32" stroke="#221f1c" stroke-width="9" stroke-linecap="round"/>
+        <g transform="translate(198 344)">
+          <circle r="28" fill="#efe6d4" stroke="#221f1c" stroke-width="6"/><circle r="28" fill="url(#glass)"/>
+          <path d="M-18 8 A20 20 0 0 1 18 8" fill="none" stroke="#221f1c" stroke-width="3" opacity=".3"/>
+          <g data-needle><path d="M0 4 L-12 -13" stroke="var(--red)" stroke-width="5" stroke-linecap="round"/></g>
+          <circle r="4.5" fill="#221f1c"/>
+        </g>
+      </g>
+
+      <!-- lever -->
+      <g class="lever" data-lever>
+        <ellipse cx="120" cy="606" rx="40" ry="9" fill="#221f1c" opacity=".13"/>
+        <rect x="88" y="424" width="64" height="182" rx="12" fill="url(#steel)" stroke="#221f1c" stroke-width="6"/>
+        <rect x="98" y="436" width="13" height="158" rx="6" fill="#fff" opacity=".26"/>
+        <rect x="104" y="436" width="32" height="118" rx="16" fill="#221f1c" opacity=".5"/>
+        <g class="arm" data-arm>
+          <rect x="110" y="336" width="20" height="112" rx="10" fill="url(#green)" stroke="#221f1c" stroke-width="6"/>
+          <circle cx="120" cy="326" r="25" fill="url(#red)" stroke="#221f1c" stroke-width="6"/>
+          <ellipse cx="112" cy="317" rx="7.5" ry="5.5" fill="#fff" opacity=".45"/>
+        </g>
+        <text x="120" y="638" text-anchor="middle" class="lbl">PULL</text>
+      </g>
+
+      <!-- the press, bolted to the bench -->
+      <g data-press>
+        <path d="M878 214 h132 M878 214 v220 M1010 214 v220" stroke="#221f1c" stroke-width="17" fill="none" stroke-linejoin="round"/>
+        <path d="M878 214 h132 M878 214 v220 M1010 214 v220" stroke="url(#steel)" stroke-width="9" fill="none" stroke-linejoin="round"/>
+        <rect x="862" y="176" width="164" height="42" rx="12" fill="url(#clay)" stroke="#221f1c" stroke-width="6"/>
+        <rect x="874" y="184" width="42" height="12" rx="6" fill="#fff" opacity=".28"/>
+        <g data-stamp>
+          <rect x="930" y="216" width="28" height="104" rx="8" fill="url(#steel)" stroke="#221f1c" stroke-width="6"/>
+          <path d="M930 232 h28 M930 252 h28 M930 272 h28 M930 292 h28" stroke="#221f1c" stroke-width="3" opacity=".32"/>
+          <rect x="888" y="314" width="112" height="52" rx="10" fill="url(#red)" stroke="#221f1c" stroke-width="6"/>
+          <rect x="898" y="322" width="32" height="12" rx="6" fill="#fff" opacity=".3"/>
+        </g>
+        <g data-lamp transform="translate(944 156)"><circle r="17" fill="#6b625a" stroke="#221f1c" stroke-width="5"/><circle class="bulb" r="10" fill="#7e3a2c"/></g>
+        <text x="944" y="204" text-anchor="middle" class="plate">THE CHECK</text>
+        <g transform="translate(1042 264)">
+          <circle r="24" fill="#efe6d4" stroke="#221f1c" stroke-width="6"/><circle r="24" fill="url(#glass)"/>
+          <g data-needle2><path d="M0 3 L10 -13" stroke="var(--green)" stroke-width="4.5" stroke-linecap="round"/></g>
+          <circle r="4" fill="#221f1c"/>
+        </g>
+      </g>
+
+      <!-- the kiosk: a person, in the loop, at the end -->
+      <g data-booth>
+        <rect x="1068" y="272" width="174" height="164" rx="12" fill="#efe6d4" stroke="#221f1c" stroke-width="6"/>
+        <path d="M1054 274 L1256 274 L1234 240 L1076 240 Z" fill="url(#clay)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M1155 240 L1256 274 L1234 240 Z" fill="#221f1c" opacity=".14"/>
+        <path d="M1155 240 L1256 274 L1234 240 Z" fill="url(#hatch)"/>
+        <rect x="1082" y="286" width="146" height="106" rx="12" fill="#39332c" stroke="#221f1c" stroke-width="6"/>
+        <g clip-path="url(#winclip)">
+          <rect x="1082" y="286" width="146" height="106" fill="#4a4038"/>
+          <ellipse cx="1206" cy="300" rx="80" ry="66" fill="url(#warm)"/>
+          <g transform="translate(1146 378)"><g data-human>
+            <path d="M-40 26 q10 -42 40 -42 q30 0 40 42 z" fill="url(#green)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+            <circle cx="0" cy="-30" r="27" fill="#f0cfa8" stroke="#221f1c" stroke-width="6"/>
+            <path d="M-27 -38 q5 -27 27 -27 q23 0 27 27 q-14 -11 -27 -9 q-17 2 -27 9z" fill="#3a2f28" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/>
+            <circle class="eye" cx="-9" cy="-30" r="3.8" fill="#221f1c"/><circle class="eye" cx="9" cy="-30" r="3.8" fill="#221f1c"/>
+            <path d="M-9 -19 q9 7 18 0" stroke="#221f1c" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <g class="mug"><rect x="30" y="0" width="24" height="22" rx="5" fill="url(#red)" stroke="#221f1c" stroke-width="5"/><path d="M54 6 q10 5 0 12" stroke="#221f1c" stroke-width="4" fill="none"/></g>
+          </g></g>
+        </g>
+        <rect x="1074" y="386" width="162" height="14" rx="7" fill="url(#brass)" stroke="#221f1c" stroke-width="5"/>
+        <g data-steam opacity=".5"><path d="M1194 348 q7 -13 0 -24 q-7 -11 0 -20" stroke="#ffe6bb" stroke-width="4" fill="none" stroke-linecap="round"/></g>
+        <g transform="translate(1155 412)"><g data-yes opacity="0"><rect x="-36" y="-17" width="72" height="34" rx="7" fill="none" stroke="var(--green)" stroke-width="5"/><text x="0" y="8" text-anchor="middle" class="yestext">YES</text></g></g>
+        <g transform="translate(1155 412)"><g data-held opacity="0"><rect x="-46" y="-17" width="92" height="34" rx="7" fill="none" stroke="var(--clay)" stroke-width="5" stroke-dasharray="9 7"/><text x="0" y="8" text-anchor="middle" class="heldtext">NOT YET</text></g></g>
+        <text x="1120" y="630" text-anchor="middle" class="lbl">A HUMAN SIGNS IT</text>
+      </g>
+
+      <!-- out -->
+      <g data-out>
+        <path d="M1246 396 L1310 396 L1352 500 L1288 500 Z" fill="url(#gold)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M1278 396 L1310 396 L1352 500 L1320 500 Z" fill="#221f1c" opacity=".12"/>
+        <path d="M1278 396 L1310 396 L1352 500 L1320 500 Z" fill="url(#hatch)"/>
+        <rect x="1256" y="496" width="118" height="80" rx="10" fill="url(#clay)" stroke="#221f1c" stroke-width="6"/>
+        <path d="M1256 524 h118 M1315 496 v80" stroke="#221f1c" stroke-width="4" opacity=".38"/>
+        <path d="M1240 250 q54 -12 66 -34" stroke="#221f1c" stroke-width="12" fill="none" stroke-linecap="round"/>
+        <g transform="translate(1312 216)"><g data-bell>
+          <path d="M-34 40 q0 -50 34 -50 q34 0 34 50 z" fill="url(#gold)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+          <path d="M-21 28 q-2 -31 13 -40" stroke="#fff" stroke-width="6" opacity=".35" fill="none" stroke-linecap="round"/>
+          <rect x="-38" y="38" width="76" height="12" rx="6" fill="url(#clay)" stroke="#221f1c" stroke-width="5"/>
+          <circle class="clapper" cx="0" cy="58" r="8" fill="var(--red)" stroke="#221f1c" stroke-width="5"/>
+        </g></g>
+        <g data-ring opacity="0">
+          <path d="M1252 214 q-17 -15 -17 -36 M1238 242 q-23 -11 -28 -30" stroke="#221f1c" stroke-width="5" fill="none" stroke-linecap="round"/>
+          <path d="M1372 214 q17 -15 17 -36 M1386 242 q23 -11 28 -30" stroke="#221f1c" stroke-width="5" fill="none" stroke-linecap="round"/>
+        </g>
+        <text x="1315" y="626" text-anchor="middle" class="lbl">SHIPPED</text>
+      </g>
+
+      <g class="rim" aria-hidden="true">
+        <path d="M1010 214 v220" stroke="#ffd98a" stroke-width="5" opacity=".5" stroke-linecap="round"/>
+        <path d="M1000 320 v46" stroke="#ffd98a" stroke-width="4" opacity=".35" stroke-linecap="round"/>
+      </g>
+      <g data-brief opacity="0">
+        <g data-brief-in>
+          <path d="M-24 -30 h34 l14 14 v46 h-48 z" fill="#fbf8ef" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/>
+          <path d="M10 -30 v14 h14" fill="#e6ddc9" stroke="#221f1c" stroke-width="4" stroke-linejoin="round"/>
+          <path d="M-14 -6 h28 M-14 6 h22 M-14 18 h28" stroke="#221f1c" stroke-width="3.6" stroke-linecap="round" opacity=".55"/>
+          <g data-stampmark opacity="0" transform="rotate(-14)">
+            <rect x="-36" y="-14" width="72" height="28" rx="5" fill="none" stroke="var(--red)" stroke-width="4"/>
+            <text x="0" y="7" text-anchor="middle" class="stamptext">NEEDS WORK</text>
+          </g>
+          <g data-passmark opacity="0" transform="rotate(-11)">
+            <rect x="-30" y="-13" width="60" height="26" rx="5" fill="none" stroke="var(--green)" stroke-width="4"/>
+            <text x="0" y="6" text-anchor="middle" class="passtext">PASSED</text>
+          </g>
+        </g>
+      </g>
+      <g data-brief-tag opacity="0"><rect data-tag-plate x="-70" y="-16" width="140" height="30" rx="8" fill="#fbf8ef" stroke="#221f1c" stroke-width="3.5"/><text x="0" y="6" text-anchor="middle" class="brieftag"></text></g>
+      <g data-chips></g>
+      <g data-puffs></g>
+    </svg></div></div>
+<div class="bb " data-bb="wsign" style="--x:-640;--z:7590;--w:400" ><svg viewBox="-200 -80 400 90" class="art"><g transform="translate(0 -40)"><rect x="-220.0" y="-26" width="440" height="52" rx="10" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/><rect x="-220.0" y="-26" width="440" height="52" fill="url(#plank)"/><text x="0" y="9" text-anchor="middle" class="signmid">VVDEX STUDIO · WHERE THE WORK RUNS</text></g></svg></div>
+<div class="bb " data-bb="post5" style="--x:460;--z:7890;--w:260" ><svg viewBox="-130 -230 260 240" class="art"><ellipse cx="4" cy="6" rx="36" ry="7" fill="#221f1c" opacity=".14"/><rect x="-8" y="-190" width="16" height="190" rx="5" fill="url(#wood)" stroke="#221f1c" stroke-width="5"/><g transform="translate(0 -176)" opacity="1"><path d="M100 -18 h-176 l-24 18 l24 18 h176 z" fill="#f6efe1" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><text x="90" y="6" text-anchor="end" class="post">THE VAULT</text></g><g transform="translate(0 -124)" opacity="0.6"><path d="M-100 -18 h176 l24 18 l-24 18 h-176 z" fill="#f6efe1" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><text x="-90" y="6" text-anchor="start" class="post">THE TOOL WALL</text></g></svg></div>
+<div class="bb " data-bb="vault" style="--x:-480;--z:8760;--w:680"  data-main="5"><svg viewBox="-340 -520 680 570" class="art"><ellipse cx="26.0" cy="10" rx="310.0" ry="18" fill="#221f1c" opacity=".13"/>
+<rect x="-280.0" y="-24" width="560" height="24" rx="6" fill="url(#stone)" stroke="#221f1c" stroke-width="6"/>
+<rect x="-260.0" y="-234" width="520" height="210" rx="10" fill="url(#wall)" stroke="#221f1c" stroke-width="6"/>
+<rect x="170.0" y="-234" width="90" height="210" fill="#221f1c" opacity=".08"/>
+<path d="M-320.0 -224 L0 -374 L320.0 -224 Z" fill="url(#roofG)" stroke="#221f1c" stroke-width="7" stroke-linejoin="round"/>
+<path d="M-290.0 -226 L0 -352 L290.0 -226" fill="none" stroke="#fff" stroke-width="6" opacity=".16"/>
+<path d="M-320.0 -224 H320.0" stroke="#221f1c" stroke-width="7"/><g transform="translate(0 -260)"><rect x="-130.0" y="-26" width="260" height="52" rx="10" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/><rect x="-130.0" y="-26" width="260" height="52" fill="url(#plank)"/><text x="0" y="9" text-anchor="middle" class="signmid">THE VAULT</text></g><g transform="translate(-120 -24)"><circle cx="0" cy="-90" r="78" fill="url(#stone)" stroke="#221f1c" stroke-width="7"/><circle cx="0" cy="-90" r="60" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/><circle cx="0" cy="-90" r="60" fill="url(#plank)"/><g class="wheel" transform="translate(0 -90)"><circle r="26" fill="none" stroke="#221f1c" stroke-width="7"/><path d="M-26 0 H26 M0 -26 V26 M-18 -18 L18 18 M-18 18 L18 -18" stroke="#221f1c" stroke-width="6" stroke-linecap="round"/><circle r="7" fill="url(#brass)" stroke="#221f1c" stroke-width="4"/></g><g fill="url(#brass)" stroke="#221f1c" stroke-width="4"><circle cx="-52" cy="-142" r="6"/><circle cx="52" cy="-142" r="6"/><circle cx="-52" cy="-38" r="6"/><circle cx="52" cy="-38" r="6"/></g></g><g transform="translate(110 -140)"><circle cx="0" cy="10" r="74" fill="url(#lampG)" opacity=".7"/><rect x="-80" y="-60" width="160" height="120" rx="12" fill="#ffe6bb" stroke="#221f1c" stroke-width="6"/><g stroke="#221f1c" stroke-width="3"><rect x="-70" y="-46" width="14" height="40" fill="url(#rd)"/><rect x="-54" y="-42" width="12" height="36" fill="url(#gr)"/><rect x="-40" y="-48" width="16" height="42" fill="url(#gd)"/><rect x="-22" y="-44" width="12" height="38" fill="url(#cl)"/><rect x="-8" y="-46" width="14" height="40" fill="url(#gr)"/><rect x="8" y="-42" width="12" height="36" fill="url(#rd)"/><rect x="22" y="-48" width="16" height="42" fill="url(#gd)"/><rect x="40" y="-44" width="12" height="38" fill="url(#gr)"/><rect x="54" y="-46" width="14" height="40" fill="url(#cl)"/><path d="M-72 -4 h144" stroke-width="4"/><rect x="-70" y="6" width="14" height="40" fill="url(#gd)"/><rect x="-54" y="10" width="12" height="36" fill="url(#rd)"/><rect x="-40" y="4" width="16" height="42" fill="url(#gr)"/><rect x="-22" y="8" width="12" height="38" fill="url(#gd)"/><rect x="-8" y="6" width="14" height="40" fill="url(#cl)"/><rect x="8" y="10" width="12" height="36" fill="url(#gr)"/><rect x="22" y="4" width="16" height="42" fill="url(#rd)"/><rect x="40" y="8" width="12" height="38" fill="url(#gd)"/><rect x="54" y="6" width="14" height="40" fill="url(#gr)"/><path d="M-72 48 h144" stroke-width="4"/></g><text x="0" y="-70" text-anchor="middle" class="lbl">THE WIKI VAULT</text></g><g transform="translate(-300 0)"><ellipse cx="0" cy="8" rx="80" ry="10" fill="#221f1c" opacity=".12"/><rect x="-8" y="-200" width="16" height="200" rx="5" fill="url(#wood)" stroke="#221f1c" stroke-width="5"/><rect x="-86" y="-300" width="172" height="120" rx="10" fill="#f6efe1" stroke="#221f1c" stroke-width="6"/><g stroke="#221f1c" stroke-width="4"><path d="M-50 -260 L-10 -230 L36 -262 M-10 -230 L-30 -200 M-10 -230 L40 -206 M36 -262 L60 -230"/></g><g fill="url(#gr)" stroke="#221f1c" stroke-width="4"><circle cx="-50" cy="-260" r="10"/><circle cx="-10" cy="-230" r="12"/><circle cx="36" cy="-262" r="10"/><circle cx="-30" cy="-200" r="9"/><circle cx="40" cy="-206" r="9"/><circle cx="60" cy="-230" r="8"/></g><text x="0" y="-188" text-anchor="middle" class="signsmall" style="font-size:11px">PROJECT BRAIN</text></g><g transform="translate(250 -24)"><circle cx="0" cy="-60" r="46" fill="url(#lampG)" class="lamp"/><path d="M-30 -20 v-70 q0 -30 30 -30 q30 0 30 30 v70 z" fill="#ffe6bb" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/><rect x="-36" y="-24" width="72" height="16" rx="5" fill="url(#brass)" stroke="#221f1c" stroke-width="4"/><rect x="-20" y="-130" width="40" height="12" rx="4" fill="url(#brass)" stroke="#221f1c" stroke-width="4"/><g fill="#4fe39c" opacity=".9"><circle cx="-10" cy="-70" r="4"/><circle cx="8" cy="-52" r="3"/><circle cx="4" cy="-88" r="3.5"/><circle cx="-8" cy="-40" r="2.5"/></g><text x="0" y="0" text-anchor="middle" class="lbl">MNEMA</text></g><g transform="translate(0 -230)"><rect x="-150.0" y="-16" width="300" height="32" rx="6" fill="#f6efe1" stroke="#221f1c" stroke-width="4"/><text x="0" y="6" text-anchor="middle" class="stamp" style="fill:var(--green);font-size:12px;letter-spacing:.18em">NOTHING STARTS FROM ZERO</text></g><text x="0" y="46" text-anchor="middle" class="lbl">THE VAULT · WHAT I BUILT TO BUILD WITH</text></svg></div>
+<div class="bb " data-bb="vaultbot" style="--x:-300;--z:8710;--w:80" ><svg viewBox="-60 -100 120 200" class="art"><use href="#bot" class="bot g read"/><g transform="translate(-46 40) rotate(-14)"><rect x="-22" y="-16" width="44" height="32" rx="3" fill="#f6efe1" stroke="#221f1c" stroke-width="4"/><path d="M0 -16 v32 M-16 -6 h12 M-16 2 h12 M4 -6 h12 M4 2 h12" stroke="#221f1c" stroke-width="3" opacity=".5"/></g></svg></div>
+<div class="bb " data-bb="post5b" style="--x:460;--z:9460;--w:260" ><svg viewBox="-130 -230 260 240" class="art"><ellipse cx="4" cy="6" rx="36" ry="7" fill="#221f1c" opacity=".14"/><rect x="-8" y="-190" width="16" height="190" rx="5" fill="url(#wood)" stroke="#221f1c" stroke-width="5"/><g transform="translate(0 -176)" opacity="1"><path d="M-100 -18 h176 l24 18 l-24 18 h-176 z" fill="#f6efe1" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><text x="-90" y="6" text-anchor="start" class="post">THE TOOL WALL</text></g><g transform="translate(0 -124)" opacity="0.6"><path d="M100 -18 h-176 l-24 18 l24 18 h176 z" fill="#f6efe1" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><text x="90" y="6" text-anchor="end" class="post">THE WATCHTOWER</text></g></svg></div>
+<div class="bb " data-bb="toolwall" style="--x:490;--z:10330;--w:660"  data-main="6"><svg viewBox="-330 -420 660 470" class="art"><ellipse cx="0" cy="8" rx="300" ry="14" fill="#221f1c" opacity=".12"/>
+<rect x="-300" y="-390" width="16" height="390" rx="5" fill="url(#wood)" stroke="#221f1c" stroke-width="5"/><rect x="284" y="-390" width="16" height="390" rx="5" fill="url(#wood)" stroke="#221f1c" stroke-width="5"/>
+<rect x="-316" y="-372" width="632" height="300" rx="10" fill="url(#cl)" stroke="#221f1c" stroke-width="6"/><rect x="-316" y="-372" width="632" height="300" fill="url(#plank)"/>
+<g fill="#221f1c" opacity=".25"><circle cx="-290" cy="-350" r="3"/><circle cx="-290" cy="-316" r="3"/><circle cx="-290" cy="-282" r="3"/><circle cx="-290" cy="-248" r="3"/><circle cx="-290" cy="-214" r="3"/><circle cx="-290" cy="-180" r="3"/><circle cx="-290" cy="-146" r="3"/><circle cx="-290" cy="-112" r="3"/><circle cx="-256" cy="-350" r="3"/><circle cx="-256" cy="-316" r="3"/><circle cx="-256" cy="-282" r="3"/><circle cx="-256" cy="-248" r="3"/><circle cx="-256" cy="-214" r="3"/><circle cx="-256" cy="-180" r="3"/><circle cx="-256" cy="-146" r="3"/><circle cx="-256" cy="-112" r="3"/><circle cx="-222" cy="-350" r="3"/><circle cx="-222" cy="-316" r="3"/><circle cx="-222" cy="-282" r="3"/><circle cx="-222" cy="-248" r="3"/><circle cx="-222" cy="-214" r="3"/><circle cx="-222" cy="-180" r="3"/><circle cx="-222" cy="-146" r="3"/><circle cx="-222" cy="-112" r="3"/><circle cx="-188" cy="-350" r="3"/><circle cx="-188" cy="-316" r="3"/><circle cx="-188" cy="-282" r="3"/><circle cx="-188" cy="-248" r="3"/><circle cx="-188" cy="-214" r="3"/><circle cx="-188" cy="-180" r="3"/><circle cx="-188" cy="-146" r="3"/><circle cx="-188" cy="-112" r="3"/><circle cx="-154" cy="-350" r="3"/><circle cx="-154" cy="-316" r="3"/><circle cx="-154" cy="-282" r="3"/><circle cx="-154" cy="-248" r="3"/><circle cx="-154" cy="-214" r="3"/><circle cx="-154" cy="-180" r="3"/><circle cx="-154" cy="-146" r="3"/><circle cx="-154" cy="-112" r="3"/><circle cx="-120" cy="-350" r="3"/><circle cx="-120" cy="-316" r="3"/><circle cx="-120" cy="-282" r="3"/><circle cx="-120" cy="-248" r="3"/><circle cx="-120" cy="-214" r="3"/><circle cx="-120" cy="-180" r="3"/><circle cx="-120" cy="-146" r="3"/><circle cx="-120" cy="-112" r="3"/><circle cx="-86" cy="-350" r="3"/><circle cx="-86" cy="-316" r="3"/><circle cx="-86" cy="-282" r="3"/><circle cx="-86" cy="-248" r="3"/><circle cx="-86" cy="-214" r="3"/><circle cx="-86" cy="-180" r="3"/><circle cx="-86" cy="-146" r="3"/><circle cx="-86" cy="-112" r="3"/><circle cx="-52" cy="-350" r="3"/><circle cx="-52" cy="-316" r="3"/><circle cx="-52" cy="-282" r="3"/><circle cx="-52" cy="-248" r="3"/><circle cx="-52" cy="-214" r="3"/><circle cx="-52" cy="-180" r="3"/><circle cx="-52" cy="-146" r="3"/><circle cx="-52" cy="-112" r="3"/><circle cx="-18" cy="-350" r="3"/><circle cx="-18" cy="-316" r="3"/><circle cx="-18" cy="-282" r="3"/><circle cx="-18" cy="-248" r="3"/><circle cx="-18" cy="-214" r="3"/><circle cx="-18" cy="-180" r="3"/><circle cx="-18" cy="-146" r="3"/><circle cx="-18" cy="-112" r="3"/><circle cx="16" cy="-350" r="3"/><circle cx="16" cy="-316" r="3"/><circle cx="16" cy="-282" r="3"/><circle cx="16" cy="-248" r="3"/><circle cx="16" cy="-214" r="3"/><circle cx="16" cy="-180" r="3"/><circle cx="16" cy="-146" r="3"/><circle cx="16" cy="-112" r="3"/><circle cx="50" cy="-350" r="3"/><circle cx="50" cy="-316" r="3"/><circle cx="50" cy="-282" r="3"/><circle cx="50" cy="-248" r="3"/><circle cx="50" cy="-214" r="3"/><circle cx="50" cy="-180" r="3"/><circle cx="50" cy="-146" r="3"/><circle cx="50" cy="-112" r="3"/><circle cx="84" cy="-350" r="3"/><circle cx="84" cy="-316" r="3"/><circle cx="84" cy="-282" r="3"/><circle cx="84" cy="-248" r="3"/><circle cx="84" cy="-214" r="3"/><circle cx="84" cy="-180" r="3"/><circle cx="84" cy="-146" r="3"/><circle cx="84" cy="-112" r="3"/><circle cx="118" cy="-350" r="3"/><circle cx="118" cy="-316" r="3"/><circle cx="118" cy="-282" r="3"/><circle cx="118" cy="-248" r="3"/><circle cx="118" cy="-214" r="3"/><circle cx="118" cy="-180" r="3"/><circle cx="118" cy="-146" r="3"/><circle cx="118" cy="-112" r="3"/><circle cx="152" cy="-350" r="3"/><circle cx="152" cy="-316" r="3"/><circle cx="152" cy="-282" r="3"/><circle cx="152" cy="-248" r="3"/><circle cx="152" cy="-214" r="3"/><circle cx="152" cy="-180" r="3"/><circle cx="152" cy="-146" r="3"/><circle cx="152" cy="-112" r="3"/><circle cx="186" cy="-350" r="3"/><circle cx="186" cy="-316" r="3"/><circle cx="186" cy="-282" r="3"/><circle cx="186" cy="-248" r="3"/><circle cx="186" cy="-214" r="3"/><circle cx="186" cy="-180" r="3"/><circle cx="186" cy="-146" r="3"/><circle cx="186" cy="-112" r="3"/><circle cx="220" cy="-350" r="3"/><circle cx="220" cy="-316" r="3"/><circle cx="220" cy="-282" r="3"/><circle cx="220" cy="-248" r="3"/><circle cx="220" cy="-214" r="3"/><circle cx="220" cy="-180" r="3"/><circle cx="220" cy="-146" r="3"/><circle cx="220" cy="-112" r="3"/><circle cx="254" cy="-350" r="3"/><circle cx="254" cy="-316" r="3"/><circle cx="254" cy="-282" r="3"/><circle cx="254" cy="-248" r="3"/><circle cx="254" cy="-214" r="3"/><circle cx="254" cy="-180" r="3"/><circle cx="254" cy="-146" r="3"/><circle cx="254" cy="-112" r="3"/><circle cx="288" cy="-350" r="3"/><circle cx="288" cy="-316" r="3"/><circle cx="288" cy="-282" r="3"/><circle cx="288" cy="-248" r="3"/><circle cx="288" cy="-214" r="3"/><circle cx="288" cy="-180" r="3"/><circle cx="288" cy="-146" r="3"/><circle cx="288" cy="-112" r="3"/></g>
+<rect x="-316" y="-404" width="632" height="36" rx="8" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/><text x="0" y="-380" text-anchor="middle" class="signsmall" style="font-size:16px">THE TOOL WALL · WHAT I WORK WITH</text>
+<g transform="translate(-240 -300)"><path d="M-6 -40 v70" stroke="#221f1c" stroke-width="9" stroke-linecap="round"/><rect x="-34" y="-46" width="56" height="24" rx="6" fill="url(#stone)" stroke="#221f1c" stroke-width="5"/><rect x="-52" y="52" width="104" height="26" rx="4" fill="#f6efe1" stroke="#221f1c" stroke-width="3.5"/><text x="0" y="70" text-anchor="middle" style="font-family:Mono,monospace;font-size:13px;font-weight:700;fill:#221f1c;letter-spacing:.04em">Python</text></g><g transform="translate(-120 -300)"><path d="M0 -44 l-18 26 v50 h36 v-50 z" fill="url(#brass)" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><path d="M-8 -6 v30 M8 -6 v30" stroke="#221f1c" stroke-width="4"/><rect x="-52" y="52" width="104" height="26" rx="4" fill="#f6efe1" stroke="#221f1c" stroke-width="3.5"/><text x="0" y="70" text-anchor="middle" style="font-family:Mono,monospace;font-size:13px;font-weight:700;fill:#221f1c;letter-spacing:.04em">TypeScript</text></g><g transform="translate(0 -300)"><rect x="-30" y="-40" width="60" height="70" rx="12" fill="url(#gr)" stroke="#221f1c" stroke-width="5"/><path d="M-30 -18 h60 M-30 4 h60" stroke="#221f1c" stroke-width="4" opacity=".5"/><rect x="-52" y="52" width="104" height="26" rx="4" fill="#f6efe1" stroke="#221f1c" stroke-width="3.5"/><text x="0" y="70" text-anchor="middle" style="font-family:Mono,monospace;font-size:13px;font-weight:700;fill:#221f1c;letter-spacing:.04em">Postgres</text></g><g transform="translate(120 -300)"><rect x="-30" y="-40" width="60" height="70" rx="12" fill="url(#rd)" stroke="#221f1c" stroke-width="5"/><path d="M-30 -18 h60 M-30 4 h60" stroke="#221f1c" stroke-width="4" opacity=".5"/><rect x="-52" y="52" width="104" height="26" rx="4" fill="#f6efe1" stroke="#221f1c" stroke-width="3.5"/><text x="0" y="70" text-anchor="middle" style="font-family:Mono,monospace;font-size:13px;font-weight:700;fill:#221f1c;letter-spacing:.04em">Redis</text></g><g transform="translate(240 -300)"><rect x="-36" y="-30" width="72" height="56" rx="6" fill="url(#cl)" stroke="#221f1c" stroke-width="5"/><path d="M-24 -30 v56 M0 -30 v56 M24 -30 v56" stroke="#221f1c" stroke-width="3.5" opacity=".5"/><rect x="-52" y="52" width="104" height="26" rx="4" fill="#f6efe1" stroke="#221f1c" stroke-width="3.5"/><text x="0" y="70" text-anchor="middle" style="font-family:Mono,monospace;font-size:13px;font-weight:700;fill:#221f1c;letter-spacing:.04em">Docker</text></g><g transform="translate(-240 -180)"><path d="M-30 30 l60 -70" stroke="#221f1c" stroke-width="10" stroke-linecap="round"/><circle cx="-26" cy="26" r="14" fill="url(#gd)" stroke="#221f1c" stroke-width="5"/><rect x="-52" y="52" width="104" height="26" rx="4" fill="#f6efe1" stroke="#221f1c" stroke-width="3.5"/><text x="0" y="70" text-anchor="middle" style="font-family:Mono,monospace;font-size:13px;font-weight:700;fill:#221f1c;letter-spacing:.04em">Playwright</text></g><g transform="translate(-120 -180)"><path d="M-26 -40 h52 v34 l-26 36 l-26 -36 z" fill="url(#stone)" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><rect x="-52" y="52" width="104" height="26" rx="4" fill="#f6efe1" stroke="#221f1c" stroke-width="3.5"/><text x="0" y="70" text-anchor="middle" style="font-family:Mono,monospace;font-size:13px;font-weight:700;fill:#221f1c;letter-spacing:.04em">Caddy</text></g><g transform="translate(0 -180)"><path d="M-34 10 q-16 0 -16 -16 q0 -20 24 -18 q6 -26 36 -22 q30 -4 36 22 q22 0 22 18 q0 16 -16 16 z" fill="url(#gd)" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><rect x="-52" y="52" width="104" height="26" rx="4" fill="#f6efe1" stroke="#221f1c" stroke-width="3.5"/><text x="0" y="70" text-anchor="middle" style="font-family:Mono,monospace;font-size:13px;font-weight:700;fill:#221f1c;letter-spacing:.04em">Cloudflare</text></g><g transform="translate(120 -180)"><circle r="30" fill="url(#rd)" stroke="#221f1c" stroke-width="5"/><path d="M-12 -6 q12 14 24 0" stroke="#f6efe1" stroke-width="5" fill="none" stroke-linecap="round"/><rect x="-52" y="52" width="104" height="26" rx="4" fill="#f6efe1" stroke="#221f1c" stroke-width="3.5"/><text x="0" y="70" text-anchor="middle" style="font-family:Mono,monospace;font-size:13px;font-weight:700;fill:#221f1c;letter-spacing:.04em">Claude</text></g><g transform="translate(240 -180)"><circle r="30" fill="url(#gr)" stroke="#221f1c" stroke-width="5"/><circle r="10" fill="#f6efe1" stroke="#221f1c" stroke-width="4"/><rect x="-52" y="52" width="104" height="26" rx="4" fill="#f6efe1" stroke="#221f1c" stroke-width="3.5"/><text x="0" y="70" text-anchor="middle" style="font-family:Mono,monospace;font-size:13px;font-weight:700;fill:#221f1c;letter-spacing:.04em">DeepSeek</text></g><g transform="translate(-180 -66)"><path d="M-30 0 h60" stroke="#221f1c" stroke-width="7"/><circle cx="-30" r="12" fill="url(#gd)" stroke="#221f1c" stroke-width="5"/><circle cx="30" r="12" fill="url(#gd)" stroke="#221f1c" stroke-width="5"/><rect x="-52" y="52" width="104" height="26" rx="4" fill="#f6efe1" stroke="#221f1c" stroke-width="3.5"/><text x="0" y="70" text-anchor="middle" style="font-family:Mono,monospace;font-size:13px;font-weight:700;fill:#221f1c;letter-spacing:.04em">n8n</text></g><g transform="translate(-60 -66)"><path d="M0 -36 l12 26 l26 4 l-19 18 l5 26 l-24 -13 l-24 13 l5 -26 l-19 -18 l26 -4 z" fill="url(#brass)" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><rect x="-52" y="52" width="104" height="26" rx="4" fill="#f6efe1" stroke="#221f1c" stroke-width="3.5"/><text x="0" y="70" text-anchor="middle" style="font-family:Mono,monospace;font-size:13px;font-weight:700;fill:#221f1c;letter-spacing:.04em">Astro</text></g><g transform="translate(60 -66)"><rect x="-34" y="-22" width="68" height="44" rx="6" fill="url(#stone)" stroke="#221f1c" stroke-width="5"/><path d="M-8 -10 l18 10 l-18 10 z" fill="#221f1c"/><rect x="-52" y="52" width="104" height="26" rx="4" fill="#f6efe1" stroke="#221f1c" stroke-width="3.5"/><text x="0" y="70" text-anchor="middle" style="font-family:Mono,monospace;font-size:13px;font-weight:700;fill:#221f1c;letter-spacing:.04em">ffmpeg</text></g><g transform="translate(180 -66)"><path d="M-24 -30 v60 M-24 0 q24 0 24 -24 M-24 0 q24 0 24 24" stroke="#221f1c" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="0" cy="-24" r="9" fill="url(#rd)" stroke="#221f1c" stroke-width="4"/><circle cx="0" cy="24" r="9" fill="url(#rd)" stroke="#221f1c" stroke-width="4"/><rect x="-52" y="52" width="104" height="26" rx="4" fill="#f6efe1" stroke="#221f1c" stroke-width="3.5"/><text x="0" y="70" text-anchor="middle" style="font-family:Mono,monospace;font-size:13px;font-weight:700;fill:#221f1c;letter-spacing:.04em">Git</text></g><text x="0" y="46" text-anchor="middle" class="lbl">TWELVE TOOLS I WORK WITH</text></svg></div>
+<div class="bb " data-bb="toolbot" style="--x:300;--z:10270;--w:80" ><svg viewBox="-60 -100 120 200" class="art"><use href="#bot" class="bot r point"/></svg></div>
+<div class="bb " data-bb="post6" style="--x:-460;--z:11030;--w:260" ><svg viewBox="-130 -230 260 240" class="art"><ellipse cx="4" cy="6" rx="36" ry="7" fill="#221f1c" opacity=".14"/><rect x="-8" y="-190" width="16" height="190" rx="5" fill="url(#wood)" stroke="#221f1c" stroke-width="5"/><g transform="translate(0 -176)" opacity="1"><path d="M100 -18 h-176 l-24 18 l24 18 h176 z" fill="#f6efe1" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><text x="90" y="6" text-anchor="end" class="post">THE WATCHTOWER</text></g><g transform="translate(0 -124)" opacity="0.6"><path d="M-100 -18 h176 l24 18 l-24 18 h-176 z" fill="#f6efe1" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><text x="-90" y="6" text-anchor="start" class="post">THE BARN</text></g></svg></div>
+<div class="bb " data-bb="hay5" style="--x:-720;--z:10530;--w:120" ><svg viewBox="-60 -70 120 80" class="art"><ellipse cx="0" cy="6" rx="62" ry="8" fill="#221f1c" opacity=".12"/><rect x="-60" y="-66" width="120" height="66" rx="16" fill="url(#gd)" stroke="#221f1c" stroke-width="6"/><rect x="-60" y="-66" width="120" height="66" rx="16" fill="url(#hatch)"/><path d="M-60 -34 h120" stroke="#221f1c" stroke-width="4" opacity=".4"/></svg></div>
+<div class="bb " data-bb="hay6" style="--x:-860;--z:10650;--w:100" ><svg viewBox="-60 -70 120 80" class="art"><ellipse cx="0" cy="6" rx="62" ry="8" fill="#221f1c" opacity=".12"/><rect x="-60" y="-66" width="120" height="66" rx="16" fill="url(#gd)" stroke="#221f1c" stroke-width="6"/><rect x="-60" y="-66" width="120" height="66" rx="16" fill="url(#hatch)"/><path d="M-60 -34 h120" stroke="#221f1c" stroke-width="4" opacity=".4"/></svg></div>
+<div class="bb " data-bb="tower" style="--x:-470;--z:11900;--w:520"  data-main="7"><svg viewBox="-260 -720 520 770" class="art"><ellipse cx="10" cy="10" rx="200" ry="18" fill="#221f1c" opacity=".13"/>
+<rect x="-150" y="-140" width="300" height="140" rx="10" fill="url(#stone)" stroke="#221f1c" stroke-width="6"/>
+<g fill="none" stroke="#221f1c" stroke-width="3.5" opacity=".4"><path d="M-150 -100 h300 M-150 -60 h300 M-150 -20 h300 M-90 -140 v40 M0 -140 v40 M90 -140 v40 M-120 -100 v40 M-40 -100 v40 M40 -100 v40 M120 -100 v40 M-90 -60 v40 M0 -60 v40 M90 -60 v40"/></g>
+<path d="M-110 -140 L-78 -560 L78 -560 L110 -140 Z" fill="url(#wood)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+<path d="M-110 -140 L-78 -560 L78 -560 L110 -140 Z" fill="url(#plank)"/>
+<path d="M40 -560 L110 -140 h-40 L20 -560 z" fill="#221f1c" opacity=".1"/>
+<!-- the ledger chain painted down the side -->
+<g transform="translate(-40 -520)" fill="#f6efe1" stroke="#221f1c" stroke-width="3"><rect x="-14" y="0" width="28" height="24" rx="3"/><path d="M0 24 v20" stroke="#221f1c" stroke-width="3" fill="none"/><rect x="-10" y="44" width="28" height="24" rx="3"/><path d="M0 68 v20" stroke="#221f1c" stroke-width="3" fill="none"/><rect x="-14" y="88" width="28" height="24" rx="3"/><path d="M0 112 v20" stroke="#221f1c" stroke-width="3" fill="none"/><rect x="-10" y="132" width="28" height="24" rx="3"/><path d="M0 156 v20" stroke="#221f1c" stroke-width="3" fill="none"/><rect x="-14" y="176" width="28" height="24" rx="3"/><path d="M0 200 v20" stroke="#221f1c" stroke-width="3" fill="none"/><rect x="-10" y="220" width="28" height="24" rx="3"/><path d="M0 244 v20" stroke="#221f1c" stroke-width="3" fill="none"/><rect x="-14" y="264" width="28" height="24" rx="3"/><path d="M0 288 v20" stroke="#221f1c" stroke-width="3" fill="none"/><rect x="-10" y="308" width="28" height="24" rx="3"/><path d="M0 332 v20" stroke="#221f1c" stroke-width="3" fill="none"/></g>
+<!-- platform -->
+<rect x="-150" y="-600" width="300" height="40" rx="8" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/><rect x="-150" y="-600" width="300" height="40" fill="url(#plank)"/>
+<g stroke="#221f1c" stroke-width="5" fill="url(#wood)"><rect x="-150" y="-670" width="10" height="70" rx="3"/><rect x="140" y="-670" width="10" height="70" rx="3"/><rect x="-5" y="-670" width="10" height="70" rx="3"/><rect x="-150" y="-650" width="300" height="8" rx="3"/></g>
+<path d="M-170 -600 L0 -690 L170 -600 Z" fill="url(#roofG)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round" opacity=".0"/>
+<!-- the lookout with a glass -->
+<g transform="translate(70 -690) scale(.5)"><use href="#bot" class="bot g idle"/><g class="glass" transform="translate(-20 20) rotate(-30)"><rect x="-8" y="-60" width="16" height="60" rx="5" fill="url(#brass)" stroke="#221f1c" stroke-width="4"/><rect x="-12" y="-72" width="24" height="16" rx="4" fill="url(#brass)" stroke="#221f1c" stroke-width="4"/></g></g>
+<g transform="translate(-100 -700)"><path d="M0 0 v-60" stroke="#221f1c" stroke-width="5" stroke-linecap="round"/><path class="flag" d="M2 -60 l52 10 l-52 12 z" fill="url(#gr)" stroke="#221f1c" stroke-width="4" stroke-linejoin="round"/></g>
+<g transform="translate(0 -300)"><rect x="-120.0" y="-26" width="240" height="52" rx="10" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/><rect x="-120.0" y="-26" width="240" height="52" fill="url(#plank)"/><text x="0" y="9" text-anchor="middle" class="signmid">WATCHTOWER</text></g><g transform="translate(0 -230)"><rect x="-80.0" y="-16" width="160" height="32" rx="6" fill="#f6efe1" stroke="#221f1c" stroke-width="4"/><text x="0" y="6" text-anchor="middle" class="stamp" style="fill:var(--clay);font-size:12px;letter-spacing:.18em">PAPER ONLY</text></g><text x="0" y="46" text-anchor="middle" class="lbl">THE WATCHTOWER · TRADING</text></svg></div>
+<div class="bb " data-bb="post7" style="--x:460;--z:12600;--w:260" ><svg viewBox="-130 -230 260 240" class="art"><ellipse cx="4" cy="6" rx="36" ry="7" fill="#221f1c" opacity=".14"/><rect x="-8" y="-190" width="16" height="190" rx="5" fill="url(#wood)" stroke="#221f1c" stroke-width="5"/><g transform="translate(0 -176)" opacity="1"><path d="M-100 -18 h176 l24 18 l-24 18 h-176 z" fill="#f6efe1" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><text x="-90" y="6" text-anchor="start" class="post">THE BARN</text></g><g transform="translate(0 -124)" opacity="0.6"><path d="M100 -18 h-176 l-24 18 l24 18 h176 z" fill="#f6efe1" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><text x="90" y="6" text-anchor="end" class="post">THE SCAFFOLD</text></g></svg></div>
+<div class="bb " data-bb="barn" style="--x:510;--z:13470;--w:720"  data-main="8"><svg viewBox="-360 -520 720 570" class="art"><ellipse cx="20" cy="10" rx="340" ry="18" fill="#221f1c" opacity=".13"/>
+<rect x="-300" y="-24" width="600" height="24" rx="6" fill="url(#stone)" stroke="#221f1c" stroke-width="6"/>
+<rect x="-280" y="-240" width="560" height="216" rx="10" fill="url(#rd)" stroke="#221f1c" stroke-width="6"/>
+<rect x="-280" y="-240" width="560" height="216" fill="url(#plank)"/>
+<rect x="190" y="-240" width="90" height="216" fill="#221f1c" opacity=".1"/>
+<path d="M-320 -232 L-320 -300 L-160 -420 L160 -420 L320 -300 L320 -232 Z" fill="url(#cl)" stroke="#221f1c" stroke-width="7" stroke-linejoin="round"/>
+<path d="M-290 -300 L-160 -398 L160 -398 L290 -300" fill="none" stroke="#fff" stroke-width="6" opacity=".16"/>
+<path d="M-320 -232 H320" stroke="#221f1c" stroke-width="7"/>
+<!-- hayloft -->
+<rect x="-40" y="-390" width="80" height="70" rx="8" fill="#221f1c" opacity=".6" stroke="#221f1c" stroke-width="5"/><rect x="-34" y="-350" width="68" height="28" rx="6" fill="url(#gd)"/><rect x="-34" y="-350" width="68" height="28" fill="url(#hatch)"/>
+<!-- doors open, crates inside -->
+<rect x="-110" y="-190" width="220" height="166" rx="8" fill="#3a2f28" stroke="#221f1c" stroke-width="6"/>
+<g transform="translate(-40 -24) scale(.8)"><use href="#crate"/></g><g transform="translate(40 -30) scale(.8)"><use href="#crate"/></g><g transform="translate(0 -80) scale(.7)"><use href="#crate"/></g>
+<rect x="-160" y="-190" width="50" height="166" rx="6" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/><rect x="110" y="-190" width="50" height="166" rx="6" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/>
+<path d="M-160 -190 l50 166 M110 -190 l50 166" stroke="#221f1c" stroke-width="4" opacity=".5"/>
+<g transform="translate(0 -280)"><rect x="-120.0" y="-26" width="240" height="52" rx="10" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/><rect x="-120.0" y="-26" width="240" height="52" fill="url(#plank)"/><text x="0" y="9" text-anchor="middle" class="signmid">THE BARN</text></g><g transform="translate(0 -212)"><rect x="-115.0" y="-16" width="230" height="32" rx="6" fill="#f6efe1" stroke="#221f1c" stroke-width="4"/><text x="0" y="6" text-anchor="middle" class="stamp" style="fill:var(--green);font-size:12px;letter-spacing:.18em">A PERSON CONFIRMS</text></g><g transform="translate(230 -20) scale(0.6)"><ellipse cx="0" cy="26" rx="46" ry="8" fill="#221f1c" opacity=".14"/><path d="M-40 26 q10 -42 40 -42 q30 0 40 42 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/><circle cx="0" cy="-30" r="27" fill="#f0cfa8" stroke="#221f1c" stroke-width="6"/><path d="M-27 -38 q5 -27 27 -27 q23 0 27 27 q-14 -11 -27 -9 q-17 2 -27 9z" fill="#3a2f28" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><circle class="eye" cx="-9" cy="-30" r="3.8" fill="#221f1c"/><circle class="eye" cx="9" cy="-30" r="3.8" fill="#221f1c"/><path d="M-9 -19 q9 7 18 0" stroke="#221f1c" stroke-width="4" fill="none" stroke-linecap="round"/></g><g transform="translate(232 -46) rotate(-8)"><rect x="-16" y="-24" width="32" height="44" rx="4" fill="#f6efe1" stroke="#221f1c" stroke-width="4"/><path d="M-8 -10 h16 M-8 0 h16 M-8 10 h10" stroke="#221f1c" stroke-width="3" opacity=".5"/></g><text x="0" y="46" text-anchor="middle" class="lbl">THE BARN · FARMQUICK</text></svg></div>
+<div class="bb " data-bb="cart2" style="--x:330;--z:13850;--w:260" ><svg viewBox="-120 -170 260 200" class="art"><!-- the cart with crates -->
+      <g transform="translate(0 0)">
+        <ellipse cx="0" cy="8" rx="110" ry="12" fill="#221f1c" opacity=".13"/>
+        <rect x="-96" y="-80" width="170" height="60" rx="8" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/>
+        <rect x="-96" y="-80" width="170" height="60" fill="url(#plank)"/>
+        <path d="M74 -70 l60 -30" stroke="#221f1c" stroke-width="9" stroke-linecap="round"/>
+        <circle cx="-56" cy="-8" r="26" fill="url(#cl)" stroke="#221f1c" stroke-width="6"/><circle cx="-56" cy="-8" r="8" fill="#f6efe1" stroke="#221f1c" stroke-width="4"/>
+        <circle cx="40" cy="-8" r="26" fill="url(#cl)" stroke="#221f1c" stroke-width="6"/><circle cx="40" cy="-8" r="8" fill="#f6efe1" stroke="#221f1c" stroke-width="4"/>
+        <g transform="translate(-40 -108) scale(.7)"><use href="#crate"/></g>
+        <g transform="translate(20 -104) scale(.62) rotate(-8)"><use href="#crate"/></g>
+      </g></svg></div>
+<div class="bb shuttle" data-bb="barnbot" style="--x:300;--z:13410;--w:80" data-shuttle="300,560,5200"><svg viewBox="-60 -100 120 200" class="art"><use href="#bot" class="bot y carry"/><g transform="translate(0 30) scale(.8)"><use href="#crate"/></g></svg></div>
+<div class="bb " data-bb="post8" style="--x:-460;--z:14170;--w:260" ><svg viewBox="-130 -230 260 240" class="art"><ellipse cx="4" cy="6" rx="36" ry="7" fill="#221f1c" opacity=".14"/><rect x="-8" y="-190" width="16" height="190" rx="5" fill="url(#wood)" stroke="#221f1c" stroke-width="5"/><g transform="translate(0 -176)" opacity="1"><path d="M100 -18 h-176 l-24 18 l24 18 h176 z" fill="#f6efe1" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><text x="90" y="6" text-anchor="end" class="post">THE SCAFFOLD</text></g><g transform="translate(0 -124)" opacity="0.6"><path d="M-100 -6 h80 v-24 l20 -16 l20 16 v24 h80 v24 h-200 z" fill="#f6efe1" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><text x="0" y="6" text-anchor="middle" class="post">THE DESK</text></g></svg></div>
+<div class="bb " data-bb="fenceB1" style="--x:560;--z:13890;--w:260" ><svg viewBox="0 0 260 90" class="art"><g fill="url(#wood)" stroke="#221f1c" stroke-width="5"><rect x="20" y="10" width="14" height="72" rx="4"/><rect x="123" y="10" width="14" height="72" rx="4"/><rect x="226" y="10" width="14" height="72" rx="4"/><rect x="0" y="26" width="260" height="10" rx="4"/><rect x="0" y="54" width="260" height="10" rx="4"/></g></svg></div>
+<div class="bb " data-bb="fenceB2" style="--x:830;--z:13890;--w:260" ><svg viewBox="0 0 260 90" class="art"><g fill="url(#wood)" stroke="#221f1c" stroke-width="5"><rect x="20" y="10" width="14" height="72" rx="4"/><rect x="123" y="10" width="14" height="72" rx="4"/><rect x="226" y="10" width="14" height="72" rx="4"/><rect x="0" y="26" width="260" height="10" rx="4"/><rect x="0" y="54" width="260" height="10" rx="4"/></g></svg></div>
+<div class="bb " data-bb="scaffold" style="--x:-470;--z:15040;--w:400"  data-main="9"><svg viewBox="-200 -420 400 470" class="art"><g transform="translate(0 0)">
+        <ellipse cx="0" cy="8" rx="150" ry="14" fill="#221f1c" opacity=".12"/>
+        <g stroke="#221f1c" stroke-width="5" fill="url(#wood)">
+          <rect x="-120" y="-260" width="12" height="260" rx="4"/><rect x="108" y="-260" width="12" height="260" rx="4"/><rect x="-6" y="-260" width="12" height="260" rx="4"/>
+          <rect x="-130" y="-200" width="260" height="10" rx="4"/><rect x="-130" y="-110" width="260" height="10" rx="4"/>
+        </g>
+        <path d="M-120 -110 L0 -200 M0 -110 L120 -200" stroke="#221f1c" stroke-width="4" opacity=".4"/>
+        <rect x="-90" y="-100" width="180" height="100" rx="8" fill="url(#wall)" stroke="#221f1c" stroke-width="6" stroke-dasharray="12 8"/>
+        <g transform="translate(40 -210) scale(.6)"><g data-hammerer><use href="#bot" class="bot y"/><g class="hammer" transform="translate(52 40)"><path d="M0 0 v-46" stroke="#221f1c" stroke-width="7" stroke-linecap="round"/><rect x="-18" y="-62" width="36" height="22" rx="5" fill="url(#stone)" stroke="#221f1c" stroke-width="5"/></g></g></g>
+        <text x="0" y="46" text-anchor="middle" class="lbl">THE SCAFFOLD · CONXFOLIO</text>
+      </g><g transform="translate(0 -300)"><path d="M0 0 v-60" stroke="#221f1c" stroke-width="5" stroke-linecap="round"/><g transform="translate(6 -70) rotate(10)"><path d="M0 0 l60 -22 l-20 30 z" fill="#f6efe1" stroke="#221f1c" stroke-width="4" stroke-linejoin="round"/><path d="M0 0 l40 8 l0 -14" fill="none" stroke="#221f1c" stroke-width="4" stroke-linejoin="round"/></g></g><g transform="translate(0 -330)"><rect x="-150.0" y="-16" width="300" height="32" rx="6" fill="#f6efe1" stroke="#221f1c" stroke-width="4"/><text x="0" y="6" text-anchor="middle" class="stamp" style="fill:var(--ink);font-size:12px;letter-spacing:.18em">FOLD · CHECK · SIGN · LAUNCH</text></g><g transform="translate(0 -60)"><rect x="-110.0" y="-16" width="220" height="32" rx="6" fill="#f6efe1" stroke="#221f1c" stroke-width="4"/><text x="0" y="6" text-anchor="middle" class="stamp" style="fill:var(--clay);font-size:12px;letter-spacing:.18em">NOT SIGNED OFF YET</text></g></svg></div>
+<div class="bb hammerer" data-bb="hammer" style="--x:-300;--z:14990;--w:84" ><svg viewBox="-60 -100 140 200" class="art"><use href="#bot" class="bot y idle"/><g class="hammer" transform="translate(52 40)"><path d="M0 0 v-46" stroke="#221f1c" stroke-width="7" stroke-linecap="round"/><rect x="-18" y="-62" width="36" height="22" rx="5" fill="url(#stone)" stroke="#221f1c" stroke-width="5"/></g></svg></div>
+<div class="bb " data-bb="post9" style="--x:460;--z:15740;--w:260" ><svg viewBox="-130 -230 260 240" class="art"><ellipse cx="4" cy="6" rx="36" ry="7" fill="#221f1c" opacity=".14"/><rect x="-8" y="-190" width="16" height="190" rx="5" fill="url(#wood)" stroke="#221f1c" stroke-width="5"/><g transform="translate(0 -176)" opacity="1"><path d="M-100 -6 h80 v-24 l20 -16 l20 16 v24 h80 v24 h-200 z" fill="#f6efe1" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><text x="0" y="6" text-anchor="middle" class="post">THE DESK</text></g><g transform="translate(0 -124)" opacity="0.6"><path d="M-100 -6 h80 v-24 l20 -16 l20 16 v24 h80 v24 h-200 z" fill="#f6efe1" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><text x="0" y="6" text-anchor="middle" class="post">THE END OF THE ROAD</text></g></svg></div>
+<div class="bb " data-bb="desk" style="--x:0;--z:16460;--w:600"  data-main="10"><svg viewBox="-300 -360 600 410" class="art"><ellipse cx="10" cy="10" rx="240" ry="16" fill="#221f1c" opacity=".13"/>
+<circle cx="0" cy="-200" r="150" fill="url(#lampG)" opacity=".7" class="lamp"/>
+<path d="M0 -330 v-20" stroke="#221f1c" stroke-width="4"/><path d="M-60 -250 L0 -336 L60 -250 Z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+<rect x="-220" y="-120" width="440" height="22" rx="6" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/><rect x="-220" y="-120" width="440" height="22" fill="url(#plank)"/>
+<g fill="url(#wood)" stroke="#221f1c" stroke-width="6"><rect x="-200" y="-98" width="22" height="98" rx="4"/><rect x="178" y="-98" width="22" height="98" rx="4"/></g>
+<rect x="60" y="-98" width="120" height="98" rx="6" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/><rect x="60" y="-98" width="120" height="98" fill="url(#plank)"/><g fill="url(#brass)" stroke="#221f1c" stroke-width="4"><circle cx="120" cy="-74" r="6"/><circle cx="120" cy="-44" r="6"/><circle cx="120" cy="-16" r="6"/></g>
+<g transform="translate(-40 -130) scale(0.8)"><ellipse cx="0" cy="26" rx="46" ry="8" fill="#221f1c" opacity=".14"/><path d="M-40 26 q10 -42 40 -42 q30 0 40 42 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/><circle cx="0" cy="-30" r="27" fill="#f0cfa8" stroke="#221f1c" stroke-width="6"/><path d="M-27 -38 q5 -27 27 -27 q23 0 27 27 q-14 -11 -27 -9 q-17 2 -27 9z" fill="#3a2f28" stroke="#221f1c" stroke-width="5" stroke-linejoin="round"/><circle class="eye" cx="-9" cy="-30" r="3.8" fill="#221f1c"/><circle class="eye" cx="9" cy="-30" r="3.8" fill="#221f1c"/><path d="M-9 -19 q9 7 18 0" stroke="#221f1c" stroke-width="4" fill="none" stroke-linecap="round"/></g><!-- the guestbook -->
+<g class="book" data-act="book" transform="translate(-150 -122) rotate(-4)"><rect x="-56" y="-40" width="112" height="40" rx="4" fill="#f6efe1" stroke="#221f1c" stroke-width="4"/><path d="M0 -40 v40" stroke="#221f1c" stroke-width="3"/><path d="M-44 -28 h32 M-44 -18 h28 M-44 -8 h20 M12 -28 h32 M12 -18 h20" stroke="#221f1c" stroke-width="2.5" opacity=".45"/></g>
+<g transform="translate(100 -150)"><rect x="-30" y="-26" width="60" height="26" rx="4" fill="url(#rd)" stroke="#221f1c" stroke-width="4"/><text x="0" y="-8" text-anchor="middle" class="sealtext" font-size="11">SIGN</text></g>
+<!-- mailbox -->
+<g transform="translate(260 0)"><rect x="-6" y="-150" width="12" height="150" rx="4" fill="url(#wood)" stroke="#221f1c" stroke-width="5"/><rect x="-40" y="-200" width="80" height="54" rx="14" fill="url(#gd)" stroke="#221f1c" stroke-width="6"/><path d="M-40 -173 h80" stroke="#221f1c" stroke-width="4" opacity=".5"/><path d="M28 -212 v-26 l18 6 l-18 8" fill="url(#rd)" stroke="#221f1c" stroke-width="4" stroke-linejoin="round"/></g>
+<g transform="translate(0 -300)"><rect x="-110.0" y="-26" width="220" height="52" rx="10" fill="url(#wood)" stroke="#221f1c" stroke-width="6"/><rect x="-110.0" y="-26" width="220" height="52" fill="url(#plank)"/><text x="0" y="9" text-anchor="middle" class="signmid">THE DESK</text></g><text x="0" y="46" text-anchor="middle" class="lbl">THE END OF THE ROAD · SAY HELLO</text></svg></div>
+<div class="bb greeter" data-bb="deskbotL" style="--x:-300;--z:16370;--w:80" ><svg viewBox="-60 -100 120 200" class="art"><g ><use href="#bot" class="bot g"/></g></svg></div>
+<div class="bb greeter" data-bb="deskbotR" style="--x:300;--z:16370;--w:80" ><svg viewBox="-60 -100 120 200" class="art"><g ><use href="#bot" class="bot r"/></g></svg></div>
+<div class="bb " data-bb="ftree0" style="--x:-1404;--z:1802;--w:170" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree1" style="--x:-1548;--z:1972;--w:130" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree2" style="--x:-1519;--z:2293;--w:130" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree3" style="--x:-1444;--z:2449;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree4" style="--x:-1092;--z:2697;--w:170" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree5" style="--x:-1579;--z:3028;--w:130" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree6" style="--x:-1590;--z:3217;--w:170" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree7" style="--x:-1226;--z:3501;--w:130" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree8" style="--x:-1296;--z:3782;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree9" style="--x:-1584;--z:3916;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree10" style="--x:-1105;--z:4263;--w:170" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree11" style="--x:-1381;--z:4506;--w:130" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree12" style="--x:-1577;--z:4740;--w:130" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree13" style="--x:-1508;--z:4998;--w:170" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree14" style="--x:1321;--z:5216;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree15" style="--x:1370;--z:5469;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree16" style="--x:-1249;--z:5623;--w:130" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree17" style="--x:1537;--z:5947;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree18" style="--x:1294;--z:6127;--w:170" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree19" style="--x:-1524;--z:6298;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree20" style="--x:1155;--z:6562;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree21" style="--x:-1684;--z:6867;--w:130" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree22" style="--x:1348;--z:7142;--w:170" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree23" style="--x:1593;--z:7329;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree24" style="--x:-1276;--z:7497;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree25" style="--x:-1317;--z:7736;--w:170" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree26" style="--x:1291;--z:8107;--w:170" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree27" style="--x:1023;--z:8298;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree28" style="--x:-1625;--z:8530;--w:130" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree29" style="--x:-1223;--z:8806;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree30" style="--x:-1407;--z:8953;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree31" style="--x:-1170;--z:9287;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree32" style="--x:1140;--z:9502;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree33" style="--x:1425;--z:9780;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree34" style="--x:-1154;--z:9977;--w:130" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree35" style="--x:-1237;--z:10165;--w:170" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree36" style="--x:-1496;--z:10419;--w:170" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree37" style="--x:1288;--z:10646;--w:130" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree38" style="--x:1547;--z:10877;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree39" style="--x:1128;--z:11236;--w:170" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree40" style="--x:-1467;--z:11451;--w:170" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree41" style="--x:1407;--z:11703;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree42" style="--x:-1493;--z:11900;--w:170" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree43" style="--x:-1195;--z:12142;--w:130" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree44" style="--x:1166;--z:12333;--w:130" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree45" style="--x:-1104;--z:12607;--w:130" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree46" style="--x:-1549;--z:12905;--w:130" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree47" style="--x:-1072;--z:13093;--w:130" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree48" style="--x:1152;--z:13397;--w:170" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree49" style="--x:1616;--z:13544;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree50" style="--x:-1118;--z:13841;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree51" style="--x:1495;--z:14079;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree52" style="--x:-1104;--z:14221;--w:170" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree53" style="--x:1490;--z:14527;--w:170" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree54" style="--x:-1210;--z:14721;--w:170" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree55" style="--x:-1556;--z:15012;--w:130" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree56" style="--x:1658;--z:15295;--w:130" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree57" style="--x:1171;--z:15466;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree58" style="--x:1651;--z:15697;--w:130" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+<div class="bb " data-bb="ftree59" style="--x:-1245;--z:16036;--w:150" ><svg viewBox="-80 -150 160 170" class="art"><!-- a tree -->
+      <g transform="translate(0 0)">
+        <ellipse cx="10" cy="6" rx="60" ry="10" fill="#221f1c" opacity=".12"/>
+        <path d="M-8 0 v-70" stroke="#221f1c" stroke-width="12" stroke-linecap="round"/>
+        <path d="M-8 -60 q-40 -10 -50 -60 q-10 -60 58 -70 q60 -6 62 60 q0 50 -70 70 z" fill="url(#gr)" stroke="#221f1c" stroke-width="6" stroke-linejoin="round"/>
+        <path d="M-40 -110 q20 -30 60 -22" stroke="#fff" stroke-width="6" opacity=".22" fill="none" stroke-linecap="round"/>
+      </g></svg></div>
+  </div>
+  <div class="haze" aria-hidden="true"></div>
+</div>
+
+<svg class="thread" data-thread aria-hidden="true"><path data-thread-path d=""/><circle data-thread-pin r="5"/></svg>
+<div class="sheet" data-sheet>
+  <div class="words" data-words data-stop="0">
+    <p class="eyebrow">You are at the gate</p>
+    <h1>This is where I build.</h1>
+    <p class="lede">Seven things so far, five of them live. Walk in and see how I make each one.</p>
+    <p class="cue"><span class="key">scroll</span> or <span class="key">→</span> to walk in</p>
+  </div>
+  <article class="card" data-card data-stop="1" data-side="right">
+    <span class="serial">NO. 001 · THE EXAM HALL</span><div class="shot"><img src="assets/shots/forge-e.jpg" alt="VVDex Forge" loading="lazy" decoding="async"></div>
+    <div class="head"><h2>VVDex Forge</h2><span class="pin" data-s="live">live</span></div>
+    <p class="sub">Reproducible exams for AI agents, with proof the box was really shut.</p>
+    <ul class="parts"><li>25 certified exams across 14 families</li><li>The answer key never mounts in the agent's box; the network is denied at freeze</li><li>Every sealed record carries its containment evidence, and nothing is certified without my go</li></ul>
+    
+    <div class="nums"><div><b>25</b><span>certified exams</span></div><div><b>14</b><span>families</span></div></div>
+    <a class="link" href="https://vvdexops.com/" target="_blank" rel="noopener">vvdexops.com ↗</a>
+  </article>
+  <article class="card" data-card data-stop="2" data-side="left">
+    <span class="serial">NO. 002 · THE PAPER MILL</span><div class="shot"><img src="assets/shots/unboundpdf.jpg" alt="UnboundPDF" loading="lazy" decoding="async"></div>
+    <div class="head"><h2>UnboundPDF</h2><span class="pin" data-s="live">live</span></div>
+    <p class="sub">Every PDF tool in the browser. The file never leaves the tab.</p>
+    <ul class="parts"><li>53 tools, all deriving their counts from one registry</li><li>A workspace that keeps your files encrypted in your own browser</li><li>A suite of 471 tests and a 430-file checksum sweep against every deploy</li></ul>
+    
+    <div class="nums"><div><b>53</b><span>tools live</span></div><div><b>0</b><span>uploads</span></div></div>
+    <a class="link" href="https://unboundpdf.com/" target="_blank" rel="noopener">unboundpdf.com ↗</a>
+  </article>
+  <article class="card" data-card data-stop="3" data-side="right">
+    <span class="serial">NO. 003 · THE POST OFFICE</span><div class="shot"><img src="assets/shots/conxto-20260915-a.jpg" alt="Conxto" loading="lazy" decoding="async"></div>
+    <div class="head"><h2>Conxto</h2><span class="pin" data-s="live">live</span></div>
+    <p class="sub">Reads live job postings against your résumé, checks every requirement and prepares the whole application. Nothing is sent without your approval.</p>
+    <ul class="parts"><li>Its own job search engine: 81,615 active postings from 22 sources (15 Sep 2026)</li><li>Every rewritten line checked against the original résumé</li><li>Five agents over one persistent memory; a person approves anything that acts</li></ul>
+    
+    <div class="nums"><div><b>81,615</b><span>live postings</span></div><div><b>5</b><span>agents</span></div></div>
+    <a class="link" href="https://conxto.com/" target="_blank" rel="noopener">conxto.com ↗</a>
+  </article>
+  <article class="card" data-card data-stop="4" data-side="right">
+    <span class="serial">NO. 004 · VVDEX STUDIO · THE WORKSHOP</span>
+    <div class="shot"><img src="assets/shots/studio.jpg" alt="VVDex Studio" loading="lazy" decoding="async"></div>
+    <div class="head"><h2>VVDex Studio</h2><span class="pin" data-s="private">private</span></div>
+    <p class="sub">The desk I run everything from, and the line every product on this road went through: I write the plan, my agents do the hands inside my rules, the check runs, and I sign.</p>
+    <ul class="parts"><li>Graph engineering: 37 service contracts as executable graphs, evidence traces and bounded memory, a human gate on every action</li><li>206 deterministic evaluation cases across five surfaces, run before anything ships</li><li>Eval Hub inside it: golden suites that gate a production deploy, nightly safety probes, a judge kept advisory until it is calibrated against human labels</li><li>The Agent Service Lab's 37 contracts and 104 tool adapters are operated from here</li></ul>
+    <div class="nums"><div><b>37</b><span>service contracts</span></div><div><b>206</b><span>evaluation cases</span></div></div>
+    <a class="link" href="https://vvdexops.com/evals" target="_blank" rel="noopener">evals methodology ↗</a>
+  </article>
+  <article class="card" data-card data-stop="5" data-side="right">
+    <span class="serial">THE VAULT · WHAT I BUILT TO BUILD WITH</span>
+    <div class="head"><h2>Nothing starts from zero</h2><span class="pin" data-s="live">in use daily</span></div>
+    <p class="sub">Before the seven products there is the operating layer I built so that no model, and no new thread, ever begins from a blank chat.</p>
+    <ul class="parts"><li><b>The Vault</b>: a wiki second brain of every decision, state and rule; any model bootstraps from it in four reads</li><li><b>Project Brain</b>: validated code graphs, tests and runtime evidence for six products, with evidence-gated write-back</li><li><b>MNEMA and RAG memory</b>: tenant-scoped agent memory with hybrid retrieval, so agents recall instead of re-derive</li><li><b>Graph engineering in Studio</b>: 37 service contracts as executable graphs with a human gate on every action, and the public Agent Service Lab where anyone can run a deterministic sample</li></ul>
+    <div class="nums"><div><b>37</b><span>service contracts</span></div><div><b>6</b><span>product graphs</span></div></div>
+    <span class="noendpoint">the lab is behind an access gate today</span>
+  </article>
+  <article class="card" data-card data-stop="6" data-side="left">
+    <span class="serial">THE TOOL WALL</span>
+    <div class="head"><h2>What I work with</h2><span class="pin" data-s="live">daily</span></div>
+    <p class="sub">Nothing exotic. This is the wall I built the seven things with, and what I run them on.</p>
+    <ul class="parts"><li>Python and TypeScript for the products; Postgres and Redis underneath</li><li>Docker for the sealed boxes; Playwright for every rendered-frame check</li><li>Caddy and Cloudflare in front of everything; Claude and DeepSeek doing the work</li><li>n8n for the farm's orders, Astro for its site, ffmpeg for the captions, Git for the record</li></ul>
+    <div class="nums"><div><b>12</b><span>tools</span></div><div><b>1</b><span>wall</span></div></div>
+  </article>
+  <article class="card" data-card data-stop="7" data-side="right">
+    <span class="serial">NO. 005 · THE WATCHTOWER</span><div class="shot"><img src="assets/shots/trading.jpg" alt="VVDex Trading" loading="lazy" decoding="async"></div>
+    <div class="head"><h2>VVDex Trading</h2><span class="pin" data-s="research">research</span></div>
+    <p class="sub">Live market microstructure beside a public, hash-chained record of every dated call.</p>
+    <ul class="parts"><li>2,028 calls, each one hash-chained to the last</li><li>Paper only. No capital, no manual trades, automation or nothing</li><li>Every claim gated on the threshold it declared in advance</li></ul>
+    
+    <div class="nums"><div><b>2,028</b><span>dated calls</span></div><div><b>0</b><span>capital</span></div></div>
+    <a class="link" href="https://trading.vvdexops.com/" target="_blank" rel="noopener">trading.vvdexops.com ↗</a>
+  </article>
+  <article class="card" data-card data-stop="8" data-side="left">
+    <span class="serial">NO. 006 · THE BARN</span><div class="shot"><img src="assets/shots/farmquick-20260915-a.jpg" alt="FarmQuick" loading="lazy" decoding="async"></div>
+    <div class="head"><h2>FarmQuick</h2><span class="pin" data-s="live">live</span></div>
+    <p class="sub">End to end for a B2B produce business: the ordering site, and Lead Desk, the agent that finds buyers every morning.</p>
+    <ul class="parts"><li>An order on the site reaches the owner and lands in the register as won</li><li>Lead Desk reads open sources across five cities every morning</li><li>A person confirms before anything moves</li></ul>
+    
+    <div class="nums"><div><b>5</b><span>cities every morning</span></div><div><b>1</b><span>human decides</span></div></div>
+    <a class="link" href="https://farmquick.in/" target="_blank" rel="noopener">farmquick.in ↗</a>
+  </article>
+  <article class="card" data-card data-stop="9" data-side="right">
+    <span class="serial">NO. 007 · THE SCAFFOLD</span><div class="shot"><img src="assets/shots/conxfolio.jpg" alt="Conxfolio" loading="lazy" decoding="async"></div>
+    <div class="head"><h2>Conxfolio</h2><span class="pin" data-s="building">building</span></div>
+    <p class="sub">A career suite that stays free from the first draft to the public page.</p>
+    <ul class="parts"><li>37 résumé designs and 20 portfolio worlds, each a complete authored structure</li><li>Every template grown from one base that adapts itself to the content</li><li>No account, no watermark, and the work stays in your browser</li></ul>
+    
+    <div class="nums"><div><b>37</b><span>résumé designs</span></div><div><b>0</b><span>accounts required</span></div></div>
+    <span class="noendpoint">not out yet</span>
+  </article>
+  <article class="card" data-card data-stop="10" data-side="right">
+    <span class="serial">THE DESK · THE END OF THE ROAD</span>
+    <div class="head"><h2>Say hello</h2><span class="pin" data-s="live">open to roles</span></div>
+    <p class="sub">That is the yard. I designed and built all seven and run the five that are live on my own servers. If you want one built for you, or want me on your team, write.</p>
+    <div class="nums"><div><b>7</b><span>things built</span></div><div><b>5</b><span>live today</span></div></div>
+    <a class="link" href="mailto:vamsi@vamsivenkatesh.com">vamsi@vamsivenkatesh.com</a><br>
+    <a class="link" href="../">back to the page</a>
+  </article>
+</div>
+
+<button class="arrow left" data-arrow="-1" aria-label="Walk back">‹</button>
+<button class="arrow right" data-arrow="1" aria-label="Walk on">›</button>
+<nav class="trail" data-trail aria-label="Stops on the walk">
+  <span class="trail-line"><i data-trail-fill></i></span>
+  <button data-go="0"><b></b><em>The gate</em></button>
+  <button data-go="1"><b></b><em>Exam hall</em></button>
+  <button data-go="2"><b></b><em>Mill</em></button>
+  <button data-go="3"><b></b><em>Post</em></button>
+  <button data-go="4"><b></b><em>Studio</em></button>
+  <button data-go="5"><b></b><em>Vault</em></button>
+  <button data-go="6"><b></b><em>Tools</em></button>
+  <button data-go="7"><b></b><em>Tower</em></button>
+  <button data-go="8"><b></b><em>Barn</em></button>
+  <button data-go="9"><b></b><em>Scaffold</em></button>
+  <button data-go="10"><b></b><em>The desk</em></button>
+</nav>
+<button class="skip" data-skip>skip the descent</button>
+<div class="track" data-track aria-hidden="true"></div>
+<script src="tour.js?v=58"></script>
+</body>
+</html>
