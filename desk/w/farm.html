@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>FarmQuick · Vamsi Venkatesh</title>
+<meta name="description" content="FarmQuick: the ordering site for a B2B produce business, and Lead Desk, the agent that finds the next buyer every morning.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="world.css?v=6">
+<style>
+  :root { --sky: #f6dcb6; --frame: #2d4a2a; --accent: #2f8f4e; --note: #fff4d6; }
+  .sun-rise { animation: rise 2.6s cubic-bezier(.2,.8,.2,1) .3s both; }
+  @keyframes rise { from { transform: translateY(260px); } }
+  .rays { transform-box: fill-box; transform-origin: center; animation: spin 40s linear infinite; }
+  @keyframes spin { to { rotate: 360deg; } }
+  .win { fill: #fff3c4; opacity: .7; }
+  .ping { fill: none; stroke: #d8412f; stroke-width: 3; transform-box: fill-box; transform-origin: center; animation: ping 2.75s ease-out infinite; opacity: 0; }
+  @keyframes ping { 0% { transform: scale(.3); opacity: .9; } 100% { transform: scale(1.8); opacity: 0; } }
+  .pin-leg { stroke: #3b2b1d; stroke-width: 2.5; }
+  .hand-label { font: 600 26px var(--hand); fill: #3b2b1d; }
+  .road { fill: none; stroke: #e8c98e; stroke-width: 30; stroke-linecap: round; }
+  .road-mid { fill: none; stroke: #fff4d6; stroke-width: 2.5; stroke-dasharray: 14 16; animation: roll 1.2s linear infinite; }
+  @keyframes roll { to { stroke-dashoffset: -30; } }
+  .furrow { stroke: rgba(60, 40, 10, .22); stroke-width: 2; }
+  .barn-x { stroke: #b8452f; stroke-width: 5; }
+  .smoke circle { fill: rgba(255, 255, 255, .7); transform-box: fill-box; transform-origin: center; animation: smoke 3.6s ease-out infinite; opacity: 0; }
+  @keyframes smoke { 0% { transform: translate(0, 0) scale(.5); opacity: .8; } 100% { transform: translate(24px, -90px) scale(1.6); opacity: 0; } }
+  .slat { stroke: rgba(90, 50, 18, .35); stroke-width: 3; }
+  .spoke { stroke: #9aa0a8; stroke-width: 2; }
+  .wing { fill: none; stroke: #3b2b1d; stroke-width: 2.6; stroke-linecap: round; transform-box: fill-box; transform-origin: center; animation: flap .5s ease-in-out infinite alternate; }
+  @keyframes flap { to { transform: scaleY(-.6); } }
+  .crop { animation: sway 3.2s ease-in-out infinite alternate; }
+  @keyframes sway { from { rotate: -4deg; } to { rotate: 4deg; } }
+  .blade { fill: #3f6f30; }
+  .antenna { stroke: #3b2b1d; stroke-width: 3; }
+  .blink { fill: #f0b83c; animation: blink 1.6s steps(2, jump-none) infinite; }
+  @keyframes blink { 50% { fill: #d8412f; } }
+  .eye { fill: #2d3038; } .ink { fill: rgba(59, 43, 29, .4); }
+  @media (prefers-reduced-motion: reduce) { .sun-rise, .rays, .ping, .road-mid, .smoke circle, .wing, .crop, .blink { animation: none; } .ping { opacity: 0; } .smoke circle { opacity: .5; } }
+</style>
+</head>
+<body>
+<header class="hero">
+  <svg id="scene" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A paper-cut farm at dawn: a truck carries crates of vegetables along the road to the city, where five city pins ping on the horizon.">
+    <defs><linearGradient id="dawn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9fcbe0"/><stop offset=".55" stop-color="#f7dcb4"/><stop offset="1" stop-color="#f4c89a"/></linearGradient></defs>
+  </svg>
+  <div class="grain" id="grain" aria-hidden="true"></div>
+  <div class="frame" aria-hidden="true"></div>
+  <div class="w-tag">
+    <p class="w-kicker">VV 103 · Live · farmquick.in</p>
+    <h1>FarmQuick</h1>
+    <p class="w-line">End to end for a B2B produce business: the ordering site buyers use, and Lead Desk, the agent that finds the next buyer every morning.</p>
+    <a class="w-go" href="https://farmquick.in/" target="_blank" rel="noopener">Visit farmquick.in ↗</a>
+    <a class="w-down" href="#work">See the work ↓</a>
+  </div>
+  <a class="w-back" href="../">← Back to the town</a>
+</header>
+<main class="work" id="work"></main>
+<script src="../facts.js?v=1"></script>
+<script src="world.js?v=6"></script>
+<script src="farm.js?v=2"></script>
+</body>
+</html>

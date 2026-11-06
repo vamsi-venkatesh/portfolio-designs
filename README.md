@@ -1,6 +1,6 @@
 # Portfolio designs
 
-Fifteen ways to present the same work: my live portfolio site, the one before it, a full multi-page site, an earlier board, and eleven interactive experiments in physics, light, sound and 3D. Every one is plain HTML, CSS and JavaScript (plus Three.js or raw WebGL where the design needs it), with no build step.
+Seventeen ways to present the same work: my live portfolio site, the one before it, a full multi-page site, an earlier board, and eleven interactive experiments in physics, light, sound and 3D. Every one is plain HTML, CSS and JavaScript (plus Three.js or raw WebGL where the design needs it), with no build step.
 
 **Open them live:** https://vamsi-venkatesh.github.io/portfolio-designs/
 
@@ -25,6 +25,8 @@ Fifteen ways to present the same work: my live portfolio site, the one before it
 | `09-window` | The Window | The screen becomes glass onto a sunlit room; with head tracking it moves like a real window | Three.js, off-axis projection, MediaPipe | [open](https://vamsi-venkatesh.github.io/portfolio-designs/09-window/) |
 | `10-for-you` | Made for you | Say who you are and the site becomes a world built for you | Three.js, WebGL | [open](https://vamsi-venkatesh.github.io/portfolio-designs/10-for-you/) |
 | `11-light` | Hold it to the light | Sunlight through a pane of glass writes each of the nine products on the wall; move the cursor and the sun turns | Three.js, WebGL | [open](https://vamsi-venkatesh.github.io/portfolio-designs/11-light/) |
+| `original-site` | The Operations Deck | My first live site (Aug 2026): walk the stations, type commands in a terminal; every number dated. Ask my AI is off in this copy (it needs its server) | Three.js, terminal UI | [open](https://vamsi-venkatesh.github.io/portfolio-designs/original-site/) |
+| `desk` | The Paper Town | A paper-cut town; each product is a building with its own world inside, plus a desk diorama | Paper-cut layers, Canvas | [open](https://vamsi-venkatesh.github.io/portfolio-designs/desk/) |
 
 ## Download one
 

@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>VVDex AI Operating System — how I build across models · Vamsi Venkatesh</title>
+<meta name="description" content="How Vamsi connects the VVDex Vault, Project Brain, private VVDex Studio, graph engineering, harnesses, evaluation, evidence and runtime memory into one controlled build loop." />
+<meta name="theme-color" content="#08090D" />
+<link rel="canonical" href="https://vamsivenkatesh.com/work/ai-operating-system/" />
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="The operating system behind every system I build" />
+<meta property="og:description" content="A connected build loop from intent and code truth through private control, evaluation, evidence and reviewed memory." />
+<meta property="og:url" content="https://vamsivenkatesh.com/work/ai-operating-system/" />
+<meta property="og:image" content="https://vamsivenkatesh.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="../../styles.css?v=25" />
+</head>
+<body>
+<div class="ambient" aria-hidden="true"></div>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="Vamsi Venkatesh — home">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2 4 L8 20 L12 10 L16 20 L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>VAMSI&nbsp;VENKATESH</span>
+    </a>
+    <div class="nav-links">
+      <a href="/#foundation">How I build</a>
+      <a href="/#conxto">Systems</a>
+      <a href="/#skills">Skills</a>
+      <a href="/#about">About</a>
+      <a class="nav-cta" href="../../ask/">Ask my AI →</a>
+    </div>
+  </div>
+</nav>
+<main>
+  <div class="container">
+    <section class="case">
+      <a class="back" href="/#foundation">← Back to how I build</a>
+      <div class="sys-tags" style="margin-top:28px">
+        <span class="tag gold">Foundation 00</span><span class="tag">Cross-model</span><span class="tag">Private control</span><span class="tag">Evidence-gated</span><span class="tag">Owned memory</span>
+      </div>
+      <h1>The operating system behind <em>every system I build.</em></h1>
+      <p class="lead">
+        I built a cross-model operating system so a new conversation does not mean a new beginning—or
+        uncontrolled execution. It preserves intent, grounds work in current code, governs models and
+        authority through VVDex Studio, proves outcomes and returns reviewed learning to the next run.
+      </p>
+
+      <div class="memory-system four" aria-label="VVDex operating architecture layers">
+        <div class="memory-layer"><span class="memory-step">01 · INTENT</span><h3>VVDex Vault</h3><p>Projects, daily history, decisions, rules, strategy, failures and working context.</p><span class="memory-proof">200+ notes · 2,000+ links</span></div>
+        <div class="memory-connector" aria-hidden="true"><span></span></div>
+        <div class="memory-layer"><span class="memory-step">02 · EVIDENCE</span><h3>Project Brain</h3><p>Validated code graphs, Git history, tests, runtime evidence and safe work coordination.</p><span class="memory-proof">Task context · locks · write-back</span></div>
+        <div class="memory-connector" aria-hidden="true"><span></span></div>
+        <div class="memory-layer"><span class="memory-step">03 · CONTROL</span><h3>VVDex Studio</h3><p>Private graphs, tools, authority, harnesses, evaluation, traces and release control.</p><span class="memory-proof">Models work inside the boundary</span></div>
+        <div class="memory-connector" aria-hidden="true"><span></span></div>
+        <div class="memory-layer"><span class="memory-step">04 · RUNTIME</span><h3>MNEMA</h3><p>Persistent, tenant-scoped memory for agents inside the products themselves.</p><span class="memory-proof">Six layers · Postgres · pgvector</span></div>
+      </div>
+
+      <div class="case-cols">
+        <div class="case-prose">
+          <h2>The problem was continuity</h2>
+          <p>
+            AI tools are powerful inside one session and forgetful across sessions. Project decisions
+            lived in old chats, a new model could repeat a rejected approach, and a confident answer
+            about the code could already be stale. Normal chat memory was not enough for several active
+            products being built across different tools and threads.
+          </p>
+
+          <h2>The vault is an AI-readable operating layer</h2>
+          <p>
+            The Obsidian vault is not merely a personal notebook. It is the canonical continuity layer:
+            every project has a status dashboard and detailed panels; daily notes preserve the temporal
+            story; durable pages hold architecture, decisions, risks, strategies and rejected paths;
+            persona and operating rules teach a fresh model how to work with me.
+          </p>
+          <div class="pull">Refer first. Work from evidence. Update the shared memory in the same turn.</div>
+          <p>
+            Wikilinks turn those records into a navigable knowledge graph. A cold model reads the
+            constitution, master index, working contract and relevant project panel—not the whole vault—
+            and recovers the right context in a few targeted reads.
+          </p>
+
+          <h2>Project Brain connects intent to reality</h2>
+          <p>
+            Documentation explains why; it cannot prove what the current software does. Project Brain
+            bridges that gap with local code graphs, repository history, product test commands and live
+            evidence. Before code work, it generates a focused context pack containing the relevant
+            intent, validated code path, recent changes, tests, file reservations and the required
+            write-back destination.
+          </p>
+          <div class="data-list">
+            <div class="row"><div class="c1">Vault</div><div class="c2">Authoritative for intent, decisions, history and why</div></div>
+            <div class="row"><div class="c1">Code graph</div><div class="c2">Current structure after direct validation</div></div>
+            <div class="row"><div class="c1">Git</div><div class="c2">History, authorship and exact diffs</div></div>
+            <div class="row"><div class="c1">Tests/runtime</div><div class="c2">The final authority on whether the system actually works</div></div>
+          </div>
+
+          <h2>VVDex Studio governs execution</h2>
+          <p>
+            Knowing the project and reading the code still does not define what an agent may do. VVDex
+            Studio is the private control plane between grounded context and execution. A canonical
+            contract drives the graph, allowed tools, human authority gates, harness cases, service
+            evaluation, traces, evidence and reviewed memory. Claude, Codex/ChatGPT, VVDex or local
+            models can work through the same boundary; the model does not own operational authority.
+          </p>
+          <p>
+            The public Agent Services Lab exposes selected deterministic proof across 37 base contracts.
+            Customer systems, credentials, live traces and specialization remain private. Eval Hub is a
+            separate independent layer for wider cross-product quality and safety baselines.
+          </p>
+
+          <h2>MNEMA is the product-memory layer</h2>
+          <p>
+            Project knowledge and product-user memory are different problems. MNEMA is the second one:
+            an owned six-layer memory substrate for agents inside products. It supports working,
+            episodic, semantic, procedural, core and outcome-causal memory with tenant-scoped retrieval
+            on Postgres and pgvector. Conxto uses it for shared cross-agent context; the same foundation
+            is designed to support MIRA, SEO Lab and VVDex workflows without mixing their domains.
+          </p>
+
+          <h2>The continuation loop</h2>
+          <div class="data-list">
+            <div class="row"><div class="c1">01 · Orient</div><div class="c2">Load identity, operating rules and the relevant project state</div></div>
+            <div class="row"><div class="c1">02 · Ground</div><div class="c2">Generate the task context and verify the code path against source</div></div>
+            <div class="row"><div class="c1">03 · Govern</div><div class="c2">Compile the graph, tools, authority and release rules inside VVDex Studio</div></div>
+            <div class="row"><div class="c1">04 · Exercise</div><div class="c2">Run clean, exception and failure cases through the harness</div></div>
+            <div class="row"><div class="c1">05 · Prove</div><div class="c2">Evaluate the contract and inspect the rendered or live result, trace and evidence</div></div>
+            <div class="row"><div class="c1">06 · Return</div><div class="c2">Review outcomes before writing durable knowledge to Vault or MNEMA</div></div>
+          </div>
+
+          <h2>Built with AI, owned as a system</h2>
+          <p>
+            I developed this way of working across Claude and Codex, using each as an engineering
+            collaborator while keeping the knowledge, rules, evidence and infrastructure under my own
+            control. The value is not a particular model. The value is continuity: another capable
+            model can enter the work without inheriting a blank slate or pretending old chat is truth.
+          </p>
+
+          <h2>Honest status</h2>
+          <p>
+            The operating loop is active and used across the portfolio. It is still being improved:
+            older provider-specific wording is being generalized, freshness checks are being tightened,
+            and MNEMA adoption is expanding product by product. The public counts above were audited in
+            July 2026 and will grow as the system is used.
+          </p>
+        </div>
+        <aside class="case-aside">
+          <div class="meta-row"><div class="k">Status</div><div class="v">Active internal foundation</div></div>
+          <div class="meta-row"><div class="k">Role</div><div class="v">Designed, built and operated by Vamsi with Claude and Codex as AI engineering collaborators</div></div>
+          <div class="meta-row"><div class="k">Scope</div><div class="v">Cross-model continuity · code truth · private execution control · graph and harness evaluation · evidence · runtime memory</div></div>
+          <div class="meta-row"><div class="k">Public boundary</div><div class="v">Architecture and verified aggregate counts only; private notes, credentials and project strategy remain private</div></div>
+          <div class="meta-row"><div class="k">Related</div><div class="v"><a href="../../work/agent-services/">Agent Services →</a><br/><a href="../../work/conxto/">Conxto →</a><br/><a href="../../work/seo-lab/">SEO Lab →</a><br/><a href="../../work/personal-os/">MIRA →</a></div></div>
+        </aside>
+      </div>
+    </section>
+  </div>
+</main>
+<footer><div class="container"><div class="footer-inner"><div class="sig">© 2026 Vamsi Venkatesh · Designed and directed by Vamsi with AI engineering collaborators.</div><div class="sig"><a href="/#foundation">How I build</a> · <a href="/#conxto">Systems</a> · <a href="../../now/">Now</a> · <a href="mailto:vamsi@vamsivenkatesh.com">Email</a></div></div></div></footer>
+<script src="../../scripts/main.js?v=10" defer></script>
+</body>
+</html>

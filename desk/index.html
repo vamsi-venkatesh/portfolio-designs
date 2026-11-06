@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Vamsi Venkatesh · The paper town</title>
+<meta name="description" content="Vamsi Venkatesh, AI systems and product engineer in Magdeburg. Eight things I built, as one paper town: walk through it and step into any of them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="w/world.css?v=6">
+<link rel="stylesheet" href="town.css?v=6">
+</head>
+<body>
+<main class="stage">
+  <div class="pan" id="pan" tabindex="0" aria-label="The paper town. Drag or scroll sideways to walk through it.">
+    <svg id="town" viewBox="0 0 3200 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A paper-cut town: a harbour at night, an airfield, a factory, a town square, a city, a workshop, an exam hall on a hill and a farm at dawn, joined by one road and one river.">
+      <defs>
+        <linearGradient id="skyTime" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#101a36"/><stop offset=".22" stop-color="#34467c"/><stop offset=".42" stop-color="#8ec7e0"/><stop offset=".62" stop-color="#b9d9e3"/><stop offset=".82" stop-color="#f7dcb4"/><stop offset="1" stop-color="#f4c089"/></linearGradient>
+        <linearGradient id="farTime" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#26335a"/><stop offset=".3" stop-color="#6d86a0"/><stop offset=".5" stop-color="#b9cfc0"/><stop offset="1" stop-color="#d4e2c4"/></linearGradient>
+        <linearGradient id="midTime" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2b3a52"/><stop offset=".3" stop-color="#7f9a7a"/><stop offset=".6" stop-color="#9fbe84"/><stop offset="1" stop-color="#a9c98e"/></linearGradient>
+        <linearGradient id="nearTime" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1c2a3e"/><stop offset=".3" stop-color="#55704c"/><stop offset="1" stop-color="#6f9a55"/></linearGradient>
+      </defs>
+    </svg>
+  </div>
+  <div class="torch" id="torch" aria-hidden="true"></div>
+  <div class="grain" id="grain" aria-hidden="true"></div>
+  <div class="frame" aria-hidden="true"></div>
+
+  <nav class="corner" aria-label="About">
+    <a href="#me" data-card="me">About me</a><a href="#bin" data-card="bin">Withdrawn</a><a href="mailto:vamsi@vamsivenkatesh.com">vamsi@vamsivenkatesh.com</a>
+  </nav>
+  <nav class="index" id="index" aria-label="The districts"></nav>
+  <p class="walk" aria-hidden="true">← drag to walk the town →</p>
+
+  <div class="sheet" id="sheet" aria-hidden="true">
+    <svg id="sheet-svg" preserveAspectRatio="none"></svg>
+    <div class="sheet-name"><p class="kick">Portfolio · Magdeburg</p><h1>Vamsi Venkatesh</h1><p class="sub">AI systems &amp; product engineer</p></div>
+  </div>
+</main>
+
+<div class="card-wrap" id="card" hidden role="dialog" aria-modal="true" aria-labelledby="c-title">
+  <div class="card-back" data-close></div>
+  <article class="paper-card">
+    <button class="c-x" type="button" data-close aria-label="Close">×</button>
+    <div class="c-body" id="c-body"></div>
+  </article>
+</div>
+<script src="facts.js?v=1"></script>
+<script src="content.js?v=2"></script>
+<script src="w/world.js?v=6"></script>
+<script src="town.js?v=3"></script>
+<script src="town-view.js?v=3"></script>
+<script src="town-life.js?v=2"></script>
+<script src="town-light.js?v=3"></script>
+</body>
+</html>

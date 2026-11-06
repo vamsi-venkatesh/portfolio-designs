@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Ask my AI · Vamsi Venkatesh</title>
+<meta name="description" content="Ask an AI agent anything about Vamsi Venkatesh — his systems, stack, experience, and how he builds. Runs on vamsivenkatesh.com." />
+<meta name="theme-color" content="#08090D" />
+<link rel="canonical" href="https://vamsivenkatesh.com/ask/" />
+<link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Ask my AI · Vamsi Venkatesh" />
+<meta property="og:description" content="An AI agent that answers questions about Vamsi's systems, stack, and experience." />
+<meta property="og:url" content="https://vamsivenkatesh.com/ask/" />
+<meta property="og:image" content="https://vamsivenkatesh.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="stylesheet" href="../styles.css?v=25" />
+<style>
+/* ask-page-scoped chat UI */
+.ask-wrap { max-width: 780px; margin: 0 auto; padding: 120px 20px 40px; min-height: 100svh; display: flex; flex-direction: column; }
+.ask-head { margin-bottom: 26px; }
+.ask-head h1 { font-size: clamp(34px, 5.4vw, 54px); }
+.ask-head p { color: var(--ivory-3); margin-top: 10px; font-size: 15.5px; max-width: 560px; line-height: 1.6; }
+.ask-agent-pill { display: inline-flex; align-items: center; gap: 9px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ivory-2); border: 1px solid var(--line-strong); border-radius: 999px; padding: 7px 14px; margin-bottom: 20px; }
+.ask-agent-pill .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--alive); animation: pulse 2.6s infinite; }
+.chat { flex: 1 1 auto; display: flex; flex-direction: column; gap: 14px; padding: 6px 0 18px; overflow-y: auto; }
+.msg { max-width: 86%; padding: 13px 17px; border-radius: 16px; font-size: 15px; line-height: 1.62; white-space: pre-wrap; overflow-wrap: anywhere; }
+.msg.you { align-self: flex-end; background: var(--gold); color: #0B1220; border-bottom-right-radius: 5px; font-weight: 500; }
+.msg.ai { align-self: flex-start; background: var(--surface); border: 1px solid var(--line-2); color: var(--ivory-2); border-bottom-left-radius: 5px; }
+.msg.ai.thinking { display: inline-flex; gap: 6px; align-items: center; padding: 15px 18px; }
+.msg.ai.thinking i { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); opacity: .4; animation: think 1.2s infinite; }
+.msg.ai.thinking i:nth-child(2) { animation-delay: .18s; } .msg.ai.thinking i:nth-child(3) { animation-delay: .36s; }
+@keyframes think { 0%,100% { opacity: .25; transform: translateY(0); } 45% { opacity: 1; transform: translateY(-3px); } }
+.chips { display: flex; flex-wrap: wrap; gap: 9px; margin: 4px 0 16px; }
+.chip { font-family: var(--mono); font-size: 12px; color: var(--ivory-2); border: 1px solid var(--line-2); background: transparent; border-radius: 999px; padding: 9px 15px; cursor: pointer; transition: border-color .2s, color .2s, background .2s; }
+.chip:hover { border-color: var(--gold); color: var(--ivory); background: var(--gold-dim); }
+.composer { display: flex; gap: 10px; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--surface); padding: 7px 7px 7px 20px; align-items: center; position: sticky; bottom: 18px; box-shadow: var(--shadow-pop); }
+.composer:focus-within { border-color: var(--gold); }
+.composer input { flex: 1 1 auto; min-width: 0; background: none; border: none; outline: none; color: var(--ivory); font-size: 15px; font-family: var(--sans); }
+.composer input::placeholder { color: var(--ivory-4); }
+.composer button { flex: 0 0 auto; font-family: var(--mono); font-size: 13px; font-weight: 600; background: var(--gold); color: #0B1220; border: none; border-radius: 999px; padding: 11px 22px; cursor: pointer; transition: background .2s, transform .15s var(--ease); }
+.composer button:hover { background: var(--gold-2); }
+.composer button:disabled { opacity: .45; cursor: default; }
+.ask-fine { font-family: var(--mono); font-size: 10.5px; color: var(--ivory-4); text-align: center; margin-top: 14px; letter-spacing: 0.05em; }
+@media (max-width: 760px) { .ask-wrap { padding-top: 100px; } .msg { max-width: 94%; } }
+</style>
+</head>
+<body>
+
+<div class="ambient" aria-hidden="true"></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="Vamsi Venkatesh — home">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M2 4 L8 20 L12 10 L16 20 L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>VAMSI&nbsp;VENKATESH</span>
+    </a>
+    <div class="nav-links">
+      <a href="/#conxto">Work</a>
+      <a href="/#skills">Skills</a>
+      <a href="/#about">About</a>
+      <a class="nav-cta" href="mailto:vamsi@vamsivenkatesh.com">Email →</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="ask-wrap">
+    <div class="ask-head">
+      <span class="ask-agent-pill"><span class="dot"></span>Agent online · answers about Vamsi only</span>
+      <h1>Ask my <em>AI</em>.</h1>
+      <p>An agent that knows my systems, stack, and story — ask it anything a recruiter or collaborator would ask me. It runs right here on vamsivenkatesh.com.</p>
+    </div>
+
+    <div class="chat" id="chat" aria-live="polite"></div>
+
+    <div class="chips" id="chips">
+      <button type="button" class="chip">Give me the 10-second recruiter summary</button>
+      <button type="button" class="chip">What has Vamsi actually shipped?</button>
+      <button type="button" class="chip">How do the 37 Agent Services work?</button>
+      <button type="button" class="chip">How does Vamsi use VVDex Studio?</button>
+      <button type="button" class="chip">Why should we interview him?</button>
+      <button type="button" class="chip">What's his tech stack?</button>
+    </div>
+
+    <form class="composer" id="composer">
+      <input id="q" type="text" maxlength="600" placeholder="Ask about my systems, experience, availability…" autocomplete="off" />
+      <button type="submit" id="send">Send</button>
+    </form>
+    <div class="ask-fine">When a prewritten answer does not apply, your question is sent to DeepSeek for generation. This site does not retain question or answer text—only anonymous abuse and aggregate usage counters. Avoid entering sensitive information. Verify important details by email.</div>
+  </div>
+</main>
+
+<script src="../scripts/main.js?v=10" defer></script>
+<script>
+(function () {
+  const chat = document.getElementById("chat");
+  const form = document.getElementById("composer");
+  const input = document.getElementById("q");
+  const send = document.getElementById("send");
+  const chips = document.getElementById("chips");
+  function addMsg(role, text) {
+    const d = document.createElement("div");
+    d.className = "msg " + role;
+    d.textContent = text;
+    chat.appendChild(d);
+    d.scrollIntoView({ behavior: "smooth", block: "end" });
+    return d;
+  }
+  function thinking() {
+    const d = document.createElement("div");
+    d.className = "msg ai thinking";
+    for (let i = 0; i < 3; i++) d.appendChild(document.createElement("i"));
+    chat.appendChild(d);
+    d.scrollIntoView({ behavior: "smooth", block: "end" });
+    return d;
+  }
+
+  async function ask(q) {
+    if (!q || send.disabled) return;
+    addMsg("you", q);
+    input.value = "";
+    send.disabled = true;
+    chips.style.display = "none";
+    const t = thinking();
+    try {
+      const r = await fetch("/api/ask", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ message: q }),
+      });
+      const d = await r.json().catch(() => ({}));
+      t.remove();
+      if (!r.ok || !d.answer) {
+        addMsg("ai", d.error === "rate_limited"
+          ? "You've hit the fair-use limit. Please try later, or email vamsi@vamsivenkatesh.com."
+          : d.error === "daily_budget_reached"
+            ? "The agent has reached today's privacy-safe usage budget. Please try tomorrow, or email vamsi@vamsivenkatesh.com."
+            : "The agent hit a snag. Try again in a moment, or email vamsi@vamsivenkatesh.com.");
+      } else {
+        addMsg("ai", d.answer);
+      }
+    } catch (e) {
+      t.remove();
+      addMsg("ai", "Network hiccup — try again, or email vamsi@vamsivenkatesh.com.");
+    }
+    send.disabled = false;
+    input.focus();
+  }
+
+  form.addEventListener("submit", (e) => { e.preventDefault(); ask(input.value.trim()); });
+  chips.addEventListener("click", (e) => {
+    const b = e.target.closest(".chip");
+    if (b) ask(b.textContent.trim());
+  });
+  // greeting
+  addMsg("ai", "Hi — I'm Vamsi's portfolio agent. Ask me about Conxto, VVDexOps, his AI operating memory, stack, education, or availability. What would you like to know?");
+})();
+</script>
+</body>
+</html>

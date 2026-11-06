@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Vamsi Venkatesh · The Desk</title>
+<meta name="description" content="Vamsi Venkatesh, AI systems and product engineer in Magdeburg. Eight things I built, on the desk where I built them.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..600&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="desk.css?v=6">
+</head>
+<body>
+<main class="stage" aria-label="A paper-cut desk: each object is something I built">
+  <svg id="desk" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="desk-t">
+    <title id="desk-t">Vamsi Venkatesh's desk, cut from paper: each object on it is a product he built.</title>
+    <defs>
+      <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="sky-top"/><stop offset="1" class="sky-bot"/></linearGradient>
+      <clipPath id="paneClip"><rect x="580" y="80" width="440" height="340"/></clipPath>
+    </defs>
+  </svg>
+  <div class="grain" id="grain" aria-hidden="true"></div>
+  <div class="frame" aria-hidden="true"></div>
+  <p class="hint">Move to look around · click anything on the desk to open it</p>
+  <button class="lamp-btn" id="lamp-btn" type="button" aria-pressed="true"><span class="sw" aria-hidden="true"><i></i></span><span id="lamp-state">Evening</span></button>
+  <div class="tip" id="tip" hidden></div>
+  <div class="bubble" id="bubble" hidden role="status"></div>
+</main>
+
+<div class="card-wrap" id="card" hidden role="dialog" aria-modal="true" aria-labelledby="c-title">
+  <div class="card-back" data-close></div>
+  <article class="paper-card">
+    <button class="c-x" type="button" data-close aria-label="Close">×</button>
+    <div class="c-body" id="c-body"></div>
+  </article>
+</div>
+<script src="content.js?v=2"></script>
+<script src="facts.js?v=1"></script>
+<script src="desk.js?v=6"></script>
+<script src="motion.js?v=4"></script>
+</body>
+</html>

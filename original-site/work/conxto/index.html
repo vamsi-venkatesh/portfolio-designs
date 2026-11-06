@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Conxto — the AI Career Operating System · Vamsi Venkatesh</title>
+<meta name="description" content="Case study: Conxto, a live multi-tenant career OS with seven specialist agents over one shared memory, an owned 25,000+ live-job engine across 17 sources, and an in-house Résumé/ATS engine. Founder, built end-to-end." />
+<meta name="theme-color" content="#0B0A08" />
+<link rel="canonical" href="https://vamsivenkatesh.com/work/conxto/" />
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Conxto — the AI Career Operating System" />
+<meta property="og:description" content="Seven specialist agents, one shared memory, two owned engines — a live career OS at conxto.com, designed and built end-to-end." />
+<meta property="og:url" content="https://vamsivenkatesh.com/work/conxto/" />
+<meta property="og:image" content="https://vamsivenkatesh.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="stylesheet" href="../../styles.css?v=25" />
+</head>
+<body>
+
+<div class="ambient" aria-hidden="true"></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="Vamsi Venkatesh — home">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M2 4 L8 20 L12 10 L16 20 L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>VAMSI&nbsp;VENKATESH</span>
+    </a>
+    <div class="nav-links">
+      <a href="/#conxto">Systems</a>
+      <a href="/#skills">Skills</a>
+      <a href="/#log">Build log</a>
+      <a href="/#about">About</a>
+      <a class="nav-cta" href="../../ask/">Ask my AI →</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <section class="case">
+
+      <a class="back" href="/#conxto">← Back to systems</a>
+
+      <div class="sys-tags" style="margin-top:26px">
+        <span class="tag live">Live · conxto.com</span>
+        <span class="tag gold">Flagship</span>
+        <span class="tag">Multi-agent</span>
+        <span class="tag">Owned engines</span>
+        <span class="tag">Multi-tenant</span>
+      </div>
+
+      <h1>Conxto — the AI <em>Career Operating System</em></h1>
+
+      <p class="lead">
+        A live, multi-tenant career OS where seven specialist agents run a job search over one shared
+        per-user memory — on top of two data engines I own outright. Launched at conxto.com on
+        2026-06-27. I'm the founder; I designed and built every layer end-to-end.
+      </p>
+
+      <div class="case-cols">
+        <div class="case-prose">
+
+          <h2>The problem</h2>
+          <p>
+            A job search is an operations problem wearing a motivation costume. Finding roles, scoring
+            fit, tailoring a résumé, tracking a pipeline, following up at the right moment — each step is
+            tractable, but they live in different tools that don't share state. Every "AI career tool" I
+            found rented its core: jobs from someone's API, résumé checks from someone's checker. Rent
+            the core and you inherit its costs, its limits, and its rug-pulls. So Conxto owns its core.
+          </p>
+
+          <h2>Seven agents, one memory</h2>
+          <p>
+            Conxto's specialist team is Identity, Operations, Market, Application, Strategist,
+            Recruiter and Résumé Critic—and the deliberate constraint that makes them a team rather
+            than six chatbots: they all read and write <strong>one shared per-user memory</strong>.
+            MNEMA runs on Postgres + pgvector with per-user memory blocks; cross-agent recall is
+            verified, and outcome→cause learning edges let results feed back into the next
+            recommendation. Tell the Identity agent something once and the Recruiter already knows it.
+          </p>
+
+          <div class="pull">Seven specialists run the career workflow. One shared memory ties it together.</div>
+
+          <p>
+            Agents don't act unilaterally. Actions surface as <strong>approval-gated action cards</strong> —
+            the agent proposes, you approve. And agents hand work to each other at real workflow moments,
+            not on a timer: save → tailor → ready → applied → recruiter → strategist. Save a job and the
+            tailoring path opens; mark it applied and the recruiter and strategist pick up the thread.
+          </p>
+
+          <h2>The proving ground became the product</h2>
+          <p>
+            Before Conxto had a product surface, I ran the same core idea against my own job search:
+            specialist agents sharing an event history, a bi-temporal knowledge graph and an
+            approval-gated dispatcher. That was not a second product—it was Conxto's proving ground.
+            The patterns that survived became the agent and safety architecture described here; the
+            separate experiment is no longer presented as another portfolio system.
+          </p>
+
+          <h2>Engine one: the Job Engine</h2>
+          <p>
+            Conxto pays nobody for jobs or résumés. The Job Engine ingests 17 live sources — Indeed,
+            Greenhouse, Ashby, Arbeitnow, Himalayas, Jobicy, Lever, Adzuna, The Muse, Remotive, plus
+            manual entry — plus an in-house harvester. Everything
+            lands in Conxto's own Postgres: 25,000+ live jobs across 5,136 companies (live production, Aug 2026),
+            full-text-search ranked, deduplicated, and liveness-checked so dead postings don't waste
+            anyone's morning. The Discover deck scores fit grounded in matched-keyword evidence —
+            you can see <em>why</em> a job scored what it did — with experience-level and geo-aware matching.
+          </p>
+
+          <h2>Engine two: the Résumé/ATS Engine</h2>
+          <p>
+            The second owned core is an in-house ATS scorer — RAKE keyword extraction, BM25 ranking,
+            Porter stemming, pure Node, zero third-party checkers — plus 37 résumé templates with live
+            PDF preview and DOCX export. Tailoring is honest by construction: every tailor produces a
+            real before→after ATS re-score and a diff of what changed. No "94% match!" theater. If the
+            score didn't move, the product says so.
+          </p>
+
+          <h2>Public product: Conxto Résumé Studio</h2>
+          <p>
+            I opened the résumé foundation as a standalone public product at
+            <strong><a href="https://conxfolio.com/" target="_blank" rel="noopener">conxfolio.com</a></strong>.
+            It is free, requires no login, adds no watermark and does not ration documents or downloads.
+            People can build or import a résumé, work through guided editing, switch among 37 templates,
+            export PDF or DOCX, and run an honest ATS check. Résumés stay in the browser rather than being
+            attached to an account.
+          </p>
+          <p>
+            The boundary is deliberate: Résumé Studio is the open utility; Conxto is the connected career
+            operating system for persistent job discovery, tailoring, applications, follow-ups and agent
+            workflows. The public product is live, while its search-discovery and content growth remain
+            active work.
+          </p>
+
+          <h2>Tracker and auto-submit</h2>
+          <p>
+            The Tracker is the mobile-first hub: 7 stage lists, a kanban pipeline board, follow-up
+            signals, and receipts for what happened when. It was redesigned on 2026-07-02 and
+            live-verified at 390px — 0 overflow, 0 console errors. Auto-submit drives a real browser to
+            fill applications across 7 ATS platforms (Greenhouse, Lever, Ashby, Workable, Recruitee,
+            Teamtailor, iCIMS). It is approval-gated with screenshot receipts and currently runs in
+            dry-run mode — nothing sends without explicit approval.
+          </p>
+
+          <h2>Built like production, not a demo</h2>
+          <p>
+            Multi-tenant from day one: fail-closed per-user context, tenant isolation, and end-to-end
+            audits run against a prod-schema clone before changes ship. The product rule that governs
+            all of it: <strong>honesty as a feature</strong> — every number in the UI is a real count or
+            a dash. Nothing is fabricated to look busy.
+          </p>
+
+          <div class="data-list">
+            <div class="row"><div class="c1">Job Engine</div><div class="c2">17 live sources · own harvester · no paid job API cost · 25,000+ live jobs / 5,136 companies in own Postgres · FTS ranked, deduped, liveness-checked</div></div>
+            <div class="row"><div class="c1">Résumé/ATS Engine</div><div class="c2">In-house scorer (RAKE + BM25 + Porter stemming, pure Node) · 37 templates, live PDF preview + DOCX export · honest before→after re-scores with diffs</div></div>
+            <div class="row"><div class="c1">Public Résumé Studio</div><div class="c2">Live at conxfolio.com · free · no login · no watermark · unlimited browser-local résumés · PDF/DOCX export · ATS check</div></div>
+            <div class="row"><div class="c1">Agents</div><div class="c2">7 specialists over one shared MNEMA memory (Postgres + pgvector) · approval-gated action cards · workflow handoffs at real moments</div></div>
+            <div class="row"><div class="c1">Safety</div><div class="c2">Auto-submit approval-gated, dry-run mode, screenshot receipts · fail-closed per-user context · tenant isolation · real counts or a dash</div></div>
+          </div>
+
+          <h2>What I'd tell another builder</h2>
+          <p>
+            Own the data engines that your product depends on — the harvester and the scorer were harder
+            to build than the agents, and they're the moat. Gate every agent action behind human
+            approval and attach a receipt; trust is the actual product. And make honesty a rendering
+            rule, not a value statement: when the UI can only show a real count or a dash, the whole
+            system stays true.
+          </p>
+
+        </div>
+
+        <aside class="case-aside">
+          <div class="meta-row"><div class="k">Status</div><div class="v">Live · <a href="https://conxto.com" target="_blank" rel="noopener">conxto.com</a> — launched 2026-06-27</div></div>
+          <div class="meta-row"><div class="k">Role</div><div class="v">Founder — designed &amp; built end-to-end</div></div>
+          <div class="meta-row"><div class="k">Timeline</div><div class="v">2026</div></div>
+          <div class="meta-row"><div class="k">Stack</div><div class="v">Vite + React + TypeScript · Fastify + Node · Postgres + Drizzle · pgvector · DeepSeek + Claude LLM layer · self-hosted VPS behind nginx + Cloudflare</div></div>
+          <div class="meta-row"><div class="k">Links</div><div class="v"><a href="https://conxto.com" target="_blank" rel="noopener">conxto.com ↗</a><br/><a href="https://conxfolio.com/" target="_blank" rel="noopener">Conxto Résumé Studio ↗</a></div></div>
+        </aside>
+      </div>
+
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="sig">© 2026 Vamsi Venkatesh · Designed and directed by Vamsi with AI engineering collaborators.</div>
+      <div class="sig"><a href="/#conxto">Systems</a> · <a href="../../now/">Now</a> · <a href="../../writing/">Writing</a> · <a href="mailto:vamsi@vamsivenkatesh.com">Email</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../../scripts/main.js?v=10" defer></script>
+</body>
+</html>

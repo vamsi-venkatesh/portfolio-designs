@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>MIRA — Personal Operating System · Vamsi Venkatesh</title>
+<meta name="description" content="MIRA case study — a personal operating system in development across Today, Plan, Learn, Health and Memory, with an action-oriented AI coach and approval-gated tools." />
+<meta name="theme-color" content="#0B0A08" />
+<link rel="canonical" href="https://vamsivenkatesh.com/work/personal-os/" />
+<link rel="icon" type="image/svg+xml" href="../../favicon.svg" />
+
+<meta property="og:type" content="article" />
+<meta property="og:title" content="MIRA — one personal operating system across the day" />
+<meta property="og:description" content="A connected personal AI app in development across Today, Plan, Learn, Health and Memory." />
+<meta property="og:url" content="https://vamsivenkatesh.com/work/personal-os/" />
+<meta property="og:image" content="https://vamsivenkatesh.com/og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="stylesheet" href="../../styles.css?v=25" />
+</head>
+<body>
+
+<div class="ambient" aria-hidden="true"></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="Vamsi Venkatesh — home">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M2 4 L8 20 L12 10 L16 20 L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span>VAMSI&nbsp;VENKATESH</span>
+    </a>
+    <div class="nav-links">
+      <a href="/#conxto">Systems</a>
+      <a href="/#skills">Skills</a>
+      <a href="/#log">Build log</a>
+      <a href="/#about">About</a>
+      <a class="nav-cta" href="../../ask/">Ask my AI →</a>
+    </div>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <section class="case">
+
+      <a class="back" href="/#conxto">← Back to systems</a>
+
+      <div class="sys-tags" style="margin-top:28px">
+        <span class="tag gold">In development</span>
+        <span class="tag">Personal AI app</span>
+        <span class="tag">AI coach</span>
+      </div>
+
+      <h1>MIRA — one operating system <em>across the day.</em></h1>
+      <p class="lead">
+        A personal AI app I am building around five connected rooms—Today, Plan, MIRA, Learn and
+        Health—so tasks, routines, learning, wellbeing and memory can inform one coach instead of
+        living in unrelated tools.
+      </p>
+
+      <div class="case-cols">
+        <div class="case-prose">
+
+          <h2 class="reveal">The product: one connected operating layer</h2>
+          <p>
+            MIRA is not a chat window placed beside a task list. Today shows the real day; Plan connects
+            goals, routines and calendar decisions; Learn turns sources into evidence-linked study
+            workspaces; Health and Motion preserve transparent wellbeing context; Memory keeps the
+            personal history the coach is explicitly allowed to use.
+          </p>
+
+          <h2 class="reveal">The coach acts through tools</h2>
+          <p>
+            The coach has a typed tool system spanning tasks, goals, plans, routines, calendar,
+            reminders, learning, notes, journal, memory, reviews, motion, wellbeing, food and habits.
+            Low-risk actions can execute automatically; medium-risk changes require preview and approval;
+            high-risk actions require a stronger confirmation. Every accepted action leaves a receipt
+            and supports Undo.
+          </p>
+
+          <div class="pull">The coach should understand the day, propose a useful action, and show exactly what changed.</div>
+
+          <h2 class="reveal">The loop: outcomes before opinions</h2>
+          <p>
+            MIRA records what actually happened, not only what was planned. Daily narrative and weekly
+            review connect actions to outcomes; semantic recall over the user's own history runs inside
+            PostgreSQL with pgvector. Personal context remains permissioned and inspectable instead of
+            silently becoming prompt material.
+          </p>
+
+          <h2 class="reveal">How it's built</h2>
+          <div class="data-list">
+            <div class="row"><div class="c1">Today</div><div class="c2">Focus, real day state, routines, reminders and universal capture</div></div>
+            <div class="row"><div class="c1">Plan</div><div class="c2">Goals, milestones, plans, routines and first-party calendar</div></div>
+            <div class="row"><div class="c1">Learn</div><div class="c2">Evidence-linked Study Packs, concepts, cards, quizzes and source-grounded questions</div></div>
+            <div class="row"><div class="c1">Health</div><div class="c2">Wellbeing and Motion with transparent evidence instead of opaque scoring</div></div>
+            <div class="row"><div class="c1">Safety</div><div class="c2">Typed tools · risk tiers · preview/approval · receipts and Undo</div></div>
+          </div>
+          <h2 class="reveal">Where it stands</h2>
+          <p>
+            Honest status: <strong>the private web product and its core workflows are operational;
+            the public app is still under development</strong>. Native iOS/Android packaging, real-device
+            review, notification/store gates, accessibility and broader product validation remain open.
+            I am showing the system and what is built without presenting an unfinished app as launched.
+          </p>
+
+        </div>
+
+        <aside class="case-aside">
+          <div class="meta-row"><div class="k">Status</div><div class="v">In development · private web product operational · native/public release pending</div></div>
+          <div class="meta-row"><div class="k">Role</div><div class="v">Builder — designed and built end-to-end</div></div>
+          <div class="meta-row"><div class="k">Stack</div><div class="v">Next.js · PostgreSQL · Drizzle ORM · pgvector · Telegram magic-link auth</div></div>
+          <div class="meta-row"><div class="k">Product rooms</div><div class="v">Today · Plan · MIRA · Learn · Health</div></div>
+          <div class="meta-row"><div class="k">Links</div><div class="v"><a href="/#conxto">All systems</a> · <a href="../../ask/">Ask my AI ↗</a></div></div>
+        </aside>
+      </div>
+
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="sig">© 2026 Vamsi Venkatesh · Designed and directed by Vamsi with AI engineering collaborators.</div>
+      <div class="sig"><a href="/#conxto">Systems</a> · <a href="../../now/">Now</a> · <a href="../../writing/">Writing</a> · <a href="mailto:vamsi@vamsivenkatesh.com">Email</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="../../scripts/main.js?v=10" defer></script>
+</body>
+</html>
