@@ -399,7 +399,7 @@ function buildTags() {
   productTrees.forEach((t, i) => {
     const p = PRODUCTS[i];
     const a = document.createElement('a');
-    a.className = 'tag'; a.href = `https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${p.slug}/`;
+    a.className = 'tag'; a.href = `${({"vvdex-platform":"https://vvdexops.com/","conxto":"https://conxto.com/","vvdex-engine":"https://lab.vvdexops.com/","unboundpdf":"https://unboundpdf.com/","farmquick":"https://farmquick.in/","conxfolio":"https://conxfolio.com/","pitchradar":"https://github.com/vamsi-venkatesh/pitchradar","vvdex-trading":"https://trading.vvdexops.com/","forecasting":"https://lab.vvdexops.com/forecast/"})[p.slug]}`;
     const stake = document.createElement('i'), label = document.createElement('span'), dot = document.createElement('b');
     dot.style.background = p.color; label.append(dot, document.createTextNode(p.name)); a.append(stake, label);
     a.setAttribute('aria-label', `${p.name}: ${p.one}`);
@@ -434,7 +434,7 @@ function showCard(i, fromTag) {
     card.querySelector('.kind span').textContent = `${p.kind} · ${p.status}`;
     card.querySelector('h2').textContent = p.name;
     card.querySelector('p').textContent = p.one;
-    const a = card.querySelector('a'); a.href = `https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${p.slug}/`; a.setAttribute('aria-label', `Open ${p.name}`);
+    const a = card.querySelector('a'); a.href = `${({"vvdex-platform":"https://vvdexops.com/","conxto":"https://conxto.com/","vvdex-engine":"https://lab.vvdexops.com/","unboundpdf":"https://unboundpdf.com/","farmquick":"https://farmquick.in/","conxfolio":"https://conxfolio.com/","pitchradar":"https://github.com/vamsi-venkatesh/pitchradar","vvdex-trading":"https://trading.vvdexops.com/","forecasting":"https://lab.vvdexops.com/forecast/"})[p.slug]}`; a.setAttribute('aria-label', `Open ${p.name}`);
   }
   cardFor = i;
   productTrees.forEach((pt, k) => pt.tag && pt.tag.classList.toggle('active', k === i));

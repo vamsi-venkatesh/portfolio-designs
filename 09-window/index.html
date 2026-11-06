@@ -107,7 +107,7 @@ const WORK = [
 ];
 const el = (tag, text, cls) => { const e = document.createElement(tag); if (text != null) e.textContent = text; if (cls) e.className = cls; return e; };
 const wl = document.getElementById('worklist');
-WORK.forEach(w => { const li = el('li'); const a = el('a', `${w.name} — ${w.one}`); a.href = `https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${w.slug}/`; li.appendChild(a); wl.appendChild(li); });
+WORK.forEach(w => { const li = el('li'); const a = el('a', `${w.name} — ${w.one}`); a.href = `${({"vvdex-platform":"https://vvdexops.com/","conxto":"https://conxto.com/","vvdex-engine":"https://lab.vvdexops.com/","unboundpdf":"https://unboundpdf.com/","farmquick":"https://farmquick.in/","conxfolio":"https://conxfolio.com/","pitchradar":"https://github.com/vamsi-venkatesh/pitchradar","vvdex-trading":"https://trading.vvdexops.com/","forecasting":"https://lab.vvdexops.com/forecast/"})[w.slug]}`; li.appendChild(a); wl.appendChild(li); });
 
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const canvas = document.getElementById('gl');
@@ -303,7 +303,7 @@ function openCard(s) { picked = s; const w = s.userData.w;
   document.getElementById('cK').style.background = w.color; document.getElementById('cKind').textContent = w.kind;
   document.getElementById('cName').textContent = w.name; document.getElementById('cOne').textContent = w.one;
   const nums = document.getElementById('cNums'); nums.replaceChildren(...w.nums.map(([n, l]) => { const d = el('div'); d.append(el('b', n), el('span', l)); return d; }));
-  document.getElementById('cLink').href = `https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${w.slug}/`; card.classList.add('open'); }
+  document.getElementById('cLink').href = `${({"vvdex-platform":"https://vvdexops.com/","conxto":"https://conxto.com/","vvdex-engine":"https://lab.vvdexops.com/","unboundpdf":"https://unboundpdf.com/","farmquick":"https://farmquick.in/","conxfolio":"https://conxfolio.com/","pitchradar":"https://github.com/vamsi-venkatesh/pitchradar","vvdex-trading":"https://trading.vvdexops.com/","forecasting":"https://lab.vvdexops.com/forecast/"})[w.slug]}`; card.classList.add('open'); }
 function closeCard() { picked = null; card.classList.remove('open'); }
 document.getElementById('cardX').addEventListener('click', closeCard);
 addEventListener('keydown', e => { if (e.key === 'Escape') closeCard(); });

@@ -20,7 +20,7 @@ const PRODUCTS = [
     one: 'Live market microstructure beside a hash-chained record of every dated call. Paper only.', numbers: [['2,028', 'dated calls'], ['0', 'capital']] },
 ];
 const BY = Object.fromEntries(PRODUCTS.map(p => [p.slug, p]));
-const workURL = s => `https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${s}/`;
+const workURL = s => `${({"vvdex-platform":"https://vvdexops.com/","conxto":"https://conxto.com/","vvdex-engine":"https://lab.vvdexops.com/","unboundpdf":"https://unboundpdf.com/","farmquick":"https://farmquick.in/","conxfolio":"https://conxfolio.com/","pitchradar":"https://github.com/vamsi-venkatesh/pitchradar","vvdex-trading":"https://trading.vvdexops.com/","forecasting":"https://lab.vvdexops.com/forecast/"})[s]}`;
 
 // tiny DOM builder (no innerHTML)
 function h(tag, attrs = {}, ...kids) {

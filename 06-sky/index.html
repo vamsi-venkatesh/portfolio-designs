@@ -579,7 +579,7 @@ function buildLabels() {
   nav.replaceChildren();
   cons.forEach(c => {
     const a = document.createElement('a');
-    a.className = 'cn'; a.href = `https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${c.slug}/`; a.textContent = c.name;
+    a.className = 'cn'; a.href = `${({"vvdex-platform":"https://vvdexops.com/","conxto":"https://conxto.com/","vvdex-engine":"https://lab.vvdexops.com/","unboundpdf":"https://unboundpdf.com/","farmquick":"https://farmquick.in/","conxfolio":"https://conxfolio.com/","pitchradar":"https://github.com/vamsi-venkatesh/pitchradar","vvdex-trading":"https://trading.vvdexops.com/","forecasting":"https://lab.vvdexops.com/forecast/"})[c.slug]}`; a.textContent = c.name;
     a.setAttribute('aria-label', `${c.name}: ${c.one}`);
     a.addEventListener('mouseenter', () => setHot(c.i));
     a.addEventListener('mouseleave', () => { if (pinned < 0) setHot(-1); });
@@ -597,7 +597,7 @@ function setHot(i) {
   document.getElementById('cardName').textContent = c.name;
   document.getElementById('cardKind').textContent = c.kind;
   document.getElementById('cardOne').textContent = c.one;
-  const l = document.getElementById('cardLink'); l.href = `https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${c.slug}/`; l.setAttribute('aria-label', `See the work: ${c.name}`);
+  const l = document.getElementById('cardLink'); l.href = `${({"vvdex-platform":"https://vvdexops.com/","conxto":"https://conxto.com/","vvdex-engine":"https://lab.vvdexops.com/","unboundpdf":"https://unboundpdf.com/","farmquick":"https://farmquick.in/","conxfolio":"https://conxfolio.com/","pitchradar":"https://github.com/vamsi-venkatesh/pitchradar","vvdex-trading":"https://trading.vvdexops.com/","forecasting":"https://lab.vvdexops.com/forecast/"})[c.slug]}`; l.setAttribute('aria-label', `See the work: ${c.name}`);
   placeCard(); card.classList.add('on');
   if (RM) frame();
 }
@@ -665,7 +665,7 @@ fg.addEventListener('pointerup', e => {
   if (down && !down.moved) {
     const h = hitCons(down.p[0], down.p[1]);
     if (h >= 0) {
-      if (e.pointerType === 'mouse') location.href = `https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${cons[h].slug}/`;
+      if (e.pointerType === 'mouse') location.href = `${({"vvdex-platform":"https://vvdexops.com/","conxto":"https://conxto.com/","vvdex-engine":"https://lab.vvdexops.com/","unboundpdf":"https://unboundpdf.com/","farmquick":"https://farmquick.in/","conxfolio":"https://conxfolio.com/","pitchradar":"https://github.com/vamsi-venkatesh/pitchradar","vvdex-trading":"https://trading.vvdexops.com/","forecasting":"https://lab.vvdexops.com/forecast/"})[cons[h].slug]}`;
       else { pinned = h; setHot(h); }
     } else if (pinned >= 0) { pinned = -1; setHot(-1); }
     else if (!RM) spawnMeteor(clock(), down.p);

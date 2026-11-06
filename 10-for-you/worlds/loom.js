@@ -420,7 +420,7 @@ export default {
       } else if (L && L.rev) el('p', 'lm-woven', `On this tapestry: a crew of specialist agents and an ${L.revLabel}`, hd);
       const lk = el('p', 'lm-golinks', null, hd);
       if (w.url) ext(w.url, `Open ${w.host} ↗`, lk);
-      ext(`https://vamsi-venkatesh.github.io/portfolio-designs/inside-the-dot/work/${w.slug}/`, 'Full case on vamsivenkatesh.com ↗', lk);
+      ext(`${({"vvdex-platform":"https://vvdexops.com/","conxto":"https://conxto.com/","vvdex-engine":"https://lab.vvdexops.com/","unboundpdf":"https://unboundpdf.com/","farmquick":"https://farmquick.in/","conxfolio":"https://conxfolio.com/","pitchradar":"https://github.com/vamsi-venkatesh/pitchradar","vvdex-trading":"https://trading.vvdexops.com/","forecasting":"https://lab.vvdexops.com/forecast/"})[w.slug]}`, 'Full case on vamsivenkatesh.com ↗', lk);
       return hd;
     }
     function pager(f, slug) {
