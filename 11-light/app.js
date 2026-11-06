@@ -13,7 +13,7 @@ const DEBUG = qs.has('debug');
 const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches && !FILM;
 const coarse = matchMedia('(pointer: coarse)').matches || Math.min(innerWidth, innerHeight) < 600;
 
-const STATES = ['name', 'unboundpdf', 'write'];
+const STATES = ['name', 'vvdex-platform', 'conxto', 'vvdex-engine', 'unboundpdf', 'conxfolio', 'forecasting', 'vvdex-trading', 'farmquick', 'pitchradar', 'write'];
 
 // ---------- scene constants (metres) ----------
 const GLASS = { x: 0.9, y: 1.95, T: 0.045 };          // pane centre; back face at z = D

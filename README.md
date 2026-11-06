@@ -24,7 +24,7 @@ Fifteen ways to present the same work: my live portfolio site, the one before it
 | `08-prism` | Prism | Steer a rainbow across the work | WebGL | [open](https://vamsi-venkatesh.github.io/portfolio-designs/08-prism/) |
 | `09-window` | The Window | The screen becomes glass onto a sunlit room; with head tracking it moves like a real window | Three.js, off-axis projection, MediaPipe | [open](https://vamsi-venkatesh.github.io/portfolio-designs/09-window/) |
 | `10-for-you` | Made for you | Say who you are and the site becomes a world built for you | Three.js, WebGL | [open](https://vamsi-venkatesh.github.io/portfolio-designs/10-for-you/) |
-| `11-light` | Hold it to the light | Sunlight through a pane of glass writes the work on the wall | Three.js, WebGL | [open](https://vamsi-venkatesh.github.io/portfolio-designs/11-light/) |
+| `11-light` | Hold it to the light | Sunlight through a pane of glass writes each of the nine products on the wall; move the cursor and the sun turns | Three.js, WebGL | [open](https://vamsi-venkatesh.github.io/portfolio-designs/11-light/) |
 
 ## Download one
 

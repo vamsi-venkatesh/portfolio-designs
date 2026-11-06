@@ -1,0 +1,36 @@
+{
+  "id": "farmquick",
+  "W": 512,
+  "H": 256,
+  "VW": 513,
+  "VH": 257,
+  "mag": 1,
+  "Lx": 1.4,
+  "Ly": 0.7,
+  "D": 2.4,
+  "n": 1.517,
+  "floor": 0.06,
+  "sun": [
+    -0.4707565417620042,
+    -0.21398024625545645,
+    -0.8559209850218258
+  ],
+  "offset": [
+    -1.32,
+    -0.6
+  ],
+  "heightRangeMm": 53.649,
+  "maxSlopeDeg": 10.124,
+  "solve": {
+    "passes": 682,
+    "meanLogErr": 0.4821,
+    "maxLogErr": 6.961,
+    "foldedCells": 0
+  },
+  "proof": {
+    "correlation": 0.9542,
+    "lostPercent": 0,
+    "raysPerCell": 9
+  },
+  "made": "2026-11-06T00:06:15.593Z"
+}
